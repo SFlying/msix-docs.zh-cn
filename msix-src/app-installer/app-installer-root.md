@@ -8,19 +8,23 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 3578d993f2d88cdcfea4781748015ac9ecba509b
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 74da9d3f2897947aecc1f63284777ff5c16b3c57
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900439"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795242"
 ---
 # <a name="install-windows-10-apps-with-app-installer"></a>使用应用安装程序安装 Windows 10 应用
 
 ## <a name="purpose"></a>用途
 此部分包含或链接至有关应用安装程序及其功能如何使用的文章。
 
-应用安装程序可以通过双击应用包安装的 Windows 10 应用。 这意味着用户无需使用 PowerShell 或其他开发人员工具来部署 Windows 10 应用。 应用安装程序还可以从 Web、可选包和相关的集中安装应用。 若要了解如何使用应用安装程序安装应用，请参阅表中的主题。
+利用应用安装程序，可以通过双击应用包来安装 Windows 10 应用。 这意味着用户无需使用 PowerShell 或其他开发人员工具来部署 Windows 10 应用。 应用安装程序还可以从 Web、可选包和相关的集中安装应用。 
+
+可以下载应用安装程序以供脱机使用从 Microsoft Store 企业中的业务[web 门户](https://businessstore.microsoft.com/en-us/store/details/app-installer/9NBLGGH4NNS1)。 您可以了解有关脱机分发的详细信息[此处](https://docs.microsoft.com/en-us/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app)。
+
+若要了解如何使用应用安装程序安装应用，请参阅表中的主题。
 
 | 主题 | 描述 |
 |-------|-------------|
@@ -30,9 +34,9 @@ ms.locfileid: "58900439"
 | [在应用安装程序文件中配置更新设置](update-settings.md)  |  了解如何使用应用安装程序文件配置应用更新。 |
 | [从 web 安装的 Windows 10 应用](installing-windows10-apps-web.md) | 在此部分中，我们将查看允许用户直接从网页中安装应用所需执行的步骤。 |
 | [可选包和相关的集](install-related-set.md) | 了解包含主包和相关的可选包的相关集。  |
-| [使用应用安装程序文件遇到的安装问题的疑难解答](troubleshoot-appinstaller-issues.md) | 使用应用安装程序文件旁加载应用程序时的常见问题和解决方案。 |
+| [应用安装程序文件进行故障排除安装问题](troubleshoot-appinstaller-issues.md) | 使用应用安装程序文件旁加载应用程序时的常见问题和解决方案。 |
 | [相关文档](app-installer-documentation.md) | 提供指向相关文档，包括 Api，可以使用来修改通过应用安装程序文件的包，或若要检索有关与应用安装程序相关联的应用的信息。  |
-| [应用安装程序文件 (.appinstaller) 参考](https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file?context=/windows/msix/render) | 查看应用安装程序文件的完整 XML 架构。 |
+| [应用安装程序文件 (.appinstaller) 引用](https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file?context=/windows/msix/render) | 查看应用安装程序文件的完整 XML 架构。 |
 
 ## <a name="tutorials"></a>教程
 

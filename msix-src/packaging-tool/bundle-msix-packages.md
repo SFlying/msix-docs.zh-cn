@@ -9,13 +9,13 @@ keywords: windows 10 msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: 54e6f063aa05c1a297725e6c1c7a091ebffbb043
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900159"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59983439"
 ---
-# <a name="bundle-msix-packages"></a>捆绑包 MSIX 包 
+# <a name="bundle-msix-packages"></a>捆绑 MSIX 包 
 
 本文介绍了转换您的 Windows 安装程序使用 MSIX 打包工具的 x86 和 x64 版本后创建一个捆绑包的过程。 
 

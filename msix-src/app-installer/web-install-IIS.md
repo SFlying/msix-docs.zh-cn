@@ -1,6 +1,6 @@
 ---
 author: mcleanbyron
-title: 从 IIS 服务器安装的 Windows 10 应用程序 |Microsoft Docs
+title: 分发 Windows 10 应用从 IIS 服务器 |Microsoft Docs
 description: 本教程介绍了如何设置 IIS 服务器，验证你的 web 应用可以托管应用程序包，并调用和有效地使用应用安装程序。
 ms.author: mcleans
 ms.date: 05/30/2018
@@ -8,14 +8,14 @@ ms.topic: article
 keywords: windows 10、 uwp、 应用程序安装程序中，应用安装旁, 加载，相关设置此选项，可选包，IIS 服务器
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 58415ff867d322f953ddb2a9d91d9593dd17d589
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 1e3762ca4cbca110cb17867c3e8e2cebd992b370
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900599"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795287"
 ---
-# <a name="install-a-windows-10-app-from-an-iis-server"></a>从 IIS 服务器安装的 Windows 10 应用
+# <a name="distribute-a-windows-10-app-from-an-iis-server"></a>分发 Windows 10 应用从 IIS 服务器
 
 本教程介绍了如何设置 IIS 服务器，验证你的 web 应用可以托管应用程序包，并调用和有效地使用应用安装程序。
 

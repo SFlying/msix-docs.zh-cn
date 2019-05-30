@@ -1,6 +1,6 @@
 ---
-title: 使用 MSI 或 APP-V 的 VM 上创建应用程序包
-description: 创建的 VM 上使用现有.msi MSIX 包
+title: 在 VM 上创建 MSIX 包从桌面安装程序 （MSI、 EXE 或 APP-V）
+description: 在 VM 上创建 MSIX 包从桌面安装程序 （MSI、 EXE 或 APP-V）
 author: mcleanbyron
 ms.author: mcleans
 ms.date: 02/11/2019
@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 83a9666091ca04634c9494f3fa58c0a380692fae
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: cc9b0e1242df931a155da1735b59c54c7b109737
+ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900629"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984421"
 ---
-# <a name="create-an-application-package-with-msi-or-app-v-on-a-vm"></a>使用 MSI 或 APP-V 的 VM 上创建应用程序包
+# <a name="create-an-msix-package-from-a-desktop-installer-msi-exe-or-app-v-on-a-vm"></a>在 VM 上创建 MSIX 包从桌面安装程序 （MSI、 EXE 或 APP-V）
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取 MSIX 打包工具</a></p></div>
 
-MSIX 打包工具可用于为 HYPER-V 虚拟机 (VM) 上将现有的 MSI 或 APP-V 安装创建 MSIX 应用程序包。 VM 必须满足以下要求：
+MSIX 打包工具可用于从 HYPER-V 虚拟机 (VM) 上将现有的 MSI、 EXE 或 APP-V 安装创建 MSIX 应用程序包。 VM 必须满足以下要求：
 
 - 它必须配置为[接收远程命令](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/remotely-manage-hyper-v-hosts)(运行[Enable-psremoting](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enable-PSRemoting?view=powershell-5.1)命令在 VM 上)
 - 它必须运行 Windows 10，版本 1809 或更高版本的 Windows。
@@ -34,7 +34,7 @@ MSIX 打包工具可用于为 HYPER-V 虚拟机 (VM) 上将现有的 MSI 或 APP
 
 ![pic2](images/pic2.png)
 
-通过单击导航到安装程序 MSI 或 APP-V**浏览**和文件选取器中选择安装程序。 然后，单击“下一步”。
+通过单击导航到安装程序 MSI 或 APP-V**浏览**和文件选取器中选择安装程序。 然后，单击“下一步”  。
 
 可选：
 - 下的复选框**使用现有 MSIX 包**、 浏览和选择你想要更新现有 MSIX 包。
@@ -47,7 +47,7 @@ MSIX 打包工具可用于为 HYPER-V 虚拟机 (VM) 上将现有的 MSI 或 APP
 
 - 选择打包环境的虚拟机。
   - 选择**现有的虚拟机上创建包**并从下拉列表选择现有的虚拟机名称。 您将会看到用户和密码字段，如果存在任何 vm 提供凭据。
-  - 单击“下一步” 。
+  - 单击“下一步”  。
 
 ## <a name="package-information"></a>包信息
 

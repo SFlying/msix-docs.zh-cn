@@ -8,16 +8,34 @@ ms.topic: article
 keywords: windows 10、 uwp、 msix、 msix 打包工具、 预览体验计划
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: be65c2838d189760707e859bfd97751424af2d35
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: b5d3f7742195105d2e1890a614070173277f19fe
+ms.sourcegitcommit: b3564e47328d21916cdeb4c84d638ac12be0a461
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900789"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66186150"
 ---
 # <a name="msix-packaging-tool-release-notes"></a>MSIX 打包工具发行说明 
 
-#### <a name="ver-120194020"></a>Ver 1.2019.402.0
+#### <a name="ver-120195220"></a>Ver 1.2019.522.0
+
+新功能：
+
+- 支持桌面安装程序需要重新启动-[了解详细信息](../support-restart.md)
+    - 重新启动的自动登录选项 
+- 应用设置中的新选项
+    - 指定的默认证书进行签名的包 
+    - 对于需要重新启动的安装程序指定的退出代码
+    
+已知问题：
+
+- 目前不支持负的重新启动退出代码
+- 如果指定默认证书，则每个转换工作流将需要选择使用证书
+- 在远程或虚拟机重启，可能会出现额外的登录提示 
+- 还原默认设置按钮不会删除证书密码或安装程序退出代码
+- 有一些 UI incongruencies
+
+### <a name="ver-120194020---public-release"></a>**Ver 1.2019.402.0-公开发布的版本**
 
  - 验证 COM ProgId 的类型值，COM 类项并删除 COM 注册无效
  - 更新 MSIX 打包工具中重新分发的 Windows SDK 工具 
@@ -70,3 +88,20 @@ ms.locfileid: "58900789"
 - 添加获取的命令行转换状态的功能
 - 改进了的 COM 警告的日志记录与人工可读的错误
 
+ ### <a name="ver-120191100---public-release"></a>**Ver 1.2019.110.0-公开发布的版本**
+  
+新功能：
+
+- 改进了的打包时间 
+- 更新的默认文件的排除列表
+- 合并到工具报告 MSIExec 错误日志
+- 已更新的日志，以添加更多的清晰度和故障排除步骤
+- 添加了的对捕获从 PowerShell ISE 安装在手动打包过程
+- 添加了对作为安装程序 UI 和命令行模板文件中的参数声明的 PowerShell 脚本支持
+- 添加详细日志记录标志 (-verbose |-v) 的命令行接口
+- 修复了有时无法访问运行在 VM 上的网络路径是
+- 修复了在其中存储版本控制要求验证失败时使用命令行接口
+- 修复了以下问题已不接受文件路径引用中的
+- 修复了问题，其中 VM 不正确清理转换后
+- 修复了问题，将文件添加到包编辑器中的包已不能正常工作
+- UI 清理 

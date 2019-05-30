@@ -8,12 +8,12 @@ ms.topic: article
 keywords: msix 打包工具，已知问题进行故障排除
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3853af303041fb0375557ec6e1735df9dbd793e7
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 79b06fc4e3e0ff0600f6e2ab85ec27c9e3a5840c
+ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900729"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59468289"
 ---
 # <a name="known-issues-and-troubleshooting"></a>已知问题和疑难解答
 
@@ -60,9 +60,19 @@ IT 管理员还可以创建[并排功能存储区 （共享文件夹）](https:/
 
 ## <a name="log-files"></a>日志文件
 
-指示在转换成功，会为每个转换生成日志文件。 它们可在此处找到： %localappdata%\packages\Microsoft.MsixPackagingTool_8wekyb3d8bbwe\LocalState\DiagOutputDir\
+指示在转换成功，会为每个转换生成日志文件。 它们可在此处找到： 
+
+`%localappdata%\packages\Microsoft.MsixPackagingTool_8wekyb3d8bbwe\LocalState\DiagOutputDir\`
 
 失败代码编写，并在转换过程指示失败的任何点。 错误代码是为了用户友好。
+
+### <a name="log-files-from-remote-devices-or-vms"></a>远程设备或虚拟机中的日志文件
+
+如果在远程设备或虚拟机上执行转换，我们建议你复制日志文件从该设备，并将它们作为反馈项目的一部分附加。 这将有助于我们诊断并更有效地解决问题。 
+
+您将找到远程转换生成的日志： `%localappdata%\packages\Microsoft.MsixPackagingTool_8wekyb3d8bbwe\LocalState\DiagOutputDir\<Logs_#>\RemoteServer\Log.txt`
+
+它将甚至更有利，如果可以共享将包含本地客户端与服务器还远程操作发生的整个日志文件夹。
 
 ## <a name="examples-of-failures-during-conversions"></a>转换过程中失败的示例
 
@@ -83,7 +93,7 @@ IT 管理员还可以创建[并排功能存储区 （共享文件夹）](https:/
 3. 下**类别**，选择**应用**，然后选择**MSIX 打包工具**。
 4. 将任何附加[日志文件](#log-files)与转换相关联。 可以在上面提供的文件夹中找到日志。
 5. （如果可能） 将附加转换后的 MSIX 包。
-6. 单击“提交” 。
+6. 单击“提交”  。
 
 您可以还向我们发送反馈直接从 MSIX 打包工具通过转到**反馈**选项卡上的**设置**。 
 

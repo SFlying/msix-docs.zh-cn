@@ -1,19 +1,19 @@
 ---
-title: 到目标 MSIX SDK 的开发人员指南
+title: 使用 MSIX SDK 将在非 Windows 10 平台上的 MSIX 包分发
 description: 使用 SDK 来的跨平台使用的包 MSIX 程序包开发人员指南
 author: mcleanbyron
 ms.author: mcleans
 ms.date: 12/13/2018
 ms.topic: article
 ms.custom: RS5
-ms.openlocfilehash: 2c6134aad4f1da8da4e835fa2e195861bd7a461a
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 64a780bbc7ef4edc6e2d0c829c7304fdf39762f7
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900639"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795230"
 ---
-# <a name="use-the-msix-sdk-to-build-a-package-for-cross-platform-use"></a>使用 MSIX SDK 来构建跨平台使用的包
+# <a name="use-the-msix-sdk-to-distribute-an-msix-package-on-non-windows-10-platforms"></a>使用 MSIX SDK 将在非 Windows 10 平台上的 MSIX 包分发
 
 MSIX SDK 开发人员提供分发到客户端设备，而不考虑客户端设备上的操作系统平台的包内容的通用方法。 这使开发人员能够一次而不是让其应用程序内容打包到为每个平台的包。
 

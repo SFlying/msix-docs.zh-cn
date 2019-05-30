@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10，uwp msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 567417fb77ade5e048388a05ccc47651b32437dc
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 7273f3866eb8ed416b8dc60a621498cbddec54bd
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900499"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795423"
 ---
 # <a name="msix-modification-packages-on-windows-10-version-1809"></a>在 Windows 10 版本 1809 MSIX 修改包 
 
@@ -46,5 +46,5 @@ ms.locfileid: "58900499"
 
 此过程还支持文件系统插件和自定义项，只要主应用程序的可执行文件不在虚拟文件系统 (VFS)。 这是为了确保主包将获得主要包和修改包的所有 VFS。 
 
-对文件系统插件和自定义项在 VFS 主应用程序的可执行文件时的支持计划的下一主要版本的 Windows。 可以预览此开始在 Windows 10 Insider Preview 构建 18312 或更高版本的支持。 有关详细信息，请参阅[此文章](modification-package-insider-preview-build-18312.md)。 
+对文件系统插件和自定义项在 VFS 主应用程序的可执行文件时的支持计划的下一主要版本的 Windows。 可以预览此开始在 Windows 10 Insider Preview 构建 18312 或更高版本的支持。 有关详细信息，请参阅[此文章](modification-package-1903.md)。 
 

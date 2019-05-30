@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10，uwp msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 419ea7ab48d9199629570d58efc2bc5ff85ebc05
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 59f38d2f23470824687a739eb87a808baac29562
+ms.sourcegitcommit: fe59d6b39d81eb4a155887fa8fe9a08b6fe48584
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900429"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65488526"
 ---
 # <a name="best-practices-for-msix-packaging-tool"></a>MSIX 打包工具的最佳做法
 
@@ -31,15 +31,15 @@ ms.locfileid: "58900429"
 
 - 其也很有必要知道应使用您的应用程序运行，以便可以了解哪些有依赖项的类型和它们应以修改包的形式打包。 例如，如果您有运行时依赖项，它是在主应用程序中包括一个好办法。 如果插件，您应打包，以关联的修改包的形式。 
 
----
-## Best practices during repackaging 
-'When you are using the MSIX Packaging Tool, there are a few things that we also recommend you do as best practice':
-  - 'When packaging ClickOnce installers, it is necessary to send a shortcut to desktop if the installer is not doing so already. In general, it is good practice to always remember to send a shortcut to desktop for the main app executable.'
-  - 'When creating modification packages, you need to declare the package Name (identity name) of the parent application in the tool UI so that the tool sets the correct package dependency in the manifest of the modification package.'
-  - Declaring an installation location field in the **Package information** page is optional but recommended. Make sure that this path matches the installation location of application installer.
-  - Performing the preparation steps in the **Prepare computer** page is optional but highly recommended.
-ms.custom: RS5
----
+
+## <a name="best-practices-during-repackaging"></a>在重新打包过程的最佳实践 
+当使用 MSIX 打包工具时，有几件事，我们还建议您作为最佳实践：
+- 打包 ClickOnce 安装程序时，必须将发送到桌面快捷方式，如果安装程序不已执行操作。 一般情况下，它是很好的做法始终记得发送到主应用程序的桌面快捷方式可执行文件。
+- 当修改包时，需要声明包的父级的名称 （标识名称） 应用程序中工具 UI，以便该工具修改包的清单中设置正确的包依赖项。
+- 声明中的安装位置字段**包信息**页是可选的但建议。 请确保此路径与应用程序安装程序的安装位置相匹配。
+- 中的步骤执行准备工作**准备计算机**页是可选但强烈推荐。
+ms.custom:RS5
+
 
 ## <a name="best-practices-while-bundling-msix-packages"></a>捆绑 MSIX 包时的最佳实践
 

@@ -9,11 +9,11 @@ keywords: windows 10、 uwp、 应用程序安装程序中，应用安装旁, �
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: be13529ecbb1845447719c7951b77ca66287ffc0
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900419"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59983339"
 ---
 # <a name="app-installer-file-api-issues"></a>应用安装程序文件 API 问题
 

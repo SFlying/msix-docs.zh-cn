@@ -1,21 +1,21 @@
 ---
 title: Windows 10 版本 1709年及更高版本上 MSIX 程序包支持
 description: 安装 MSIX 包 1709年及更高版本。
-author: nonasi
-ms.author: nonasir
-ms.date: 01/07/2019
+author: c-don
+ms.author: cdon
+ms.date: 04/04/2019
 ms.topic: article
 keywords: MSIX、 MPT、 MSIX 打包工具，1709年版本 16299
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6202f8ec5d60c27affb30d244c7b4802ef99c4bd
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: bf737f108cc3c248fe5008a27fde15b79abfbaf9
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900219"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795459"
 ---
-# <a name="msix-package-support-on-1709-and-later"></a>1709 及更高版本上 MSIX 程序包支持
+# <a name="msix-package-support-on-windows-10-1709-and-later"></a>MSIX 包支持在 Windows 10 1709年及更高版本
 
 如果现有应用程序转换为 MSIX，可能想要在早期版本的 Windows 比 1809 （生成 17701） 使用应用。 这篇博客文章讨论如何能够最早版本 16299，也称为 Windows 10 版本 1709年中生成此类应用程序。 
  

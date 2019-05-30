@@ -1,34 +1,36 @@
 ---
-author: nonasi
+author: c-don
 title: 在内部版本 1709年和 1803 MSIX 支持
 description: 本文概述了使用我们最新的更新 1/22/2019年截至 MSIX 的支持。
-ms.author: nonasir
-ms.date: 01/18/2019
+ms.author: cdon
+ms.date: 04/04/2019
 ms.topic: article
 keywords: windows 10、 uwp、 msix，1709年、 1803年
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 667de11b23e9e5eab75cb60be016adbf100409e8
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: d3cfed5d986551ee72ab174b28409927a365cf6e
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900569"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795404"
 ---
 # <a name="msix-support-on-windows-10-builds-1709-and-1803"></a>在 Windows 10 版本 1709年和 1803 MSIX 支持
 
 本文总结了 MSIX 支持和我们最新的更新的限制。
 
-普遍的需求，我们已添加了对 MSIX 支持多个 Windows 10 版本上。 最值得注意的是，这包括 1709年和 1803年的版本。 此支持允许用户部署 MSIX 包在早期 Windows 版本，同时利用 MSIX，包括容器化并通过证书安全的所有优势。 若要充分利用这些更新，请确保你已 1.0.30311 或更高版本的应用安装程序和最新服务修补程序在 1709年及 1803年的设备上。
+普遍的需求，我们已添加了对 MSIX 支持多个 Windows 10 版本上。 最值得注意的是，这包括 1709年和 1803年的版本。 此支持允许用户部署 MSIX 包在早期 Windows 版本，同时利用 MSIX，包括容器化并通过证书安全的所有优势。 若要充分利用这些更新，请确保具有 1.0.30311 或更高版本的应用安装程序并将在 Windows 10 1709年更新或更高版本。 
 
 下面，我们讨论 MSIX 支持的功能和限制在较早的操作系统版本上。
 
 ##  <a name="msix-double-click-support"></a>MSIX 双击支持
-部署 MSIX 1809 和更高版本上的优势之一是用户可以通过单击其上安装包。 应用安装程序-1.0.30311.0-的最新版本能够通过单击其上安装 MSIX 包可以 1709年和 1803 也是可用。 
+部署 MSIX 1809 和更高版本上的优势之一是用户可以通过单击其上安装包。 应用安装程序-1.0.30311.0-的最新版本能够通过单击其上安装 MSIX 包是可在上找到 Windows 10 1709年及 1803年的更新。 
 
 单击包提供如下所示 1809年相同的安装支持，Microsoft 的应用安装程序应用程序即显示给用户，指导他们完成将应用安装的 UI。 应用安装程序预安装，并从应用商店，获取更新，因此我们就可以始终将您的最佳的安装体验。 
 
-下面是单击安装 MSIX 支持的摘要可 1709年和 1803年上。
+可以下载应用安装程序以供脱机使用从 Microsoft Store 企业中的业务[web 门户](https://businessstore.microsoft.com/en-us/store/details/app-installer/9NBLGGH4NNS1)。 您可以了解有关脱机分发的详细信息[此处](https://docs.microsoft.com/en-us/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app)。
+
+下面是可在 Windows 10 1709年及 1803年更新上单击安装 MSIX 支持的摘要。
 
 ### <a name="support-matrix"></a>支持矩阵
 
@@ -53,7 +55,7 @@ MSIX 的受支持的最低操作系统版本被列为在清单文件中的包的
 当前通过 Microsoft Store 和于企业的 Microsoft Store MSIX 安装需要 Windows 10 版本 1809年。
 
 ## <a name="packaging--signing"></a>打包和签名
-当前进行打包和签名 MSIX，您需要 1809 SDK。 可通过 SDK 命令行工具，MSIX 打包工具或 Visual Studio 打包和签名。 
+当前进行打包和签名 MSIX，您需要 1809 SDK。 MSIX 打包工具或 Visual Studio，可以通过 Windows 10 SDK 命令行工具 （MakeAppx.exe 和 SignTool.exe） 完成打包和签名。 
 
 ## <a name="auto-elevation"></a>自动提升
 在极少数情况下，某些应用需要提升的权限。 

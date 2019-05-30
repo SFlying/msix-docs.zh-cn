@@ -8,14 +8,14 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 538855e6d32beaac571253b7d880db9b21897174
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 7dcd522a1c1b79fe59a5b6e1fd04c7aec19ed419
+ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900889"
+ms.lasthandoff: 04/15/2019
+ms.locfileid: "59566501"
 ---
-# <a name="conversion-with-cli"></a>使用 CLI 的转换
+# <a name="conversion-with-command-line-interface-cli"></a>使用命令行接口 (CLI) 转换
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取 MSIX 打包工具</a></p></div>
       
@@ -23,7 +23,7 @@ ms.locfileid: "58900889"
 
 下面是可以作为命令行参数传递的参数：
 
-|**参数** |    **描述**|
+|**参数** |    **说明**|
 |---------|---------|
 |-? --help  |显示帮助信息|
 |--template | [必需] 包含包的信息和设置此转换的转换模板 XML 文件路径|
@@ -39,6 +39,8 @@ ms.locfileid: "58900889"
     MSIXPackagingTool.exe create-package --template c:\users\documents\ConversionTemplate.xml --virtualMachinePassword pswd112893
     
 ```
+> [!NOTE]
+> App-V 5.x conversion is currently supported to be converted throught the command line. This includes capabilities. 
 
 **Conversion template file**
 
@@ -159,7 +161,7 @@ ms.locfileid: "58900889"
 
 下面是可以在转换模板文件中使用的参数的完整列表。
 
-|**ConversionSettings** |   **描述** |
+|**ConversionSettings** |   **说明** |
 |---------|---------|
 |设置：：AllowTelemetry |        [可选]启用该工具的此调用的遥测日志记录。|
 |设置：：ApplyAllPrepareComputerFixes     |  [可选]应用所有建议准备计算机的修补程序。 可以使用其他属性时，不能设置。|

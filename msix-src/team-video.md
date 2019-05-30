@@ -9,12 +9,12 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 00fad059e7e2035b56395148be54f7de2b6abe02
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 44ec48793e0419c60ee789f555e2c6fe810a570e
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900719"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795438"
 ---
 # <a name="msix-videos"></a>MSIX 视频
 ***
@@ -33,18 +33,18 @@ ms.locfileid: "58900719"
 :::row:::
     :::column:::
     >[!VIDEO https://www.youtube.com/embed/sBOTQoi6iXQ]
-        #### MSIX inside and out (Sept 2018)
-        MSIX is the future of app installation and a significant step forward in enabling enterprises to modernize their app deployment processes and stay current with Windows, Office and third-party apps.
+#### <a name="msix-inside-and-out-sept-2018"></a>MSIX 内到外 (2018 年 9 月)
+MSIX 是未来的应用安装和重大进展中使企业能够实现现代化，其应用程序部署过程并了解最新的 Windows、 Office 和第三方应用程序。
     :::column-end:::
     :::column:::
     >[!VIDEO https://www.youtube.com/embed/0kSwCOr7-Ao]
-        #### MSIX – Accelerating Windows 10 and app deployment (Sept 2018)
-        MSIX provides lots of benefits across the app lifecycle management. Learn how to take advantage of MSIX in your enterprise and the benefits to developers, IT Pros and end users.
+#### <a name="msix--accelerating-windows-10-and-app-deployment-sept-2018"></a>MSIX – 加速 Windows 10 和应用程序部署 (2018 年 9 月)
+MSIX 跨应用程序生命周期管理提供了诸多好处。 了解如何利用 MSIX 在您的企业和优势的开发人员、 IT 专业人员和最终用户。
     :::column-end:::
     :::column:::
     >[!VIDEO https://www.youtube.com/embed/_wCv31TI_30]
-        #### Updating your existing Configuration Manager apps to MSIX (Sept 2018)
-        MSIX simplifies and modernizes app deployment. It brings a faster, more reliable, and rot-free deployment for your enterprise. Learn the ins and outs of updating your existing System Center Configuration Manager apps to MSIX along with how it will integrate with Configuration Manager.
+#### <a name="updating-your-existing-configuration-manager-apps-to-msix-sept-2018"></a>更新现有的配置管理器应用到 MSIX (2018 年 9 月)
+MSIX 可简化并改进了应用部署。 它将为你的企业更快、 更可靠，并且无 rot 的部署。 了解更新到 MSIX 现有 System Center Configuration Manager 应用程序，以及它将如何集成使用 Configuration Manager 的细节。
     :::column-end:::
 
 

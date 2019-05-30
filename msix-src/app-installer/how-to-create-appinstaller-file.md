@@ -1,6 +1,6 @@
 ---
 author: mcleanbyron
-title: 手动创建的应用安装程序文件
+title: 手动创建应用安装程序文件
 description: 本文介绍如何安装一组相关通过应用程序的安装程序。 我们还将完成相应的步骤以构建一个将定义相关集的 *.appinstaller 文件。
 ms.author: mcleans
 ms.date: 1/4/2018
@@ -9,13 +9,13 @@ keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关�
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: 4256e95aa02e73330213034304abbe1354223641
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900559"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59983399"
 ---
-# <a name="create-an-app-installer-file-manually"></a>手动创建的应用安装程序文件
+# <a name="create-an-app-installer-file-manually"></a>手动创建应用安装程序文件
 
 本文介绍如何手动创建定义的应用安装程序文件[相关集](install-related-set.md)。 相关集不是一个实体，而是主要包和可选包的组合。 
 

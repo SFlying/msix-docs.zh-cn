@@ -9,10 +9,10 @@ keywords: windows 10、 uwp、 应用程序安装程序中，应用安装旁, �
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 38a18c50ac1be215819b870215f89b9042d060d8
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58900689"
 ---
 # <a name="related-app-installer-file-documentation"></a>应用安装程序文件的相关的文档

@@ -1,5 +1,5 @@
 ---
-title: 应用程序包更新
+title: 应用包更新
 description: 了解如何应用差异会更新。
 author: mcleanbyron
 ms.author: mcleans
@@ -8,14 +8,14 @@ ms.topic: article
 keywords: windows 10、 uwp、 应用程序包、 应用更新，msix、 appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 786dd7236b8d5c8600dd36e5d3e507576df79ae7
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 1d7fc6a2d899638a8d38c47a477653173f2c5c9d
+ms.sourcegitcommit: b6887e8f66e1d4a49870b933efa25d539eabfcaf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900509"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882608"
 ---
-# <a name="app-package-updates"></a>应用程序包更新
+# <a name="app-package-updates"></a>应用包更新
 
 正在更新现代 Windows 应用包进行了优化以确保仅应用的重要更改的 bits 下载来更新现有的 Windows 应用。
 
@@ -51,8 +51,26 @@ ms.locfileid: "58900509"
 
 更大的规模，如果整个文件不会更改 （由一套完整的块不更改），该文件可以重复使用从现有包，从而节省时间和资源。
 
-有两种方法使用此差异更新技术。
+## <a name="app-update-constraints"></a>应用更新约束
+
+#### <a name="updates-are-performed-within-the-same-package-family"></a>相同的包系列内执行更新
+包系列组成的包名称和发布服务器。 为了能够更新，新的包元数据将需要以前安装的包相同。 
+
+#### <a name="app-updates-must-increment-to-a-higher-version"></a>应用更新必须递增到更高版本
+应用更新是常规需要比当前高的新包的版本。 常规应用更新过程将不允许使用较低版本，默认情况下安装的包。 正在启动 Windows 10 1809年更新 *'回滚'* 引入了。 它允许更低版本包时重写开关提供更新 arguments 的一部分进行安装。 目前在 PowerShell 中使用 ForceUpdateFromAnyVersion 开关并在已[应用安装文件，](https://docs.microsoft.com/en-us/windows/msix/app-installer/update-settings)。  
+
+#### <a name="app-update-package-can-have-a-different-architecture"></a>应用更新包可以有不同的体系结构
+只要新的体系结构支持在正在部署到在 OS 上更新包的当前安装的应用程序包可以是不同的体系结构。 例如：如果具有 x86 Windows 10 设备在 x64 上安装的 MyFavApp(v1.0.0.0) 版本和更新 package(v2.0.0.0) 是 x64 版本：MyFavApp(1.0.0.0) 将已成功更新到 MyFavApp(v2.0.0.0)。 
+
+#### <a name="packages-can-update-from-an-msix-to-an-msixbundle"></a>包可以从 MSIX 更新到 MSIXbundle
+更新包可以从 MSIX 包转到 MSIXbundle 程序包，但反之则不然。 安装 MSIXbundle 时，包更新将需要保持一个捆绑包。 
+
+## <a name="optimize-differential-update-technology"></a>优化差异更新技术
+    
+有几种方法以确保，差异更新技术已经过优化，最大值。
 
 - 如果需要更改，将会影响完整文件，更新仍很小，将确保小-执行此操作对包中的保留文件。
-- 对文件的修改应该是累加性尽可能的累加性的更改将确保最终用户设备仅下载那些已更改的块。
-- 如果您的应用程序具有较大的文件，并且需要包含到块的一组更改的文件的中间部分的更改将起到显著作用，应到 64 KB 的块在可能的情况-包含对文件的修改。
+- 对文件的更改应该是累加性尽可能的累加性的更改将确保最终用户设备仅下载那些已更改的块。
+- 如果您的应用程序具有较大的文件，并且需要包含到块的一组更改的文件的中间部分的更改将起到显著作用，应到 64 KB 的块在可能的情况-包含对文件的更改。
+ 
+

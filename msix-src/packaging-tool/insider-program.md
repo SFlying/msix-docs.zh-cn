@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10，uwp，MSIX，MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b19c7158f6323d867b3b6610d9827396fb6f91d8
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 11461bd93c7ef4147077c34585cce8968ce6c588
+ms.sourcegitcommit: b3564e47328d21916cdeb4c84d638ac12be0a461
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900659"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66186163"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -36,18 +36,23 @@ MSIX 打包工具预览体验计划提供了提前访问 IT 专业人员和开�
 
 ### <a name="current-insider-preview-build"></a>当前 Insider Preview 版本 
 
-#### <a name="ver-120194020"></a>Ver 1.2019.402.0
+#### <a name="ver-120195220"></a>Ver 1.2019.522.0
 
 新功能：
 
-- 可以将远程计算机的上[的详细信息](remote-conversion-setup.md)
-- 改进了包编辑器中的管理体验
-    - 在包的编辑器中保存时自动版本控制建议
-    - 现在支持现有的文件夹添加 VFS 中打包
-- 用户可以指定对 CLI 转换的已知有效的退出代码
-- 添加了对时间戳已签名的包中所有其中签名是当前可用的工作流 
-    - 在工具设置页中，可以指定您的默认时间戳 URL 和时间戳服务器的类型
-- 更新[AppID 生成逻辑](release-notes/history.md#appid-generation-logic)，并添加为包名称和应用程序的其他验证 
+- 支持桌面安装程序需要重新启动-[了解详细信息](support-restart.md)
+    - 重新启动的自动登录选项 
+- 应用设置中的新选项
+    - 指定的默认证书进行签名的包 
+    - 对于需要重新启动的安装程序指定的退出代码
+    
+已知问题：
+
+- 目前不支持负的重新启动退出代码
+- 如果指定默认证书，则每个转换工作流将需要选择使用证书
+- 在远程或虚拟机重启，可能会出现额外的登录提示 
+- 还原默认设置按钮不会删除证书密码或安装程序退出代码
+- 有一些 UI incongruencies
 
 您可以找到 MSIX 打包工具发行说明的完整历史记录[此处](release-notes/history.md)。
 

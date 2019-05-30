@@ -9,11 +9,11 @@ keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 2a2645ae4527342af85d747a2217e576a91c0c2c
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900949"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59983529"
 ---
 # <a name="installing-windows-10-apps-from-a-web-page"></a>在网页上安装 Windows 10 应用
 

@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10，uwp msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 67fbda421f84227ed2618af5711617e406b26a7e
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 34143433ba07c68c86c394466f9be7dc75632194
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900279"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795258"
 ---
 # <a name="app-installer-file-overview"></a>应用安装程序文件概述
 
 通常情况下，需要使用多个用户共享你的应用。 需要更新应用程序的更高版本，并且你想要确保可以执行的操作是为非技术用户，即使无缝且轻松的方式。
 
-为了帮助您实现此目的，我们引入了创建应用安装程序文件。 这是您可以自己创建或使用 Visual Studio 创建一个 XML 文件 (请参阅 Visual Studio 说明[此处](create-appinstallerfile-vs.md))。 应用安装程序文件指定您的应用程序所在的位置以及如何更新它。 如果您选择使用这样的应用分发方法，您必须与用户共享的应用安装程序文件，而不是实际的应用程序容器。 然后，用户必须单击应用安装程序文件。 此时熟悉的应用程序安装程序 UI 将出现，并引导用户完成安装。  用户安装后使用这些步骤的应用程序，该应用程序是与应用安装程序文件相关联。  
+为了帮助您实现此目的，我们引入了应用安装程序文件。 这是您可以自己创建或使用 Visual Studio 创建一个 XML 文件 (请参阅 Visual Studio 说明[此处](create-appinstallerfile-vs.md))。 应用安装程序文件指定您的应用程序所在的位置以及如何更新它。 如果您选择使用这样的应用分发方法，您必须与用户共享的应用安装程序文件，而不是实际的应用程序容器。 然后，用户必须单击应用安装程序文件。 此时熟悉的应用程序安装程序 UI 将出现，并引导用户完成安装。  用户安装后使用这些步骤的应用程序，该应用程序是与应用安装程序文件相关联。  
 
 更高版本，对应用程序的更新后，你只能更新应用安装程序 (.appinstaller) 文件。 更新文件，该应用程序的新版本会推送到用户。 这是尤其适用于你的用户，因为它们无需执行任何操作来获取更新。 它们只继续使用该应用程序像往常一样，并更新将直接发送到它们。
 
@@ -46,6 +46,6 @@ ms.locfileid: "58900279"
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Visual Studio 创建应用安装程序文件](create-appinstallerfile-vs.md)
+* [使用 Visual Studio 创建的应用安装程序文件](create-appinstallerfile-vs.md)
 * [手动创建的应用安装程序文件](how-to-create-appinstaller-file.md)
 * [在应用安装程序文件中配置更新设置](update-settings.md)

@@ -8,21 +8,16 @@ ms.topic: article
 keywords: MSIX，MPT，MSIX 打包工具，远程 IP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 19a6c4741293835e1494e2796e2ef84f63b63079
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 22ae4c4b939ed70c8a915ce1f3718105e2c65f49
+ms.sourcegitcommit: b3564e47328d21916cdeb4c84d638ac12be0a461
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900359"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66186144"
 ---
 # <a name="setup-instructions-for-remote-machine-conversions"></a>远程计算机的转换的设置说明 
 
-> [!NOTE]
-> 远程计算机的转换是目前仅在 insider preview 版本中提供的新功能。 
->
-> 您可以加入[MSIX 打包工具深入了解预览计划](insider-program.md)才能访问此功能。 
-
-在此预览版本[MSIX 打包工具](insider-program.md#current-insider-preview-build)，我们启用了连接到远程计算机上运行您的转换的功能。 有几个需要开始使用远程转换之前需要采取的步骤。  
+若要连接到远程计算机运行您的转换的功能现已推出。 有几个需要开始使用远程转换之前需要采取的步骤。  
 
 必须安全地访问在远程计算机上启用 PowerShell 远程处理。 此外必须在远程计算机的管理员帐户。  如果你想要使用的 IP 地址进行连接，请按照说明连接到未加入域的远程计算机。 
 

@@ -9,17 +9,17 @@ keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: eb2c4e5f9e223e5dd741b53ff3943cc920a61c31
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58900619"
 ---
-# <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>使用应用安装程序文件遇到的安装问题的疑难解答
+# <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>排查使用应用安装程序文件遇到的安装问题
 
 如果在通过应用安装程序文件安装应用程序时发现任何问题，本主题将提供一些可能有帮助的故障排除指南。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 为了能在 Windows 10 中旁加载应用，用户设备必须满足下面的要求：
 
@@ -66,8 +66,8 @@ Windows 10 应用程序可以有根据用于生成应用程序的应用程序平
 
 在从 HTTP 终结点安装时，务必验证是否可以访问具有正确 MIME 类型的所有文件。 验证这些文件的最简单方法是遵循 Visual Studio 所生成 HTML 页面中提供的链接。 你必须检查这些文件：
 
-- `.appinstaller` 文件，提供形式为 `application/xml`
-- `.appx` 和 `.appxbundle` 文件，提供形式为 `application/vns.ms-appx`
+- `.appinstaller` 文件，可用作 `application/xml`
+- `.appx` 和`.appxbundle`文件，可用作 `application/vns.ms-appx`
 
 ## <a name="isolate-app-installer-app-issues"></a>隔离应用安装程序应用问题
 
@@ -81,6 +81,6 @@ Windows 10 应用程序可以有根据用于生成应用程序的应用程序平
 
 ## <a name="related-logs"></a>相关日志
 
-应用部署基础结构提供 Windows 事件查看器中的调试日志。 这些日志位于： `Application and Services Logs->Microsoft->Windows->AppxDeployment-Server`
+应用部署基础结构提供 Windows 事件查看器中的调试日志。 这些日志位于此处： `Application and Services Logs->Microsoft->Windows->AppxDeployment-Server`
 
 

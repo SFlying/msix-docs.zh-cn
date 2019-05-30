@@ -1,6 +1,6 @@
 ---
 author: c-don
-title: 从 Azure 的 Web 服务器的 Windows 10 应用程序安装 |Microsoft Docs
+title: 分发 Windows 10 应用从 Azure web 应用
 description: 阅读此教程，了解如何设置 Azure Web 服务器、如何验证 Web 应用可以托管应用包，以及如何有效调用和使用应用安装程序。
 ms.author: cdon
 ms.date: 09/30/2018
@@ -8,14 +8,14 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包, Azure web 服务器
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: b904922ad123a8b59659c217b748683116ee9a2a
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 7dbe2592d0ed60a88d77476f797f1575fee3f172
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900549"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795455"
 ---
-# <a name="install-a-windows-10-app-from-an-azure-web-app"></a>从 Azure Web 应用中安装 Windows 10 应用
+# <a name="distribute-a-windows-10-app-from-an-azure-web-app"></a>分发 Windows 10 应用从 Azure web 应用
 
 通过应用安装程序，开发人员和 IT 专业人员可以通过在各自的内容分发网络 (CDN) 上托管应用的方式来分发 Windows 10 应用。 这种方式适用于不希望或不需要将应用发布到 Microsoft Store，但仍希望利用 Windows 10 打包和部署平台的企业。
 

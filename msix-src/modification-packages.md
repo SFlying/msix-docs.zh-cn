@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10，uwp msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 7650ab881a3d1c8e6ef295f8c79297fa5ab23498
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: 142fce0927d916376733a0380fab6a0dc026a55e
+ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58900539"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795415"
 ---
 # <a name="customize-your-enterprise-apps-with-modification-packages"></a>自定义企业应用的修改包 
 
@@ -58,4 +58,4 @@ ms.locfileid: "58900539"
 
 ## <a name="see-also"></a>请参阅
 - [修改包在 Windows 10 版本 1809](modification-package-1809-update.md)
-- [修改包在 Windows 10 Insider Preview 构建 18312 及更高版本](modification-package-insider-preview-build-18312.md)
+- [Windows 10 版本 1903年上修改包](modification-package-1903.md)
