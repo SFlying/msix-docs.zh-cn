@@ -1,76 +1,21 @@
 ---
 Description: 本文包含桌面桥的已知问题。
-title: 已知问题（桌面桥）
+title: 打包桌面应用程序的已知的问题
 ms.date: 06/20/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 60ad8b3aa64265f80a1cf87b8fdec12b56238030
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: 4f8ac1b2eee520c4a1a3facbaba6aca248e346e8
+ms.sourcegitcommit: bc3f2bf9fe105576d0cc047d95b3f0de36fbc8b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985557"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400784"
 ---
-# <a name="known-issues-with-packaged-desktop-applications"></a>打包桌面应用程序的已知的问题
+# <a name="known-issues-with-packaged-desktop-apps"></a>打包桌面应用程序的已知的问题
 
-本文包含桌面应用程序创建 Windows 应用包时可能出现的已知的问题。
-
-<a id="app-converter" />
-
-## <a name="known-issues-with-the-desktop-app-converter"></a>Desktop App Converter 的已知问题
-
-### <a name="ecreatingisolatedenvfailed-an-estartingisolatedenvfailed-errors"></a>E_CREATING_ISOLATED_ENV_FAILED 和 E_STARTING_ISOLATED_ENV_FAILED 错误    
-
-如果收到任一错误，请确保你正在使用的是从[下载中心](https://aka.ms/converterimages)下载的有效基础映像。
-如果使用的是有效的基础映像，请尝试在命令中使用 ``-Cleanup All``。
-如果不起作用，请将日志发送至 converter@microsoft.com，以帮助我们进行调查。
-
-### <a name="new-containernetwork-the-object-already-exists-error"></a>新 ContainerNetwork:该对象已存在错误
-
-设置新的基础映像时，可能会收到此错误。 如果你在以前安装了 Desktop App Converter 的开发人员计算机上安装有 Windows 预览体验计划外部测试版，则可能会出现这种情况。
-
-若要解决此问题，请尝试从提升的命令提示符中运行命令 `Netsh int ipv4 reset`，然后重启计算机。
-
-### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET 应用程序使用"AnyCPU"生成选项编译和安装失败
-
-如果将主要可执行文件或任何依赖项放置在 **Program Files** 或 **Windows\System32** 文件夹层次结构中的任意位置，则可能会出现这种情况。
-
-若要解决此问题，请尝试使用你体系结构特定的桌面安装程序（32 位或 64 位）生成 Windows 应用包。
-
-### <a name="publishing-public-side-by-side-fusion-assemblies-wont-work"></a>发布公共并行的 Fusion 程序集不起作用。
-
- 在安装期间，应用程序可以发布公共并行 Fusion 程序集，这些程序集可供任何其他进程访问。 在进程激活上下文创建期间，这些程序集将由名为 CSRSS.exe 的系统进程检索。 当已转换的进程执行此操作时，这些程序集的激活上下文创建和模块加载将失败。 并行的 Fusion 程序集注册在以下位置中：
-  + 注册表： `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Winners`
-  + 文件系统: %windir%\\SideBySide
-
-这是一个已知限制，目前尚无解决方法。 即，内置程序集（如 ComCtl）随操作系统附带，因此依赖它们是安全的行为。
-
-### <a name="error-found-in-xml-the-executable-attribute-is-invalid---the-value-myappexe-is-invalid-according-to-its-datatype"></a>XML 中发现错误。 “Executable”特性无效 - 根据其数据类型，值“MyApp.EXE”无效
-
-如果应用程序中的可执行文件具有大写的 **.EXE** 扩展名，则可能会出现这种情况。 虽然此扩展的大小写不应影响是否应用程序在运行，这可能会导致生成此错误的 DAC。
-
-若要解决此问题，请尝试指定 **-AppExecutable**标志时包，并使用小写".exe"作为扩展的主可执行文件 (例如：MYAPP.exe)。    或者可以从小写到大写在应用程序中更改所有可执行文件的大小写 (例如： 从。EXE 为.exe)。
-
-### <a name="corrupted-or-malformed-authenticode-signatures"></a>已损坏或格式不正确的验证码签名
-
-本部分包含有关如何在可能包含已损坏或格式不正确的验证码签名的 Windows 应用包中标识可移植可执行 (PE) 文件的问题。 PE 文件中的无效验证码签名可能采用任何二进制格式（如 .exe、.dll、.chm 等），并且会阻止程序包正确签名，从而使其无法从 Windows 应用包部署。
-
-PE 文件的验证码签名的位置由可选头数据目录中的证书表项和关联的属性证书表指定。 在签名验证期间，这些结构中指定的信息用于找到 PE 文件上的签名。 如果这些值损坏，则文件可能看起来无法有效进行签名。
-
-若要使验证码签名正确，验证码签名必须符合以下情况：
-
-- PE 文件中 **WIN_CERTIFICATE** 项的开头不得超过可执行文件的末尾
-- **WIN_CERTIFCATE** 项应位于映像的末尾
-- **WIN_CERTIFICATE** 项的大小必须为正数
-- 对于 32 位可执行文件，**WIN_CERTIFICATE** 项必须在 **IMAGE_NT_HEADERS32** 结构之后开始，对于 64 位可执行文件，必须在 IMAGE_NT_HEADERS64 结构之后开始
-
-有关更多详细信息，请参考[验证码门户可执行文件规范](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx)和 [PE 文件格式规范](https://msdn.microsoft.com/windows/hardware/gg463119.aspx)。
-
-请注意，当尝试对 Windows 应用包进行签名时，SignTool.exe 可能会输出已损坏或格式不正确的二进制文件列表。 若要执行此操作，请通过将环境变量 APPXSIP_LOG 设置为 1（如 ```set APPXSIP_LOG=1```）来启用详细日志记录并重新运行 SignTool.exe。
-
-若要修复这些格式不正确的二进制文件，请确保它们符合上述要求。
+本文包含为桌面应用程序创建一个 MSIX 包时可能发生的已知的问题。
 
 ## <a name="you-receive-the-error----msb4018-the-generateresource-task-failed-unexpectedly"></a>你收到错误 MSB4018“GenerateResource”任务意外失败
 

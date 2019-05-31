@@ -7,44 +7,23 @@ keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8fa9188ef078de6104c14cc983b8ce9549507096
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: 14c27f77fae7f1af095eb0a8de5bd4836f51837f
+ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985717"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66411435"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>打包桌面应用程序 （桌面桥）
 
-需要您现有的桌面应用程序并添加对 Windows 10 用户的新式体验。 然后，将应用发布到 Microsoft Store，以拓展国际市场。 您可以将转化为收益应用程序中多更简单的方法通过利用存储内置的功能。 当然，并非必须使用 Store。 你完全可以使用现有的渠道。
-
-![桌面桥](images/desktop-bridge-4.png)
+需要您现有的桌面应用程序并添加对 Windows 10 用户的新式体验。 然后，将应用发布到 Microsoft Store，以拓展国际市场。 您可以将转化为收益应用程序中多更简单的方法通过利用存储内置的功能。 当然，您无需使用的存储。 你完全可以使用现有的渠道。
 
 桌面应用程序创建包时，应用程序将收到一个标识和桌面应用程序与该标识具有访问权限对 Windows 通用平台 (UWP) Api。 你可以使用它们添加具有吸引力的现代体验，例如动态磁贴和通知。 使用简单的条件编译和运行时检查仅当你的应用程序运行在 Windows 10 上运行 UWP 代码。
 
-除了利用所掌握 Windows 10 体验的代码，你的应用程序保持不变，并且可以继续将其分发到你现有的 Windows 7、 Windows Vista 或 Windows XP 用户群。 在 Windows 10 上继续在完全信任环境中运行你的应用程序现在执行用户模式下，就像它一样的操作。
-
->[!IMPORTANT]
->在 Windows 10，版本 1607，引入的功能来创建 Windows 应用程序包为桌面应用程序 （也称为桌面桥） 且不能仅用在面向 Windows 10 周年更新 (10.0; 项目Build 14393) 或更高版本在 Visual Studio 中的。
+除了利用所掌握 Windows 10 体验的代码，你的应用程序保持不变，并且可以继续将其分发到以前版本的 Windows 上的用户。 在 Windows 10 上继续在完全信任环境中运行你的应用程序现在执行用户模式下，就像它一样的操作。
 
 > [!NOTE]
-> 请观看 Microsoft Virtual Academy 发布的<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">这一系列</a>的视频短片。 这些视频介绍如何将您的桌面应用程序到通用 Windows 平台 (UWP) 的整个过程。
-
-## <a name="benefits"></a>优势
-
-以下是为你的 Windows 桌面应用程序创建 Windows 应用包的一些原因：
-
-:heavy_check_mark:**简化了部署**。 使用此桥的应用和游戏都具有出色的部署体验。 这种体验可确保用户可以更有信心地安装应用程序和更新它。 如果用户选择卸载应用，则将完全删除它，不留下任何痕迹。 这能减少编写设置体验的时间，并使用户使用最新应用。
-
-:heavy_check_mark:**自动更新和许可**。 你的应用程序可以参与 Microsoft Store 内置许可和自动更新功能。 自动更新是高度可靠和高效的机制，因为仅下载文件的已更改部分。
-
-:heavy_check_mark:**扩大了覆盖范围，并简化了盈利。** 选择通过 Microsoft Store 进行分发可将覆盖范围扩大至数以百万的 Windows 10 用户，这些用户可以通过当地支付选项获取应用、游戏和应用内商品。
-
-:heavy_check_mark:**添加 UWP 功能**。  你可以按照自己的节奏向应用的程序包添加 UWP 功能，如 XAML 用户界面、动态磁贴更新、UWP 后台任务、应用服务以及许多其他功能。
-
-:heavy_check_mark:**拓展了跨设备用例**。 通过使用桥，可以将代码逐渐迁移到通用 Windows 平台，以覆盖所有的 Windows 10 设备，包括手机、Xbox One 和 HoloLens。
-
-若要查看更完整的优势列表，请参阅[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)。
+> 请查看<a href="https://mva.microsoft.com/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">这一系列</a>个发布的 Microsoft Virtual Academy 视频。 这些视频介绍如何将您的桌面应用程序到通用 Windows 平台 (UWP) 的整个过程。
 
 ## <a name="prepare"></a>准备
 
@@ -56,18 +35,30 @@ ms.locfileid: "65985717"
 
 有几种不同的方法来创建 MSIX 程序包为桌面应用。
 
-### <a name="build-an-msix-from-an-existing-app-package"></a>生成从现有的应用程序包 MSIX
+### <a name="build-an-msix-from-an-existing-app-installer"></a>从现有的应用安装程序生成 MSIX
 
-如果已有应用包 （例如，MSI 或 APP-V 安装程序），我们建议你使用[MSIX 打包工具](../mpt-overview.md)重新打包为 MSIX 格式对现有桌面应用程序。 它提供了交互式用户界面和命令行的转换，并使你能够将应用程序而无需的源代码。
+如果已有应用包 （例如，MSI 或 APP-V 安装程序），我们建议你使用[MSIX 打包工具](../mpt-overview.md)重新打包为 MSIX 格式对现有桌面应用程序。 它提供了交互式用户界面和命令行的转换，并使你能够将应用程序而无需的源代码。 
 
-> [!NOTE]
-> 名为早期工具[Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md)也是仍可用于重新打包为 MSIX 格式的现有桌面应用包。 但是，此工具现已弃用，并且我们建议你使用[MSIX 打包工具](../mpt-overview.md)相反。
+名为早期工具[Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md)也是仍可用于重新打包现有桌面应用程序包。 但是，此工具现已弃用，并且我们建议您改用 MSIX 打包工具。
+
+下表显示了支持的版本的 Windows 10 和包格式的这些工具。
+
+|  Tool  | 用于创建包支持的操作系统版本  | 支持的操作系统版本的已安装的包  |  支持的包格式  |
+|-----------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------|
+|  [MSIX 打包工具](../mpt-overview.md)        |  Windows 10，版本 1809 及更高版本           | Windows 10 版本 1709 和更高版本            |  仅.msix                 |
+|  [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md)        |  Windows 10 版本 1607 和更高版本           | Windows 10 版本 1607 和更高版本            |  仅.appx    |
+
+若要开始使用 MSIX 打包工具，请参阅以下文章：
+
+* [在 VM 上创建 MSIX 包从桌面安装程序 （MSI、 EXE 或 APP-V）](../packaging-tool/create-app-package-msi-vm.md)
+* [创建 MSIX 包与所有其他安装程序类型](../packaging-tool/create-other-installer.md)
+* [创建使用命令行对 MSIX 程序包](../packaging-tool/package-conversion-cli.md)
 
 ### <a name="build-an-msix-from-source-code-using-visual-studio"></a>生成从使用 Visual Studio 源代码 MSIX
 
 如果你通过除 Visual Studio 之外的开发环境来维护应用，但没有应用安装程序或安装程序无法执行太多复杂任务，请考虑使用 Visual Studio。
 
-借助 Visual Studio 可以非常轻松地创建包。 只需添加打包项目，参考桌面项目，再按 F5 进行应用调试。 无需手动调整。 相比于使用以往版本的 Visual Studio 的体验，新的简洁体验是一个巨大的改进。 以下是你可以利用它执行的一些其他操作。
+Visual Studio 就可轻松创建包。 你将添加**Windows 应用程序的包项目**到解决方案中，引用桌面项目，然后再按 F5 来调试您的应用程序。 以下是你可以利用它执行的一些其他操作。
 
 :heavy_check_mark:自动生成的视觉资产。
 
@@ -77,7 +68,11 @@ ms.locfileid: "65985717"
 
 :heavy_check_mark:轻松地从你已在中保留的名称将标识分配到应用程序[合作伙伴中心](https://partner.microsoft.com/dashboard)。
 
-请参阅[通过使用 Visual Studio 打包桌面应用程序](desktop-to-uwp-packaging-dot-net.md)
+有关说明，请参阅[通过使用 Visual Studio 打包桌面应用程序](desktop-to-uwp-packaging-dot-net.md)。 下表显示了受支持的版本的 Visual Studio、 Windows 10 和包格式。
+
+|  支持的 Visual Studio 版本 | 用于创建包支持的操作系统版本  | 支持的操作系统版本的已安装的包  |  支持的包格式  |
+|-----------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------|
+|  Visual Studio 2019<br/>Visual Studio 2017 15.5年及更高版本       |  Windows 10 版本 1607 和更高版本           |  Windows 10 版本 1607 和更高版本            |  .msix （适用于 Windows 10 版本 1709年及更高版本)<br/>.appx （适用于 Windows 10，版本 1607年及更高版本)                 |
 
 ### <a name="third-party-installer"></a>第三方安装程序
 
@@ -147,7 +142,7 @@ InstallShield 提供单一解决方案来开发 MSI 与 EXE 安装程序、创�
 
 通过基于现有 InstallShield 项目生成 UWP 应用包，为 Microsoft Store 做准备，并简化软件在 Windows 10 上的安装体验。 生成 Windows Installer 和 UWP 应用包，以支持你的所有客户所需的部署方案。 通过基于现有 InstallShield 项目生成 WSA 包，支持 Nano Server 和 Windows Server 2016 部署。
 
-以模块形式开发你的安装程序，以便更轻松地进行部署和维护，然后在生成时将各个组件和依赖项合并到单个 UWP 应用包中，通过 Microsoft Store 分发。 要在 Store 之外直接分发，请将你的 UWP 应用包和其他依赖项与套件/高级 UI 安装程序捆绑到一起。
+以模块形式开发你的安装程序，以便更轻松地进行部署和维护，然后在生成时将各个组件和依赖项合并到单个 UWP 应用包中，通过 Microsoft Store 分发。 在存储外的直接分发，捆绑包 UWP 应用包和套件/高级 UI 安装程序以及其他依赖项。
 
 在此[电子书](https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fresources.flexerasoftware.com%2Fweb%2Fpdf%2FeBook-IS-Your-Fast-Track-to-Profit.pdf&data=02%7C01%7Cnormesta%40microsoft.com%7C86b9a00bc8e345c2ac6208d4ba464802%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C1%7C636338258409706554&sdata=IAYNp9nFc8B5ayxwrs%2FQTWowUmOda6p%2Fn%2BjdHea257M%3D&reserved=0)中了解详细信息。
 
@@ -224,13 +219,13 @@ Raynet 的打包解决方案[RayPack Studio](https://raynet.de/Raynet-Products/R
 中实际设置测试你的应用程序，如准备进行分发，它是应用程序进行签名，然后将其安装。 请参阅[测试你的应用](desktop-to-uwp-debug.md#test-your-app)。
 
 >[!IMPORTANT]
-> 如果你打算发布到 Microsoft Store 应用程序，请确保你的应用程序在 S 模式下运行 Windows 10 的设备上正常运行。 这是 Microsoft Store 的要求。 请参阅[测试 Windows 应用是否适用于 S 模式下的 Windows 10](desktop-to-uwp-test-windows-s.md)。
+> 如果你打算发布到 Microsoft Store 应用程序，请确保你的应用程序在 S 模式下运行 Windows 10 的设备上正常运行。 这是存储要求。 请参阅[测试 Windows 应用是否适用于 S 模式下的 Windows 10](desktop-to-uwp-test-windows-s.md)。
 
 ## <a name="validate"></a>验证
 
 若要为应用程序提供的已发布在 Microsoft Store 或逐渐成为最大限度地[Windows 认证](https://go.microsoft.com/fwlink/p/?LinkID=309666)、 验证和本地测试，然后提交以进行认证。
 
-如果使用 DAC 来打包你的应用，你可以使用新``-Verify``标志，用于针对打包桌面应用程序和应用商店要求验证包。 请参阅[将应用打包、对应用进行签名并为 Store 提交做好准备](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters)。
+如果使用 DAC 来打包你的应用，你可以使用新``-Verify``标志，用于针对打包桌面应用程序和应用商店要求验证包。 请参阅[打包应用程序，登录应用程序中，并准备将其提交到应用商店](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters)。
 
 如果你使用 Visual Studio，可以验证你的应用程序从**创建应用程序包**向导。 请参阅[创建应用包上传文件](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps#create-an-app-package-upload-file)。
 

@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cc9b0e1242df931a155da1735b59c54c7b109737
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: 457f9a0358cb8e72abd9539d1a4fe3131ffd2a54
+ms.sourcegitcommit: bc3f2bf9fe105576d0cc047d95b3f0de36fbc8b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984421"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400807"
 ---
 # <a name="create-an-msix-package-from-a-desktop-installer-msi-exe-or-app-v-on-a-vm"></a>在 VM 上创建 MSIX 包从桌面安装程序 （MSI、 EXE 或 APP-V）
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取 MSIX 打包工具</a></p></div>
 
-MSIX 打包工具可用于从 HYPER-V 虚拟机 (VM) 上将现有的 MSI、 EXE 或 APP-V 安装创建 MSIX 应用程序包。 VM 必须满足以下要求：
+可以使用[MSIX 打包工具](../mpt-overview.md)从 HYPER-V 虚拟机 (VM) 上将现有的 MSI、 EXE 或 APP-V 安装创建 MSIX 应用程序包。 VM 必须满足以下要求：
 
 - 它必须配置为[接收远程命令](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/remotely-manage-hyper-v-hosts)(运行[Enable-psremoting](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enable-PSRemoting?view=powershell-5.1)命令在 VM 上)
 - 它必须运行 Windows 10，版本 1809 或更高版本的 Windows。

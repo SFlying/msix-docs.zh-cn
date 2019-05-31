@@ -1,26 +1,29 @@
 ---
 Description: 本指南介绍如何配置 Visual Studio 解决方案来编辑、 调试和打包桌面应用程序。
-title: 通过使用 Visual Studio 打包桌面应用程序
+title: 打包桌面应用中使用 Visual Studio 的源代码
 ms.date: 08/30/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: beb5096263aaae2b2bd8a32b9417c8af6891a5e3
-ms.sourcegitcommit: 958d9e8177036c8485fb79b49f35cb2deb8d553c
+ms.openlocfilehash: 0cb6807c0aa126bbbdaf8e034f9fab489e49cffa
+ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308451"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66411406"
 ---
-# <a name="package-a-desktop-application-by-using-visual-studio"></a>通过使用 Visual Studio 打包桌面应用程序
+# <a name="package-a-desktop-app-from-source-code-using-visual-studio"></a>打包桌面应用中使用 Visual Studio 的源代码
 
-可以使用 Visual Studio 为你的桌面应用生成一个包。 然后，你可以发布的 Microsoft Store 或旁加载到其打包到一个或多台电脑上。
+可以使用**Windows 应用程序打包项目**Visual Studio 为桌面应用程序生成一个包中的项目。 然后，你可以发布的 Microsoft Store 或旁加载到其打包到一个或多台电脑上。
 
-Visual Studio 的最新版本提供了新版本的打包项目，能够消除在打包应用时必需的所有手动步骤。 只需添加打包项目，参考桌面项目，再按 F5 进行应用调试。 无需手动调整。 相比于使用以往版本的 Visual Studio 的体验，新的简洁体验是一个巨大的改进。
+**Windows 应用程序打包项目**项目包含在以下版本的 Visual Studio。 为获得最佳体验，我们建议使用最新版本。
 
->[!IMPORTANT]
->在 Windows 10，版本 1607，引入的功能来创建 Windows 应用程序包为桌面应用程序 （也称为桌面桥） 且不能仅用在面向 Windows 10 周年更新 (10.0; 项目Build 14393) 或更高版本在 Visual Studio 中的。
+* Visual Studio 2019
+* Visual Studio 2017 15.5年及更高版本
+
+> [!IMPORTANT]
+> **Windows 应用程序打包项目**在 Windows 10，版本 1607，及更高版本上支持在 Visual Studio 中的项目。 仅可在面向 Windows 10 周年更新 (10.0; 的项目Build 14393) 或更高版本。
 
 ## <a name="first-prepare-your-application"></a>首先，准备应用程序
 
@@ -37,9 +40,6 @@ Visual Studio 的最新版本提供了新版本的打包项目，能够消除在
    你无需向该项目中添加任何代码。 该项目只用于为你生成包。 我们将此项目称为“打包项目”。
 
    ![打包项目](images/packaging-project.png)
-
-   >[!NOTE]
-   >此项目仅出现在 15.5 版或更高版本的 Visual Studio 2017 中。
 
 3. 将此项目的**目标版本**设置为你需要的任何版本，但请务必将**最低版本**设置为 **Windows 10 周年更新**。
 

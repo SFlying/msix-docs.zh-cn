@@ -6,19 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 112c0bb7c1e2baf373f337f2f829bb80478d155a
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: f3d58c2e81e2d7eb56ed43286febac5cf81d717d
+ms.sourcegitcommit: bc3f2bf9fe105576d0cc047d95b3f0de36fbc8b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985677"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400772"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>准备打包桌面应用程序
 
 本文列出了在对桌面应用打包前你需要知道的事项。 可能无需执行很多以获取你的应用程序准备好进行打包过程中，但如果任何以下各项适用于你的应用程序，则需要打包之前解决。 请记住，Microsoft Store 会为你处理授权和自动更新，使你能够从基本代码中删除与这些任务相关的任何功能。
-
->[!IMPORTANT]
->在 Windows 10，版本 1607，引入的功能来创建 Windows 应用程序包为桌面应用程序 （也称为桌面桥） 且不能仅用在面向 Windows 10 周年更新 (10.0; 项目Build 14393) 或更高版本在 Visual Studio 中的。
 
 + __应用程序需要以前版本的.NET 4.6.2__。 您需要确保你的应用程序在.NET 4.6.2 上运行。 你不能需要或重新分发早于 4.6.2 的版本。 这是 Windows 10 周年更新中提供的 .NET 版本。 验证你的应用程序适用于此版本，可以确保你的应用程序将继续与将来的更新的 Windows 10 兼容。  如果你的应用程序面向.NET Framework 4.0 或更高版本，它应在.NET 4.6.2 上运行，但仍应测试它。
 
@@ -48,7 +45,7 @@ ms.locfileid: "65985677"
 
 + __应用程序需要 UIAccess__。 如果应用程序在 UAC 清单的 `requestedExecutionLevel` 元素中指定 `UIAccess=true`，则当前不支持转换为 UWP。 有关详细信息，请参阅 [UI 自动化安全概述](https://msdn.microsoft.com/library/ms742884.aspx)。
 
-+ __你的应用程序公开的 COM 对象__。 来自程序包内的进程和扩展可以注册并使用 COM 和 OLE 服务器，进程内和进程外 (OOP) 皆可。   创意者更新添加了打包的 COM 支持，它提供注册 OOP COM 和 OLE 服务器（现在这些服务器在包外部可见）的功能。  请参阅[对桌面桥的 COM 服务器和 OLE 文档支持](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#bjPyETFgtpZBGrS1.97)。
++ __你的应用程序公开的 COM 对象__。 来自程序包内的进程和扩展可以注册并使用 COM 和 OLE 服务器，进程内和进程外 (OOP) 皆可。  创意者更新添加了打包的 COM 支持，它提供注册 OOP COM 和 OLE 服务器（现在这些服务器在包外部可见）的功能。  请参阅[对桌面桥的 COM 服务器和 OLE 文档支持](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#bjPyETFgtpZBGrS1.97)。
 
    打包的 COM 支持适用于现有的 COM API，但不适用于依赖直接读取注册表的应用程序扩展，因为打包的 COM 位于一个专用位置。
 

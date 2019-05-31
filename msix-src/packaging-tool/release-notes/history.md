@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10、 uwp、 msix、 msix 打包工具、 预览体验计划
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: b5d3f7742195105d2e1890a614070173277f19fe
-ms.sourcegitcommit: b3564e47328d21916cdeb4c84d638ac12be0a461
+ms.openlocfilehash: 52a1306f9bf484b828cfa4471030dd0065f90981
+ms.sourcegitcommit: bc3f2bf9fe105576d0cc047d95b3f0de36fbc8b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66186150"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400684"
 ---
 # <a name="msix-packaging-tool-release-notes"></a>MSIX 打包工具发行说明 
 
@@ -33,75 +33,25 @@ ms.locfileid: "66186150"
 - 如果指定默认证书，则每个转换工作流将需要选择使用证书
 - 在远程或虚拟机重启，可能会出现额外的登录提示 
 - 还原默认设置按钮不会删除证书密码或安装程序退出代码
-- 有一些 UI incongruencies
 
 ### <a name="ver-120194020---public-release"></a>**Ver 1.2019.402.0-公开发布的版本**
 
+ - 可以将远程计算机的上[的详细信息](../remote-conversion-setup.md)
  - 验证 COM ProgId 的类型值，COM 类项并删除 COM 注册无效
  - 更新 MSIX 打包工具中重新分发的 Windows SDK 工具 
-
-#### <a name="ver-120193220"></a>Ver 1.2019.322.0
-
  - 自动将参数拆分为单独的字段对清单表示 com 可执行文件
-
-#### <a name="ver-120193150"></a>Ver 1.2019.315.0
-
  - 可靠的处理 PowerShell 安装程序参数
  - 执行禁用 Windows 更新服务的计算机准备阶段中所必需的步骤
-
-#### <a name="ver-120193080"></a>Ver 1.2019.308.0
-
 - 添加了对时间戳已签名的包中所有其中签名是当前可用的工作流
     - 在工具设置页中，可以指定您的默认时间戳 URL 和时间戳服务器的类型 
 - 将包保存后将保留在 VFS 包编辑器中创建的空文件夹
-
-#### <a name="ver-120193040"></a>Ver 1.2019.304.0
-
-新功能：
-
 - 用户可以指定有效的预期的退出代码，CLI 转换
 - 在转换过程中生成的空文件夹将在打包保持不变
-- 更新[AppID 生成逻辑](#appid-generation-logic)，并添加为包名称和应用程序的其他验证 
-
-##### <a name="appid-generation-logic"></a>AppID 生成逻辑
-当前派生应用程序 ID 的过程如下所示： 
-1. 查找 exe/msi 名称，并在扩展
-2. 将转换为大写
-3. 删除所有非字母数字字符
-4. 转换为相应的英语单词数字
-5. 如果生成的字符串包含不超过 3 个字符，请改为使用字符串"应用"
-6. 如果生成的字符串包含超过 64 个字符，则将其截断。
-7. 存在冲突，截断字符串，如果它包含多个 62 个字符，并追加 00 开始的两位数字值。
-
-#### <a name="ver-120192260"></a>Ver 1.2019.226.0
-新功能：
-
-- 可以将远程计算机的上[的详细信息](../remote-conversion-setup.md)
+- 更新应用程序标识生成的逻辑，并为包名称和应用程序添加额外的验证 
 - 改进了包编辑器中的管理体验
 - 在包的编辑器中保存时自动版本控制建议
-
-其他更新
-
 - 添加了使用"。" 进度的版本字段
 - 已修复的验证的安装位置
 - 固定清单转换问题的文件类型关联的处理程序和 com 服务器条目
 - 添加获取的命令行转换状态的功能
 - 改进了的 COM 警告的日志记录与人工可读的错误
-
- ### <a name="ver-120191100---public-release"></a>**Ver 1.2019.110.0-公开发布的版本**
-  
-新功能：
-
-- 改进了的打包时间 
-- 更新的默认文件的排除列表
-- 合并到工具报告 MSIExec 错误日志
-- 已更新的日志，以添加更多的清晰度和故障排除步骤
-- 添加了的对捕获从 PowerShell ISE 安装在手动打包过程
-- 添加了对作为安装程序 UI 和命令行模板文件中的参数声明的 PowerShell 脚本支持
-- 添加详细日志记录标志 (-verbose |-v) 的命令行接口
-- 修复了有时无法访问运行在 VM 上的网络路径是
-- 修复了在其中存储版本控制要求验证失败时使用命令行接口
-- 修复了以下问题已不接受文件路径引用中的
-- 修复了问题，其中 VM 不正确清理转换后
-- 修复了问题，将文件添加到包编辑器中的包已不能正常工作
-- UI 清理 

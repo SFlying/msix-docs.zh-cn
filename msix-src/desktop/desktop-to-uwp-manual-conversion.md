@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 07e5ea931446c01c39a586062f1fd703ae4ab1bd
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: f645df3d1375924303540cd9d1f86402c5f34a3c
+ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985627"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66411400"
 ---
 # <a name="package-a-desktop-application-manually"></a>手动打包桌面应用程序
 
@@ -24,8 +24,8 @@ ms.locfileid: "65985627"
 
 如果不确定安装程序会对系统进行哪些更改，或如果更希望使用自动化工具来生成程序包清单，请考虑任一[这些](desktop-to-uwp-root.md#convert)选项。
 
->[!IMPORTANT]
->在 Windows 10，版本 1607，引入的功能来创建 Windows 应用程序包为桌面应用程序 （也称为桌面桥） 且不能仅用在面向 Windows 10 周年更新 (10.0; 项目Build 14393) 或更高版本在 Visual Studio 中的。
+> [!IMPORTANT]
+> 在 Windows 10，版本 1607，引入的功能来创建 Windows 应用程序包为桌面应用程序 （也称为桌面桥） 且不能仅用在面向 Windows 10 周年更新 (10.0; 项目Build 14393) 或更高版本在 Visual Studio 中的。
 
 ## <a name="first-prepare-your-application"></a>首先，准备应用程序
 

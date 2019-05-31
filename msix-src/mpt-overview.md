@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10，uwp msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 6432a4b33b93a6340acabfd6284f5f530b2fe8b9
-ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
+ms.openlocfilehash: 3832cdceab23506da7ed16f3d07aa070222e5c0b
+ms.sourcegitcommit: bc3f2bf9fe105576d0cc047d95b3f0de36fbc8b9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795429"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400702"
 ---
 # <a name="msix-packaging-tool"></a>MSIX 打包工具 
 
@@ -50,7 +50,7 @@ MSIX 打包工具还可以下载供脱机使用从 Microsoft Store 企业中的�
 - 用户可以指定对 CLI 转换的已知有效的退出代码
 - 添加了对时间戳已签名的包中所有其中签名是当前可用的工作流 
     - 在工具设置页中，可以指定您的默认时间戳 URL 和时间戳服务器的类型
-- 更新[AppID 生成逻辑](packaging-tool/release-notes/history.md#appid-generation-logic)，并添加为包名称和应用程序的其他验证 
+- 更新应用程序标识生成的逻辑，并为包名称和应用程序添加额外的验证 
 
 您可以找到 MSIX 打包工具发行说明的完整历史记录[此处](packaging-tool/release-notes/history.md)。
 
