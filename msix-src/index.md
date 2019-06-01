@@ -9,27 +9,27 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 3e36c3c5031b1780513c92b2cb821aec6335eb4c
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
+ms.openlocfilehash: a19ce324f4a5993672e9f56c1b49bcadda5c7140
+ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58899581"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65984406"
 ---
 # <a name="msix-documentation"></a>MSIX 文档
 MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构建的一种安全可靠的打包格式。 
 
-<br>
-
+ > [!TIP]
+ > 访问 [MSIX 技术社区](https://aka.ms/msixcommunity)页，了解各种讨论内容和最新信息。
+ 
 :::row:::
     :::column:::
         ### Package existing Windows apps
-        MSIX Packaging Tool enables you to update existing Win32 application packages to the MSIX format. [Learn more](mpt-overview.md)
+可以使用 MSIX 打包工具将现有的 Win32 应用程序包更新为 MSIX 格式。 [了解详细信息](mpt-overview.md)
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取工具</a></p></div>
     :::column-end:::
     :::column:::
-        ### Use MSIX anywhere
-各平台的开发人员可以使用 MSIX SDK 对程序包执行打包和解包操作，以便从 Microsoft Store 分发，或者从其自己的内容分发网络分发。 [了解详细信息](msix-sdk/sdk-overview.md)
+        ### Use MSIX anywhere 各平台的开发人员可以使用 MSIX SDK 对程序包执行打包和解包操作，以便从 Microsoft Store 进行分发，或者从其自己的内容分发网络进行分发。 [了解详细信息](msix-sdk/sdk-overview.md)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -37,7 +37,7 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
         ### 安装 MSIX 应用包 可以通过应用安装程序安装和更新在本地或内容分发网络上提供的 MSIX 应用包。 [了解详细信息](app-installer/app-installer-root.md)
     :::column-end:::
     :::column:::
-    ### 包支持框架 应用可以通过 PSF 规避一系列新式运行时环境限制，确保现有解决方案在不修改源代码的情况下按预期方式运行。 [了解详细信息](package-support-framework-overview.md)
+    ### 包支持框架 应用可以通过 PSF 规避一系列新式运行时环境限制，确保现有解决方案在不修改源代码的情况下按预期方式运行。 [了解详细信息](psf/package-support-framework-overview.md)
     :::column-end:::
 :::row-end:::
 
@@ -125,7 +125,7 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
                             <div class="cardText">
                                 <h3>分配</h3>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/app-submissions?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store</a>
+                                    <a href="/en-us/windows/uwp/publish/app-submissions?context=/windows/msix/render" data-linktype="absolute-path">Microsoft 官方商城</a>
                                 </p>
                                 <p>
                                     <a href="/en-us/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render" data-linktype="absolute-path">适用于企业的 Microsoft Store</a>
@@ -212,7 +212,7 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
                                     <a href="/en-us/windows/uwp/debug-test-perf/windows-app-certification-kit?context=/windows/msix/render" data-linktype="absolute-path">Windows 应用认证工具包</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render" data-linktype="absolute-path">Windows Device Portal</a>
+                                    <a href="/en-us/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render" data-linktype="absolute-path">Windows 设备门户</a>
                                 </p>
                                 <p>
                                     <a href="/en-us/windows/uwp/publish/package-flights?context=/windows/msix/render" data-linktype="absolute-path">程序包外部测试</a>
@@ -237,7 +237,7 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
                             <div class="cardText">
                                 <h3>分配</h3>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store</a>
+                                    <a href="/en-us/windows/uwp/publish/?context=/windows/msix/render" data-linktype="absolute-path">Microsoft 官方商城</a>
                                 </p>
                                 <p>
                                     <a href="/en-us/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render" data-linktype="absolute-path">适用于企业的 Microsoft Store</a>
@@ -286,17 +286,17 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
     :::column:::
     >[!VIDEO https://www.youtube.com/embed/sBOTQoi6iXQ]
         #### MSIX inside and out (Sept 2018)
-        MSIX is the future of app installation and a significant step forward in enabling enterprises to modernize their app deployment processes and stay current with Windows, Office and third-party apps. 
+MSIX 代表着应用安装的未来，在技术上是一种巨大的跨越，可以让企业实现应用部署过程的现代化，与 Windows、Office 和第三方应用保持同步。 
     :::column-end:::
     :::column:::
     >[!VIDEO https://www.youtube.com/embed/0kSwCOr7-Ao]
         #### MSIX – Accelerating Windows 10 and app deployment (Sept 2018)
-        MSIX provides lots of benefits across the app lifecycle management. Learn how to take advantage of MSIX in your enterprise and the benefits to developers, IT Pros and end users. 
+MSIX 在应用生命周期管理方面具有许多优势。 了解如何在企业中充分利用 MSIX，以及如何利用它提供给开发人员、IT 专业人员和最终用户的权益。 
     :::column-end:::
     :::column:::
     >[!VIDEO https://www.youtube.com/embed/_wCv31TI_30]
         #### Updating your existing Configuration Manager apps to MSIX (Sept 2018)
-        MSIX simplifies and modernizes app deployment. It brings a faster, more reliable, and rot-free deployment for your enterprise. Learn the ins and outs of updating your existing System Center Configuration Manager apps to MSIX along with how it will integrate with Configuration Manager. 
+MSIX 简化了应用部署并使之现代化。 它为企业提供更快速、更可靠且耐用的部署。 了解将现有 System Center Configuration Manager 应用更新到 MSIX 的细节，以及它如何与 Configuration Manager 集成。 
     :::column-end:::
 
     

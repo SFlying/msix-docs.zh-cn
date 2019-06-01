@@ -1,175 +1,200 @@
-items:
 - name: MSIX
-  href: index.md
   items:
-  - name: 什么是 MSIX？
-    href: overview.md
-  - name: 应用包格式
-    href: https://docs.microsoft.com/windows/uwp/launch-resume/extend-your-app-with-services-extensions-packages?context=/windows/msix/render
-    items:
-    - name: 可选包
-      href: https://docs.microsoft.com/windows/uwp/packaging/optional-packages?context=/windows/msix/render
-    - name: Windows 应用流式安装
-      href: https://docs.microsoft.com/windows/uwp/packaging/streaming-install?context=/windows/msix/render
-    - name: 平面捆绑应用包
-      href: https://docs.microsoft.com/windows/uwp/packaging/flat-bundles?context=/windows/msix/render
-    - name: 资产包
-      href: https://docs.microsoft.com/windows/uwp/packaging/asset-packages?context=/windows/msix/render
-    - name: 应用包体系结构
-      href: https://docs.microsoft.com/windows/uwp/packaging/device-architecture?context=/windows/msix/render
-  - name: 应用包更新
-    href: app-package-updates.md
-  - name: 1709 和 1803 上的 MSIX 支持
-    href: msix-1709-and-1803-support.md
-- name: MSIX 打包工具
-  href: mpt-overview.md
+    - name: 概述
+      href: index.md
+    - name: 什么是 MSIX？
+      href: overview.md
+    - name: 应用包格式
+      items:
+        - name: 概述
+          href: 'https://docs.microsoft.com/windows/uwp/launch-resume/extend-your-app-with-services-extensions-packages?context=/windows/msix/render'
+        - name: 可选包
+          href: 'https://docs.microsoft.com/windows/uwp/packaging/optional-packages?context=/windows/msix/render'
+        - name: Windows 应用流式安装
+          href: 'https://docs.microsoft.com/windows/uwp/packaging/streaming-install?context=/windows/msix/render'
+        - name: 平面捆绑应用包
+          href: 'https://docs.microsoft.com/windows/uwp/packaging/flat-bundles?context=/windows/msix/render'
+        - name: 资产包
+          href: 'https://docs.microsoft.com/windows/uwp/packaging/asset-packages?context=/windows/msix/render'
+        - name: 修改包
+          items:
+            - name: 概述
+              href: modification-packages.md
+            - name: 基于 Windows 10 版本 1809 的修改包
+              href: modification-package-1809-update.md
+            - name: 基于 Windows 10 版本 1903 的修改包
+              href: modification-package-1903.md
+            - name: 应用包体系结构
+              href: 'https://docs.microsoft.com/windows/uwp/packaging/device-architecture?context=/windows/msix/render'
+    - name: 应用包更新
+      href: app-package-updates.md
+    - name: 1709 和 1803 上的 MSIX 支持
+      href: msix-1709-and-1803-support.md
+    - name: 组策略和 MSIX 打包应用
+      href: group-policy-msix.md
+- name: 工具
   items:
-  - name: 在 VM 上通过 MSI 或 App-V 创建应用包
-    href: packaging-tool/create-app-package-MSI-VM.md
-  - name: 使用命令行创建应用包
-    href: packaging-tool/package-conversion-cli.md
-  - name: 使用命令行自动进行转换
-    href: packaging-tool/automate-conversion.md
-  - name: 使用包编辑器修改包
-    href: packaging-tool/package-editor.md
-  - name: 1709 及更高版本上的 MSIX 包支持
-    href: packaging-tool/Support-on-1709-and-later.md
-  - name: MSIX 打包工具的最佳做法
-    href: mpt-best-practices.md
-  - name: 使用 Hyper-V Quick Create 进行打包
-    href: packaging-tool/Quick-Create-VM.md
-  - name: 已知问题和疑难解答
-    href: packaging-tool/mpt-known-issues.md
-  - name: 捆绑 MSIX 包
-    href: packaging-tool/bundle-msix-packages.md
-  - name: 跨多个设备复制 MSIX 打包工具设置
-    href: packaging-tool/duplicate-mpt-settings-across-devices.md
-  - name: 远程计算机转换
-    href: packaging-tool/remote-conversion-setup.md
-  - name: MSIX 打包工具预览体验计划
-    href: packaging-tool/insider-program.md
-    items:
-    - name: 发行说明
-      href: packaging-tool/release-notes/history.md
-  - name: 修改包
-    href: modification-packages.md
-    items:
-    - name: 基于 Windows 10 版本 1809 的修改包
-      href: modification-package-1809-update.md
-    - name: 基于 Windows 10 Insider Preview 18312 及更高版本的修改包
-      href: modification-package-insider-preview-build-18312.md
-- name: 包支持框架
-  href: package-support-framework-overview.md
-  items:
-  - name: 将运行时修复应用到桌面应用程序包
-    href: https://docs.microsoft.com/windows/uwp/porting/package-support-framework?context=/windows/msix/render
-- name: 应用安装程序
-  href: app-installer/app-installer-root.md
-  items:
-  - name: 应用安装程序文件概述
-    href: app-installer/app-installer-file-overview.md
-  - name: 在 Visual Studio 中创建应用安装程序文件
-    href: app-installer/create-appinstallerfile-vs.md
-  - name: 手动创建应用安装程序文件
-    href: app-installer/how-to-create-appinstaller-file.md
-  - name: 在应用安装程序文件中配置更新设置
-    href: app-installer/update-settings.md
-  - name: 使用应用安装程序从 Web 安装 Windows 10 应用
-    href: app-installer/installing-windows10-apps-web.md
-    items:
-    - name: 从 Azure Web 应用安装 Windows 10 应用
-      href: app-installer/web-install-azure.md
-    - name: 从 IIS 服务器安装 Windows 10 应用
-      href: app-installer/web-install-IIS.md
-    - name: 在 AWS 上托管进行 Web 安装的 Windows 10 应用包
-      href: app-installer/web-install-aws.md
-  - name: 已知问题
-    items:
-    - name: 排查使用应用安装程序文件遇到的安装问题
-      href: app-installer/troubleshoot-appinstaller-issues.md
-    - name: API 问题
-      href: app-installer/app-installer-api-issues.md
-  - name: 可选包和相关集
-    href: app-installer/install-related-set.md
-  - name: 相关文档
-    href: app-installer/app-installer-documentation.md
-- name: MSIX SDK
-  href: msix-sdk/sdk-overview.md
-  items:
-  - name: 发行说明
-    items:
-    - name: MSIX SDK Release 1.4
-      href: msix-sdk/release-notes/sdk-release-notes-1.4.md
-    - name: MSIX SDK Release 1.5
-      href: msix-sdk/release-notes/sdk-release-notes-1.5.md
-    - name: MSIX SDK Release 1.6
-      href: msix-sdk/release-notes/sdk-release-notes-1.6.md
-  - name: 使用 MSIX SDK 生成跨平台使用的包
-    href: msix-sdk/sdk-guidance.md
+    - name: MSIX 打包工具
+      items:
+        - name: 概述
+          href: mpt-overview.md
+        - name: 使用包编辑器修改包
+          href: packaging-tool/package-editor.md
+        - name: Windows 10 1709 及更高版本上的 MSIX 包支持
+          href: packaging-tool/Support-on-1709-and-later.md
+        - name: MSIX 打包工具的最佳做法
+          href: mpt-best-practices.md
+        - name: 使用 Hyper-V Quick Create 进行打包
+          href: packaging-tool/Quick-Create-VM.md
+        - name: 已知问题和疑难解答
+          href: packaging-tool/mpt-known-issues.md
+        - name: 跨多个设备复制 MSIX 打包工具设置
+          href: packaging-tool/duplicate-mpt-settings-across-devices.md
+        - name: MSIX 打包工具预览体验计划
+          items:
+            - name: 概述
+              href: packaging-tool/insider-program.md
+            - name: 发行说明
+              href: packaging-tool/release-notes/history.md
+    - name: 包支持框架
+      items:
+        - name: 概述
+          href: psf/package-support-framework-overview.md
+    - name: 应用安装程序
+      items:
+        - name: 概述
+          href: app-installer/app-installer-root.md
+        - name: AppInstaller 文件概述
+          href: app-installer/app-installer-file-overview.md
+        - name: 已知问题
+          items:
+            - name: 排查使用应用安装程序文件遇到的安装问题
+              href: app-installer/troubleshoot-appinstaller-issues.md
+            - name: API 问题
+              href: app-installer/app-installer-api-issues.md
+        - name: 可选包和相关集
+          href: app-installer/install-related-set.md
+        - name: 相关文档
+          href: app-installer/app-installer-documentation.md
+    - name: MSIX SDK
+      items:
+        - name: 概述
+          href: msix-sdk/sdk-overview.md
+        - name: 发行说明
+          items:
+            - name: MSIX SDK Release 1.4
+              href: msix-sdk/release-notes/sdk-release-notes-1.4.md
+            - name: MSIX SDK Release 1.5
+              href: msix-sdk/release-notes/sdk-release-notes-1.5.md
+            - name: MSIX SDK Release 1.6
+              href: msix-sdk/release-notes/sdk-release-notes-1.6.md
+        - name: 使用 MSIX SDK 在非 Windows 10 平台上分发 MSIX 包
+          href: msix-sdk/sdk-guidance.md
 - name: 应用包
   items:
-  - name: 使用 Visual Studio 打包应用
-    href: https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps?context=/windows/msix/render
-  - name: 打包 Windows 桌面应用程序
-    href: https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net?context=/windows/msix/render
-    items:
-    - name: 准备打包桌面应用程序
-      href: https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-prepare?context=/windows/msix/render
-    - name: 使用 Visual Studio 打包桌面应用程序
-      href: https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net?context=/windows/msix/render
-    - name: 使用 Desktop App Converter 打包桌面应用程序
-      href: https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter?context=/windows/msix/render
-    - name: 手动打包桌面应用程序
-      href: https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion?context=/windows/msix/render
-    - name: 使用本机映像优化桌面应用程序二进制文件
-      href: https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-r2r?context=/windows/msix/render
-  - name: 手动打包工具
-    href: https://docs.microsoft.com/windows/uwp/packaging/manual-packaging-root?context=/windows/msix/render
-  - name: 为应用包签名
-    href: https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render
+    - name: 通过桌面安装程序创建 MSIX 程序包
+      items:
+        - name: 在 VM 上通过 MSI、EXE 或 App-V 创建 MSIX 包
+          href: packaging-tool/create-app-package-MSI-VM.md
+        - name: 通过其他安装程序类型创建 MSIX 包
+          href: packaging-tool/create-other-installer.md
+        - name: 使用命令行创建 MSIX 包
+          href: packaging-tool/package-conversion-cli.md
+        - name: 使用命令行自动进行转换
+          href: packaging-tool/automate-conversion.md
+        - name: 在远程计算机上创建 MSIX 包
+          href: packaging-tool/remote-conversion-setup.md
+        - name: 使用 Desktop App Converter 进行打包
+          href: desktop/desktop-to-uwp-run-desktop-app-converter.md
+        - name: 在打包桌面应用幕后
+          href: desktop/desktop-to-uwp-behind-the-scenes.md
+    - name: 使用 Visual Studio 将桌面应用与源代码一起打包（桌面桥）
+      items:
+        - name: 概述
+          href: desktop/desktop-to-uwp-root.md
+        - name: 准备打包
+          href: desktop/desktop-to-uwp-prepare.md
+        - name: 使用 Visual Studio 打包桌面应用
+          href: desktop/desktop-to-uwp-packaging-dot-net.md
+        - name: 使用本机映像优化二进制文件
+          href: desktop/desktop-to-uwp-r2r.md
+    - name: 使用 Visual Studio 打包应用
+      href: 'https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps?context=/windows/msix/render'
+    - name: 手动打包工具
+      items:
+        - name: 概述
+          href: 'https://docs.microsoft.com/windows/uwp/packaging/manual-packaging-root?context=/windows/msix/render'
+        - name: 手动打包桌面应用
+          href: desktop/desktop-to-uwp-manual-conversion.md
+    - name: 捆绑 MSIX 包
+      href: packaging-tool/bundle-msix-packages.md
+    - name: 为应用包签名
+      items:
+        - name: 概述
+          href: package/signing-package-overview.md
+        - name: 使用 SignTool 对应用包进行签名
+          href: 'https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render'
 - name: 验证
   items:
-  - name: Windows 应用认证工具包
-    href: https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit?context=/windows/msix/render
-  - name: Windows 设备门户
-    href: https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render
-  - name: 程序包外部测试
-    href: https://docs.microsoft.com/windows/uwp/publish/package-flights?context=/windows/msix/render
-  - name: 测试 Windows 应用是否适用于 S 模式下的 Windows 10
-    href: https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s?context=/windows/msix/render
+    - name: Windows 应用认证工具包
+      href: 'https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit?context=/windows/msix/render'
+    - name: Windows 设备门户
+      href: 'https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render'
+    - name: 程序包外部测试
+      href: 'https://docs.microsoft.com/windows/uwp/publish/package-flights?context=/windows/msix/render'
+    - name: 调试和测试打包的桌面应用
+      items:
+        - name: 概述
+          href: desktop/desktop-to-uwp-debug.md
+        - name: 测试处于 S 模式的 Windows 10
+          href: desktop/desktop-to-uwp-test-windows-s.md
+    - name: 将运行时修补程序应用到桌面应用包
+      href: psf/package-support-framework.md
 - name: 分配
   items:
-  - name: 发布到 Microsoft Store
-    href: https://docs.microsoft.com/windows/uwp/publish/?context=/windows/msix/render
-  - name: 发布到适用于企业的 Microsoft Store
-    href: https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render
-  - name: 非 Microsoft Store 分发
-    href: https://docs.microsoft.com/windows/uwp/packaging/appinstaller-root?context=/windows/msix/render
+    - name: 发布到 Microsoft Store
+      href: 'https://docs.microsoft.com/windows/uwp/publish/?context=/windows/msix/render'
+    - name: 发布到适用于企业的 Microsoft Store
+      href: 'https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render'
+    - name: 在 Microsoft Store 之外分发应用（应用安装程序）
+      items:
+        - name: 使用应用安装程序从 Web 分发 Windows 10 应用
+          items:
+            - name: 概述
+              href: app-installer/installing-windows10-apps-web.md
+            - name: 从 Azure Web 应用分发 Windows 10 应用
+              href: app-installer/web-install-azure.md
+            - name: 从 IIS 服务器分发 Windows 10 应用
+              href: app-installer/web-install-IIS.md
+            - name: 从 AWS Web 服务分发 Windows 10 应用
+              href: app-installer/web-install-aws.md
+        - name: 在 Visual Studio 中创建应用安装程序文件
+          href: app-installer/create-appinstallerfile-vs.md
+        - name: 手动创建应用安装程序文件
+          href: app-installer/how-to-create-appinstaller-file.md
+        - name: 在应用安装程序文件中配置更新设置
+          href: app-installer/update-settings.md
 - name: 管理
   items:
-  - name: 部署图像处理服务管理
-    href: https://docs.microsoft.com/windows-hardware/manufacture/desktop/what-is-dism?context=/windows/msix/render
-  - name: Windows PowerShell
-    href: https://docs.microsoft.com/powershell/module/appx/?view=win10-ps?context=/windows/msix/render
+    - name: 排查 MSIX 容器问题
+      href: manage/troubleshoot-msix-container.md
+    - name: 部署图像处理服务管理
+      href: 'https://docs.microsoft.com/windows-hardware/manufacture/desktop/what-is-dism?context=/windows/msix/render'
+    - name: Windows PowerShell
+      href: 'https://docs.microsoft.com/powershell/module/appx/?view=win10-ps?context=/windows/msix/render'
 - name: API 和架构参考
   items:
-  - name: 程序包管理器 API
-    href: https://docs.microsoft.com/uwp/api/windows.management.deployment?context=/windows/msix/render
-  - name: 打包 API
-    href: https://docs.microsoft.com/windows/desktop/appxpkg/interfaces?context=/windows/msix/render
-  - name: 应用清单架构
-    href: https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest?context=/windows/msix/render
-  - name: 应用安装程序文件架构
-    href: https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file?context=/windows/msix/render
+    - name: 程序包管理器 API
+      href: 'https://docs.microsoft.com/uwp/api/windows.management.deployment?context=/windows/msix/render'
+    - name: 打包 API
+      href: 'https://docs.microsoft.com/windows/desktop/appxpkg/interfaces?context=/windows/msix/render'
+    - name: 应用清单架构
+      href: 'https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest?context=/windows/msix/render'
+    - name: 应用安装程序文件架构
+      href: 'https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file?context=/windows/msix/render'
 - name: 资源
   items:
-  - name: MSIX 合作伙伴
-    href: partners.md
-  - name: MSIX 视频
-    href: team-video.md
-ms.openlocfilehash: 06e3378e725362d2d9c84e08d4d2c3409fa7a938
-ms.sourcegitcommit: 92e034ce942cf3df1ea243b03e7b38ed78af4d43
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58899571"
+    - name: MSIX 合作伙伴
+      href: partners.md
+    - name: MSIX 视频
+      href: team-video.md
