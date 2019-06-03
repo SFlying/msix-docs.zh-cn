@@ -40,7 +40,7 @@
           href: mpt-overview.md
         - name: 使用包编辑器修改包
           href: packaging-tool/package-editor.md
-        - name: Windows 10 1709 及更高版本上的 MSIX 包支持
+        - name: Windows 10 版 1709 及更高版本上的 MSIX 包支持
           href: packaging-tool/Support-on-1709-and-later.md
         - name: MSIX 打包工具的最佳做法
           href: mpt-best-practices.md
@@ -92,33 +92,37 @@
           href: msix-sdk/sdk-guidance.md
 - name: 应用包
   items:
-    - name: 通过桌面安装程序创建 MSIX 程序包
-      items:
-        - name: 在 VM 上通过 MSI、EXE 或 App-V 创建 MSIX 包
-          href: packaging-tool/create-app-package-MSI-VM.md
-        - name: 通过其他安装程序类型创建 MSIX 包
-          href: packaging-tool/create-other-installer.md
-        - name: 使用命令行创建 MSIX 包
-          href: packaging-tool/package-conversion-cli.md
-        - name: 使用命令行自动进行转换
-          href: packaging-tool/automate-conversion.md
-        - name: 在远程计算机上创建 MSIX 包
-          href: packaging-tool/remote-conversion-setup.md
-        - name: 使用 Desktop App Converter 进行打包
-          href: desktop/desktop-to-uwp-run-desktop-app-converter.md
-        - name: 在打包桌面应用幕后
-          href: desktop/desktop-to-uwp-behind-the-scenes.md
-    - name: 使用 Visual Studio 将桌面应用与源代码一起打包（桌面桥）
+    - name: 将桌面应用打包
       items:
         - name: 概述
           href: desktop/desktop-to-uwp-root.md
-        - name: 准备打包
+        - name: 准备将桌面应用打包
           href: desktop/desktop-to-uwp-prepare.md
-        - name: 使用 Visual Studio 打包桌面应用
-          href: desktop/desktop-to-uwp-packaging-dot-net.md
-        - name: 使用本机映像优化二进制文件
-          href: desktop/desktop-to-uwp-r2r.md
-    - name: 使用 Visual Studio 打包应用
+        - name: 从现有安装程序中将桌面应用打包
+          items:
+            - name: 在 VM 上通过 MSI、EXE 或 App-V 创建 MSIX 包
+              href: packaging-tool/create-app-package-MSI-VM.md
+            - name: 通过其他安装程序类型创建 MSIX 包
+              href: packaging-tool/create-other-installer.md
+            - name: 使用命令行创建 MSIX 包
+              href: packaging-tool/package-conversion-cli.md
+            - name: 使用命令行自动进行转换
+              href: packaging-tool/automate-conversion.md
+            - name: 在远程计算机上创建 MSIX 包
+              href: packaging-tool/remote-conversion-setup.md
+            - name: 使用 Desktop App Converter 进行打包
+              href: desktop/desktop-to-uwp-run-desktop-app-converter.md
+        - name: 使用 Visual Studio 从源代码中将桌面应用打包
+          items:
+            - name: 概述
+              href: desktop/desktop-to-uwp-packaging-dot-net.md
+            - name: 使用本机映像优化二进制文件
+              href: desktop/desktop-to-uwp-r2r.md
+        - name: 在打包桌面应用幕后
+          href: desktop/desktop-to-uwp-behind-the-scenes.md
+        - name: 已知问题
+          href: desktop/desktop-to-uwp-known-issues.md
+    - name: 使用 Visual Studio 打包 UWP 应用
       href: 'https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps?context=/windows/msix/render'
     - name: 手动打包工具
       items:
