@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10，uwp，MSIX，MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 11461bd93c7ef4147077c34585cce8968ce6c588
-ms.sourcegitcommit: b3564e47328d21916cdeb4c84d638ac12be0a461
+ms.openlocfilehash: e7d39475cf3e0e2ae4c117418ab8a4a76f3f2a7e
+ms.sourcegitcommit: e7d974ff7b318af19aa8d578d031914e1f1ff926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66186163"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826722"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -36,23 +36,12 @@ MSIX 打包工具预览体验计划提供了提前访问 IT 专业人员和开�
 
 ### <a name="current-insider-preview-build"></a>当前 Insider Preview 版本 
 
-#### <a name="ver-120195220"></a>Ver 1.2019.522.0
+### <a name="ver-120196040"></a>Ver 1.2019.604.0 
 
-新功能：
-
-- 支持桌面安装程序需要重新启动-[了解详细信息](support-restart.md)
-    - 重新启动的自动登录选项 
-- 应用设置中的新选项
-    - 指定的默认证书进行签名的包 
-    - 对于需要重新启动的安装程序指定的退出代码
-    
-已知问题：
-
-- 目前不支持负的重新启动退出代码
-- 如果指定默认证书，则每个转换工作流将需要选择使用证书
-- 在远程或虚拟机重启，可能会出现额外的登录提示 
-- 还原默认设置按钮不会删除证书密码或安装程序退出代码
-- 有一些 UI incongruencies
+- 默认值为如果在设置中指定默认签名证书对程序包进行签名
+- 允许要在设置中指定的负的安装程序代码
+- 使用 PowerShell 安装程序退出代码
+- 在需要重新启动的驱动程序时通知用户
 
 您可以找到 MSIX 打包工具发行说明的完整历史记录[此处](release-notes/history.md)。
 

@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10，uwp msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fd234323185200895a6eaf276988fbe7a5c363b3
-ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
+ms.openlocfilehash: 5470a3e8c9b39734645da838b467aaf32bf8e79f
+ms.sourcegitcommit: e7d974ff7b318af19aa8d578d031914e1f1ff926
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59983489"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66826726"
 ---
 # <a name="configure-update-settings-in-the-app-installer-file"></a>在应用安装程序文件中配置更新设置
 
@@ -37,9 +37,9 @@ ms.locfileid: "59983489"
 
     - **OnLaunch**:在启动更新检查。 此类型的更新可以显示用户界面，具有以下属性：
 
-        - **ShowPrompt**:一个布尔值，确定是否将向用户显示 UI。
+        - **ShowPrompt**:一个布尔值，确定是否将向用户显示 UI。 在 Windows 10，版本 1903年及更高版本上支持此值。
 
-        - **UpdateBlocksActivation**:一个布尔值，确定向用户显示的 UI 可让用户以启动应用而无需使更新，还是用户所必须执行的更新前启动应用程序。 此属性可以设置为"true"仅当**ShowPrompt**设置为"true"。 **UpdateBlocksActivation**="true"表示用户界面，用户将看到，允许用户执行更新或关闭应用程序。 **UpdateBlocksActivation**="false"表示用户界面，用户将看到，允许用户执行更新或启动应用程序而不更新。 在后一种情况下，更新将以无提示方式在应用扩大。 在 Windows 10，版本 1809年及更高版本中可用。
+        - **UpdateBlocksActivation**:一个布尔值，确定向用户显示的 UI 可让用户以启动应用而无需使更新，还是用户所必须执行的更新前启动应用程序。 此属性可以设置为"true"仅当**ShowPrompt**设置为"true"。 **UpdateBlocksActivation**="true"表示用户界面，用户将看到，允许用户执行更新或关闭应用程序。 **UpdateBlocksActivation**="false"表示用户界面，用户将看到，允许用户执行更新或启动应用程序而不更新。 在后一种情况下，更新将以无提示方式在应用扩大。 在 Windows 10，版本 1903年及更高版本上支持此值。
 
         > [!NOTE]
         > ShowPrompt 需要设置为 true，如果 UpdateBlocksActivation 设置为 true。
