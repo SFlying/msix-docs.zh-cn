@@ -8,23 +8,29 @@ ms.topic: article
 keywords: windows 10、 uwp、 msix、 msix 打包工具、 预览体验计划
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: 576ce8abf3bbbe178dbd124f250a749136f50267
-ms.sourcegitcommit: e7d974ff7b318af19aa8d578d031914e1f1ff926
+ms.openlocfilehash: 4d3826450ade25d5e6fe8a682f03435bc1f1f4d3
+ms.sourcegitcommit: 23d6e24cd3197204868091bca2f21cfd9b1bf0da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826705"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67027926"
 ---
-# <a name="msix-packaging-tool-release-notes"></a>MSIX 打包工具发行说明 
+# <a name="msix-packaging-tool-release-notes"></a>MSIX 打包工具发行说明
 
-### <a name="ver-120196040"></a>Ver 1.2019.604.0 
+## <a name="version-120196110"></a>版本 1.2019.611.0
+
+- 还原默认设置和排除项现在也清除签名证书的密码并退出代码
+- 修复了第一个启动任务未获得正确删除
+- 包创建期间将忽略排除的文件的快捷方式
+
+## <a name="version-120196040"></a>版本 1.2019.604.0
 
 - 默认值为如果在设置中指定默认签名证书对程序包进行签名
 - 允许要在设置中指定的负的安装程序代码
 - 使用 PowerShell 安装程序退出代码
 - 在需要重新启动的驱动程序时通知用户
 
-#### <a name="ver-120195220"></a>Ver 1.2019.522.0
+## <a name="version-120195220"></a>版本 1.2019.522.0
 
 新功能：
 
@@ -41,7 +47,7 @@ ms.locfileid: "66826705"
 - 在远程或虚拟机重启，可能会出现额外的登录提示 
 - 还原默认设置按钮不会删除证书密码或安装程序退出代码
 
-### <a name="ver-120194020---public-release"></a>**Ver 1.2019.402.0-公开发布的版本**
+## <a name="version-120194020---public-release"></a>版本 1.2019.402.0-公开发布的版本
 
  - 可以将远程计算机的上[的详细信息](../remote-conversion-setup.md)
  - 验证 COM ProgId 的类型值，COM 类项并删除 COM 注册无效
