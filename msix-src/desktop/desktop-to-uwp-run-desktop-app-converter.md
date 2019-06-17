@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 6959d762430094cab449a9168defc8aac673fdc1
-ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
+ms.openlocfilehash: 4ab29d5559b118ea32b91f8a266b137bcb83bd5d
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66411445"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67126812"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>包使用 Desktop App Converter 的桌面应用程序
 
@@ -32,9 +32,6 @@ Desktop App Converter (DAC) 创建包的桌面应用程序为与最新的 Window
 
 > [!IMPORTANT]
 > 在 Windows 10，版本 1607，及更高版本上支持 Desktop App Converter。 仅可在面向 Windows 10 周年更新 (10.0; 的项目Build 14393) 或更高版本在 Visual Studio 中的。
-
-> [!NOTE]
-> 请观看 Microsoft Virtual Academy 发布的<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">这一系列</a>的视频短片。 这些视频演示了使用 Desktop App Converter 的一些常见方法。
 
 ## <a name="the-dac-does-more-than-just-generate-a-package-for-you"></a>DAC 不仅能为你生成一个包
 
@@ -160,10 +157,6 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 > [!IMPORTANT]
 > 以下是在执行此操作时要记住的两个重要事项。 首先，请确保安装程序位于独立文件夹中，并确保只有与该安装程序相关的文件位于同一文件夹中。 转换器将该文件夹的所有内容复制到隔离的 Windows 环境中。 <br> 其次，如果合作伙伴中心将标识分配给您以数字开头的软件包，请确保还传递中<i>-AppId</i>参数，以及如何使用字符串后缀将 （之后的时间段分隔符） 作为该参数的值。  
 
-**视频**
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-an-Application-That-Has-an-MSI-Installer-Kh1UU2WhD_7106218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
-
 如果你的安装程序包括相关库或框架的安装程序，则组织内容的方式可能略有不同。 请参阅[用桌面桥链连多个安装程序](https://blogs.msdn.microsoft.com/appconsult/2017/09/11/chaining-multiple-installers-with-the-desktop-app-converter/)。
 
 <a id="setup-conversion" />
@@ -175,14 +168,11 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
+
 >[!IMPORTANT]
 >如果合作伙伴中心将标识分配给您以数字开头的软件包，请确保还传递中<i>-AppId</i>参数，以及如何使用字符串后缀将 （之后的时间段分隔符） 作为该参数的值。
 
 ``InstallerArguments`` 参数是可选参数。 但是，由于 Desktop App Converter 需要安装程序，以在无人参与模式下运行，您可能需要使用它，如果应用程序需要无提示要以无提示方式运行的标志。 ``/S`` 标志是十分常见的无提示标志，但你使用的标志可能有所不同，具体取决于用于创建安装程序文件的安装程序技术。
-
-**视频**
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-an-Application-That-Has-a-Setup-exe-Installer-amWit2WhD_5306218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 <a id="no-installer-conversion" />
 
@@ -198,10 +188,6 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 >[!IMPORTANT]
 >如果合作伙伴中心将标识分配给您以数字开头的软件包，请确保还传递中<i>-AppId</i>参数，以及如何使用字符串后缀将 （之后的时间段分隔符） 作为该参数的值。
-
-**视频**
-
-<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-a-No-Installer-Application-agAXF2WhD_3506218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 <a id="optional-parameters" />
 
@@ -342,12 +328,6 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 > [!NOTE]
 > 如果你对安装程序进行的注册表设置做出了更改，则需要再次运行 Desktop App Converter 以应用这些更改。
-
-**视频**
-
-|修改并重新打包输出 |演示：修改并重新打包输出|
-|---|---|
-|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Modifying-and-Repackaging-Output-from-Desktop-App-Converter-OwpAJ3WhD_6706218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Modify-Output-from-Desktop-App-Converter-gEnsa3WhD_8606218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
 以下两个部分介绍几种封装的应用程序可能要考虑到的可选链接地址。
 

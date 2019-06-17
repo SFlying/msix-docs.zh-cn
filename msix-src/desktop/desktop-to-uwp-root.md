@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 14c27f77fae7f1af095eb0a8de5bd4836f51837f
-ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
+ms.openlocfilehash: 7e831023a6d21447d1175a1f802c568c5023be87
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66411435"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67126824"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>打包桌面应用程序 （桌面桥）
 
@@ -21,9 +21,6 @@ ms.locfileid: "66411435"
 桌面应用程序创建包时，应用程序将收到一个标识和桌面应用程序与该标识具有访问权限对 Windows 通用平台 (UWP) Api。 你可以使用它们添加具有吸引力的现代体验，例如动态磁贴和通知。 使用简单的条件编译和运行时检查仅当你的应用程序运行在 Windows 10 上运行 UWP 代码。
 
 除了利用所掌握 Windows 10 体验的代码，你的应用程序保持不变，并且可以继续将其分发到以前版本的 Windows 上的用户。 在 Windows 10 上继续在完全信任环境中运行你的应用程序现在执行用户模式下，就像它一样的操作。
-
-> [!NOTE]
-> 请查看<a href="https://mva.microsoft.com/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">这一系列</a>个发布的 Microsoft Virtual Academy 视频。 这些视频介绍如何将您的桌面应用程序到通用 Windows 平台 (UWP) 的整个过程。
 
 ## <a name="prepare"></a>准备
 
