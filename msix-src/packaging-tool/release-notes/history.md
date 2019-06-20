@@ -8,29 +8,34 @@ ms.topic: article
 keywords: windows 10、 uwp、 msix、 msix 打包工具、 预览体验计划
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: 4d3826450ade25d5e6fe8a682f03435bc1f1f4d3
-ms.sourcegitcommit: 23d6e24cd3197204868091bca2f21cfd9b1bf0da
+ms.openlocfilehash: ce17fc580b19d9f47f653367184016f5c68774b7
+ms.sourcegitcommit: 0378a8897e0691bee4d9a957982961a377974856
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67027926"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67250944"
 ---
 # <a name="msix-packaging-tool-release-notes"></a>MSIX 打包工具发行说明
 
-## <a name="version-120196110"></a>版本 1.2019.611.0
+### <a name="version-120196180"></a>版本 1.2019.618.0
+
+- 自动设置为 1709 设置中关闭了应用商店版本控制要求时的 MinVersion
+- 在包编辑器中，可以将新文件夹添加下资产
+
+### <a name="version-120196110"></a>版本 1.2019.611.0
 
 - 还原默认设置和排除项现在也清除签名证书的密码并退出代码
 - 修复了第一个启动任务未获得正确删除
 - 包创建期间将忽略排除的文件的快捷方式
 
-## <a name="version-120196040"></a>版本 1.2019.604.0
+### <a name="version-120196040"></a>版本 1.2019.604.0
 
 - 默认值为如果在设置中指定默认签名证书对程序包进行签名
 - 允许要在设置中指定的负的安装程序代码
 - 使用 PowerShell 安装程序退出代码
 - 在需要重新启动的驱动程序时通知用户
 
-## <a name="version-120195220"></a>版本 1.2019.522.0
+### <a name="version-120195220"></a>版本 1.2019.522.0
 
 新功能：
 

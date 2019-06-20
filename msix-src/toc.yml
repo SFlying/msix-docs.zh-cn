@@ -90,7 +90,7 @@
               href: msix-sdk/release-notes/sdk-release-notes-1.6.md
         - name: 使用 MSIX SDK 在非 Windows 10 平台上分发 MSIX 包
           href: msix-sdk/sdk-guidance.md
-- name: 应用包
+- name: 程序包
   items:
     - name: 将桌面应用打包
       items:
@@ -118,6 +118,8 @@
               href: desktop/desktop-to-uwp-packaging-dot-net.md
             - name: 使用本机映像优化二进制文件
               href: desktop/desktop-to-uwp-r2r.md
+        - name: 使用第三方安装程序将桌面应用打包
+          href: desktop/desktop-to-uwp-third-party-installer.md
         - name: 在打包桌面应用幕后
           href: desktop/desktop-to-uwp-behind-the-scenes.md
         - name: 已知问题
@@ -154,7 +156,7 @@
           href: desktop/desktop-to-uwp-test-windows-s.md
     - name: 将运行时修补程序应用到桌面应用包
       href: psf/package-support-framework.md
-- name: 分配
+- name: 分发
   items:
     - name: 发布到 Microsoft Store
       href: 'https://docs.microsoft.com/windows/uwp/publish/?context=/windows/msix/render'
