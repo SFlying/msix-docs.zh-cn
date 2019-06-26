@@ -1,32 +1,32 @@
-# <a name="signing-windows-10-app-package"></a>Windows 10 应用程序包进行签名 
+# <a name="signing-windows-10-app-package"></a>为 Windows 10 应用包签名 
 
-应用程序包签名是创建可以部署的 Windows 10 应用程序包的过程中的必需的步骤。 Windows 10 要求所有应用程序使用有效的代码签名证书进行签名。 
+在创建可部署的 Windows 10 应用包过程中，应用包签名是必须执行的步骤。 Windows 10 要求使用有效的代码签名证书为所有应用程序签名。 
 
-若要成功安装 Windows 10 应用程序，包就无需签名但还受信任的设备上。 这意味着该证书必须链接到一个在设备上受信任的根。 为默认值，Windows 10 信任来自大部分证书颁发机构提供代码签名证书的证书。 
+若要成功安装 Windows 10 应用程序，该包不仅需要签名，而且还需在设备上受信任。 这意味着，该证书必须链接到设备上的某个受信任根。 默认情况下，Windows 10 信任提供代码签名证书的大部分证书颁发机构的证书。 
 
 |主题| 描述 |
 |:---|:---|
-|[签名的先决条件](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render#prerequisites)| 本部分讨论对 Windows 10 应用包进行签名所需的先决条件。 | 
-|[使用 SignTool](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render#using-signtool)| 本部分讨论如何使用 Windows 10 SDK 中的 SignTool 应用程序包进行签名。|
+|[签名先决条件](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render#prerequisites)| 此部分说明为 Windows 10 应用包签名所要满足的先决条件。 | 
+|[使用 SignTool](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render#using-signtool)| 此部分介绍如何使用 Windows 10 SDK 中的 SignTool 为应用包签名。|
 
 ## <a name="timestamping"></a>时间戳 
 
-除了使用证书对应用程序包进行签名，决定了代码签名证书的有效性的另一个重要特征就是**加盖时间戳**。 时间戳将保留允许可接受的应用程序部署平台，即使该证书已过期的应用程序包的签名。 在包检查时，时间戳允许包的签名验证根据其进行签名的时间。 这使得包可以被接受甚至后证书不再有效。 将根据当前的时间计算是不带时间戳的包，如果证书不再有效，Windows 将接受包。 
+除了使用证书为应用包签名以外，决定代码签名证书有效性的另一个重要特征是**时间戳**。 时间戳可以保留签名，这样，即使是在证书过期之后，应用部署平台也会接受该应用包。 检查包时，可以使用时间戳根据包的签名时间验证包签名。 这样，即使证书不再有效，也会接受该包。 不带时间戳的包将会根据当前时间进行评估，如果证书不再有效，Windows 不会接受该包。 
 
-以下是围绕应用签名的输入/输出时间戳的不同方案：
+下面是围绕使用/不使用时间戳进行应用签名的各种方案：
 
-| |应用程序签名没有时间戳 | 使用时间戳签名的应用程序 |
+| |不使用时间戳为应用签名 | 使用时间戳为应用签名 |
 |---|---------------------------------- | ------------------------------- |
-| 证书有效 |将安装应用 | 将安装应用 |
-| 证书是 invalid(expired) | 应用程序将无法安装 | 通过时间戳颁发机构进行签名通过验证证书的真实性将安装应用 |
+| 证书有效 |将会安装应用 | 将会安装应用 |
+| 证书无效（已过期） | 无法安装应用 | 将会安装应用，因为在签名时，证书的真实性已由时间戳机构验证 |
 
  > [!NOTE]
- > 如果在设备上成功安装该应用程序，它将继续甚至在证书过期而不考虑它正在加盖时间戳后运行。 
+ > 如果应用已在设备上成功安装，则即使是在证书过期之后，该应用也会继续运行，而不管证书是否带有时间戳。 
 
 ## <a name="device-mode"></a>设备模式
 
-Windows 10，用户可以选择要在其中运行其设备设置应用中的模式。 模式是 Microsoft Store 应用程序、 旁加载应用程序和开发人员模式。 
+Windows 10 允许用户在“设置”应用中选择运行设备的模式。 模式包括“Microsoft Store 应用”、“旁加载应用”和“开发人员模式”。 
 
-**Microsoft Store 应用**是最安全，因为它仅允许安装来自 Microsoft Store 的应用。 Microsoft Store 中的应用程序经过认证过程，以确保应用是安全的使用。 
+“Microsoft Store 应用”是最安全的模式，因为它只允许从 Microsoft Store 安装应用。  Microsoft Store 中的应用会经历认证过程，确保应用可供安全使用。 
 
-**旁加载应用程序**并**开发人员模式**更宽松的证书所签名的其他，只要这些证书是受信任的应用和链，进入设备上受信任的根。 如果您是开发人员和生成或调试 Windows 10 应用，只能选择开发人员模式。 可以找到有关开发人员模式和它提供了更多信息[此处](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development)。 
+“旁加载应用”和“开发人员模式”对其他证书签名的应用的宽容度更高，前提是这些证书受信任并已链接到设备上的某个受信任根。   仅当你是开发人员并在生成或调试 Windows 10 应用时，才能选择“开发人员模式”。 可在[此处](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development)找到有关“开发人员模式”及其提供的功能的详细信息。 

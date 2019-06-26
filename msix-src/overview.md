@@ -1,18 +1,18 @@
 ---
 title: 什么是 MSIX？
-description: 了解 MSIX 打包格式的基础知识。
+description: 了解有关 MSIX 打包格式的基础知识。
 author: mcleanbyron
 ms.author: mcleans
 ms.date: 09/12/2018
 ms.topic: article
-keywords: windows 10，uwp msix
+keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 73f659cd827bbcbb69c7f6179422a692dc1e50aa
-ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "59983349"
 ---
 # <a name="what-is-msix"></a>什么是 MSIX？
@@ -34,11 +34,11 @@ ms.locfileid: "59983349"
     :::column-end:::
 :::row-end:::
 
-MSIX 是一种 Windows 应用包格式，可以为所有 Windows 应用提供现代化打包体验。 MSIX 包格式保留现有的应用程序包的功能和/或安装文件以及启用新的、 Win32、 WPF 和 WinForm 应用到现代打包和部署功能。
+MSIX 是一种 Windows 应用包格式，可以为所有 Windows 应用提供现代化打包体验。 MSIX 包格式保留了现有应用包和/或安装文件的功能，此外，它还为 Win32、WPF 和 WinForm 应用启用了新的现代化打包和部署功能。
 
-使用 MSIX 打包工具创建的任何 Windows 应用程序，旧的或新 MSIX 包。 MSIX 打包工具简化了产品/服务的交互的用户界面或命令行转换并打包 Windows 应用的打包体验。 MSIX 打包工具目前在 Microsoft Store，在最新的 Windows 预览体验成员版本上受支持。
+使用 MSIX 打包工具可为任何旧式或新式 Windows 应用创建 MSIX 包。 MSIX 打包工具简化了打包体验，提供交互式用户界面或命令行来转换和打包 Windows 应用。 MSIX 打包工具已在 Microsoft Store 中提供，受最新 Windows Insider 内部版本的支持。
 
-使用的开放源代码 MSIX SDK，MSIX 包是更灵活，并独立于平台。 SDK 提供了所有所需验证，验证，并将解包在任何平台上的应用程序包的 Api。 
+由于使用了开源 MSIX SDK，MSIX 包的用途更广泛，并且不区分平台。 SDK 提供全部所需的 API 用于在任何平台上验证和解包应用包。 
 
 
 

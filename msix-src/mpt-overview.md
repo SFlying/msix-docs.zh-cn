@@ -1,75 +1,75 @@
 ---
 title: MSIX 打包工具概述
-description: 如何开始使用 Msix 打包工具的概述文档
+description: 有关如何开始使用 MSIX 打包工具的概述文档
 author: mcleanbyron
 ms.author: mcleans
 ms.date: 02/19/2019
 ms.topic: article
-keywords: windows 10，uwp msix
+keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: 3832cdceab23506da7ed16f3d07aa070222e5c0b
-ms.sourcegitcommit: bc3f2bf9fe105576d0cc047d95b3f0de36fbc8b9
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "66400702"
 ---
 # <a name="msix-packaging-tool"></a>MSIX 打包工具 
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取 MSIX 打包工具</a></p></div>
 
-MSIX 打包工具，可重新打包现有 Win32 应用程序为 MSIX 格式。 它提供了交互式用户界面和命令行的转换，并使你能够将应用程序而无需的源代码。 我们想要使 IT 专业人员能够将现有的资产转换为 MSIX，若要为其提供更好的方式进行打包和应用管理。
+使用 MSIX 打包工具可将现有的 Win32 应用程序重新打包为 MSIX 格式。 此工具提供交互式 UI 和命令行用于转换，并且可以在没有源代码的情况下转换应用程序。 我们希望 IT 专业人员能够将现有资产转换为 MSIX，使其能够更好地进行打包和应用管理。
 
-从 Microsoft Store 现 MSIX 打包工具。 你可以运行此工具通过您桌面的安装程序并获得一个 MSIX 包，可以在计算机上安装。
+MSIX 打包工具现已在 Microsoft Store 中提供。 可以通过此工具运行桌面安装程序，并获取可在计算机上安装的 MSIX 包。
 
-想要 MSIX 打包工具深入了解，请单击[此处](packaging-tool/insider-program.md)的更多详细信息。
+如果你有意成为 MSIX 打包工具的预览体验成员，请单击[此处](packaging-tool/insider-program.md)了解更多详细信息。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-- Windows 10，版本 1809 （或更高版本）
-- 参加 Windows 预览体验计划 （如果使用的预览体验内部版本）
-- 有效的 Microsoft 帐户 (MSA) 别名访问从 Microsoft Store 应用 
-- 若要运行该工具在 PC 上的管理员权限
+- Windows 10 版本 1809（或更高版本）
+- 参与 Windows 预览体验计划（如果使用的是预览体验内部版本）
+- 用于访问 Microsoft Store 中的应用的有效 Microsoft 帐户 (MSA) 别名 
+- 电脑上的管理员特权（可运行该工具）
  
  ## <a name="install"></a>安装
  
-若要从 Microsoft Store 安装 MSIX 打包工具，请转[此处](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf)，确保使用为你的 Windows 预览体验计划使用 MSA 登录。 接下来，转到产品说明页并单击安装图标以开始安装。
+若要从 Microsoft Store 安装 MSIX 打包工具，请转[此处](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf)，并确保使用用于 Windows 预览体验计划的 MSA 登录。 接下来，转到产品说明页，并单击“安装”图标开始安装。
 
-MSIX 打包工具还可以下载供脱机使用从 Microsoft Store 企业中的业务[web 门户](https://businessstore.microsoft.com/)。 您可以了解有关脱机分发的详细信息[此处](https://docs.microsoft.com/en-us/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app)。
+也可以从适用于企业的 Microsoft Store [Web 门户](https://businessstore.microsoft.com/)下载 MSIX 打包工具供离线使用。 可在[此处](https://docs.microsoft.com/en-us/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app)详细了解离线分发。
 
  
-## <a name="latest-public-version---120194020"></a>最新的公共版本-1.2019.402.0
+## <a name="latest-public-version---120194020"></a>最新公共版本 - 1.2019.402.0
 
-### <a name="new-features"></a>新的功能：
+### <a name="new-features"></a>新增功能：
 
-- 可以将远程计算机的上[的详细信息](packaging-tool/remote-conversion-setup.md)
+- 可以在远程计算机上转换 - [详细信息](packaging-tool/remote-conversion-setup.md)
 - 改进了包编辑器中的管理体验
-    - 在包的编辑器中保存时自动版本控制建议
-    - 现在支持现有的文件夹添加 VFS 中打包
-- 用户可以指定对 CLI 转换的已知有效的退出代码
-- 添加了对时间戳已签名的包中所有其中签名是当前可用的工作流 
-    - 在工具设置页中，可以指定您的默认时间戳 URL 和时间戳服务器的类型
-- 更新应用程序标识生成的逻辑，并为包名称和应用程序添加额外的验证 
+    - 在包编辑器中保存时自动显示版本控制建议
+    - 现在支持在 VFS 中将现有文件夹添加到包中
+- 用户可以指定已知有效的退出代码用于 CLI 转换
+- 在当前可以使用签名的所在工作流中，添加了为已签名的包加上时间戳的功能 
+    - 可以在工具的“设置”页中指定默认的时间戳 URL 和时间戳服务器类型
+- 更新了 AppID 生成逻辑，并添加了针对包名称和应用的附加验证 
 
-您可以找到 MSIX 打包工具发行说明的完整历史记录[此处](packaging-tool/release-notes/history.md)。
+可在[此处](packaging-tool/release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
  ## <a name="tasks"></a>任务
  
-下面是可以预期要能够使用此工具执行操作：
+下面是使用此工具预期可以实现的目的：
  
-- 打包你最喜欢的应用程序 (msi、 exe、 APP-V 5.x 和自定义脚本) 中启动工具并选择 MSIX 格式**应用程序包**图标。
-- 通过启动工具并选择为 MSIX 包创建修改包**修改包**图标。 
-- 打开 MSIX 包以进行查看和编辑其内容/属性通过选择**包编辑器**图标，浏览到 MSIX 包，并选择**打开包**。
+- 通过启动该工具并选择“应用程序包”图标，以 MSIX 格式将你偏爱的应用程序（msi、exe、App-V 5.x 和自定义脚本）打包。 
+- 通过启动该工具并选择“修改包”图标，为 MSIX 包创建修改包。  
+- 通过选择“包编辑器”图标，浏览到 MSIX 包并选择“打开包”，来打开 MSIX 包以查看和编辑其内容/属性。  
 
 ## <a name="try-it-out"></a>试用 
 
-以下文章是有关如何使用 MSIX 打包工具将桌面应用程序的教程： 
+以下文章是有关如何使用 MSIX 打包工具转换桌面应用程序的教程： 
 
 | 文章 | 描述 |
 |-------|-------------|
-| [从 MSI/APP-V 文件创建 MSIX 包](packaging-tool/create-app-package-MSI-VM.md) | 本教程会演示如何使用 MSIX 打包工具的 UI 将转换到 MSIX 包对桌面应用程序 （尤其是如 MSI、 EXE 或 APP-V 的安装程序）。 |
-| [从其他安装程序类型创建 MSIX 包](packaging-tool/create-other-installer.md) | 本教程将向演示如何使用 MSIX 打包工具的 UI 来转换你的桌面应用程序 （安装程序如批处理脚本，PowerShell 等） 到 MSIX 包。 |
-| [创建 MSIX 包使用 MSIX 打包工具的命令行接口](packaging-tool/package-conversion-cli.md) | 本教程会演示如何使用 MSIX 打包工具命令行接口来转换到 MSIX 包桌面应用程序。 |
-| [自动执行 MSIX 包转换](packaging-tool/automate-conversion.md) | 本教程将介绍如何使用命令行接口来自动执行桌面应用程序转换为 MSIX 包。 |
-| [在远程设备上创建 MSIX 包](packaging-tool/remote-conversion-setup.md) | 本文将提供执行远程设备上的桌面应用程序转换为 MSIX 包所需的说明进行操作。 |
+| [从 MSI/App-V 文件创建 MSIX 包](packaging-tool/create-app-package-MSI-VM.md) | 此教程介绍如何使用 MSIX 打包工具的 UI 将桌面应用程序（具体而言，是 MSI、EXE 或 App-V 等安装程序）转换为 MSIX 包。 |
+| [从其他安装程序类型创建 MSIX 包](packaging-tool/create-other-installer.md) | 此教程介绍如何使用 MSIX 打包工具的 UI 将桌面应用程序（批处理脚本、PowerShell 等安装程序）转换为 MSIX 包。 |
+| [使用 MSIX 打包工具的命令行接口创建 MSIX 包](packaging-tool/package-conversion-cli.md) | 此教程介绍如何使用 MSIX 打包工具的命令行接口将桌面应用程序转换为 MSIX 包。 |
+| [自动执行 MSIX 包转换](packaging-tool/automate-conversion.md) | 此教程介绍如何使用命令行接口将桌面应用程序自动转换为 MSIX 包。 |
+| [在远程设备上创建 MSIX 包](packaging-tool/remote-conversion-setup.md) | 此文提供有关如何在远程设备上将桌面应用程序转换为 MSIX 包的说明。 |

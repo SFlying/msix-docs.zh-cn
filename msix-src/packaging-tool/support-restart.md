@@ -1,16 +1,16 @@
-# <a name="support-for-desktop-installers-that-require-device-restart"></a>对桌面安装程序需要重启设备的支持
+# <a name="support-for-desktop-installers-that-require-device-restart"></a>对需要重启设备的桌面安装程序的支持
 
  > [!NOTE] 
- > 设备重新启动是目前仅在 insider preview 版本中提供的新功能。
- > 您可以加入 MSIX 打包工具深入了解预览计划才能访问此功能。
+ > 设备重启是当前仅在 Insider Preview 内部版本中可用的一项新功能。
+ > 加入 MSIX 打包工具预览体验计划即可访问此功能。
 
-我们现在支持使用 MSIX 打包工具在转换过程中重新启动的功能 ！ 
+我们现在支持在转换过程中使用 MSIX 打包工具重启的功能！ 
 
-通过我们的交互式用户界面和通过我们的命令行界面支持重新启动。 此外，通过我们的命令行，您可以还指定要自动登录到在重启后具有无的无缝转换。 
+可以通过交互式 UI 和命令行接口支持重启。 此外，通过命令行还可以指定在重启后自动登录，以顺利地进行自动转换。 
 
-您可以指定的退出代码指示在重启**设置 （安装程序退出代码） 页**。 
+可以在“设置(安装程序退出代码)”页中指定哪些退出代码表示重启。  
 
-可以触发重新启动通过期间转换工作流 UI 或通过在转换计算机的开始菜单。 发生重新启动后，你将返回到你已使用您的转换工具以继续在同一位置。
+可以在执行转换工作流期间通过 UI 触发重启，或者通过转换计算机的开始菜单触发重启。 发生重启后，你将返回到先前在工具中的同一位置，以继续转换。
 
-请记住此功能仍处于开发阶段，可能还有一些 bug。 如果发现任何，务必[文件的反馈](https://docs.microsoft.com/en-us/windows/msix/packaging-tool/insider-program#share-your-feedback)以便我们能够修复它 ！
+请记住，此功能仍在开发中，可能还有一些 bug。 如果发现任何 bug，请务必[提交反馈](https://docs.microsoft.com/en-us/windows/msix/packaging-tool/insider-program#share-your-feedback)，让我们修复它！
 

@@ -1,27 +1,27 @@
 ---
 author: dianmsft
-title: 在 Windows 10 版本 1903 MSIX 修改包
-description: 在本部分中，我们将回顾在 Windows 10 1903 Update 修改包
+title: Windows 10 版本 1903 中的 MSIX 修改包
+description: 本部分介绍 Windows 10 1903 更新版中的修改包
 ms.author: diahar
 ms.date: 01/14/2019
 ms.topic: article
-keywords: windows 10，uwp msix
+keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.openlocfilehash: bca7001b4db8ac2e6ced6763d4eca7bb7c8d294d
-ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "65802373"
 ---
-# <a name="msix-modification-packages-on-windows-10-version-1903"></a>在 Windows 10 版本 1903 MSIX 修改包
+# <a name="msix-modification-packages-on-windows-10-version-1903"></a>Windows 10 版本 1903 中的 MSIX 修改包
  
-在 Windows 10 版本 1809年，我们引入了[MSIX 修改包](modification-packages.md)允许企业自定义其 Windows 10 上的应用。 在下一主要版本的 Windows，我们将添加更多的支持，可让 IT 专业人员和包的自定义，例如基于文件的插件到 MSIX 包。 
+我们在 Windows 10 版本 1809 中引入了 [MSIX 修改包](modification-packages.md)，使企业能够在 Windows 10 上自定义其应用。 在下一个 Windows 主要版本中，我们将添加更多的支持，使 IT 专业人员能够将自定义内容（例如基于文件的插件）打包成 MSIX 包。 
 
-以下功能已添加到 Windows 10，版本 1903年。
+Windows 10 版本 1903 中添加了以下功能。
 
 ## <a name="manifest-update"></a>清单更新
-我们为 MSIX 修改包清单中添加了对以下元素的支持。
+我们在 MSIX 修改包的清单中添加了对以下元素的支持。
 
 ```xml
 <Properties>
@@ -29,26 +29,26 @@ ms.locfileid: "65802373"
 </Properties>
 ```
 
-若要确保修改包版本 1903年或更高版本中正常运行，请修改包的清单必须包含此元素。 这会在为您如果打包 MSIX 修改包使用 MSIX 打包工具的年 1 月版。 如果已转换的包使用我们的工具发布之前，你可以编辑在我们的工具将此新元素添加现有包。 此外，如果用户安装修改包，它们会发出警报，包可能会修改主应用程序。
+为了确保修改包可在 1903 或更高版本中正常运行，修改包的清单必须包含此元素。 如果使用 MSIX 打包工具一月版打包 MSIX 修改包，则系统会自动包含此元素。 如果使用更低版本的工具转换了某个包，可以在工具中编辑现有的包以添加此新元素。 此外，当用户安装修改包时，系统将发出警报，指出该包可能会修改主应用程序。
 
-如果使用的版本 1903年之前创建的修改包，则需要编辑包清单，以更新到 10.0.18362.0 MaxVersionTested 属性。
+如果使用的修改包是由低于 1903 的版本创建的，则需要编辑包清单，以将 MaxVersionTested 属性更新为 10.0.18362.0。
 
 ```xml
 <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17701.0" MaxVersionTested="10.0.18362.0" />
 ```
 
-## <a name="overriding-a-file-in-the-main-package"></a>重写中主要包文件
-您可以重写中修改包的主要包文件。 这并不意味着您要更改的主要包文件。 该文件保持不变的修改包。 但是，主包在运行时发现其文件和修改包的文件，并且它将选择修改要加载的包的文件。 
+## <a name="overriding-a-file-in-the-main-package"></a>替代主包中的文件
+可以使用修改包替代主包中的文件。 这并不意味着更改主包的文件。 修改包不会更改该文件。 但是，在运行时，主包会同时看到自身的文件和修改包的文件，并且会选择修改包的文件进行加载。 
 
 > [!NOTE]
-> 修改程序包打算重写的文件必须在虚拟文件系统 (VSF) 文件夹中。 
+> 修改包要替代的文件必须位于虚拟文件系统 (VSF) 文件夹中。 
 
-## <a name="file-system-based-plug-in"></a>基于插件的文件系统
-您可以打包基于插件以 MSIX 修改包的形式在文件系统。 如果主包加载其插件来看一下一个文件夹，可以单独安装主包和修改包。 在运行时，该插件会出现，因为主应用程序可以查询其文件夹和修改的文件夹。 
+## <a name="file-system-based-plug-in"></a>基于文件系统的插件
+可将基于文件系统的插件打包为 MSIX 修改包。 如果主包通过查找某个文件夹来加载其插件，则你可以单独安装主包和修改包。 在运行时，该插件将会显示，因为主应用可以查询自身的文件夹和修改包的文件夹。 
 
 > [!NOTE]
-> 主应用程序用来加载插件文件夹必须位于虚拟文件系统 (VFS) 文件夹中。  
+> 主应用程序用来加载插件的文件夹必须位于虚拟文件系统 (VFS) 文件夹中。  
 
-## <a name="what-remains-the-same"></a>内容保持不变
-虚拟注册表的管理单元已转换为 MSIX 修改包仍会支持 Windows 的下一个主版本中。 
+## <a name="what-remains-the-same"></a>保持不变的功能
+已转换为 MSIX 修改包的虚拟注册表插件在下一个  Windows 主要版本中仍受支持。 
 

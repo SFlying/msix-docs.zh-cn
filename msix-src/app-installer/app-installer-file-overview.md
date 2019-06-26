@@ -1,51 +1,51 @@
 ---
 title: 应用安装程序文件概述
-description: 了解有关应用安装程序文件和它们的工作原理的内容。
+description: 了解应用安装程序文件的内容及其工作原理。
 author: mcleanbyron
 ms.author: mcleans
 ms.date: 12/12/2018
 ms.topic: article
-keywords: windows 10，uwp msix
+keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: 34143433ba07c68c86c394466f9be7dc75632194
-ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "65795258"
 ---
 # <a name="app-installer-file-overview"></a>应用安装程序文件概述
 
-通常情况下，需要使用多个用户共享你的应用。 需要更新应用程序的更高版本，并且你想要确保可以执行的操作是为非技术用户，即使无缝且轻松的方式。
+你经常需要与许多用户共享应用。 后来你需要更新应用，并希望确保即使是对于非技术用户，也能够轻松顺利地完成更新。
 
-为了帮助您实现此目的，我们引入了应用安装程序文件。 这是您可以自己创建或使用 Visual Studio 创建一个 XML 文件 (请参阅 Visual Studio 说明[此处](create-appinstallerfile-vs.md))。 应用安装程序文件指定您的应用程序所在的位置以及如何更新它。 如果您选择使用这样的应用分发方法，您必须与用户共享的应用安装程序文件，而不是实际的应用程序容器。 然后，用户必须单击应用安装程序文件。 此时熟悉的应用程序安装程序 UI 将出现，并引导用户完成安装。  用户安装后使用这些步骤的应用程序，该应用程序是与应用安装程序文件相关联。  
+为帮助你实现此目的，我们引入了应用安装程序文件。 这是一个可由你自行创建的或者使用 Visual Studio 创建的 XML 文件（请参阅[此处](create-appinstallerfile-vs.md)的 Visual Studio 说明）。 应用安装程序文件指定应用所在的位置及其更新方式。 如果选择使用此应用分发方法，则必须与用户共享应用安装程序文件，而不是实际的应用容器。 然后，用户必须单击应用安装程序文件。 此时会显示用户所熟悉的应用安装程序 UI，并引导用户完成安装。  用户使用这些步骤安装应用程序后，该应用程序将与应用安装程序文件相关联。  
 
-更高版本，对应用程序的更新后，你只能更新应用安装程序 (.appinstaller) 文件。 更新文件，该应用程序的新版本会推送到用户。 这是尤其适用于你的用户，因为它们无需执行任何操作来获取更新。 它们只继续使用该应用程序像往常一样，并更新将直接发送到它们。
+以后需要更新应用程序时，只需更新应用安装程序文件 (.appinstaller) 即可。 更新该文件时，应用程序的新版本将推送给用户。 此方法尤其适合用户，因为他们无需执行任何操作即可获得更新。 他们只需像平时一样使用应用程序，而更新会自动提供给他们。
 
-下面是一个示例，演示这的工作原理：
+以下示例演示了此方法的工作原理：
 
-1. IT 专业人员 Joe 想要分发到其企业人力资源应用。
-2. IT 专业人员 Joe 将人力资源应用程序放在共享上，并创建一个名为 HumanResources.appinstaller 的应用安装程序文件。 此应用安装程序文件是与应用关联。
-3. IT 专业人员 Joe 将 HumanResources.appinstaller 放在共享上。
-4. IT 专业人员 Joe 点 HumanResources.appinstaller 到企业的员工。
-5. 管理器 Maggie 单击 HumanResources.appinstaller，获取应用程序安装程序 UI，指导她安装人力资源应用程序。
-6. 从该点管理器上 Maggie 的设备人力资源是只是另一个应用程序和她与之交互，她与任何其他应用。 她可以将其固定到任务栏或开始菜单，它会显示在她的应用列表等等。
-7. 一周后 IT 专业人员 Joe 获取人力资源应用的更新。 若要与用户共享，他只需更新 HumanResources.appinstaller 以指向新的应用程序版本，并设置他想要的更新类型。
-8. 在下一步的早上，Manager Maggie，不会知道有关更新的任何启动已在她台式机的人力资源应用程序。
-9. 应用程序检测到认为那里更新，并自动应用更新
-10. 管理器 Maggie 很高兴她现在具有最新版本的应用程序和可以充分利用新功能。
+1. IT 专业人员 Joe 想要在企业中分发人力资源应用。
+2. IT 专业人员 Joe 将该人力资源应用放在共享中，并创建名为 HumanResources.appinstaller 的应用安装程序文件。 此应用安装程序文件与该应用相关联。
+3. IT 专业人员 Joe 将 HumanResources.appinstaller 放在共享中。
+4. IT 专业人员 Joe 将企业员工指向 HumanResources.appinstaller。
+5. 经理 Maggie 单击 HumanResources.appinstaller 并看到应用安装程序的 UI，其中会引导她安装该人力资源应用程序。
+6. 从此时起，在经理 Maggie 的设备上，该人力资源应用不过是另一个应用，她可以像操作任何其他应用时一样与该应用交互。 她可以将该应用固定到任务栏或开始菜单，它也会显示在应用列表中，等等。
+7. 一周后，IT 专业人员 Joe 获得了人力资源应用的更新。 若要与用户共享该应用，他只需更新 HumanResources.appinstaller 以指向新的应用版本，并设置所需的更新类型。
+8. 第二天上午，不知道有应用更新的经理 Maggie 启动了桌面上的人力资源应用程序。
+9. 该应用程序检测到有可用的更新，并自动应用更新
+10. 经理 Maggie 很高兴她现在获得了最新版本的应用程序，并可以利用新的功能。
 
-从 Windows 10 Fall Creators Update （版本 1709，内部版本 16299） 和更高版本，Windows SDK 还提供了几个 Api，可以使用以编程方式修改通过应用安装程序文件的包，或若要检索有关与应用的应用的信息安装程序关联。 有关详细信息，请参阅[相关文档](app-installer-documentation.md)。
+从 Windows 10 Fall Creators Update（版本 1709，内部版本 16299）和更高版本开始，Windows SDK 还提供多个 API 让你以编程方式通过应用安装程序文件修改包，或者使用应用安装程序关联检索有关应用的信息。 有关详细信息，请参阅[相关文档](app-installer-documentation.md)。
 
 ## <a name="contents-of-the-app-installer-file"></a>应用安装程序文件的内容
 
-下图显示了示例应用安装程序文件。 有关应用安装程序文件中的 XML 元素的完整详细信息，请参阅[应用程序安装程序文件架构参考](https://docs.microsoft.com/uwp/schemas/appinstallerschema/schema-root)。 有关如何在应用安装程序文件中配置更新设置的详细信息，请参阅[中的应用安装程序文件的配置更新设置](update-settings.md)。
+下图显示了一个示例应用安装程序文件。 有关应用安装程序文件中 XML 元素的完整详细信息，请参阅[应用安装程序文件架构参考](https://docs.microsoft.com/uwp/schemas/appinstallerschema/schema-root)。 有关如何在应用安装程序文件中配置更新设置的详细信息，请参阅[在应用安装程序文件中配置更新设置](update-settings.md)。
 
-![使用更新设置的应用安装程序文件示例](images/App-Installer-File-Update.png)
+![应用安装程序文件和更新设置示例](images/App-Installer-File-Update.png)
 
 ## <a name="related-topics"></a>相关主题
 
-* [使用 Visual Studio 创建的应用安装程序文件](create-appinstallerfile-vs.md)
-* [手动创建的应用安装程序文件](how-to-create-appinstaller-file.md)
+* [使用 Visual Studio 创建应用安装程序文件](create-appinstallerfile-vs.md)
+* [手动创建应用安装程序文件](how-to-create-appinstaller-file.md)
 * [在应用安装程序文件中配置更新设置](update-settings.md)

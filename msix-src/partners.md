@@ -1,27 +1,27 @@
 ---
 title: MSIX 合作伙伴
-description: 提供有关 MSIX 工具和支持的受信任的合作伙伴链接到其他文档。
+description: 提供受信任合作伙伴提供的，有关 MSIX 工具和支持的其他文档的链接。
 author: mcleanbyron
 ms.author: mcleans
 ms.date: 09/14/2018
 ms.topic: article
-keywords: windows 10，uwp msix
+keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 011fe229491114299e9085be780798a68ddb2cbc
-ms.sourcegitcommit: fe59d6b39d81eb4a155887fa8fe9a08b6fe48584
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "65488518"
 ---
 # <a name="msix-partners"></a>MSIX 合作伙伴
 
-以下合作伙伴提供了用于 MSIX 开发方案的其他工具和支持。
+以下合作伙伴提供了有关 MSIX 开发方案的其他工具和支持。
 
 :::row:::
 :::column:::
-[![高级安装程序徽标](images/AdvancedInstaller_Logo.png)](https://www.advancedinstaller.com/desktop-bridge)
+[![Advanced Installer 徽标](images/AdvancedInstaller_Logo.png)](https://www.advancedinstaller.com/desktop-bridge)
 :::column-end:::
 
 :::column:::
@@ -61,7 +61,7 @@ ms.locfileid: "65488518"
 :::column-end:::
 
 :::column:::
-[![节奏徽标](images/Pace_Logo.png)](https://pacesuite.com/convert-exe-to-msix/)
+[![Pace 徽标](images/Pace_Logo.png)](https://pacesuite.com/convert-exe-to-msix/)
 :::column-end:::
 
 :::row-end:::

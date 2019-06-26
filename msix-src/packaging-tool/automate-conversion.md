@@ -1,6 +1,6 @@
 ---
-title: 自动执行 Windows 安装程序对 MSIX 包转换
-description: 自动执行转换的现有 windows 安装程序命令行接口用于生成 msix 包
+title: 将 Windows 安装程序自动转换为 MSIX 包
+description: 使用命令行接口自动转换现有的 Windows 安装程序以生成 MSIX 包
 author: mcleanbyron
 ms.author: mcleans
 ms.date: 09/07/2018
@@ -9,19 +9,19 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4408381a0ebbcc7fbdad7c517c1b64bbec2254da
-ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
-ms.translationtype: MT
+ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
+ms.lasthandoff: 06/14/2019
 ms.locfileid: "58900169"
 ---
-# <a name="automate-conversion-of-windows-installers-to-msix-packages"></a>自动执行 Windows 安装程序对 MSIX 包转换
+# <a name="automate-conversion-of-windows-installers-to-msix-packages"></a>将 Windows 安装程序自动转换为 MSIX 包
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取 MSIX 打包工具</a></p></div>
 
-MSIX 打包工具支持命令行接口用于创建 MSIX 应用程序包，这样用户就可以自动执行重新打包和执行简单的 PowerShell 脚本使用的批量转换。
+MSIX 打包工具支持使用命令行接口创建 MSIX 应用程序包，可让用户使用简单的 PowerShell 脚本自动重新打包和执行批量转换。
 
-下面是一个简单的 powershell 脚本的使用示例转换模板的文件夹路径中每个安装程序创建相应的模板并将模板传递给 MSIX 打包工具，以创建 MSIX 包。
+下面是一个使用示例转换模板的简单 PowerShell 脚本，它为文件夹路径中的每个安装程序创建相应的模板，并将模板传递给 MSIX 打包工具以创建 MSIX 包。
 
 
 ```ps1
