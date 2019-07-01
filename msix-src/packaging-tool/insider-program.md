@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: eb1e5400617559a3de85ce40a9ae3bf1bfcb13b0
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: d1c68d687e07b4e018358bb32c09c8094e10688f
+ms.sourcegitcommit: 0378a8897e0691bee4d9a957982961a377974856
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67027914"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67250973"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -37,11 +37,10 @@ ms.locfileid: "67027914"
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-版本 1.2019.611.0：
+### <a name="version-120196180"></a>版本 1.2019.618.0
 
-- 还原默认设置和排除项现在也会清除签名证书密码和退出代码。
-- 修复了无法正常删除初始启动任务的问题。
-- 在创建包期间，将忽略已排除文件的快捷方式。
+- 当设置中禁用了 Store 版本控制要求时，自动将 MinVersion 设置为 1709。
+- 可以在包编辑器中的“资产”下添加新的文件夹。
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
