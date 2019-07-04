@@ -8,34 +8,43 @@ ms.topic: article
 keywords: windows 10、 uwp、 msix、 msix 打包工具、 预览体验计划
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: ce17fc580b19d9f47f653367184016f5c68774b7
-ms.sourcegitcommit: 0378a8897e0691bee4d9a957982961a377974856
+ms.openlocfilehash: 30370a49eb168353fcadbeeed21d0e2caf399b3e
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67250944"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555635"
 ---
 # <a name="msix-packaging-tool-release-notes"></a>MSIX 打包工具发行说明
 
-### <a name="version-120196180"></a>版本 1.2019.618.0
+## <a name="version-120197010"></a>版本 1.2019.701.0
+
+- 重新启动方案的 bug 修复。
+
+## <a name="version-120196210"></a>版本 1.2019.621.0
+
+- 重启列表设置中的退出代码包括常见的默认值。
+- 若要添加新、 未知与自定义功能，通过包编辑器的功能。
+
+## <a name="version-120196180"></a>版本 1.2019.618.0
 
 - 自动设置为 1709 设置中关闭了应用商店版本控制要求时的 MinVersion
 - 在包编辑器中，可以将新文件夹添加下资产
 
-### <a name="version-120196110"></a>版本 1.2019.611.0
+## <a name="version-120196110"></a>版本 1.2019.611.0
 
 - 还原默认设置和排除项现在也清除签名证书的密码并退出代码
 - 修复了第一个启动任务未获得正确删除
 - 包创建期间将忽略排除的文件的快捷方式
 
-### <a name="version-120196040"></a>版本 1.2019.604.0
+## <a name="version-120196040"></a>版本 1.2019.604.0
 
 - 默认值为如果在设置中指定默认签名证书对程序包进行签名
 - 允许要在设置中指定的负的安装程序代码
 - 使用 PowerShell 安装程序退出代码
 - 在需要重新启动的驱动程序时通知用户
 
-### <a name="version-120195220"></a>版本 1.2019.522.0
+## <a name="version-120195220"></a>版本 1.2019.522.0
 
 新功能：
 
@@ -54,20 +63,20 @@ ms.locfileid: "67250944"
 
 ## <a name="version-120194020---public-release"></a>版本 1.2019.402.0-公开发布的版本
 
- - 可以将远程计算机的上[的详细信息](../remote-conversion-setup.md)
+ - 可以在远程计算机上转换 - [详细信息](../remote-conversion-setup.md)
  - 验证 COM ProgId 的类型值，COM 类项并删除 COM 注册无效
  - 更新 MSIX 打包工具中重新分发的 Windows SDK 工具 
  - 自动将参数拆分为单独的字段对清单表示 com 可执行文件
  - 可靠的处理 PowerShell 安装程序参数
  - 执行禁用 Windows 更新服务的计算机准备阶段中所必需的步骤
-- 添加了对时间戳已签名的包中所有其中签名是当前可用的工作流
-    - 在工具设置页中，可以指定您的默认时间戳 URL 和时间戳服务器的类型 
+- 在当前可以使用签名的所在工作流中，添加了为已签名的包加上时间戳的功能
+    - 可以在工具的“设置”页中指定默认的时间戳 URL 和时间戳服务器类型 
 - 将包保存后将保留在 VFS 包编辑器中创建的空文件夹
 - 用户可以指定有效的预期的退出代码，CLI 转换
 - 在转换过程中生成的空文件夹将在打包保持不变
-- 更新应用程序标识生成的逻辑，并为包名称和应用程序添加额外的验证 
+- 更新了 AppID 生成逻辑，并添加了针对包名称和应用的附加验证 
 - 改进了包编辑器中的管理体验
-- 在包的编辑器中保存时自动版本控制建议
+- 在包编辑器中保存时自动显示版本控制建议
 - 添加了使用"。" 进度的版本字段
 - 已修复的验证的安装位置
 - 固定清单转换问题的文件类型关联的处理程序和 com 服务器条目

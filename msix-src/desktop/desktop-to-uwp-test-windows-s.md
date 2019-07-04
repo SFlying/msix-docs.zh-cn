@@ -3,16 +3,18 @@ Description: 在 S 模式下，适用于 Windows 10 中测试您的应用程序�
 title: 测试适用于 Windows 10 S 的 Windows 应用
 ms.date: 05/11/2017
 ms.topic: article
-keywords: windows 10 S, uwp
+author: dianmsft
+ms.author: diahar
+keywords: windows 10 S、 uwp、 msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 548349bbca82694c38509a5f4dc1f14a9c79b82f
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: 63803681601e03392273a1606f77c49d17fe11e8
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985567"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555591"
 ---
-# <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>测试 Windows 应用是否适用于 S 模式下的 Windows 10
+# <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>在 S 模式下测试适用于 Windows 10 的 Windows 应用
 
 可以对 Windows 应用进行测试，以确保其在以 S 模式运行 Windows 10 的设备上正常运行。 事实上，如果准备将应用发布到 Microsoft Store，则必须这样做，因为这是 Microsoft Store 的一项要求。 若要测试你的应用，可以在运行 Windows 10 专业版的设备上应用 Device Guard 代码完整性策略。
 
@@ -54,7 +56,7 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 #### <a name="optional-find-specific-failure-points-in-the-call-stack"></a>（可选）查找调用堆栈中的特定故障点
 若要在调用堆栈中找到阻止问题发生的特定点，请添加此注册表项，然后[设置内核模式调试环境](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging)。
 
-|键|名称|在任务栏的搜索框中键入|值|
+|键|名称|type|ReplTest1|
 |--|---|--|--|
 |HKEY_LOCAL_MACHINE\SYSTEM\CurentControlSet\Control\CI| DebugFlags |REG_DWORD | 1 |
 

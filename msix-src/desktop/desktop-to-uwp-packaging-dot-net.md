@@ -1,19 +1,21 @@
 ---
 Description: 本指南介绍如何配置 Visual Studio 解决方案来编辑、 调试和打包桌面应用程序。
-title: 打包桌面应用中使用 Visual Studio 的源代码
+title: 使用 Visual Studio 从源代码中将桌面应用打包
 ms.date: 08/30/2017
 ms.topic: article
-keywords: windows 10, uwp
+author: dianmsft
+ms.author: diahar
+keywords: windows 10, uwp, msix
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cb6807c0aa126bbbdaf8e034f9fab489e49cffa
-ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
+ms.openlocfilehash: 71eec6e16c2ef012e5d60e437393afdd6f9af532
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66411406"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555616"
 ---
-# <a name="package-a-desktop-app-from-source-code-using-visual-studio"></a>打包桌面应用中使用 Visual Studio 的源代码
+# <a name="package-a-desktop-app-from-source-code-using-visual-studio"></a>使用 Visual Studio 从源代码中将桌面应用打包
 
 可以使用**Windows 应用程序打包项目**Visual Studio 为桌面应用程序生成一个包中的项目。 然后，你可以发布的 Microsoft Store 或旁加载到其打包到一个或多台电脑上。
 

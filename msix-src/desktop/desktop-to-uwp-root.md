@@ -3,16 +3,18 @@ Description: 为现有 Windows 窗体、WPF 或 Win32 应用或游戏创建现�
 title: 打包桌面应用程序
 ms.date: 09/05/2018
 ms.topic: article
-keywords: windows 10, uwp
+author: dianmsft
+ms.author: diahar
+keywords: windows 10, uwp, msix
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8012fd10e45c718cf1136f4da51a7a8cdac5d376
-ms.sourcegitcommit: 0378a8897e0691bee4d9a957982961a377974856
+ms.openlocfilehash: 388de972a2ac97418e2f684c57c7aff550292b9e
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67250932"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555501"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>打包桌面应用程序 （桌面桥）
 
@@ -34,7 +36,7 @@ ms.locfileid: "67250932"
 
 ### <a name="build-an-msix-from-an-existing-app-installer"></a>从现有的应用安装程序生成 MSIX
 
-如果已有应用包 （例如，MSI 或 APP-V 安装程序），我们建议你使用[MSIX 打包工具](../mpt-overview.md)重新打包为 MSIX 格式对现有桌面应用程序。 它提供了交互式用户界面和命令行的转换，并使你能够将应用程序而无需的源代码。 
+如果已有应用包 （例如，MSI 或 APP-V 安装程序），我们建议你使用[MSIX 打包工具](../mpt-overview.md)重新打包为 MSIX 格式对现有桌面应用程序。 此工具提供交互式 UI 和命令行用于转换，并且可以在没有源代码的情况下转换应用程序。 
 
 名为早期工具[Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md)也是仍可用于重新打包现有桌面应用程序包。 但是，此工具现已弃用，并且我们建议您改用 MSIX 打包工具。
 

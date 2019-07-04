@@ -1,27 +1,26 @@
 ---
 Description: 本指南介绍如何配置 Visual Studio 解决方案来优化本机映像使用的应用程序二进制文件。
 title: 优化用于本机映像.NET 桌面应用
-ms.date: 06/11/2018
+ms.date: 07/03/2019
 ms.topic: article
-keywords: windows 10 中，编译器的本机映像
+author: dianmsft
+ms.author: diahar
+keywords: windows 10，uwp，msix，本机映像编译器
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fa6d50f6dbb7e16d00a656f8fd931595a4ce69e
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: f49622ad78b50b5cf38918034fda9fbbd9087a11
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985497"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555583"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>优化用于本机映像.NET 桌面应用
 
-> [!NOTE]
-> 与在商业发行之前可能会进行实质性修改的预发布产品相关的一些信息。 Microsoft 不对此处提供的信息作任何明示或默示的担保。
-
 可以通过预编译二进制文件的位置来提高您的.NET Framework 应用程序的启动时间。 在大型应用程序打包并通过 Microsoft Store 分发，可以使用此技术。 在某些情况下，我们已发现 20%的性能改善。 你可以了解有关此技术的详细[技术概述](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md)。
 
-我们发布了预览版本的本机映像编译器作为[NuGet 包](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler)。 可以将此包应用到任何面向.NET Framework 版本 4.6.2 的.NET Framework 应用程序或更高版本。 此程序包将添加包含到应用程序所使用的所有二进制文件的本机有效负载的 post 生成步骤。 在应用程序运行在.NET 4.7.2 及更高版本上一版本仍将加载的 MSIL 代码时，将加载此优化的有效负载。
+我们发布了为本机映像编译器[NuGet 包](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler)。 可以将此包应用到任何面向.NET Framework 版本 4.6.2 的.NET Framework 应用程序或更高版本。 此程序包将添加包含到应用程序所使用的所有二进制文件的本机有效负载的 post 生成步骤。 在应用程序运行在.NET 4.7.2 及更高版本上一版本仍将加载的 MSIL 代码时，将加载此优化的有效负载。
 
-[.NET framework 4.7.2](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/)中包含[Windows 10 2018 年 4 月更新](https://blogs.windows.com/windowsexperience/2018/04/30/how-to-get-the-windows-10-april-2018-update/)。 此外可以在 PC 上的运行 Windows 7 + 和 Windows Server 2008 R2 及更高的安装此版本的.NET Framework。
+[.NET framework 4.7.2](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/)中包含[Windows 10 2018 年 4 月更新](https://blogs.windows.com/windowsexperience/2018/04/30/how-to-get-the-windows-10-april-2018-update/)。 此外可以在运行 Windows 7 + 和 Windows Server 2008 R2 及更高的 Pc 上安装此版本的.NET Framework。
 
 > [!IMPORTANT]
 > 如果您想要生成本机映像为 Windows 应用程序打包项目的打包应用程序，请确保将项目的目标平台最低版本设置为 Windows 周年更新。
@@ -72,11 +71,8 @@ ms.locfileid: "65985497"
 本机映像编译器需要将添加到生成的可执行文件的 Visual Studio 项目的 NuGet 包的形式提供。 这通常是你的 Windows 窗体或 WPF 项目。 使用此 PowerShell 命令来执行该操作。
 
 ```PS
-PM> Install-Package Microsoft.DotNet.Framework.NativeImageCompiler -Version 0.0.1-prerelease-00002  -PRE
+PM> Install-Package Microsoft.DotNet.Framework.NativeImageCompiler -Version 1.0.0
 ```
-
-> [!NOTE]
-> 预览包作为未列出 NuGet.org 中发布。 通过浏览 NuGet.org 或通过使用 Visual Studio 中的包管理器 UI 不会找到它们。 但是，可以从包管理器控制台安装它们，当你从另一台计算机还原。 当我们发布的第一个非预览版本时，我们将使包可以完全访问。
 
 ## <a name="create-a-release-build"></a>创建版本生成
 

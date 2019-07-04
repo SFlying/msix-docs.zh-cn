@@ -1,19 +1,21 @@
 ---
 Description: 本指南提供了一系列第三方产品和打包桌面应用程序的安装程序。
-title: 包使用第三方安装程序的桌面应用程序
+title: 使用第三方安装程序将桌面应用打包
 ms.date: 06/17/2019
 ms.topic: article
+author: dianmsft
+ms.author: diahar
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e07d44d2a809a183d57b59f3121683bf0e2ab971
-ms.sourcegitcommit: 0378a8897e0691bee4d9a957982961a377974856
+ms.openlocfilehash: 586314c33e3b33bdcfdd15ad95d415233355c99e
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67253482"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555544"
 ---
-# <a name="package-a-desktop-app-using-third-party-installers"></a>包使用第三方安装程序的桌面应用程序
+# <a name="package-a-desktop-app-using-third-party-installers"></a>使用第三方安装程序将桌面应用打包
 
 下面是常用的第三方产品和支持的功能打包桌面应用程序的安装程序的列表。 只需单击几下即可使用它们来生成 MSI 安装程序或应用包。 我们不提供有关如何使用这些工具的文档，不过你可以访问它们的网站以了解详细信息。
 

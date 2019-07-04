@@ -3,15 +3,17 @@ Description: 运行 Desktop App Converter 以将 Windows 桌面应用程序（�
 title: 使用 Desktop App Converter 将应用打包（桌面桥）
 ms.date: 08/21/2018
 ms.topic: article
+author: dianmsft
+ms.author: diahar
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ab29d5559b118ea32b91f8a266b137bcb83bd5d
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: e52cb34795fbf3bf83c43ea9194a6b0ec8a25c00
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67126812"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555560"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>包使用 Desktop App Converter 的桌面应用程序
 

@@ -3,16 +3,18 @@ Description: 演示如何手动打包用于 Windows 10 的 Windows 桌面应用�
 title: 手动打包应用程序 （桌面桥）
 ms.date: 05/18/2018
 ms.topic: article
-keywords: windows 10, uwp
+author: dianmsft
+ms.author: diahar
+keywords: windows 10, uwp, msix
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f645df3d1375924303540cd9d1f86402c5f34a3c
-ms.sourcegitcommit: 6173086c11ffeb5fa836da6bd42711a9a626fc0e
+ms.openlocfilehash: 0c3bf9cec02d2db18fba3d6246a740e7d62a401c
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66411400"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555521"
 ---
 # <a name="package-a-desktop-application-manually"></a>手动打包桌面应用程序
 
@@ -85,7 +87,7 @@ ms.locfileid: "66411400"
 > [!NOTE]
 > 如果你已保留在 Microsoft Store 应用程序名称，则可以通过使用获取的名称和发布服务器[合作伙伴中心](https://partner.microsoft.com/dashboard)。 如果打算旁加载应用程序转移到其他系统，您可以自己项目的名称，前提是用于登录您的应用程序选择与证书上的名称相匹配的发布服务器名称。
 
-### <a name="properties"></a>属性
+### <a name="properties"></a>properties
 
 [属性](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素具有 3 个所需子元素。 下面是一个带元素占位符文本的示例**属性**节点。 **DisplayName**是保留在存储中，上载到应用商店的应用的应用程序的名称。
 

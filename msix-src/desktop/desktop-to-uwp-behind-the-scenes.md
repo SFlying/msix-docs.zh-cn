@@ -3,15 +3,17 @@ Description: 本文深入研究桌面桥深层次的工作原理。
 title: 在桌面桥幕后
 ms.date: 04/25/2019
 ms.topic: article
-keywords: windows 10, uwp
+author: dianmsft
+ms.author: diahar
+keywords: windows 10, uwp, msix
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cfc81ec1e6927db2c9655f99878251e7d60f774
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: ed9e98adba65eed187479f7752ba8e0685f5545f
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985667"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555513"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>打包的桌面应用程序在后台
 
