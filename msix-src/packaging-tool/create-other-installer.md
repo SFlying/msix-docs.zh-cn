@@ -7,12 +7,12 @@ ms.date: 04/04/2019
 ms.topic: article
 keywords: MSIX, MPT, MSIX 打包工具
 ms.localizationpriority: medium
-ms.openlocfilehash: eaafc015baa320eacfd977e070f7fafdd8c8990e
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 1ffff072b712545a0e956dfae1addc2e49ceeee7
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "65795261"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555538"
 ---
 # <a name="create-an-msix-package-with-all-other-installer-types"></a>创建包含所有其他安装程序类型的 MSIX 包
 
@@ -98,6 +98,9 @@ MSIX 打包工具驱动程序是必需的，如果未启用该驱动程序，该
 
 此时，如果你尚未向我们提供安装程序，请继续运行所有必需的安装程序。 这包括自定义脚本和程序。 该工具会监视设备上的更改，包括正在设备上安装的内容。
 
+> [!NOTE]
+> 在转换期间，安装程序可能会运行服务。 在转换期间不会捕获服务。 因此，应用可能会安装，但可能会在运行时出现问题。
+
 ## <a name="manage-first-launch-tasks"></a>管理初始启动任务
 
 此页显示工具捕获到的应用程序可执行文件。 如果有多个应用程序，请选中对应于主入口点的框。 如果在此处未看到应用程序 .exe，请手动浏览并运行它。
@@ -115,4 +118,4 @@ MSIX 打包工具驱动程序是必需的，如果未启用该驱动程序，该
 - 在保存 MSIX 包之前若要继续编辑包的内容和属性，可以选择“包编辑器”转到[包编辑器]("https://docs.microsoft.com/en-us/windows/msix/packaging-tool/package-editor") 
 - 单击“创建”以创建 MSIX 包。 
 
-创建包后，会出现一个弹出窗口。 此弹出窗口中包含新建包的名称、发布者、日志保存位置和该包的保存位置。 可以关闭此弹出窗口并重定向到欢迎页。 还可以选择包编辑器来查看和修改包的内容与属性。
+创建包后，该工具将显示一个弹出窗口，其中显示名称、发布者、日志的保存位置以及新创建的包的保存位置。 可以关闭此弹出窗口以便重定向到欢迎页。 还可以选择“包编辑器”  来查看和修改包的内容与属性。

@@ -1,4 +1,20 @@
-# <a name="signing-windows-10-app-package"></a>为 Windows 10 应用包签名 
+---
+Description: 本文介绍了 Windows 10 应用的签名要求。
+title: 为 Windows 10 应用包签名
+ms.date: 07/03/2019
+ms.topic: article
+author: dianmsft
+ms.author: diahar
+keywords: windows 10, uwp, msix
+ms.localizationpriority: medium
+ms.openlocfilehash: e568a8371c7f68383bd57f10e999d1398e11825a
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555471"
+---
+# <a name="sign-a-windows-10-app-package"></a>为 Windows 10 应用包签名 
 
 在创建可部署的 Windows 10 应用包过程中，应用包签名是必须执行的步骤。 Windows 10 要求使用有效的代码签名证书为所有应用程序签名。 
 

@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 457f9a0358cb8e72abd9539d1a4fe3131ffd2a54
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 2997fa46ebf2c7c027d20772e619234a93a821e6
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "66400807"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555575"
 ---
 # <a name="create-an-msix-package-from-a-desktop-installer-msi-exe-or-app-v-on-a-vm"></a>在 VM 上通过桌面安装程序（MSI、EXE 或 App-V）创建 MSIX 包
 
@@ -23,6 +23,9 @@ ms.locfileid: "66400807"
 
 - 必须配置为[接收远程命令](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/remotely-manage-hyper-v-hosts)（在 VM 上运行 [Enable-PSRemoting](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enable-PSRemoting?view=powershell-5.1) 命令）。
 - 必须运行 Windows 10 版本 1809 或更高版本。
+
+> [!NOTE]
+> MSIX 打包工具当前支持 APP-V 5.1。 如果有包含 APP-V 4.x 的包，我们建议你先将其转换为 APP-V 5.1，然后再使用 MsIX 打包工具转换为 MSIX。 
 
 首次启动该工具时，系统会提示你同意发送遥测数据。 必须注意，共享的诊断数据仅来自应用，永远不会用于识别你的身份或与你联系。 这些数据仅用于帮助我们更快地为你解决问题。
 
@@ -107,6 +110,9 @@ MSIX 打包工具驱动程序是必需的，如果未启用该驱动程序，该
 
 ![images/pic6](images/pic6.png)
 
+> [!NOTE]
+> 在转换期间，安装程序可能会运行服务。 在转换期间不会捕获服务。 因此，应用可能会安装，但可能会在运行时出现问题。
+
 - 现已进入安装阶段，该工具会监视并捕获应用程序安装操作。
 - 该工具会在前一阶段中已打开的虚拟机窗口中启动安装程序，你需要完成安装程序向导来安装应用程序。
     - 请确保安装路径与前面在包信息页中定义的内容相匹配。
@@ -141,3 +147,4 @@ MSIX 打包工具驱动程序是必需的，如果未启用该驱动程序，该
 - 单击“创建”以创建 MSIX 包。 
 
 创建包后，会出现一个弹出窗口。 此弹出窗口中包含新建包的名称、发布者和该保存位置。 可以关闭此弹出窗口并重定向到欢迎页。 还可以选择包编辑器来查看和修改包的内容与属性。
+

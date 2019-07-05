@@ -8,12 +8,12 @@ ms.topic: article
 keywords: msix 打包工具, 已知问题, 故障排除
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 79b06fc4e3e0ff0600f6e2ab85ec27c9e3a5840c
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 6da45ad324e55dfbe3a95ec76993f28a38380da6
+ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "59468289"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67555629"
 ---
 # <a name="known-issues-and-troubleshooting"></a>已知问题和疑难解答
 
@@ -55,6 +55,7 @@ IT 管理员还可以创建[并列功能存储（共享文件夹）](https://doc
 
 - 不支持在应用程序安装期间重启计算机。 如果可能，请忽略重启请求，或者向安装程序传递一个参数，用于指定不需要重启。
 - 安装程序在安装之前，可能要求安装特定的框架或驱动程序。 若要在用于转换应用的计算机上查找框架和驱动程序，请使用以下查询：```driverquery /v | Out-File``` 或 ```driverquery /v | Out-File "path to text file"```
+- 在转换期间，安装程序可能会运行服务。 在转换期间不会捕获服务。 因此，应用可能会安装，但可能会在运行时出现问题。
 
 # <a name="troubleshooting"></a>疑难解答
 
