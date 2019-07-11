@@ -42,6 +42,8 @@
           href: mpt-overview.md
         - name: 使用包编辑器修改包
           href: packaging-tool/package-editor.md
+        - name: 编辑图标和资产
+          href: packaging-tool/edit-icons-and-assets.md
         - name: Windows 10 版 1709 及更高版本上的 MSIX 包支持
           href: packaging-tool/Support-on-1709-and-later.md
         - name: MSIX 打包工具的最佳做法
