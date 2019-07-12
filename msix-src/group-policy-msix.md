@@ -1,18 +1,16 @@
 ---
 title: 组策略如何与 MSIX 打包的应用配合工作
 description: 介绍组策略如何与转换成 MSIX 的应用配合工作
-author: dianmsft
-ms.author: diahar
 ms.date: 04/12/2019
 ms.topic: article
 keywords: msix
 ms.localizationpriority: medium
-ms.openlocfilehash: d85f37e08d0748b1e8cab5cfc288def793c92d02
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: c812fc18ead17c145d8359971fa25d15dad5ee47
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "66308439"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829045"
 ---
 # <a name="group-policy-and-msix-packaged-apps"></a>组策略和 MSIX 打包应用
 

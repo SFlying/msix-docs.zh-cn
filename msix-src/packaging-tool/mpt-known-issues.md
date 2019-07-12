@@ -1,19 +1,17 @@
 ---
 title: 已知问题和疑难解答
 description: 描述 MSIX 打包工具的已知问题并提供故障排除提示。
-author: dianmsft
-ms.author: diahar
 ms.date: 02/26/2019
 ms.topic: article
 keywords: msix 打包工具, 已知问题, 故障排除
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6da45ad324e55dfbe3a95ec76993f28a38380da6
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: c5227d8a394e6af211e2409e34dfcb3648cd2c93
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555629"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829192"
 ---
 # <a name="known-issues-and-troubleshooting"></a>已知问题和疑难解答
 

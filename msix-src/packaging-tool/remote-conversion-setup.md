@@ -1,19 +1,17 @@
 ---
 title: MSIX 打包工具中的远程转换设置
 description: 远程转换设置说明
-author: c-don
-ms.author: cdon
 ms.date: 02/26/2019
 ms.topic: article
 keywords: MSIX, MPT, MSIX 打包工具, 远程 IP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 22ae4c4b939ed70c8a915ce1f3718105e2c65f49
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 444b4a98d183f2473543c0ca2472f0fddf50052e
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "66186144"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829138"
 ---
 # <a name="setup-instructions-for-remote-machine-conversions"></a>有关远程计算机转换的设置说明 
 

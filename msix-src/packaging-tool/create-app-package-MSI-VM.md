@@ -1,19 +1,17 @@
 ---
 title: 在 VM 上通过桌面安装程序（MSI、EXE 或 App-V）创建 MSIX 包
 description: 在 VM 上通过桌面安装程序（MSI、EXE 或 App-V）创建 MSIX 包
-author: mcleanbyron
-ms.author: mcleans
 ms.date: 02/11/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2997fa46ebf2c7c027d20772e619234a93a821e6
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: 4acb1f829d724b27be8745958f08d5e180af7ce6
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555575"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829315"
 ---
 # <a name="create-an-msix-package-from-a-desktop-installer-msi-exe-or-app-v-on-a-vm"></a>在 VM 上通过桌面安装程序（MSI、EXE 或 App-V）创建 MSIX 包
 

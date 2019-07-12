@@ -1,19 +1,17 @@
 ---
 title: 使用命令行接口创建包
 description: 了解如何使用命令行接口创建 MSIX 包。
-author: mcleanbyron
-ms.author: mcleans
 ms.date: 02/11/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7dcd522a1c1b79fe59a5b6e1fd04c7aec19ed419
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 00a58a89975e0521038ae5e18895d5e7294a9df5
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "59566501"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829162"
 ---
 # <a name="conversion-with-command-line-interface-cli"></a>使用命令行接口 (CLI) 进行转换
 

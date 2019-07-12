@@ -1,19 +1,17 @@
 ---
 title: 应用安装程序文件概述
 description: 了解应用安装程序文件的内容及其工作原理。
-author: mcleanbyron
-ms.author: mcleans
 ms.date: 12/12/2018
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 34143433ba07c68c86c394466f9be7dc75632194
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: a470b406c1e4f155e297fd0d278b89fd5d0fdab5
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "65795258"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828589"
 ---
 # <a name="app-installer-file-overview"></a>应用安装程序文件概述
 

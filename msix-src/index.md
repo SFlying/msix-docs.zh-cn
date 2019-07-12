@@ -2,19 +2,17 @@
 layout: LandingPage
 title: MSIX 文档
 description: 查找 MSIX 的文档。MSIX 是一种更新的打包格式，它组合使用了 .msi、.appx、App-V 和 ClickOnce 安装技术，既安全又可靠。
-author: mcleanbyron
-ms.author: mcleans
 ms.date: 09/07/2018
 ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: a19ce324f4a5993672e9f56c1b49bcadda5c7140
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: a01de1bf8d0539317c5276c114dcc88269af5a14
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984406"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829367"
 ---
 # <a name="msix-documentation"></a>MSIX 文档
 MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构建的一种安全可靠的打包格式。 

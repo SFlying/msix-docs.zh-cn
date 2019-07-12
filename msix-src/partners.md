@@ -1,19 +1,17 @@
 ---
 title: MSIX 合作伙伴
 description: 提供受信任合作伙伴提供的，有关 MSIX 工具和支持的其他文档的链接。
-author: mcleanbyron
-ms.author: mcleans
 ms.date: 09/14/2018
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 011fe229491114299e9085be780798a68ddb2cbc
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 64204a73e3547083783cc7367f8bfafc4b2f3eda
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "65488518"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829180"
 ---
 # <a name="msix-partners"></a>MSIX 合作伙伴
 

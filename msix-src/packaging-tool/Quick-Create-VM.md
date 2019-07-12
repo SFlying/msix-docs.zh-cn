@@ -1,19 +1,17 @@
 ---
 title: Hyper-V Quick Create 中的 MSIX 打包环境
 description: 使用 Hyper-V Quick Create 功能创建 MSIX 打包项目的虚拟环境。
-author: c-don
-ms.author: cdon
 ms.date: 04/04/2019
 ms.topic: article
 keywords: MSIX, MPT, MSIX 打包工具, Hyper-V Quick Create
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 807c8467338f8b01aa1643ab570c82e9675b1264
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: f22e81e26cda7c8e94f8f89cc1551b8771f640dd
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "59983419"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829336"
 ---
 # <a name="msix-packaging-environment-on-hyper-v-quick-create"></a>Hyper-V Quick Create 中的 MSIX 打包环境
  

@@ -1,19 +1,17 @@
 ---
 title: 使用 MSIX 打包工具编辑图标和资产
 description: 介绍如何使用 MSIX 打包工具编辑图标和资产。
-author: sharlaakers
-ms.author: shakers
 ms.date: 06/27/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 4a44d1e97ab250f033dbf54d0c921dbe05506eda
-ms.sourcegitcommit: d5d91ea18875d26b1661a9ef2c750494fa7cf75d
+ms.openlocfilehash: 82dfb48cdb02ee72f6dbcbb2a572dd8419e6c2d4
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798608"
+ms.locfileid: "67829262"
 ---
 # <a name="edit-icons-and-assets-using-the-msix-packaging-tool"></a>使用 MSIX 打包工具编辑图标和资产
 

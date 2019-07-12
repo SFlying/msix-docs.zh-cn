@@ -1,18 +1,16 @@
 ---
-author: dianmsft
 title: Windows 10 版本 1903 中的 MSIX 修改包
 description: 本部分介绍 Windows 10 1903 更新版中的修改包
-ms.author: diahar
 ms.date: 01/14/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: bca7001b4db8ac2e6ced6763d4eca7bb7c8d294d
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: e9b8059d61910a7ffa7c5ff789ce1263769e0c01
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "65802373"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828694"
 ---
 # <a name="msix-modification-packages-on-windows-10-version-1903"></a>Windows 10 版本 1903 中的 MSIX 修改包
  

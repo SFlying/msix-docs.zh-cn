@@ -39,7 +39,7 @@
     - name: MSIX 打包工具
       items:
         - name: 概述
-          href: mpt-overview.md
+          href: packaging-tool/mpt-overview.md
         - name: 使用包编辑器修改包
           href: packaging-tool/package-editor.md
         - name: 编辑图标和资产
@@ -47,7 +47,7 @@
         - name: Windows 10 版 1709 及更高版本上的 MSIX 包支持
           href: packaging-tool/Support-on-1709-and-later.md
         - name: MSIX 打包工具的最佳做法
-          href: mpt-best-practices.md
+          href: packaging-tool/mpt-best-practices.md
         - name: 使用 Hyper-V Quick Create 进行打包
           href: packaging-tool/Quick-Create-VM.md
         - name: 已知问题和疑难解答

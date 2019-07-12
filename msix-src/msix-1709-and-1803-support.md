@@ -1,19 +1,17 @@
 ---
-author: c-don
 title: Windows 10 版本 1709 和 1803 上的 MSIX 支持
 description: 本文汇总了包含最新更新（截至 2019 年 1 月 22 日）的 MSIX 的支持。
-ms.author: cdon
 ms.date: 04/04/2019
 ms.topic: article
 keywords: windows 10, uwp, msix, 1709, 1803
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 37fd4538d7942f92316139f9187a4016997a0048
-ms.sourcegitcommit: 789bef8a4d41acc516b66b5f2675c25dcd7c3bcf
+ms.openlocfilehash: 9e2a4864d8f5f15f70a48eb04e787c80cd7c90a8
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "66400725"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829389"
 ---
 # <a name="msix-support-on-windows-10-version-1709-and-1803"></a>Windows 10 版本 1709 和 1803 上的 MSIX 支持
 
