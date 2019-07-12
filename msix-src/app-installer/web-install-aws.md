@@ -1,21 +1,19 @@
 ---
-author: mcleanbyron
-title: 分发 Windows 10 应用从 AWS web 服务
+title: 从 AWS Web 服务分发 Windows 10 应用
 description: 设置 AWS web 服务器以验证通过应用安装程序应用程序的应用程序安装教程
-ms.author: mcleans
 ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10 中，Windows 10 UWP，应用程序安装程序中，应用安装旁, 加载，相关设置此选项，可选包，AWS
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 63d1aeb5ec86bd0fa91deeb8869f58d52b893d90
-ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
+ms.openlocfilehash: 81d2d4afa0e6f8834461c5d561c23edf578bd24b
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795272"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828779"
 ---
-# <a name="distribute-a-windows-10-app-from-an-aws-web-service"></a>分发 Windows 10 应用从 AWS web 服务
+# <a name="distribute-a-windows-10-app-from-an-aws-web-service"></a>从 AWS Web 服务分发 Windows 10 应用
 
 通过应用安装程序，开发人员和 IT 专业人员可以通过在各自的内容分发网络 (CDN) 上托管应用的方式来分发 Windows 10 应用。 这种方式适用于不希望或不需要将应用发布到 Microsoft Store，但仍希望利用 Windows 10 打包和部署平台的企业。
 

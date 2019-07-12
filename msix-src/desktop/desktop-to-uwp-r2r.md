@@ -3,16 +3,14 @@ Description: 本指南介绍如何配置 Visual Studio 解决方案来优化本�
 title: 优化用于本机映像.NET 桌面应用
 ms.date: 07/03/2019
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: windows 10，uwp，msix，本机映像编译器
 ms.localizationpriority: medium
-ms.openlocfilehash: f49622ad78b50b5cf38918034fda9fbbd9087a11
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: 1a4db70df07adfe48f70e4f84e25af0744974945
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555583"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828917"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>优化用于本机映像.NET 桌面应用
 

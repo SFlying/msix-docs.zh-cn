@@ -5,16 +5,16 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 837ca1566fb0ccf60288e1ca5020f26eed8ca7c8
-ms.sourcegitcommit: c3bdc2150bba942dc95811746c7a0f14ce54fbc9
+ms.openlocfilehash: ea4d2bae04d019d754d97aea33f5ba7d201f1011
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65985977"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829244"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用包支持框架将运行时修补程序应用于 MSIX 包
 
-包支持框架是一个开放源代码工具包，可帮助你应用修补程序到现有的 win32 应用程序时不能访问源代码，以便它可以在 MSIX 容器中运行。 包支持框架可帮助遵循最佳做法现代的运行时环境的应用程序。
+包支持框架是一个开源工具包，在你无法访问源代码时，可帮助你将修复程序应用到现有的 win32 应用程序，使它可以在 MSIX 容器中运行。 包支持框架可帮助应用程序遵循新式运行时环境的最佳做法。
 
 若要了解详细信息，请参阅[包支持框架](package-support-framework-overview.md)。
 
@@ -24,7 +24,7 @@ ms.locfileid: "65985977"
 
 ## <a name="identify-packaged-application-compatibility-issues"></a>确定打包的应用程序兼容性问题
 
-首先，创建你的应用程序的包。 然后，安装并运行，然后观察其行为。 可能会收到错误消息可以帮助你确定兼容性问题。 此外可以使用[Process Monitor](https://docs.microsoft.com/sysinternals/downloads/procmon)识别问题。  常见的问题与应用程序工作目录和程序路径权限方面的假设。
+首先，创建你的应用程序的包。 然后，安装并运行，然后观察其行为。 收到的错误消息可能会帮助你识别兼容性问题。 也可以使用[进程监视器](https://docs.microsoft.com/sysinternals/downloads/procmon)来识别问题。  常见的问题与应用程序工作目录和程序路径权限方面的假设。
 
 ### <a name="using-process-monitor-to-identify-an-issue"></a>使用进程监视器以确定问题
 
@@ -104,7 +104,7 @@ makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 
 #### <a name="get-the-package-by-using-the-command-line-tool"></a>通过使用命令行工具获取包
 
-从该位置安装的 Nuget 命令行工具： https://www.nuget.org/downloads。 然后，在 Nuget 命令行中，运行以下命令：
+从该位置安装的 Nuget 命令行工具： https://www.nuget.org/downloads 。 然后，在 Nuget 命令行中，运行以下命令：
 
 ```powershell
 nuget install Microsoft.PackageSupportFramework
@@ -185,7 +185,7 @@ nuget install Microsoft.PackageSupportFramework
 
 以下是针对 config.json 架构的指南：
 
-| 数组 | 键 | ReplTest1 |
+| 数组 | 键 | 值 |
 |-------|-----------|-------|
 | applications | id |  使用的值`Id`属性的`Application`包清单中的元素。 |
 | applications | 可执行文件 | 你想要启动的可执行文件包相对路径。 在大多数情况下，您可以从包清单文件获取此值之前对其进行修改。 它是值的`Executable`属性的`Application`元素。 |
@@ -398,7 +398,7 @@ Windows 应用程序打包项目的详细信息，请参阅[通过使用 Visual 
 
 对于每个键提供值。 使用此表作为指南。
 
-| 数组 | 键 | ReplTest1 |
+| 数组 | 键 | 值 |
 |-------|-----------|-------|
 | applications | id |  使用的值`Id`属性的`Application`包清单中的元素。 |
 | applications | 可执行文件 | 你想要启动的可执行文件包相对路径。 在大多数情况下，您可以从包清单文件获取此值之前对其进行修改。 它是值的`Executable`属性的`Application`元素。 |
@@ -446,7 +446,7 @@ Windows 应用程序打包项目的详细信息，请参阅[通过使用 Visual 
 
 ### <a name="replacement-functions"></a>替换函数
 
-首先，确定哪一个函数调用失败时 MSIX 容器中运行应用程序。 然后，可以创建你想要改为调用的运行时管理器的替代函数。 这使你有机会函数的实现替换为符合现代的运行时环境的规则的行为。
+首先，确定哪一个函数调用失败时 MSIX 容器中运行应用程序。 然后可以创建替代的函数，让运行时管理器改为调用这些函数。 这样，便可以使用符合新式运行时环境规则的行为来替代函数的实现。
 
 在 Visual Studio 中，打开在本指南前面部分中创建的运行时修补程序项目。
 

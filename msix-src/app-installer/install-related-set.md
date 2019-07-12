@@ -1,19 +1,17 @@
 ---
-author: mcleanbyron
 title: 可选包和相关集
 description: 本文列出了有关安装通过应用程序的安装程序的相关的集的学习资源。
-ms.author: mcleans
 ms.date: 1/4/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: a18b5e11ec87e625b757764994762cf0e29cab99
-ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
+ms.openlocfilehash: 5b77ceced9ce8f897d2f5f776a14e68eaa75530e
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58900459"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828578"
 ---
 # <a name="optional-packages-and-related-sets"></a>可选包和相关集
 

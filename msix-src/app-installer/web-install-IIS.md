@@ -1,21 +1,19 @@
 ---
-author: mcleanbyron
-title: 分发 Windows 10 应用从 IIS 服务器 |Microsoft Docs
+title: 从 IIS 服务器分发 Windows 10 应用
 description: 本教程介绍了如何设置 IIS 服务器，验证你的 web 应用可以托管应用程序包，并调用和有效地使用应用安装程序。
-ms.author: mcleans
 ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10、 uwp、 应用程序安装程序中，应用安装旁, 加载，相关设置此选项，可选包，IIS 服务器
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 1e3762ca4cbca110cb17867c3e8e2cebd992b370
-ms.sourcegitcommit: 5669d59a0979a9de1dead4949f44d1544fd45988
+ms.openlocfilehash: bacf7ab3125d651ef30320072dd45a94bffc677f
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795287"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828746"
 ---
-# <a name="distribute-a-windows-10-app-from-an-iis-server"></a>分发 Windows 10 应用从 IIS 服务器
+# <a name="distribute-a-windows-10-app-from-an-iis-server"></a>从 IIS 服务器分发 Windows 10 应用
 
 本教程介绍了如何设置 IIS 服务器，验证你的 web 应用可以托管应用程序包，并调用和有效地使用应用安装程序。
 
@@ -120,7 +118,7 @@ ms.locfileid: "65795287"
 
 ## <a name="step-8---add-loopback-exemption-for-app-installer"></a>步骤 8-添加应用程序安装工具的环回例外
 
-由于网络隔离等应用安装程序的 Windows 10 应用仅限使用 IP 环回地址，如 http://localhost/。 使用本地 IIS 服务器时，必须将应用安装程序添加到环回免除列表。 
+由于网络隔离等应用安装程序的 Windows 10 应用仅限使用 IP 环回地址，如 http://localhost/ 。 使用本地 IIS 服务器时，必须将应用安装程序添加到环回免除列表。 
 
 若要执行此操作，打开**命令提示符**作为**管理员**并输入以下命令: ' 命令行 CheckNetIsolation.exe LoopbackExempt-a-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
 ```

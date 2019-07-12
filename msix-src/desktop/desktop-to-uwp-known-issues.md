@@ -3,17 +3,15 @@ Description: 本文包含桌面桥的已知问题。
 title: 打包桌面应用程序的已知的问题
 ms.date: 06/20/2018
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: windows 10, uwp, msix
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 7238afbbc8717d8c4ca27d363950f6b6f48cfb79
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: e5abc7f51cd6b34f11c5cf063ecf2d755c56d61b
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555497"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828868"
 ---
 # <a name="known-issues-with-packaged-desktop-apps"></a>打包桌面应用程序的已知的问题
 

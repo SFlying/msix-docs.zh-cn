@@ -3,16 +3,14 @@ Description: 在 S 模式下，适用于 Windows 10 中测试您的应用程序�
 title: 测试适用于 Windows 10 S 的 Windows 应用
 ms.date: 05/11/2017
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: windows 10 S、 uwp、 msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 63803681601e03392273a1606f77c49d17fe11e8
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: 18789e9c4294befc6a730b4763fb0a847b8c622d
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555591"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829034"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>在 S 模式下测试适用于 Windows 10 的 Windows 应用
 

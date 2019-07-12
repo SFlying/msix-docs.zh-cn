@@ -1,19 +1,17 @@
 ---
-author: ridomin
-title: 使用 Visual Studio 创建的应用安装程序文件 |Microsoft Docs
+title: 使用 Visual Studio 创建应用安装程序文件
 description: 了解如何使用 Visual Studio 通过 .appinstaller 文件启用自动更新。
-ms.author: rmpablos
 ms.date: 5/2/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: fefef9fb4a5ac0e0a0e5251fe2ccef5768351f93
-ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
+ms.openlocfilehash: 3dd4a48722cca9296769adfb7c0bb570b11cc82f
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59983509"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828576"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>使用 Visual Studio 创建应用安装程序文件
 

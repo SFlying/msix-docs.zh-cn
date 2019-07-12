@@ -3,18 +3,16 @@ Description: 演示如何手动打包用于 Windows 10 的 Windows 桌面应用�
 title: 手动打包应用程序 （桌面桥）
 ms.date: 05/18/2018
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: windows 10, uwp, msix
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0c3bf9cec02d2db18fba3d6246a740e7d62a401c
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: 82bc2465b5980a536e684ff057d587e20ea7918f
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555521"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828893"
 ---
 # <a name="package-a-desktop-application-manually"></a>手动打包桌面应用程序
 

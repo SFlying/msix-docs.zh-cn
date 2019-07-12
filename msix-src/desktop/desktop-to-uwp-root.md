@@ -3,18 +3,16 @@ Description: 为现有 Windows 窗体、WPF 或 Win32 应用或游戏创建现�
 title: 打包桌面应用程序
 ms.date: 09/05/2018
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: windows 10, uwp, msix
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 388de972a2ac97418e2f684c57c7aff550292b9e
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: 07477630e9fc9987aa609244301d8f6b44bbb0e1
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555501"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828961"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>打包桌面应用程序 （桌面桥）
 

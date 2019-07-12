@@ -1,19 +1,17 @@
 ---
-author: mcleanbyron
 title: 手动创建应用安装程序文件
 description: 本文介绍如何安装一组相关通过应用程序的安装程序。 我们还将完成相应的步骤以构建一个将定义相关集的 *.appinstaller 文件。
-ms.author: mcleans
 ms.date: 1/4/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 4256e95aa02e73330213034304abbe1354223641
-ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
+ms.openlocfilehash: 61b98b924015f021950c5f6a022d383f940443c8
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59983399"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828478"
 ---
 # <a name="create-an-app-installer-file-manually"></a>手动创建应用安装程序文件
 
@@ -73,7 +71,7 @@ ms.locfileid: "59983399"
 
 若要作为一个实体来分配相关集，你必须创建一个应用安装程序文件，其中包含该 [appinstaller 架构](https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file)所需的元素。
 
-### <a name="step-1-create-the-appinstaller-file"></a>第 1 步：创建 *.appinstaller 文件
+### <a name="step-1-create-the-appinstaller-file"></a>步骤 1：创建 *.appinstaller 文件
 使用文本编辑器，创建一个文件（其中将包含 XML）并将其命名为 &lt;文件名&gt;.appinstaller
 
 ### <a name="step-2-add-the-basic-template"></a>步骤 2：添加基本模板
@@ -87,7 +85,7 @@ ms.locfileid: "59983399"
 </AppInstaller>
 ```
 
-### <a name="step-3-add-the-main-package-information"></a>步骤 3:将主包信息添加
+### <a name="step-3-add-the-main-package-information"></a>步骤 3：将主包信息添加
 
 如果主要应用程序包是.msix 或.appx 文件，然后使用`<MainPackage>`，如下所示。 务必包括 ProcessorArchitecture，因为它是必需的非捆绑包。
 

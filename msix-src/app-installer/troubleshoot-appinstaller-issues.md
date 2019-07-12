@@ -1,25 +1,23 @@
 ---
-author: ridomin
-title: 安装问题的应用安装程序文件进行故障排除 |Microsoft Docs
+title: 使用应用安装程序文件遇到的安装问题的疑难解答
 description: 使用应用安装程序文件旁加载应用程序时的常见问题。
-ms.author: rmpablos
 ms.date: 5/2/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: eb2c4e5f9e223e5dd741b53ff3943cc920a61c31
-ms.sourcegitcommit: 67e56f5414857671c47334c65d636d531632b8f3
+ms.openlocfilehash: fd0dbb8160fc1c3a384afc6a52121db71e295975
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58900619"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828685"
 ---
-# <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>排查使用应用安装程序文件遇到的安装问题
+# <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>使用应用安装程序文件遇到的安装问题的疑难解答
 
 如果在通过应用安装程序文件安装应用程序时发现任何问题，本主题将提供一些可能有帮助的故障排除指南。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 为了能在 Windows 10 中旁加载应用，用户设备必须满足下面的要求：
 

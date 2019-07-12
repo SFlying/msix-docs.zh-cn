@@ -1,19 +1,17 @@
 ---
-author: mcleanbyron
 title: 在网页上安装 Windows 10 应用
 description: 在此部分中，我们将查看允许用户直接从网页中安装应用所需执行的步骤。
-ms.author: mcleans
 ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2a2645ae4527342af85d747a2217e576a91c0c2c
-ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
+ms.openlocfilehash: c6007dfb124e308dad5d17bf7643a7021957e277
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59983529"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828705"
 ---
 # <a name="installing-windows-10-apps-from-a-web-page"></a>在网页上安装 Windows 10 应用
 
@@ -73,7 +71,7 @@ ms.locfileid: "59983529"
 | 下载程序包后，应用安装程序会自动启动应用包 | 用户必须单击**安装**，然后手动启动应用包 |
 | 应用安装程序将处理已下载的程序包 | 用户必须手动删除已下载的文件 |
 
-## <a name="web-install-experience-on-previous-versions-of-windows-10"></a>以前版本的 Windows 10 的 Web 安装体验 
+## <a name="web-install-experience-on-previous-versions-of-windows-10"></a>以前版本的 Windows 10 的 Web 安装体验
 在 Windows 10 Fall Creators Update 之前的版本中，应用安装程序无法直接从 Web 中安装应用。 在这些版本中，应用安装程序只能安装本地可用的应用包。 相反，应用安装程序将下载程序包，并且要求用户双击下载的程序包以进行安装。
 
 

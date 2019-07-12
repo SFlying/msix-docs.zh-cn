@@ -3,27 +3,31 @@ Description: 本文列出了需要打包桌面应用程序之前需要了解的�
 title: 准备打包桌面应用程序 （桌面桥）
 ms.date: 07/03/2019
 ms.topic: article
-author: dianmsft
-ms.author: diahar
 keywords: windows 10, uwp, msix
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 338ac2a974905670f8223045acaeaa2a73f14e33
-ms.sourcegitcommit: e90f6c00a1ecbd6af2cfef206f233a21831285b4
+ms.openlocfilehash: 649af332b13e1f50e0d89c174955fcc99855927e
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67557911"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829008"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>准备打包桌面应用程序
 
-本文列出了在对桌面应用打包前你需要知道的事项。 可能无需执行很多以获取你的应用程序准备好进行打包过程中，但如果任何以下各项适用于你的应用程序，则需要打包之前解决。 请记住，Microsoft Store 会为你处理授权和自动更新，使你能够从基本代码中删除与这些任务相关的任何功能。
+本文列出了需要打包桌面应用程序前需知的事项。 可能无需执行很多以获取你的应用程序准备好进行打包过程中，但如果任何以下各项适用于你的应用程序，则需要打包之前解决。 请记住，Microsoft Store 会为你处理授权和自动更新，使你能够从基本代码中删除与这些任务相关的任何功能。
 
-+ __应用程序需要以前版本的.NET 4.6.2__。 您需要确保你的应用程序在.NET 4.6.2 上运行。 你不能需要或重新分发早于 4.6.2 的版本。 这是 Windows 10 周年更新中提供的 .NET 版本。 验证你的应用程序适用于此版本，可以确保你的应用程序将继续与将来的更新的 Windows 10 兼容。  如果你的应用程序面向.NET Framework 4.0 或更高版本，它应在.NET 4.6.2 上运行，但仍应测试它。
++ __.NET 应用程序需要.NET Framework 4.6.2 之前的版本__。 如果您正.NET 应用程序，我们建议你应用程序的目标.NET Framework 4.6.2 或更高版本。 安装和运行打包桌面应用程序的功能首次引入了 Windows 10，版本 1607 （也称为周年更新），并且此 OS 版本都包括默认情况下在.NET Framework 4.6.2。 更高版本的操作系统版本包括更高版本的.NET Framework。 有关的更高版本的 Windows 10 中包含哪些版本的.NET 的完整列表，请参阅[这篇文章](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)。
+
+  面向低于 4.6.2 打包桌面应用程序中的.NET framework 的版本应能在大多数情况下工作。 但是，如果面向 4.6.2 之前的版本，您应全面测试您打包桌面应用程序之前将其分发给用户。
+
+  + 4.0 - 4.6.1:面向这些版本的.NET Framework 的应用程序应该不会出现问题 4.6.2 或更高版本运行。 因此，这些应用程序应安装并在 Windows 10，版本 1607年或更高版本，则包含与操作系统的.NET framework 版本上运行而无需更改。
+
+  + 2.0 和 3.5:在我们的测试，打包通常面向这些版本的.NET Framework 的桌面应用程序工作，但可能会出现在某些情况下的性能问题。 为了使这些打包应用程序进行安装和运行， [.NET Framework 3.5 功能](https://docs.microsoft.com/dotnet/framework/install/dotnet-35-windows-10)（此功能还包括.NET Framework 2.0 和 3.0） 在目标计算机上必须安装。 此外应测试这些应用程序进行全面后您将它们打包。
 
 + __使用提升的安全权限运行应用程序始终__。 你的应用程序需要交互式用户身份运行时协同工作。 从 Microsoft Store 安装应用程序的用户可能不是系统管理员，因此需要运行提升的权限意味着它将无法正确运行为标准用户应用程序。 Microsoft Store 中不接受任何功能部分需要提升的应用。
 
-+ __应用程序所需的内核模式驱动程序或 Windows 服务__。 该桥适用于应用，但不支持内核模式驱动程序或需要在系统帐户下运行的 Windows 服务。 使用[后台任务](/windows/uwp/launch-resume/create-and-register-a-background-task)，而不是 Windows 服务。
++ __应用程序所需的内核模式驱动程序或 Windows 服务__。 桌面桥是适用于应用程序，但它不支持的内核模式驱动程序或系统帐户下运行所需的 Windows 服务。 使用[后台任务](/windows/uwp/launch-resume/create-and-register-a-background-task)，而不是 Windows 服务。
 
 + __在进程内将应用的模块加载到不在 Windows 应用包中的进程__。 不允许此操作，这意味着不支持进程中扩展，如 [shell 扩展](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx)。 但是，如果你在同一个程序包中有两个应用，则可以在它们之间执行进程间通信。
 
@@ -69,7 +73,7 @@ ms.locfileid: "67557911"
     <tr><td>2015 和 2017 (VC 14)</td><td>支持</td><td>支持</td>
     </table>
 
-    注意：必须在所有情况下，链接到最新公开发布 CRT。
+    注意:必须在所有情况下，链接到最新公开发布 CRT。
 
 + __你的应用程序安装并从 Windows 的并行文件夹加载程序集__。 例如，你的应用程序使用 C 运行时库 VC8 或 vc9 版本且和动态从 Windows 的并行文件夹中，这意味着你的代码使用常用 DLL 文件从共享文件夹链接它们。 这不受支持。 你将需要静态链接它们，方法是将可再发行库文件直接链接到你的代码中。
 

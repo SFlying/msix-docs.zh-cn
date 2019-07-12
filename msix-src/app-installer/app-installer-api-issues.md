@@ -1,19 +1,17 @@
 ---
-author: joshusto
 title: 应用安装程序文件 API 问题
 description: 列出与应用安装程序文件 Api 的已知问题。
-ms.author: joshusto
 ms.date: 2/20/2019
 ms.topic: article
 keywords: windows 10、 uwp、 应用程序安装程序中，应用安装旁, 加载 API
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: be13529ecbb1845447719c7951b77ca66287ffc0
-ms.sourcegitcommit: 9bbb116d1984082123f694130b4d6cc078fa8510
+ms.openlocfilehash: f0ad59509ce95c94b790419cb46b159475be0f05
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59983339"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828463"
 ---
 # <a name="app-installer-file-api-issues"></a>应用安装程序文件 API 问题
 
