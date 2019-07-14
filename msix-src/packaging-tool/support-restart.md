@@ -1,3 +1,18 @@
+---
+title: 对需要重启设备的桌面安装程序的支持
+description: 介绍如何支持需要重启设备的桌面安装程序。
+ms.date: 04/04/2019
+ms.topic: article
+keywords: MSIX, MPT, MSIX 打包工具, 1709, 16299
+ms.localizationpriority: medium
+ms.custom: RS5
+ms.openlocfilehash: 8a48358c94e9c799ff285cd3d1e20940e79f4731
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829123"
+---
 # <a name="support-for-desktop-installers-that-require-device-restart"></a>对需要重启设备的桌面安装程序的支持
 
  > [!NOTE] 

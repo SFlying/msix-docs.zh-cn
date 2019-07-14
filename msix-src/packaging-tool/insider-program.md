@@ -1,19 +1,17 @@
 ---
 title: MSIX 打包工具预览体验计划
 description: 了解打包工具预览体验计划以及如何加入该计划
-author: c-don
-ms.author: cdon
 ms.date: 06/25/2019
 ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ad6e30c3964dae41d6d479aa292c69dffb4e9af8
-ms.sourcegitcommit: 52010495873758d9bfe7a9fb0b240108b25b3d3c
+ms.openlocfilehash: 5997ac7b870d5030440fcf357f298d776db9d87e
+ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555644"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829254"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -37,9 +35,9 @@ ms.locfileid: "67555644"
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-版本 1.2019.701.0：
+我们近期发布了我们最新的公共版本 1.2019.701.0
 
-- 针对重启方案的 bug 修复。
+请继续关注我们下一版本的第一个预览版！
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
