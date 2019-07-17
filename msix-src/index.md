@@ -7,12 +7,12 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: a01de1bf8d0539317c5276c114dcc88269af5a14
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 4e31f0cf5af1ec9a637d0c59ed54f26c3ed80d31
+ms.sourcegitcommit: 70036a054d1a5da24f535ddd4ea0fae78c30d469
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829367"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238957"
 ---
 # <a name="msix-documentation"></a>MSIX 文档
 MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构建的一种安全可靠的打包格式。 
@@ -277,27 +277,23 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
 
 <br>
 
-## <a name="conference-talks-by-msix-team"></a>MSIX 团队的会议演讲
-***
-
+## <a name="msix-training-videos"></a>MSIX 培训视频
 :::row:::
     :::column:::
-    >[!VIDEO https://www.youtube.com/embed/sBOTQoi6iXQ]
-        #### MSIX inside and out (Sept 2018)
-MSIX 代表着应用安装的未来，在技术上是一种巨大的跨越，可以让企业实现应用部署过程的现代化，与 Windows、Office 和第三方应用保持同步。 
+    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3ig2l]
+#### <a name="msix-overview"></a>MSIX 概述
+MSIX 在应用生命周期管理方面具有许多优势。 了解如何在企业中充分利用 MSIX，以及如何利用它提供给开发人员、IT 专业人员和最终用户的权益。
     :::column-end:::
     :::column:::
-    >[!VIDEO https://www.youtube.com/embed/0kSwCOr7-Ao]
-        #### MSIX – Accelerating Windows 10 and app deployment (Sept 2018)
-MSIX 在应用生命周期管理方面具有许多优势。 了解如何在企业中充分利用 MSIX，以及如何利用它提供给开发人员、IT 专业人员和最终用户的权益。 
+    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3i5DH]
+#### <a name="msix-for-developers"></a>面向开发人员的 MSIX
+了解开发人员可以如何充分利用 MSIX 的优点。
     :::column-end:::
     :::column:::
-    >[!VIDEO https://www.youtube.com/embed/_wCv31TI_30]
-        #### Updating your existing Configuration Manager apps to MSIX (Sept 2018)
-MSIX 简化了应用部署并使之现代化。 它为企业提供更快速、更可靠且耐用的部署。 了解将现有 System Center Configuration Manager 应用更新到 MSIX 的细节，以及它如何与 Configuration Manager 集成。 
+    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3iiD5]
+#### <a name="evolving-and-enhancing-desktop-apps-with-msix"></a>使用 MSIX 改进和增强桌面应用
+使用 MSIX 改进和增强桌面应用。 利用新 API、新控件和其他功能。 
     :::column-end:::
-
-    
 :::row-end:::
 
 
