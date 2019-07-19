@@ -1,33 +1,33 @@
 ---
-Description: 本指南介绍如何配置 Visual Studio 解决方案来编辑、 调试和打包桌面应用程序。
+Description: 本指南介绍如何配置 Visual Studio 解决方案, 以编辑、调试和打包桌面应用程序。
 title: 使用 Visual Studio 从源代码中将桌面应用打包
 ms.date: 08/30/2017
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: bf157014fd43a8fdfe3162a8b42e1f4b241d7938
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: aad9f460a9589e58d55583c7ffb80dd18e4bcbde
+ms.sourcegitcommit: 6a0a40ba5d941ff4c5b24569e15cdd588e143b6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828926"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68315703"
 ---
 # <a name="package-a-desktop-app-from-source-code-using-visual-studio"></a>使用 Visual Studio 从源代码中将桌面应用打包
 
-可以使用**Windows 应用程序打包项目**Visual Studio 为桌面应用程序生成一个包中的项目。 然后，你可以发布的 Microsoft Store 或旁加载到其打包到一个或多台电脑上。
+您可以使用 Visual Studio 中的 " **Windows 应用程序打包项目**" 项目为桌面应用程序生成包。 然后, 你可以将该包发布到 Microsoft Store 或将其旁加载到一个或多个电脑上。
 
-**Windows 应用程序打包项目**项目包含在以下版本的 Visual Studio。 为获得最佳体验，我们建议使用最新版本。
+**Windows 应用程序打包项目**项目在以下版本的 Visual Studio 中提供。 为了获得最佳体验, 建议使用最新版本。
 
 * Visual Studio 2019
-* Visual Studio 2017 15.5年及更高版本
+* Visual Studio 2017 15.5 及更高版本
 
 > [!IMPORTANT]
-> **Windows 应用程序打包项目**在 Windows 10，版本 1607，及更高版本上支持在 Visual Studio 中的项目。 仅可在面向 Windows 10 周年更新 (10.0; 的项目Build 14393) 或更高版本。
+> Windows 10 版本1607及更高版本支持 Visual Studio 中的**Windows 应用程序打包项目**项目。 它只能用于面向 Windows 10 周年更新的项目 (10.0;版本 14393) 或更高版本。
 
-## <a name="first-prepare-your-application"></a>首先，准备应用程序
+## <a name="prepare-your-application"></a>准备应用程序
 
-在开始创建你的应用程序的包之前，请查看本指南：[准备将桌面应用程序打包](desktop-to-uwp-prepare.md)。
+开始为应用程序创建包之前, 请查看本指南:[准备打包桌面应用程序](desktop-to-uwp-prepare.md)。
 
 <a id="new-packaging-project"/>
 
@@ -45,7 +45,7 @@ ms.locfileid: "67828926"
 
    ![打包版本选择器对话框](images/packaging-version.png)
 
-4. 在打包项目中，右键单击**应用程序**文件夹，然后选择**添加引用**。
+4. 在解决方案资源管理器中, 右键单击打包项目下的 "**应用程序**" 文件夹, 然后选择 "**添加引用**"。
 
    ![添加项目引用](images/add-project-reference.png)
 
@@ -57,13 +57,36 @@ ms.locfileid: "67828926"
 
    ![设置入口点](images/entry-point-set.png)
 
-6. 生成打包项目，以确保未显示任何错误。  如果收到错误，打开**Configuration Manager** ，并确保你的项目面向同一平台。
+6. 如果打包的应用程序面向 .NET Core 3, 请按照以下步骤将新的生成目标添加到项目文件。 这仅适用于面向 .NET Core 3 的应用程序。  
+
+    1. 在解决方案资源管理器中, 右键单击打包项目节点, 然后选择 "**编辑项目文件**"。
+
+    2. 将以下 XML 添加到项目文件中, 紧靠在结束`</Project>`元素之前。
+
+        ``` xml
+        <!-- Stomp the path to application executable. This task will copy the main exe to the appx root folder. -->
+        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
+          <ItemGroup>
+            <!-- Stomp all "SourceProject" values for all incoming dependencies to flatten the package. -->
+            <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
+            <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
+            <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
+              <!-- Blank the SourceProject here to vend all files into the root of the package. -->
+              <SourceProject></SourceProject>
+            </_FilteredNonWapProjProjectOutput>
+          </ItemGroup>
+        </Target>
+        ```
+
+    3. 保存并关闭项目文件。
+
+7. 生成打包项目，以确保未显示任何错误。 如果收到错误, 请打开**Configuration Manager**并确保项目面向同一平台。
 
    ![配置管理器](images/config-manager.png)
 
-7. 使用[创建应用包](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)向导生成 appxupload 文件。
+8. 使用 "[创建应用包](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)" 向导来生成 msixupload/.appxupload 文件。
 
-   可以将该文件上载到应用商店直接。
+   可以直接将该文件上传到存储区。
 
 **视频**
 
@@ -80,18 +103,18 @@ ms.locfileid: "67828926"
 
 请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
-**运行、 调试或测试桌面应用程序**
+**运行、调试或测试桌面应用程序**
 
-请参阅[运行、 调试和测试打包桌面应用程序](desktop-to-uwp-debug.md)
+请参阅[运行、调试和测试打包的桌面应用程序](desktop-to-uwp-debug.md)
 
-**通过添加 UWP Api 增强您的桌面应用程序**
+**通过添加 UWP Api 增强桌面应用程序**
 
 请参阅[增强用于 Windows 10 的桌面应用程序](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)
 
-**通过添加 UWP 项目和 Windows 运行时组件来扩展你的桌面应用程序**
+**通过添加 UWP 项目和 Windows 运行时组件来扩展桌面应用程序**
 
 请参阅[使用新式 UWP 组件扩展桌面应用程序](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extend)。
 
-**将应用分发**
+**分发应用**
 
-请参阅[分发打包桌面应用程序](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-distribute)
+请参阅[分发打包的桌面应用程序](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-distribute)
