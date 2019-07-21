@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4acb1f829d724b27be8745958f08d5e180af7ce6
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: fec62c4a37529cf9f27828096c473a620c443419
+ms.sourcegitcommit: 70036a054d1a5da24f535ddd4ea0fae78c30d469
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829315"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238962"
 ---
 # <a name="create-an-msix-package-from-a-desktop-installer-msi-exe-or-app-v-on-a-vm"></a>在 VM 上通过桌面安装程序（MSI、EXE 或 App-V）创建 MSIX 包
 
@@ -23,7 +23,7 @@ ms.locfileid: "67829315"
 - 必须运行 Windows 10 版本 1809 或更高版本。
 
 > [!NOTE]
-> MSIX 打包工具当前支持 APP-V 5.1。 如果有包含 APP-V 4.x 的包，我们建议你先将其转换为 APP-V 5.1，然后再使用 MsIX 打包工具转换为 MSIX。 
+> MSIX 打包工具当前支持 APP-V 5.1。 如果有包含 APP-V 4.x 的包，我们建议你先将其转换为 APP-V 5.1，然后再使用 MSIX 打包工具转换为 MSIX。 
 
 首次启动该工具时，系统会提示你同意发送遥测数据。 必须注意，共享的诊断数据仅来自应用，永远不会用于识别你的身份或与你联系。 这些数据仅用于帮助我们更快地为你解决问题。
 
