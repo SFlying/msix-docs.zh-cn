@@ -7,10 +7,10 @@ keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关�
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: bacf7ab3125d651ef30320072dd45a94bffc677f
-ms.sourcegitcommit: 70036a054d1a5da24f535ddd4ea0fae78c30d469
+ms.sourcegitcommit: 6a0a40ba5d941ff4c5b24569e15cdd588e143b6b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
+ms.lasthandoff: 07/23/2019
 ms.locfileid: "67828746"
 ---
 # <a name="distribute-a-windows-10-app-from-an-iis-server"></a>从 IIS 服务器分发 Windows 10 应用
@@ -120,10 +120,12 @@ ms.locfileid: "67828746"
 
 由于网络隔离, 应用安装程序等 Windows 10 应用程序限制为使用 IP 环回地址, http://localhost/ 如。 使用本地 IIS 服务器时, 必须将应用程序安装程序添加到环回豁免列表。 
 
-为此, 请以**管理员身份**打开**命令提示符**, 然后输入以下内容: "' ' 命令行 CheckNetIsolation LoopbackExempt-n = desktopappinstaller_8wekyb3d8bbwe
+为此, 请以**管理员身份**打开**命令提示符**, 然后输入以下命令:
+```Command Line
+CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.desktopappinstaller_8wekyb3d8bbwe
 ```
 
-To verify that the app is added to the exempt list, use the following command to display the apps in the loopback exempt list: 
+若要验证是否已将应用添加到免除列表中, 请使用以下命令在环回豁免列表中显示应用: 
 ```Command Line
 CheckNetIsolation.exe LoopbackExempt -s
 ```
@@ -132,28 +134,29 @@ CheckNetIsolation.exe LoopbackExempt -s
 
 完成通过应用安装程序安装应用程序的本地验证后, 可以通过以下操作删除在此步骤中添加的环回豁免:
 
-"" "命令行 CheckNetIsolation LoopbackExempt = desktopappinstaller_8wekyb3d8bbwe
+```Command Line
+CheckNetIsolation.exe LoopbackExempt -d -n=microsoft.desktopappinstaller_8wekyb3d8bbwe
 ```
 
-## Step 9 - Run the Web App 
+## <a name="step-9---run-the-web-app"></a>步骤 9-运行 Web 应用 
 
-Build and run the web application by clicking on the run button on the VS Ribbon as shown in the image below:
+通过单击 VS 功能区上的 "运行" 按钮生成并运行 web 应用程序, 如下图所示:
 
-![Screenshot of running web app in Visual Studio](images/run.png)
+![在 Visual Studio 中运行 web 应用的屏幕截图](images/run.png)
 
-A web page will open in your browser:
+将在浏览器中打开网页:
 
-![Screenshot of installing app from web page](images/web-page.png)
+![从网页安装应用程序的屏幕截图](images/web-page.png)
 
-Click on the link in the web page to launch the App Installer app and install your Windows 10 app package.
+单击网页中的链接以启动应用安装程序应用程序并安装 Windows 10 应用包。
 
 
-## Troubleshooting issues
+## <a name="troubleshooting-issues"></a>解决问题
 
-### Not sufficient privilege 
+### <a name="not-sufficient-privilege"></a>权限不足 
 
-If running the web app in Visual Studio displays an error such as "You do not have sufficient privilege to access IIS web sites on your machine", you will need to run Visual Studio as an administrator. Close the current instance of Visual Studio and reopen it as an admin.
+如果在 Visual Studio 中运行 web 应用时显示错误, 如 "你没有足够的权限访问计算机上的 IIS 网站", 则需以管理员身份运行 Visual Studio。 关闭 Visual Studio 的当前实例, 并将其重新打开为管理员。
 
-### Set start page 
+### <a name="set-start-page"></a>设置起始页 
 
-If running the web app causes the browser to load with an HTTP 403.14 - Forbidden error, it's because the web app doesn't have a defined start page. Refer to Step 6 in this tutorial to learn how to define a start page.
+如果运行 web 应用会导致浏览器加载 HTTP 403.14-禁止错误, 这是因为 web 应用没有定义的起始页。 请参阅本教程中的步骤 6, 了解如何定义起始页。
