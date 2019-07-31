@@ -144,6 +144,8 @@
           href: package/signing-package-overview.md
         - name: 使用 SignTool 对应用包进行签名
           href: 'https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render'
+        - name: 使用 Device Guard 签名功能对 MSIX 包进行签名
+          href: package/signing-package-device-guard-signing.md
 - name: 验证
   items:
     - name: Windows 应用认证工具包
