@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 3dd4a48722cca9296769adfb7c0bb570b11cc82f
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: a8596581cb68d7fe9347528e4e206482d39a0be9
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828576"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685236"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>使用 Visual Studio 创建应用安装程序文件
 
-从 Windows 10，版本 1803年和 Visual Studio 2017 中，更新 15.7 开始旁加载应用程序可以将配置为接收自动更新使用`.appinstaller`文件。 Visual Studio 支持启用这些更新。
+从 Windows 10 版本1803和 Visual Studio 2017, 更新15.7 开始, 可以将旁加载应用配置为使用`.appinstaller`文件接收自动更新。 Visual Studio 支持启用这些更新。
 
 ## <a name="app-installer-file-location"></a>应用安装程序文件位置
 `.appinstaller` 文件可以托管在一个共享位置，如 HTTP 终结点或 UNC 共享文件夹，并包含用于查找要安装的应用包的路径。 用户从共享位置安装应用并启用对新更新的定期检查。 
@@ -26,12 +26,12 @@ ms.locfileid: "67828576"
 你可以在创建项目时配置 `TargetPlatformMinVersion` 属性，也可以稍后从项目属性中进行更改。 
 
 >[!IMPORTANT]
-> 应用安装程序文件仅是生成时`TargetPlatformMinVersion`为 Windows 10，版本 1803 版或更高版本。
+> 仅当`TargetPlatformMinVersion`为 Windows 10 版本1803或更高版本时, 才会生成应用程序安装程序文件。
 
 
 ## <a name="create-packages"></a>创建包
 
-若要分发通过旁加载应用，必须创建应用包 (.appx/.msix) 或应用程序捆绑包 (.appxbundle/.msixbundle)，并将其发布在共享位置。
+若要通过旁加载分发应用, 必须创建应用包 (.appx/. .msix) 或应用捆绑包 (.appxbundle/.msixbundle), 并将其发布到共享位置。
 
 要执行该操作，请使用 Visual Studio 中的**创建应用序包**向导，并执行以下步骤。
 
@@ -47,7 +47,7 @@ ms.locfileid: "67828576"
 
     只有在项目的 `TargetPlatformMinVersion` 设置为正确的 Windows 10 版本时，才启用**启用自动更新**。
 
-3. 在**选择和配置包**对话框中可以选择支持的体系结构配置。 如果选择捆绑包，将生成一个安装程序；如果不想要捆绑包，而是希望为每个体系结构生成一个程序包，它还会为每个体系结构生成一个安装程序文件。  如果你不确定该选择哪种体系结构，或者想了解有关各种设备使用哪种体系结构的详细信息，请参阅[应用包体系结构](https://docs.microsoft.com/windows/uwp/packaging/device-architecture?context=/windows/msix/render)。
+3. 在**选择和配置包**对话框中可以选择支持的体系结构配置。 如果选择捆绑包，将生成一个安装程序；如果不想要捆绑包，而是希望为每个体系结构生成一个程序包，它还会为每个体系结构生成一个安装程序文件。  如果你不确定该选择哪种体系结构，或者想了解有关各种设备使用哪种体系结构的详细信息，请参阅[应用包体系结构](../package/device-architecture.md)。
 
 4. 配置任何其他详细信息，例如版本编号或包输出位置。
 
@@ -55,7 +55,7 @@ ms.locfileid: "67828576"
 
 5. 如果在步骤 2 中选中了**启用自动更新**，此时会显示**配置更新设置**对话框。 在该页面中，可以指定**安装 URL** 和更新检查频率。
 
-    ![配置更新设置窗口与发布位置配置](images/sideloading-screen.png)  
+    ![配置具有发布位置配置的更新设置窗口](images/sideloading-screen.png)  
 
 6. 当你的应用成功打包后，将出现一个对话框，显示包含你的应用包的输出文件夹位置。 输出文件夹包含旁加载应用所需的所有文件，包括可用于宣传你的应用的 HTML 页面。
 

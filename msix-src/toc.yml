@@ -7,15 +7,23 @@
     - name: 应用包格式
       items:
         - name: 概述
-          href: 'https://docs.microsoft.com/windows/uwp/launch-resume/extend-your-app-with-services-extensions-packages?context=/windows/msix/render'
+          href: package/app-package-formats.md
         - name: 可选包
-          href: 'https://docs.microsoft.com/windows/uwp/packaging/optional-packages?context=/windows/msix/render'
-        - name: Windows 应用流式安装
-          href: 'https://docs.microsoft.com/windows/uwp/packaging/streaming-install?context=/windows/msix/render'
+          items:
+            - name: 概述
+              href: package/optional-packages.md
+            - name: 包含可执行代码的可选包
+              href: package/optional-packages-with-executable-code.md
+        - name: 应用流式安装
+          items:
+            - name: 概述
+              href: package/streaming-install.md
+            - name: 创建和转换源内容组映射
+              href: package/create-cgm.md
         - name: 平面捆绑应用包
-          href: 'https://docs.microsoft.com/windows/uwp/packaging/flat-bundles?context=/windows/msix/render'
+          href: package/flat-bundles.md
         - name: 资产包
-          href: 'https://docs.microsoft.com/windows/uwp/packaging/asset-packages?context=/windows/msix/render'
+          href: package/asset-packages.md
         - name: 修改包
           items:
             - name: 概述
@@ -25,7 +33,7 @@
             - name: 基于 Windows 10 版本 1903 的修改包
               href: modification-package-1903.md
             - name: 应用包体系结构
-              href: 'https://docs.microsoft.com/windows/uwp/packaging/device-architecture?context=/windows/msix/render'
+              href: package/device-architecture.md
     - name: 应用包更新
       href: app-package-updates.md
     - name: 1709 和 1803 上的 MSIX 支持
@@ -122,6 +130,8 @@
               href: desktop/desktop-to-uwp-packaging-dot-net.md
             - name: 使用本机映像优化二进制文件
               href: desktop/desktop-to-uwp-r2r.md
+        - name: 手动打包桌面应用
+          href: desktop/desktop-to-uwp-manual-conversion.md
         - name: 使用第三方安装程序将桌面应用打包
           href: desktop/desktop-to-uwp-third-party-installer.md
         - name: 在打包桌面应用幕后
@@ -129,13 +139,19 @@
         - name: 已知问题
           href: desktop/desktop-to-uwp-known-issues.md
     - name: 使用 Visual Studio 打包 UWP 应用
-      href: 'https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps?context=/windows/msix/render'
-    - name: 手动打包工具
+      href: package/packaging-uwp-apps.md
+    - name: 手动打包应用
       items:
         - name: 概述
-          href: 'https://docs.microsoft.com/windows/uwp/packaging/manual-packaging-root?context=/windows/msix/render'
-        - name: 手动打包桌面应用
-          href: desktop/desktop-to-uwp-manual-conversion.md
+          href: package/manual-packaging-root.md
+        - name: 使用 MakeAppx.exe 工具创建应用包
+          href: package/create-app-package-with-makeappx-tool.md
+        - name: 为程序包签名创建证书
+          href: package/create-certificate-package-signing.md
+        - name: 用资产包和包折叠进行开发
+          href: package/package-folding.md
+        - name: 使用打包布局创建包
+          href: package/packaging-layout.md
     - name: 捆绑 MSIX 包
       href: packaging-tool/bundle-msix-packages.md
     - name: 为应用包签名
@@ -143,7 +159,7 @@
         - name: 概述
           href: package/signing-package-overview.md
         - name: 使用 SignTool 对应用包进行签名
-          href: 'https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render'
+          href: package/sign-app-package-using-signtool.md
         - name: 使用 Device Guard 签名功能对 MSIX 包进行签名
           href: package/signing-package-device-guard-signing.md
 - name: 验证

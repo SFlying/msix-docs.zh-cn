@@ -1,17 +1,17 @@
 ---
 Description: 本文介绍如何签名和设备保护签名
-title: 使用 Device Guard 签名对 .MSIX 包进行签名
+title: 使用 Device Guard 签名功能对 MSIX 包进行签名
 ms.date: 07/12/2019
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 0784d6c3bb8cf563d5238698f42653e7747f00e0
-ms.sourcegitcommit: c5aafec124a1b5e5bce364768f6f9127a8500f73
+ms.openlocfilehash: 61d2b3f62d8fa7cbcbf81fa7ae6a8cb046e5c4b3
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68663852"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685300"
 ---
-# <a name="sign-an-msix-package-with-device-guard-signing"></a>使用 Device Guard 签名对 .MSIX 包进行签名
+# <a name="sign-an-msix-package-with-device-guard-signing"></a>使用 Device Guard 签名功能对 MSIX 包进行签名
 
 [Device guard 签名](https://docs.microsoft.com/microsoft-store/device-guard-signing-portal)是一项 device guard 功能, 可用于商业和教育 Microsoft Store。 它使企业能够保证每个应用都来自受信任的来源。 从 Windows 10 预览体验版18945开始, 可以使用 Windows SDK 中的 SignTool, 通过设备保护签名对 .MSIX 应用进行签名。 此功能支持使你能够轻松地将设备防护登录纳入 .MSIX 包生成和签名工作流。
 
@@ -101,7 +101,7 @@ signtool sign /fd sha256 /dlib DgssLib.dll /dmdf <Azure AAD in .json format> /t 
 ```
 
 > [!NOTE]
-> * 建议你在对包进行签名时使用一个时间戳选项。 如果不应用时间戳, 签名将在一年后过期, 应用将需要重新签名。
+> * 建议你在对包进行签名时使用一个时间戳选项。 如果不应用[时间戳](signing-package-overview.md#timestamping), 签名将在一年后过期, 应用将需要重新签名。
 > * 确保包清单中的发布者名称与用来对包进行签名的证书匹配。 利用此功能, 它将是你的叶证书。 例如, 如果 "叶证书" 是 "**公司**名称", 则清单中的发布者名称必须是**CN = "公司**名称"。 否则, 签名操作将失败。
 > * 仅支持 SHA256 算法。
 > * 当你用 Device Guard 签名对包进行签名时, 你的包将不是通过 Internet 发送的。

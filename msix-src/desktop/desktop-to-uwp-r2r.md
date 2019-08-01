@@ -1,33 +1,33 @@
 ---
-Description: 本指南介绍如何配置 Visual Studio 解决方案来优化本机映像使用的应用程序二进制文件。
-title: 优化用于本机映像.NET 桌面应用
-ms.date: 07/03/2019
+Description: 本指南说明如何配置 Visual Studio 解决方案, 以便通过本机映像优化应用程序二进制文件。
+title: 通过本机映像优化 .NET 桌面应用
+ms.date: 07/29/2019
 ms.topic: article
-keywords: windows 10，uwp，msix，本机映像编译器
+keywords: windows 10、uwp、.msix、本机映像编译器
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4db70df07adfe48f70e4f84e25af0744974945
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 6ce41bafb2debfb8c2d99135634ba30c91f4400a
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828917"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685402"
 ---
-# <a name="optimize-your-net-desktop-apps-with-native-images"></a>优化用于本机映像.NET 桌面应用
+# <a name="optimize-your-net-desktop-apps-with-native-images"></a>通过本机映像优化 .NET 桌面应用
 
-可以通过预编译二进制文件的位置来提高您的.NET Framework 应用程序的启动时间。 在大型应用程序打包并通过 Microsoft Store 分发，可以使用此技术。 在某些情况下，我们已发现 20%的性能改善。 你可以了解有关此技术的详细[技术概述](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md)。
+你可以通过预编译二进制文件来改善 .NET Framework 应用程序的启动时间。 可以在通过 Microsoft Store 打包和分发的大型应用程序上使用此技术。 在某些情况下, 我们观察到性能提高了 20%。 有关此技术的详细信息, 请参阅[技术概述](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md)。
 
-我们发布了为本机映像编译器[NuGet 包](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler)。 可以将此包应用到任何面向.NET Framework 版本 4.6.2 的.NET Framework 应用程序或更高版本。 此程序包将添加包含到应用程序所使用的所有二进制文件的本机有效负载的 post 生成步骤。 在应用程序运行在.NET 4.7.2 及更高版本上一版本仍将加载的 MSIL 代码时，将加载此优化的有效负载。
+我们已将本机映像编译器作为[NuGet 包](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler)发布。 可以将此包应用于面向 .NET Framework 4.6.2 或更高版本的任何 .NET Framework 应用程序。 此包将向应用程序使用的所有二进制文件中添加一个包含本机有效负载的 post 生成步骤。 当应用程序在 .NET 4.7.2 和更高版本中运行时, 将加载此优化的负载, 而以前版本仍将加载 MSIL 代码。
 
-[.NET framework 4.7.2](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/)中包含[Windows 10 2018 年 4 月更新](https://blogs.windows.com/windowsexperience/2018/04/30/how-to-get-the-windows-10-april-2018-update/)。 此外可以在运行 Windows 7 + 和 Windows Server 2008 R2 及更高的 Pc 上安装此版本的.NET Framework。
+[Windows 10 2018 年4月更新](https://blogs.windows.com/windowsexperience/2018/04/30/how-to-get-the-windows-10-april-2018-update/)中包含[.net framework 4.7.2](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/) 。 你还可以在运行 Windows 7 + 和 Windows Server 2008 R2 + 的电脑上安装此版本的 .NET Framework。
 
 > [!IMPORTANT]
-> 如果您想要生成本机映像为 Windows 应用程序打包项目的打包应用程序，请确保将项目的目标平台最低版本设置为 Windows 周年更新。
+> 如果要生成由 Windows 应用程序打包项目打包的应用程序的本机映像, 请确保将项目的目标平台最低版本设置为 Windows 周年周年更新。
 
 ## <a name="how-to-produce-native-images"></a>如何生成本机映像
 
-按照这些说明配置你的项目。
+按照这些说明进行操作以配置项目。
 
-1. 配置目标框架为 4.6.2 或更高版本
+1. 将目标框架配置为4.6.2 或更高版本
 
 2. 将目标平台配置为 x86 或 x64 
 
@@ -35,47 +35,47 @@ ms.locfileid: "67828917"
 
 4. 创建发布版本。
 
-## <a name="configure-the-target-framework-as-462-or-above"></a>配置目标框架为 4.6.2 或更高版本
+## <a name="configure-the-target-framework-as-462-or-above"></a>将目标框架配置为4.6.2 或更高版本
 
-若要配置你的项目面向.NET Framework 4.6.2 到需要.NET Framework 4.6.2 开发工具或更高版本。 作为.NET 桌面开发工作负荷下的可选组件，这些工具是可通过 Visual Studio 安装程序：
+若要将项目配置为面向 .NET Framework 4.6.2, 需要 .NET Framework 4.6.2 开发工具或更高版本。 这些工具可通过 Visual Studio 安装程序作为 .NET 桌面开发工作负载下的可选组件提供:
 
-![安装.NET 4.6.2 的开发工具](images/install-4.6.2-devpack.png)
+![安装 .NET 4.6.2 开发工具](images/install-4.6.2-devpack.png)
 
-或者，可以获取中的.NET 开发人员包： [https://www.microsoft.com/net/download/visual-studio-sdks](https://www.microsoft.com/net/download/visual-studio-sdks)
+或者, 你可以从以下内容获取 .NET 开发人员包:[https://www.microsoft.com/net/download/visual-studio-sdks](https://www.microsoft.com/net/download/visual-studio-sdks)
 
 ## <a name="configure-the-target-platform-as-x86-or-x64"></a>将目标平台配置为 x86 或 x64
 
-本机映像编译器优化给定平台的代码。 若要使用它，需要应用程序配置为一个特定的平台，如 x86 或 x64。
+本机映像编译器优化给定平台的代码。 若要使用它, 需要将应用程序配置为面向某个特定平台, 如 x86 或 x64。
 
-如果你的解决方案中有多个项目，只将入口点项目 （很可能会生成可执行文件是项目） 必须编译为 x86 或 x64。 在主项目中指定的体系结构将处理从主项目中引用的其他二进制文件，即使它们编译为 AnyCPU。
+如果你的解决方案中有多个项目, 则必须将入口点项目 (最有可能是生成可执行文件的项目) 编译为 x86 或 x64。 从主项目引用的其他二进制文件将用主项目中指定的体系结构进行处理, 即使它们编译为 AnyCPU 也是如此。
 
-若要配置你的项目：
+配置项目:
 
-1. 右键单击解决方案，然后依次**Configuration Manager**。
+1. 右键单击解决方案, 然后选择 " **Configuration Manager**"。
 
-2. 选择 **< 新...>** 中**平台**生成可执行文件的项目名称旁的下拉列表菜单。
+2. 选择 **< 新建 ... "。** 在**平台**下拉菜单中, 在生成可执行文件的项目的名称旁 >。
 
-3. 在中**新建项目平台**对话框框中，请确保**从此处复制设置**下拉列表设置为**任何 CPU**。
+3. 在 "**新建项目平台**" 对话框中, 确保 "从下拉列表**复制设置**" 设置为 "**任何 CPU**"。
 
 ![配置 x86](images/configure-x86.png)
 
-重复此步骤为`Release/x64`如果您希望生成 x64 二进制文件。
+如果要生成 x64 `Release/x64`二进制文件, 请重复此步骤。
 
 >[!IMPORTANT]
 > 本机映像编译器不支持 AnyCPU 配置。
 
 ## <a name="add-the-nuget-packages"></a>添加 NuGet 包
 
-本机映像编译器需要将添加到生成的可执行文件的 Visual Studio 项目的 NuGet 包的形式提供。 这通常是你的 Windows 窗体或 WPF 项目。 使用此 PowerShell 命令来执行该操作。
+本机映像编译器以 NuGet 包的形式提供, 你需要将其添加到生成可执行文件的 Visual Studio 项目中。 这通常是 Windows 窗体或 WPF 项目。 使用此 PowerShell 命令来执行此操作。
 
 ```PS
 PM> Install-Package Microsoft.DotNet.Framework.NativeImageCompiler -Version 1.0.0
 ```
 
-## <a name="create-a-release-build"></a>创建版本生成
+## <a name="create-a-release-build"></a>创建发布版本
 
-NuGet 包配置项目以运行另一种工具适用于发行版本。 此工具将本机代码添加到相同的二进制文件。
-若要验证该工具已处理的二进制文件可以查看生成的输出内容以确保它包含此类消息：
+NuGet 包将项目配置为针对发布版本运行其他工具。 此工具将本机代码添加到相同的二进制文件。
+若要验证该工具是否已处理二进制文件, 您可以查看生成输出, 以确保它包含如下所示的消息:
 
 ```
 Native image obj\x86\Release\\R2R\DesktopApp1.exe generated successfully.
@@ -83,18 +83,18 @@ Native image obj\x86\Release\\R2R\DesktopApp1.exe generated successfully.
 
 ## <a name="faq"></a>常见问题
 
-**问题与解答。新的二进制文件是否在计算机而无需.NET Framework 4.7.2 工作？**
+**:.在没有 .NET Framework 4.7.2 的情况下, 新的二进制文件在计算机上是否正常工作？**
 
-A. 当运行使用.NET Framework 4.7.2，优化的二进制文件将从提升中获益。 运行以前的.NET framework 版本的客户端将从二进制文件加载的非优化 MSIL 代码。
+A. 优化的二进制文件在 .NET Framework 4.7.2 运行时可从改进中受益。 运行以前的 .NET framework 版本的客户端将从二进制文件加载非优化的 MSIL 代码。
 
-**问题与解答。如何提供反馈或报告问题？**
+**:.如何提供反馈或报告问题？**
 
-A. 通过在 Visual Studio 2017 中使用反馈工具来报告问题。 [详细信息](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)。
+A. 使用 Visual Studio 2017 中的反馈工具报告问题。 [详细信息](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)。
 
-**问题与解答。将本机映像添加到现有的二进制文件的影响是什么？**
+**:.将本机映像添加到现有二进制文件中有什么影响？**
 
-A. 优化的二进制文件包含托管和本机代码，使最终文件更高版本。
+A. 优化的二进制文件包含托管代码和本机代码, 使最终文件更大。
 
-**问题与解答。可以发布使用此技术的二进制文件？**
+**:.能否使用这种技术发布二进制文件？**
 
-A. 此版本包括您可以立即使用的 Go Live 许可证。
+A. 此版本包含你现在可以使用的 "上线" 许可证。

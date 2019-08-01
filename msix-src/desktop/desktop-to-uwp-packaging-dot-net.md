@@ -1,17 +1,17 @@
 ---
 Description: 本指南介绍如何配置 Visual Studio 解决方案, 以编辑、调试和打包桌面应用程序。
 title: 使用 Visual Studio 从源代码中将桌面应用打包
-ms.date: 08/30/2017
+ms.date: 07/18/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: aad9f460a9589e58d55583c7ffb80dd18e4bcbde
-ms.sourcegitcommit: 6a0a40ba5d941ff4c5b24569e15cdd588e143b6b
+ms.openlocfilehash: 8effa64d5b06739d1251423fc0776e3e010b73e2
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68315703"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685423"
 ---
 # <a name="package-a-desktop-app-from-source-code-using-visual-studio"></a>使用 Visual Studio 从源代码中将桌面应用打包
 
@@ -84,7 +84,7 @@ ms.locfileid: "68315703"
 
    ![配置管理器](images/config-manager.png)
 
-8. 使用 "[创建应用包](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)" 向导来生成 msixupload/.appxupload 文件。
+8. 使用 "[创建应用包](../package/packaging-uwp-apps.md)" 向导来生成 msixupload/.appxupload 文件。
 
    可以直接将该文件上传到存储区。
 

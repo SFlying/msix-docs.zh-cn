@@ -1,16 +1,16 @@
 ---
-Description: 在 S 模式下，适用于 Windows 10 中测试您的应用程序。
+Description: 在 S 模式下测试适用于 Windows 10 的应用。
 title: 测试适用于 Windows 10 S 的 Windows 应用
-ms.date: 05/11/2017
+ms.date: 07/29/2019
 ms.topic: article
-keywords: windows 10 S、 uwp、 msix
+keywords: windows 10 S、uwp、.msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 18789e9c4294befc6a730b4763fb0a847b8c622d
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: d9517a7f350d58838e0b1de30a11b325dfe7cf1a
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829034"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685233"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>在 S 模式下测试适用于 Windows 10 的 Windows 应用
 
@@ -45,7 +45,7 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 ### <a name="audit-mode-policy"></a>审核模式策略
 在此模式下，即使你的应用执行 Windows 10 S 上不支持的任务，应用也会运行。Windows 将任何可能已被阻止的可执行文件记录到代码完整性事件日志中。
 
-可以通过打开找到这些日志**事件查看器**，然后浏览到此位置：应用程序和服务日志-> Microsoft-> Windows-> CodeIntegrity-> 操作。
+可以通过打开**事件查看器**并浏览到以下位置找到这些日志:应用程序和服务日志-> Microsoft > Windows > CodeIntegrity-> 运营。
 
 ![代码完整性事件日志](images/code-integrity-logs.png)
 
@@ -75,7 +75,7 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 
 如果想要将这些策略应用于本地计算机，最好从审核模式策略开始。 使用此策略，你可以查看代码完整性事件日志，以确保在强制执行的策略中不会阻止任何关键操作。
 
-如果你已准备好应用策略，查找。所选的策略的 P7B 文件重命名到**SIPolicy.P7B**，然后将该文件保存到您的系统上的此位置：**C:\Windows\System32\CodeIntegrity\\** 。
+准备好应用策略时, 请找到。P7B 文件, 将其重命名为**SIPolicy**, 然后将该文件保存到系统上的以下位置:**C:\Windows\System32\CodeIntegrity\\** 。
 
 然后，重启系统。
 
@@ -92,10 +92,10 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 
 请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
-**查看我们的应用程序请查阅团队已发布的详细的博客文章**
+**查看我们的应用咨询团队发布的详细博客文章**
 
 请参阅[使用桌面桥移植和测试 Windows 10 上的经典桌面应用程序](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/)。
 
-**了解使其更易于测试在 S 模式下的 Windows 的工具**
+**了解用于在 S 模式下更轻松地测试 Windows 的工具**
 
 请参阅[对 APPX 进行解压缩、修改、重新打包、签名](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/)。

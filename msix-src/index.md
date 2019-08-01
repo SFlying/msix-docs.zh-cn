@@ -7,12 +7,12 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 4e31f0cf5af1ec9a637d0c59ed54f26c3ed80d31
-ms.sourcegitcommit: 70036a054d1a5da24f535ddd4ea0fae78c30d469
+ms.openlocfilehash: d3800d9af4808501afd5ad7862cf1bc62790dad3
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238957"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685355"
 ---
 # <a name="msix-documentation"></a>MSIX 文档
 MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构建的一种安全可靠的打包格式。 
@@ -57,7 +57,7 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
                             <div class="cardText">
                                 <h3>立即开始行动</h3>                                
                 <p>
-                                    <a href="/en-us/windows/msix/packaging-tool/create-app-package-msi-vm" data-linktype="absolute-path">将现有的安装程序更新为 MSIX</a>
+                                    <a href="/windows/msix/packaging-tool/create-app-package-msi-vm" data-linktype="absolute-path">将现有的安装程序更新为 MSIX</a>
                                 </p>
                             </div>
                         </div>
@@ -76,13 +76,13 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
                             <div class="cardText">
                                 <h3>应用包</h3>
                                 <p>
-                                    <a href="/en-us/windows/msix/mpt-overview" data-linktype="absolute-path">使用 MSIX 打包工具</a>
+                                    <a href="/windows/msix/mpt-overview" data-linktype="absolute-path">使用 MSIX 打包工具</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/msix/packaging-tool/package-conversion-cli" data-linktype="absolute-path">使用命令行</a>
+                                    <a href="/windows/msix/packaging-tool/package-conversion-cli" data-linktype="absolute-path">使用命令行</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render" data-linktype="absolute-path">为包签名</a>
+                                    <a href="/windows/msix/package/sign-app-package-using-signtool" data-linktype="absolute-path">为包签名</a>
                                 </p>
                             </div>
                         </div>
@@ -101,10 +101,10 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
                             <div class="cardText">
                                 <h3>验证</h3>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/package-flights?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store 外部测试</a>
+                                    <a href="/windows/uwp/publish/package-flights?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Store 外部测试</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/porting/desktop-to-uwp-test-windows-s?context=/windows/msix/render#first-download-the-policies-and-then-choose-one" data-linktype="absolute-path">测试处于 S 模式的 Windows 10</a>
+                                    <a href="/windows/uwp/porting/desktop-to-uwp-test-windows-s?context=/windows/msix/render#first-download-the-policies-and-then-choose-one" data-linktype="absolute-path">测试处于 S 模式的 Windows 10</a>
                                 </p>
                             </div>
                         </div>
@@ -123,19 +123,19 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
                             <div class="cardText">
                                 <h3>分配</h3>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/app-submissions?context=/windows/msix/render" data-linktype="absolute-path">Microsoft 官方商城</a>
+                                    <a href="/windows/uwp/publish/app-submissions?context=/windows/msix/render" data-linktype="absolute-path">Microsoft 官方商城</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render" data-linktype="absolute-path">适用于企业的 Microsoft Store</a>
+                                    <a href="/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render" data-linktype="absolute-path">适用于企业的 Microsoft Store</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/sccm/apps/understand/introduction-to-application-management?context=/windows/msix/render" data-linktype="absolute-path">System Center Configuration Manager</a>
+                                    <a href="/sccm/apps/understand/introduction-to-application-management?context=/windows/msix/render" data-linktype="absolute-path">System Center Configuration Manager</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/intune/introduction-intune?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Intune</a>
+                                    <a href="/intune/introduction-intune?context=/windows/msix/render" data-linktype="absolute-path">Microsoft Intune</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/msix/app-installer/app-installer-file-overview" data-linktype="absolute-path">非 Store 分发</a>
+                                    <a href="/windows/msix/app-installer/app-installer-file-overview" data-linktype="absolute-path">非 Store 分发</a>
                                 </p>
                             </div>
                         </div>
@@ -160,10 +160,10 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
                             <div class="cardText">
                                 <h3>立即开始行动</h3>
                                 <p>
-                                    <a href="/en-us/windows/msix/overview">什么是 MSIX？</a>
+                                    <a href="/windows/msix/overview">什么是 MSIX？</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/msix/app-package-updates?context=/windows/msix/render">MSIX 应用更新</a>
+                                    <a href="/windows/msix/app-package-updates?context=/windows/msix/render">MSIX 应用更新</a>
                                 </p>
                             </div>
                         </div>
@@ -182,13 +182,19 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
                             <div class="cardText">
                                 <h3>内部版本</h3>
                                 <p>
-                                    <a href="/en-us/windows/uwp/packaging/packaging-uwp-apps?context=/windows/msix/render" data-linktype="absolute-path">使用 Visual Studio 打包应用</a>
+                                    <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">使用 Visual Studio 打包桌面应用</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/packaging/manual-packaging-root?context=/windows/msix/render" data-linktype="absolute-path">手动打包工具</a>
+                                    <a href="/windows/msix/package/packaging-uwp-apps" data-linktype="absolute-path">使用 Visual Studio 打包 UWP 应用</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render" data-linktype="absolute-path">为应用包签名</a>
+                                    <a href="/windows/msix/package/manual-packaging-root" data-linktype="absolute-path">手动打包工具</a>
+                                </p>
+                                <p>
+                                    <a href="/windows/msix/package/sign-app-package-using-signtool" data-linktype="absolute-path">为应用包签名</a>
+                                </p>
+                                <p>
+                                    <a href="/windows/msix/package/streaming-install" data-linktype="absolute-path">应用流式安装</a>
                                 </p>
                             </div>
                         </div>
@@ -207,16 +213,16 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
                             <div class="cardText">
                                 <h3>验证</h3>
                                 <p>
-                                    <a href="/en-us/windows/uwp/debug-test-perf/windows-app-certification-kit?context=/windows/msix/render" data-linktype="absolute-path">Windows 应用认证工具包</a>
+                                    <a href="/windows/uwp/debug-test-perf/windows-app-certification-kit?context=/windows/msix/render" data-linktype="absolute-path">Windows 应用认证工具包</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render" data-linktype="absolute-path">Windows 设备门户</a>
+                                    <a href="/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render" data-linktype="absolute-path">Windows 设备门户</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/package-flights?context=/windows/msix/render" data-linktype="absolute-path">程序包外部测试</a>
+                                    <a href="/windows/uwp/publish/package-flights?context=/windows/msix/render" data-linktype="absolute-path">程序包外部测试</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/porting/desktop-to-uwp-test-windows-s?context=/windows/msix/render" data-linktype="absolute-path">测试处于 S 模式的 Windows 10</a>
+                                    <a href="/windows/uwp/porting/desktop-to-uwp-test-windows-s?context=/windows/msix/render" data-linktype="absolute-path">测试处于 S 模式的 Windows 10</a>
                                 </p>
                             </div>
                         </div>
@@ -235,13 +241,13 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
                             <div class="cardText">
                                 <h3>分配</h3>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/?context=/windows/msix/render" data-linktype="absolute-path">Microsoft 官方商城</a>
+                                    <a href="/windows/uwp/publish/?context=/windows/msix/render" data-linktype="absolute-path">Microsoft 官方商城</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render" data-linktype="absolute-path">适用于企业的 Microsoft Store</a>
+                                    <a href="/windows/uwp/publish/distribute-lob-apps-to-enterprises?context=/windows/msix/render" data-linktype="absolute-path">适用于企业的 Microsoft Store</a>
                                 </p>
                                 <p>
-                                    <a href="/en-us/windows/uwp/packaging/create-appinstallerfile-vs?context=/windows/msix/render" data-linktype="absolute-path">非 Store 分发</a>
+                                    <a href="/windows/uwp/packaging/create-appinstallerfile-vs?context=/windows/msix/render" data-linktype="absolute-path">非 Store 分发</a>
                                 </p>
                             </div>
                         </div>
