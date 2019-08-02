@@ -2,28 +2,27 @@
 Description: 本文介绍了 Windows 10 应用的签名要求。
 title: 为 Windows 10 应用包签名
 ms.date: 07/03/2019
-ms.author: diahar
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fc4d6003c26cbfc41d65f533de20273c0037e6a
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 5068d3adc3926a589d1f440146098e1e19265671
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829325"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685155"
 ---
-# <a name="sign-a-windows-10-app-package"></a>为 Windows 10 应用包签名 
+# <a name="sign-a-windows-10-app-package"></a>为 Windows 10 应用包签名
 
-在创建可部署的 Windows 10 应用包过程中，应用包签名是必须执行的步骤。 Windows 10 要求使用有效的代码签名证书为所有应用程序签名。 
+在创建可部署的 Windows 10 应用包过程中，应用包签名是必须执行的步骤。 Windows 10 要求使用有效的代码签名证书为所有应用程序签名。
 
 若要成功安装 Windows 10 应用程序，该包不仅需要签名，而且还需在设备上受信任。 这意味着，该证书必须链接到设备上的某个受信任根。 默认情况下，Windows 10 信任提供代码签名证书的大部分证书颁发机构的证书。 
 
 |主题| 描述 |
 |:---|:---|
-|[签名先决条件](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render#prerequisites)| 此部分说明为 Windows 10 应用包签名所要满足的先决条件。 | 
-|[使用 SignTool](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool?context=/windows/msix/render#using-signtool)| 此部分介绍如何使用 Windows 10 SDK 中的 SignTool 为应用包签名。|
+|[签名先决条件](sign-app-package-using-signtool.md#prerequisites)| 此部分说明为 Windows 10 应用包签名所要满足的先决条件。 | 
+|[使用 SignTool](sign-app-package-using-signtool.md#using-signtool)| 此部分介绍如何使用 Windows 10 SDK 中的 SignTool 为应用包签名。|
 
-## <a name="timestamping"></a>时间戳 
+## <a name="timestamping"></a>时间戳
 
 除了使用证书为应用包签名以外，决定代码签名证书有效性的另一个重要特征是**时间戳**。 时间戳可以保留签名，这样，即使是在证书过期之后，应用部署平台也会接受该应用包。 检查包时，可以使用时间戳根据包的签名时间验证包签名。 这样，即使证书不再有效，也会接受该包。 不带时间戳的包将会根据当前时间进行评估，如果证书不再有效，Windows 不会接受该包。 
 

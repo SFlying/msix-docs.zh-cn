@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: b6f49d25628b4cd2358aa4054c9ca19e77013f99
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 48e3eb8414b827ba1675214e9c0eec7ca451103f
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829398"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68685367"
 ---
 # <a name="msix-modification-packages-on-windows-10-version-1809"></a>Windows 10 版本 1809 中的 MSIX 修改包 
 
@@ -31,7 +31,7 @@ ms.locfileid: "67829398"
 
 ## <a name="create-a-modification-package-using-makeappxexe"></a>使用 MakeAppx.exe 创建修改包
 
-可以使用 Windows 10 SDK 中包含的 [MakeAppX.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool) 工具手动创建修改包：
+可以使用 Windows 10 SDK 中包含的 [MakeAppX.exe](package/create-app-package-with-makeappx-tool.md) 工具手动创建修改包：
 * 在清单中指定主包。 包含发布者和主包名称。
 
     ```xml
