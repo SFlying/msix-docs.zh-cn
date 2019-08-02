@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 14045d6bd5d78ba364c82b190d065d8630983fdb
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 7742ca5e52ed5ee435ee3c8765fa45cfbdc903dc
+ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829295"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68685432"
 ---
 # <a name="bundle-msix-packages"></a>捆绑 MSIX 包 
 
@@ -48,29 +48,32 @@ MakeAppx.exe 可用于提取 Windows 10 应用包或捆绑包的文件内容。 
 
 MakeAppx.exe 使用以下命令行语法。
 
-```命令提示符 C:\>"C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\MakeAppx.exe" bundle /d input_directorypath /p <filepath>.msixbundle
+```Command Prompt
+C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\MakeAppx.exe" bundle /d input_directorypath 
+/p <filepath>.msixbundle
 ```
 
-Here is an example command.
+下面是一个示例命令。
 
 ```
-C:\>"C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\MakeAppx.exe" bundle /d c:\AppPackages\ /p c:\MyLOBApp_10.0.0.0_ph32m9x8skttmg.msixbundle
+C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\MakeAppx.exe" bundle /d c:\AppPackages\ 
+/p c:\MyLOBApp_10.0.0.0_ph32m9x8skttmg.msixbundle
 ```
 
-After running the command, an unsigned .msixbundle will be created in the path specified. Packages do not need to be signed before bundling.  
+运行该命令后，将在指定的路径中创建一个未签名的 .msixbundle。 绑定之前，不需要对包进行签名。  
 
-## Step 3: Sign the bundle
+## <a name="step-3-sign-the-bundle"></a>步骤 3:为捆绑包签名
 
-After you create the bundle, you must sign the package before you can distribute the app to your users or install it. 
+创建捆绑包后，必须先对包进行签名，然后才能将应用分发给用户或进行安装。 
 
-To sign a package, you will need a general code signing certificate and use SignTool.exe from the Windows 10 SDK. 
+若要对包进行签名，需要具有常规代码签名证书并使用 Windows 10 SDK 中的 SignTool.exe。 
 
-We strongly recommend that you use a trusted cert from certificate authority as that allows for the package to be distributed and deployed on your end users devices seamlessly. Once you have access to the private certificate (.pfx file), you can sign the package as shown below.
+我们强烈建议你使用证书颁发机构提供的受信任证书，因为这样可以使包在最终用户设备上无缝分发和部署。 一旦有权访问私有证书（.pfx 文件），就可以对包进行签名，如下所示。
 
 >[!NOTE]
-> SignTool.exe is available in the same directory as MakeAppx.exe in the Windows 10 SDK. 
+> SignTool.exe 在 Windows 10 SDK 中 MakeAppx.exe 所在的目录中提供。 
 
-SignTool.exe has the following command line syntax.
+SignTool.exe 使用以下命令行语法。
 
 ```Command Prompt
 C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\SignTool.exe" sign /fd <Hash Algorithm> /a 
@@ -84,7 +87,7 @@ C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\SignTool.exe" 
 /f c:\private-cert.pfx /p aaabbb123 c:\MyLOBApp_10.0.0.0_ph32m9x8skttmg.msixbundle
 ```
 
-有关使用 SignTool.exe 为应用包签名的详细信息，请参阅[此文](https://docs.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool)。 
+有关使用 SignTool.exe 为应用包签名的详细信息，请参阅[此文](../package/sign-app-package-using-signtool.md)。 
 
 成功为捆绑包签名后，可将其放在网络共享或任何内容分发网络上，以将其分发给用户。 
 
