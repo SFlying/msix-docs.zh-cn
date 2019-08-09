@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 00a58a89975e0521038ae5e18895d5e7294a9df5
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: cc1c64fb367f66655c1a1303c898caff9b334b2b
+ms.sourcegitcommit: 163d233b3f8bdf5d811ba1953aef7617926d9031
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829162"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68786996"
 ---
 # <a name="conversion-with-command-line-interface-cli"></a>使用命令行接口 (CLI) 进行转换
 
@@ -30,7 +30,7 @@ ms.locfileid: "67829162"
 
 示例：
 
-``` 命令提示符
+```console
 
     MsixPackagingTool.exe create-package --template c:\users\documents\ConversionTemplate.xml -v
 
@@ -38,9 +38,9 @@ ms.locfileid: "67829162"
     
 ```
 > [!NOTE]
-> App-V 5.x conversion is currently supported to be converted throught the command line. This includes capabilities. 
+> App-V 5.x 目前受支持，可以通过命令行转换。 其中包括功能。 
 
-**Conversion template file**
+**转换模板文件**
 
 ``` xml
 <MsixPackagingToolTemplate

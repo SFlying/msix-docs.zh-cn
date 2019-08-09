@@ -100,6 +100,8 @@
               href: msix-sdk/release-notes/sdk-release-notes-1.5.md
             - name: MSIX SDK Release 1.6
               href: msix-sdk/release-notes/sdk-release-notes-1.6.md
+            - name: MSIX SDK Release 1.7
+              href: msix-sdk/release-notes/sdk-release-notes-1.7.md
         - name: 使用 MSIX SDK 在非 Windows 10 平台上分发 MSIX 包
           href: msix-sdk/sdk-guidance.md
 - name: 应用包
