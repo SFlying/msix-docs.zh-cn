@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 82dfb48cdb02ee72f6dbcbb2a572dd8419e6c2d4
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: a0f02d99993d3ff73c2cfd57289d8f45b4bd29d1
+ms.sourcegitcommit: b014ea712802a2845468182770c7acd5ae6aea70
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829262"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935552"
 ---
 # <a name="edit-icons-and-assets-using-the-msix-packaging-tool"></a>使用 MSIX 打包工具编辑图标和资产
 
@@ -33,4 +33,4 @@ ms.locfileid: "67829262"
 - 若要添加新的资产文件，请右键单击资产文件夹，然后选择“添加文件”  或“添加文件夹”  。
 - 若要删除现有资产文件，请右键单击该文件，并选择“删除”  。
 
-若要验证资产更改，请转到“包信息”  页，并打开清单文件。 确认 [uap:VisualElements](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-uap-visualelements) 节点中表示了已添加或删除的资产。
+若要验证资产更改，请转到“包信息”  页，并打开清单文件。 确认 [uap:VisualElements](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-uap-visualelements) 节点中表示了已添加或删除的资产。 清单引用需要是特定的，但资产文件可以命名为任何所需的名称。 

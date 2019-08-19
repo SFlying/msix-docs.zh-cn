@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 应用包, 应用更新, msix, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 39d9434a4f36b9f9fb59f90b1840f2eba94617c5
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: e49f0a9541bf3cbaa3f04d395dbc916befed049f
+ms.sourcegitcommit: b014ea712802a2845468182770c7acd5ae6aea70
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828832"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935536"
 ---
 # <a name="app-package-updates"></a>应用包更新
 
@@ -55,7 +55,7 @@ ms.locfileid: "67828832"
 包系列由包名称和发布者构成。 为了能够更新，新包元数据需要与以前安装的包相同。 
 
 #### <a name="app-updates-must-increment-to-a-higher-version"></a>应用更新必须递增到更高版本
-一般情况下，应用更新要求新包的版本高于当前版本。 默认情况下，常规应用更新过程不允许安装版本更低的包。 从 Windows 10 1809 更新版开始引入了“回滚”。  提供重写开关作为更新参数的一部分时，它允许安装更低版本的包。 目前可以在 PowerShell 中使用 ForceUpdateFromAnyVersion 开关以及在 [AppInstaller 文件](https://docs.microsoft.com/en-us/windows/msix/app-installer/update-settings)中使用这种安装方法。  
+一般情况下，应用更新要求新包的版本高于当前版本。 默认情况下，应用更新进程不允许安装版本更低的包。 自 Windows 10 版本 1809 起，当提供重写开关作为更新参数的一部分时，可以使用 ForceUpdateToAnyVersion 允许安装更低版本的包。 目前可以在 PowerShell 中使用 ForceUpdateFromAnyVersion 开关以及在 [AppInstaller 文件](https://docs.microsoft.com/windows/msix/app-installer/update-settings)中使用这种安装方法。  
 
 #### <a name="app-update-package-can-have-a-different-architecture"></a>应用更新包可以采用不同的体系结构
 只要部署到的 OS 支持新体系结构，则更新包与当前安装的应用包可以采用不同的体系结构。 例如：如果在 x64 Windows 10 设备上安装了 x86 版本的 MyFavApp (v1.0.0.0)，并且更新包 (v2.0.0.0) 采用 x64 版本：MyFavApp (1.0.0.0) 将成功更新到 MyFavApp (v2.0.0.0)。 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fec62c4a37529cf9f27828096c473a620c443419
-ms.sourcegitcommit: 70036a054d1a5da24f535ddd4ea0fae78c30d469
+ms.openlocfilehash: 855e80bfc859cf2ff4b2f46ce921841080cb7fce
+ms.sourcegitcommit: b014ea712802a2845468182770c7acd5ae6aea70
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238962"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935564"
 ---
 # <a name="create-an-msix-package-from-a-desktop-installer-msi-exe-or-app-v-on-a-vm"></a>在 VM 上通过桌面安装程序（MSI、EXE 或 App-V）创建 MSIX 包
 
@@ -25,30 +25,32 @@ ms.locfileid: "68238962"
 > [!NOTE]
 > MSIX 打包工具当前支持 APP-V 5.1。 如果有包含 APP-V 4.x 的包，我们建议你先将其转换为 APP-V 5.1，然后再使用 MSIX 打包工具转换为 MSIX。 
 
-首次启动该工具时，系统会提示你同意发送遥测数据。 必须注意，共享的诊断数据仅来自应用，永远不会用于识别你的身份或与你联系。 这些数据仅用于帮助我们更快地为你解决问题。
+首次启动该工具时，系统会提示你同意发送遥测数据。 必须注意，共享的诊断数据仅来自应用，永远不会用于识别你的身份或与你联系。
 
 创建应用程序包是最常用的选项。 使用此选项时，将会通过某个安装程序或者通过手动安装应用程序有效负载来创建 MSIX 包。
 
-![pic1](images/pic1.png)
+![pic1](images/pic1.PNG)
 
 ## <a name="choose-the-installer-you-want-to-package"></a>选择要打包的安装程序
 
-![pic2](images/pic2.png)
+![pic2](images/pic2.jpg)
 
 单击“浏览”并在文件选取器中选择该安装程序，导航到 MSI 或 App-V 安装程序。  然后，单击“下一步”  。
 
 可选：
-- 选中“使用现有 MSIX 包”下面的框，浏览并选择要更新的现有 MSIX 包。 
+- 选中“为包签名”下面的框，浏览到并选择 .pfx 证书文件。  如果证书受密码保护，请在密码框中键入密码。 还可以在设置中将其设置为默认值，这将在每次转换时节省一些步骤。 
 - 选中“使用安装程序参数”下面的框，并在提供的字段中输入所需的参数。  此字段接受任何字符串。
-- 选中“为包签名以进行测试”下面的框，浏览到并选择 .pfx 证书文件。  如果证书受密码保护，请在密码框中键入密码。
 
 ## <a name="packaging-method"></a>打包方法
 
-![images/pic3](images/pic3.png)
+![images/pic3](images/pic3.jpg)
 
-- 选择打包环境的虚拟机。
-  - 选择“在现有的虚拟机上创建包”，并从下拉列表中选择现有的虚拟机名称。  此时会显示用户和密码字段，可在其中提供 VM 的凭据（如果有）。
-  - 单击“下一步”  。
+选择适用于你的转换计算机的选项：
+- 如果已在干净的环境中工作，请选择“在此计算机上创建包” 
+- 如果要连接到现有 VM 或远程计算机，请选择“在远程计算机上创建包” 
+  - 需要先设置远程计算机，然后才能在其上进行转换
+- 如果要执行转换操作的计算机上有本地 VM，请选择“在本地虚拟机上创建包” 
+  - 单击“下一步” 
 
 ## <a name="package-information"></a>包信息
 
