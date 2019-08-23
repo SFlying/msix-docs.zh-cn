@@ -1,17 +1,17 @@
 ---
 Description: 本文列出了打包桌面应用程序之前需要了解的一些知识。 你可能不需要执行很多操作即可使应用为打包过程做好准备。
 title: 准备打包桌面应用程序 (Desktop Bridge)
-ms.date: 07/29/2019
+ms.date: 08/22/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: b46dfe767f84987e6f4930b8a263812904274e3d
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 4e907e4008389a5075575431dcb74d93fe3b4ddd
+ms.sourcegitcommit: 641ab68bc55d09291dbc26748658e64f15eaedee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685388"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69979230"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>准备打包桌面应用程序
 
@@ -79,17 +79,29 @@ ms.locfileid: "68685388"
 
 + __应用程序使用 System32/SysWOW64 文件夹中的依赖项__。 若要使这些 DLL 有效，必须将其包含在 Windows 应用包的虚拟文件系统部分中。 这可确保应用程序的行为就像在**System32**/**SysWOW64**文件夹中安装了 dll。 在程序包的根目录中，创建一个名为 **VFS** 的文件夹。 在该文件夹内创建 **SystemX64** 和 **SystemX86** 文件夹。 然后，将 DLL 的 32 位版本放置在 **SystemX86** 文件夹，并将 64 位版本放置在 **SystemX64** 文件夹。
 
-+ __你的应用使用 VCLibs 框架程序包__。 如果 VCLibs 库被定义为 Windows 应用包中的依赖项，则可以直接从 Microsoft Store 中安装。 例如, 如果应用程序使用 Dev11 VCLibs 包, 请对应用程序包清单进行以下更改:`<Dependencies>`在节点下, 添加:  
-`<PackageDependency Name="Microsoft.VCLibs.110.00.UWPDesktop" MinVersion="11.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />`  
-在从 Microsoft Store 安装期间，将在安装应用之前先安装 VCLibs 框架的适当版本（x86 或 x64）。  
-如果应用程序是通过旁加载安装的, 则不会安装依赖项。 若要在计算机上手动安装这些依赖项，必须下载并安装桌面桥的相应 VCLibs 框架包。 有关这些方案的详细信息，请参阅 [在 Centennial 项目中使用 Visual C++ 运行时](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/)。
++ __你的应用使用 VCLibs 框架程序包__。 如果要转换C++ Win32 应用程序, 则必须处理 Visual C++ Runtime 的部署。 Visual Studio 2019 和 Windows SDK 包括以下文件夹中的 Visual C++ Runtime 版本11.0、12.0 和14.0 的最新框架包:
 
-  **框架包**：
+    * **VC 14.0 framework 包**:C:\Program Files (x86) \Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop\14。0
 
-  * [桌面桥的 VC 14.0 framework 包](https://www.microsoft.com/download/details.aspx?id=53175)
-  * [桌面桥的 VC 12.0 framework 包](https://www.microsoft.com/download/details.aspx?id=53176)
-  * [桌面桥的 VC 11.0 framework 包](https://www.microsoft.com/download/details.aspx?id=53340)
+    * **VC 12.0 framework 包**:C:\Program Files (x86) \Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop.120\14。0
 
+    * **VC 11.0 framework 包**:C:\Program Files (x86) \Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop.110\14。0
+
+    若要使用这些包之一, 必须在包清单中引用包作为依赖项。 当客户从 Microsoft Store 安装零售版应用时, 将从应用商店中安装包以及应用。 如果您要加载您的应用程序, 则不会安装依赖项。 若要手动安装依赖项, 必须使用位于上面列出的安装文件夹中的适用于 x86、x64 或 ARM 的相应 .appx 包安装适当的框架包。
+
+    在应用中引用C++ Visual Runtime framework 包:
+
+    1. 对于您的应用程序使用的 Visual C++运行时版本, 请参阅上面列出的框架包安装文件夹。
+
+    2. 打开该文件夹中的 sdkmanifest.xml 文件, `FrameworkIdentity-Debug`找到或`FrameworkIdentity-Retail`属性 (取决于你使用的是调试还是零售版本的运行时`Name` ), 然后从该属性中复制和`MinVersion`值。 例如, 以下是`FrameworkIdentity-Retail`当前 VC 14.0 framework 包的属性。
+        ```xml
+        FrameworkIdentity-Retail = "Name = Microsoft.VCLibs.140.00.UWPDesktop, MinVersion = 14.0.27323.0, Publisher = 'CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US'"
+        ```
+
+    3. 在应用的包清单中, 在`<PackageDependency>` `<Dependencies>`节点下添加以下元素。 请确保将`Name`和`MinVersion`值替换为在上一步骤中复制的值。 下面的示例指定 VC 14.0 framework 包的当前版本的依赖关系。
+        ```xml
+        <PackageDependency Name="Microsoft.VCLibs.140.00.UWPDesktop" MinVersion="14.0.27323.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+        ```
 
 + __您的应用程序包含一个自定义跳转列表__。 使用跳转列表时需要注意几个问题和注意事项。
 
