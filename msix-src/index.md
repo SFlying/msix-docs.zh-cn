@@ -7,12 +7,12 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 067a6b9730fe7de37e0c90587534fe67edf5d1ad
-ms.sourcegitcommit: 163d233b3f8bdf5d811ba1953aef7617926d9031
+ms.openlocfilehash: 704da0b007ad6ff82341b01db38944476388a4de
+ms.sourcegitcommit: f5cd0d2d004bb93e60ec5231426b99deecb49601
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68786985"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69882535"
 ---
 # <a name="msix-documentation"></a>MSIX 文档
 MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构建的一种安全可靠的打包格式。 
@@ -26,16 +26,20 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
       可以使用 MSIX 打包工具将现有的 Win32 应用程序包更新为 MSIX 格式。 [了解详细信息](mpt-overview.md)
       <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取工具</a></p></div>
    :::column-end:::
+   
    :::column:::
-      ### 随处使用 MSIX。各种平台的开发人员可以使用 MSIX SDK 对程序包执行打包和解包操作，以便从 Microsoft Store 进行分发，或者从其自己的内容分发网络进行分发。 [了解详细信息](msix-sdk/sdk-overview.md)
+      ### <a name="use-msix-anywhere"></a>随时随地使用 MSIX
+      各平台的开发人员可以使用 MSIX SDK 对程序包执行打包和解包操作，以便从 Microsoft Store 分发，或者从其自己的内容分发网络分发。 [了解详细信息](msix-sdk/sdk-overview.md)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      ### 安装 MSIX 应用包 可以通过应用安装程序安装和更新在本地或内容分发网络上提供的 MSIX 应用包。 [了解详细信息](app-installer/app-installer-root.md)
+      ### <a name="install-msix-app-packages"></a>安装 MSIX 应用包
+      可以通过应用安装程序安装和更新在本地或任何内容分发网络上提供的任何 MSIX 应用包。 [了解详细信息](app-installer/app-installer-root.md)
    :::column-end:::
    :::column:::
-      ### 包支持框架 应用可以通过 PSF 规避一系列新式运行时环境限制，确保现有解决方案在不修改源代码的情况下按预期方式运行。 [了解详细信息](psf/package-support-framework-overview.md)
+      ### <a name="package-support-framework"></a>包支持框架
+      应用可以通过 PSF 规避一系列新式运行时环境限制，确保现有解决方案在不修改源代码的情况下按预期方式运行。 [了解详细信息](psf/package-support-framework-overview.md)
    :::column-end:::
 :::row-end:::
 
