@@ -2,14 +2,15 @@
 Description: 本文介绍如何签名和设备保护签名
 title: 使用 Device Guard 签名功能对 MSIX 包进行签名
 ms.date: 07/12/2019
+ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 61d2b3f62d8fa7cbcbf81fa7ae6a8cb046e5c4b3
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: f373b5a67e5af6eb0c88ae45c0a2b8f6e092ad39
+ms.sourcegitcommit: 2eb663be861f2eb29f4882a15a4913ced9da833a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685300"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70014865"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>使用 Device Guard 签名功能对 MSIX 包进行签名
 
