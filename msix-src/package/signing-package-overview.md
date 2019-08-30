@@ -2,14 +2,15 @@
 Description: 本文介绍了 Windows 10 应用的签名要求。
 title: 为 Windows 10 应用包签名
 ms.date: 07/03/2019
+ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 5068d3adc3926a589d1f440146098e1e19265671
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: d1a779be300de2b29703455874d823374bc8d708
+ms.sourcegitcommit: 2eb663be861f2eb29f4882a15a4913ced9da833a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685155"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70014855"
 ---
 # <a name="sign-a-windows-10-app-package"></a>为 Windows 10 应用包签名
 
