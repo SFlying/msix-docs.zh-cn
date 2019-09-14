@@ -6,12 +6,12 @@ ms.topic: article
 keywords: msix 打包工具, 已知问题, 故障排除
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c5227d8a394e6af211e2409e34dfcb3648cd2c93
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: b38231f6cf918ecbcd598c01e17c68e4e072cfd5
+ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829192"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70864003"
 ---
 # <a name="known-issues-and-troubleshooting"></a>已知问题和疑难解答
 
@@ -49,9 +49,15 @@ IT 管理员还可以创建[并列功能存储（共享文件夹）](https://doc
 
 可以使用 DISM 命令行选项安装单独获取的按需功能包。
 
+### <a name="getting-the-msix-packaging-tool-for-offline-use"></a>获取 MSIX 打包工具供脱机使用
+
+可以从适用于企业的 Microsoft Store [Web 门户](https://businessstore.microsoft.com/store)下载 MSIX 打包工具供脱机使用。 可在[此处](https://docs.microsoft.com/microsoft-store/distribute-offline-apps)详细了解离线分发。 如果在使用打包工具的脱机副本时遇到问题，请确保你有该工具的[许可证脱机副本](https://docs.microsoft.com/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app)。 
+
+有了应用程序的脱机版本后，可以使用 [PowerShell](https://docs.microsoft.com/powershell/module/dism/add-appxprovisionedpackage?view=win10-ps) 将应用包和许可证添加到计算机。
+
+
 ## <a name="other-known-issues"></a>其他已知问题
 
-- 不支持在应用程序安装期间重启计算机。 如果可能，请忽略重启请求，或者向安装程序传递一个参数，用于指定不需要重启。
 - 安装程序在安装之前，可能要求安装特定的框架或驱动程序。 若要在用于转换应用的计算机上查找框架和驱动程序，请使用以下查询：```driverquery /v | Out-File``` 或 ```driverquery /v | Out-File "path to text file"```
 - 在转换期间，安装程序可能会运行服务。 在转换期间不会捕获服务。 因此，应用可能会安装，但可能会在运行时出现问题。
 

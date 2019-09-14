@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 855e80bfc859cf2ff4b2f46ce921841080cb7fce
-ms.sourcegitcommit: b014ea712802a2845468182770c7acd5ae6aea70
+ms.openlocfilehash: 0fccdcbf9a5d03155695e420871d6b204d9a83d7
+ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935564"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70864079"
 ---
 # <a name="create-an-msix-package-from-a-desktop-installer-msi-exe-or-app-v-on-a-vm"></a>在 VM 上通过桌面安装程序（MSI、EXE 或 App-V）创建 MSIX 包
 
@@ -39,6 +39,7 @@ ms.locfileid: "68935564"
 
 可选：
 - 选中“为包签名”下面的框，浏览到并选择 .pfx 证书文件。  如果证书受密码保护，请在密码框中键入密码。 还可以在设置中将其设置为默认值，这将在每次转换时节省一些步骤。 
+  - 签名时，可以选择将**时间戳**添加到证书，以便证书可以在其到期日期之后仍然有效。 接受的格式为 RFC 3161 [时间戳服务器 URL](https://docs.microsoft.com/windows/win32/seccrypto/signtool)。 
 - 选中“使用安装程序参数”下面的框，并在提供的字段中输入所需的参数。  此字段接受任何字符串。
 
 ## <a name="packaging-method"></a>打包方法

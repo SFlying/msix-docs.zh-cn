@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 98e837669feda0147ad9465330907c930132b43d
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 3efb0ef21810ba4e5aa8cf9071c2ed3e985ebc12
+ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829108"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70864031"
 ---
 # <a name="package-support-framework"></a>包支持框架
 
@@ -42,6 +42,9 @@ ms.locfileid: "67829108"
 发现问题后，可以检查 [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/) 页中是否提供了修复程序。 如果找到了修复程序，可将其应用到包。 我们的[分步指南](https://docs.microsoft.com/windows/uwp/porting/package-support-framework)介绍了如何执行此操作。 其中还介绍了如何使用 Visual Studio 调试器逐步调试应用程序，验证该修复程序是否起到了作用并可以解决兼容性问题。
 
 如果找不到可以解决问题的运行时修复程序，可以创建一个。 为此，需要识别当应用程序在 MSIX 容器中运行时哪些函数调用失败。 然后可以创建替代的函数，让运行时管理器改为调用这些函数。 这样，便可以使用符合新式运行时环境规则的行为来替代函数的实现。
+
+## <a name="limitation-of-package-support-framework"></a>包支持框架的限制 
+包支持框架不支持注册表重写。 它将解决与运行时相关的问题。 请选取满足你的需求的下列 dll。 
 
 ## <a name="get-started-with-the-package-support-framework"></a>开始使用包支持框架
 

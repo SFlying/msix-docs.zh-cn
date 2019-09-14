@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5997ac7b870d5030440fcf357f298d776db9d87e
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 4e9f066ee57d06c5cf0f7cde4a68683c99fa8792
+ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829254"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70864011"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -35,9 +35,13 @@ ms.locfileid: "67829254"
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-我们近期发布了我们最新的公共版本 1.2019.701.0
-
-请继续关注我们下一版本的第一个预览版！
+### <a name="version-120198080"></a>版本 1.2019.808.0
+- 设置改进
+    - 从其他设置中分离出了工具默认设置
+    - 添加了导入和导出设置的功能
+- 签名改进
+    - 现在可以为工作流选择默认签名选项
+- 更新了打包过程中的步骤以改善体验
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
