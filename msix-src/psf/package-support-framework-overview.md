@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3efb0ef21810ba4e5aa8cf9071c2ed3e985ebc12
-ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
+ms.openlocfilehash: b62a73942ad0bd8324aa76b0df43f6aa52237e8b
+ms.sourcegitcommit: cc7fe74ea7c7b8c06190330023b3dff43034960e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70864031"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310978"
 ---
 # <a name="package-support-framework"></a>包支持框架
 
@@ -35,17 +35,25 @@ ms.locfileid: "70864031"
 
 ![包支持框架 DLL 注入](images/package-support-framework-2.png)
 
-## <a name="how-to-use-the-package-support-framework"></a>如何使用包支持框架
+## <a name="get-started-using-the-package-support-framework"></a>开始使用包支持框架
 
 为应用程序创建包后，请安装并运行它，同时观察其行为。 收到的错误消息可能会帮助你识别兼容性问题。 也可以使用[进程监视器](https://docs.microsoft.com/sysinternals/downloads/procmon)来识别问题。
 
 发现问题后，可以检查 [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/) 页中是否提供了修复程序。 如果找到了修复程序，可将其应用到包。 我们的[分步指南](https://docs.microsoft.com/windows/uwp/porting/package-support-framework)介绍了如何执行此操作。 其中还介绍了如何使用 Visual Studio 调试器逐步调试应用程序，验证该修复程序是否起到了作用并可以解决兼容性问题。
 
-如果找不到可以解决问题的运行时修复程序，可以创建一个。 为此，需要识别当应用程序在 MSIX 容器中运行时哪些函数调用失败。 然后可以创建替代的函数，让运行时管理器改为调用这些函数。 这样，便可以使用符合新式运行时环境规则的行为来替代函数的实现。
+如果找不到可以解决问题的运行时修复程序，可以[创建一个](package-support-framework.md#create-a-runtime-fix)。 为此，需要识别当应用程序在 MSIX 容器中运行时哪些函数调用失败。 然后可以创建替代的函数，让运行时管理器改为调用这些函数。 这样，便可以使用符合新式运行时环境规则的行为来替代函数的实现。
 
-## <a name="limitation-of-package-support-framework"></a>包支持框架的限制 
-包支持框架不支持注册表重写。 它将解决与运行时相关的问题。 请选取满足你的需求的下列 dll。 
+还可以使用包支持框架来运行脚本，以便针对用户环境来动态自定义应用程序。 有关详细信息，请参阅[此文章](run-scripts-with-package-support-framework.md)。
 
-## <a name="get-started-with-the-package-support-framework"></a>开始使用包支持框架
+## <a name="limitations"></a>限制
 
-如果你已准备好开始使用包支持框架来解决兼容性问题，请参阅我们的分步指南：[使用包支持框架将运行时修复程序应用到 MSIX 包](https://docs.microsoft.com/windows/uwp/porting/package-support-framework)。
+包支持框架不支持注册表重写。 它旨在解决运行时问题。
+
+## <a name="data-and-telemetry"></a>数据和遥测
+
+包支持框架包含遥测功能，该功能收集使用情况数据并将其发送给 Microsoft 以帮助改进我们的产品和服务。 请阅读 Microsoft 的[隐私声明以了解详细信息](https://privacy.microsoft.com/en-US/privacystatement)。 但是，仅当满足以下两个条件时，才会收集数据：
+
+* 从 Windows 10 计算机上的 [NuGet 包](https://www.nuget.org/packages?q=packagesupportframework)使用包支持框架二进制文件。
+* 用户已在计算机上启用数据收集。
+
+NuGet 包中包含已签名的二进制文件，并且 NuGet 包将从计算机收集使用情况数据。 如果通过克隆存储库或直接下载二进制文件在本地生成二进制文件，则不会收集遥测数据。

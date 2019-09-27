@@ -180,6 +180,8 @@
           href: desktop/desktop-to-uwp-test-windows-s.md
     - name: 将运行时修补程序应用到桌面应用包
       href: psf/package-support-framework.md
+    - name: 使用包支持框架运行脚本
+      href: psf/run-scripts-with-package-support-framework.md
 - name: 分配
   items:
     - name: 发布到 Microsoft Store

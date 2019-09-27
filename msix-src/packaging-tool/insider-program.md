@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4e9f066ee57d06c5cf0f7cde4a68683c99fa8792
-ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
+ms.openlocfilehash: eea73079a33821cbd1c97653e83f0bec0ab95a5b
+ms.sourcegitcommit: 1c3a0f5c27ee741d26f693ad657754c4ab29ac73
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70864011"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71189872"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -35,13 +35,9 @@ ms.locfileid: "70864011"
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-### <a name="version-120198080"></a>版本 1.2019.808.0
-- 设置改进
-    - 从其他设置中分离出了工具默认设置
-    - 添加了导入和导出设置的功能
-- 签名改进
-    - 现在可以为工作流选择默认签名选项
-- 更新了打包过程中的步骤以改善体验
+### <a name="version-120199190"></a>版本 1.2019.919.0
+- Device Guard 签名功能现已提供。 此签名选项需要一个已为适用于企业的 Microsoft Store 配置的活动 Microsoft Azure Active Directory 帐户。 有关详细信息，请参阅[此文章](https://docs.microsoft.com/windows/msix/package/signing-package-device-guard-signing)。
+- **包编辑器**现在支持选择要执行某个操作的多个项目的功能。
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
