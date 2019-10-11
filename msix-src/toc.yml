@@ -92,6 +92,8 @@
       items:
         - name: 概述
           href: msix-sdk/sdk-overview.md
+        - name: 使用 MSIX SDK 分发 MSIX 包
+          href: msix-sdk/sdk-guidance.md
         - name: 发行说明
           items:
             - name: MSIX SDK Release 1.4
@@ -102,8 +104,6 @@
               href: msix-sdk/release-notes/sdk-release-notes-1.6.md
             - name: MSIX SDK Release 1.7
               href: msix-sdk/release-notes/sdk-release-notes-1.7.md
-        - name: 使用 MSIX SDK 在非 Windows 10 平台上分发 MSIX 包
-          href: msix-sdk/sdk-guidance.md
 - name: 应用包
   items:
     - name: 将桌面应用打包
