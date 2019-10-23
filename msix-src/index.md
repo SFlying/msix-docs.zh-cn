@@ -7,12 +7,12 @@ ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 704da0b007ad6ff82341b01db38944476388a4de
-ms.sourcegitcommit: f5cd0d2d004bb93e60ec5231426b99deecb49601
+ms.openlocfilehash: 43a351aaffaf56ed312dad1bc318dbba316416d1
+ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69882535"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776498"
 ---
 # <a name="msix-documentation"></a>MSIX 文档
 MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构建的一种安全可靠的打包格式。 
@@ -22,23 +22,23 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
  
 :::row:::
    :::column:::
-      ### <a name="package-existing-windows-apps"></a>将现有的 Windows 应用打包
+      **将现有的 Windows 应用打包**  
       可以使用 MSIX 打包工具将现有的 Win32 应用程序包更新为 MSIX 格式。 [了解详细信息](mpt-overview.md)
       <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取工具</a></p></div>
    :::column-end:::
    
    :::column:::
-      ### <a name="use-msix-anywhere"></a>随时随地使用 MSIX
+      **随时随地使用 MSIX**  
       各平台的开发人员可以使用 MSIX SDK 对程序包执行打包和解包操作，以便从 Microsoft Store 分发，或者从其自己的内容分发网络分发。 [了解详细信息](msix-sdk/sdk-overview.md)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      ### <a name="install-msix-app-packages"></a>安装 MSIX 应用包
+      **安装 MSIX 应用包**  
       可以通过应用安装程序安装和更新在本地或任何内容分发网络上提供的任何 MSIX 应用包。 [了解详细信息](app-installer/app-installer-root.md)
    :::column-end:::
    :::column:::
-      ### <a name="package-support-framework"></a>包支持框架
+      **包支持框架**  
       应用可以通过 PSF 规避一系列新式运行时环境限制，确保现有解决方案在不修改源代码的情况下按预期方式运行。 [了解详细信息](psf/package-support-framework-overview.md)
    :::column-end:::
 :::row-end:::
@@ -291,17 +291,16 @@ MSIX 是一种基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合构
 :::row:::
    :::column:::
       >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3ig2l]
-      #### <a name="msix-overview"></a>MSIX 概述
-      MSIX 在应用生命周期管理方面具有许多优势。 了解如何在企业中充分利用 MSIX，以及如何利用它提供给开发人员、IT 专业人员和最终用户的权益。
+      **MSIX 概述** MSIX 在应用生命周期管理方面具有许多优势。 了解如何在企业中充分利用 MSIX，以及如何利用它提供给开发人员、IT 专业人员和最终用户的权益。
    :::column-end:::
    :::column:::
       >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3i5DH]
-      #### <a name="msix-for-developers"></a>面向开发人员的 MSIX
+      **面向开发人员的 MSIX**  
       了解开发人员可以如何充分利用 MSIX 的优点。
    :::column-end:::
    :::column:::
       >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3iiD5]
-      #### <a name="evolving-and-enhancing-desktop-apps-with-msix"></a>使用 MSIX 改进和增强桌面应用
+      **使用 MSIX 改进和增强桌面应用**  
       使用 MSIX 改进和增强桌面应用。 利用新 API、新控件和其他功能。 
    :::column-end:::
 :::row-end:::
