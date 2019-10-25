@@ -6,31 +6,31 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ee3cae57fc5e344edd8a7daf48a24b49baeb80
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 49686fcfbe9ab4e414047c996e5d69ef0c1b3fa4
+ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689716"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776486"
 ---
 # <a name="create-a-certificate-for-package-signing"></a>为程序包签名创建证书
 
-本文介绍了如何使用 PowerShell 工具为应用包签名创建和导出证书。 建议使用 Visual Studio[打包 UWP 应用](packaging-uwp-apps.md)并[打包桌面应用](../desktop/desktop-to-uwp-packaging-dot-net.md), 但如果未使用 visual studio 开发应用, 仍可手动打包应用。
+本文介绍了如何使用 PowerShell 工具为应用包签名创建和导出证书。 建议使用 Visual Studio[打包 UWP 应用](packaging-uwp-apps.md)并[打包桌面应用](../desktop/desktop-to-uwp-packaging-dot-net.md)，但如果未使用 visual studio 开发应用，仍可手动打包应用。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 - **打包或未打包的应用**  
 包含 AppxManifest.xml 文件的应用。 在创建用于给最终应用包签名的证书时，你将需要参考清单文件。 有关如何手动打包应用的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](create-app-package-with-makeappx-tool.md)。
 
-- **公钥基础结构 (PKI) Cmdlet**  
+- **公钥基础结构（PKI） Cmdlet**  
 你需要 PKI cmdlet 创建和导出你的签名证书。 有关详细信息，请参阅[公钥基础结构 Cmdlet](https://docs.microsoft.com/powershell/module/pkiclient/)。
 
 ## <a name="create-a-self-signed-certificate"></a>创建自签名证书
 
-自签名证书可用于测试你的应用程序, 然后才能将其发布到应用商店。 按照此部分中所述的步骤创建自签名证书。
+自签名证书可用于测试你的应用程序，然后才能将其发布到应用商店。 按照此部分中所述的步骤创建自签名证书。
 
 > [!NOTE]
-> 自签名证书严格用于测试。 准备好将应用发布到应用商店或其他会场时, 请将证书切换到可信来源。 如果不这样做, 您的客户将无法安装您的应用程序。
+> 当你创建并使用自签名证书时，只有安装和信任你的证书的用户才能运行你的应用程序。 这易于实现测试，但可能会阻止其他用户安装您的应用程序。 当你准备好发布应用程序时，我们建议你使用由受信任源颁发的证书。 此集中信任系统有助于确保应用程序生态系统具有验证级别，以保护用户免受恶意用户的攻击。
 
 ### <a name="determine-the-subject-of-your-packaged-app"></a>确定你的打包应用的主体  
 
@@ -56,15 +56,15 @@ ms.locfileid: "68689716"
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\CurrentUser\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
 ```
 
-请注意以下有关某些参数的详细信息:
+请注意以下有关某些参数的详细信息：
 
-- **密钥用法**:此参数定义证书的用途。 对于自签名证书, 应将此参数设置为**DigitalSignature**。
+- **密钥用法**：此参数定义证书的用途。 对于自签名证书，应将此参数设置为**DigitalSignature**。
 
-- **TextExtension**:此参数包括以下扩展的设置:
+- **TextExtension**：此参数包括以下扩展的设置：
 
-  - 扩展密钥用法 (EKU):此扩展指示可使用已认证的公钥的其他目的。 对于自签名证书, 此参数应包含扩展字符串 **"2.5.29.37 = {text} 1.3.6.1.5.5.7.3.3"** , 这表示证书将用于代码签名。
+  - 扩展密钥用法（EKU）：此扩展指示可使用已认证的公钥的其他目的。 对于自签名证书，此参数应包含扩展字符串 **"2.5.29.37 = {text} 1.3.6.1.5.5.7.3.3"** ，这表示证书将用于代码签名。
 
-  - 基本约束:此扩展指示证书是否为证书颁发机构 (CA)。 对于自签名证书, 此参数应包含扩展字符串 **"2.5.29.19 = {text}"** , 这表示该证书是一个最终实体 (而不是一个 CA)。
+  - 基本约束：此扩展指示证书是否为证书颁发机构（CA）。 对于自签名证书，此参数应包含扩展字符串 **"2.5.29.19 = {text}"** ，这表示该证书是一个最终实体（而不是一个 CA）。
 
 运行此命令后，证书将被添加到本地证书存储中，如“-CertStoreLocation”参数中指定。 此命令的结果还将生成证书的指纹。  
 
