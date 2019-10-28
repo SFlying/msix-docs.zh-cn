@@ -6,16 +6,22 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b62a73942ad0bd8324aa76b0df43f6aa52237e8b
-ms.sourcegitcommit: cc7fe74ea7c7b8c06190330023b3dff43034960e
+ms.openlocfilehash: fa8cc955d44ddf2a3db5900e9f054a23e0037242
+ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71310978"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776473"
 ---
 # <a name="package-support-framework"></a>包支持框架
 
 包支持框架是一个开源工具包，在你无法访问源代码时，可帮助你将修复程序应用到现有的 win32 应用程序，使它可以在 MSIX 容器中运行。 包支持框架可帮助应用程序遵循新式运行时环境的最佳做法。
+
+下面是一些常见示例，你可以在其中找到适用的包支持框架：
+
+* 应用在启动时找不到某些 DLL。 可能需要设置当前工作目录。 在转换为 MSIX 之前，可以通过原始快捷方式了解所需的当前工作目录。
+* 应用将写入到安装文件夹中。 通常会在[进程监视器](https://docs.microsoft.com/windows/msix/psf/package-support-framework)中通过“拒绝访问”错误查看它。
+* 在启动时，应用需要将参数传递给可执行文件。 可以在[此处](package-support-framework.md#identify-packaged-application-compatibility-issues)了解更多有关如何确定此问题的信息，并在[此处](https://github.com/microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher)了解更多有关可用配置的信息。
 
 若要创建包支持框架，我们利用了 [Detour](https://www.microsoft.com/en-us/research/project/detours) 技术，这是 Microsoft Research (MSR) 开发的一个开源框架，可帮助实现 API 重定向和挂接。
 

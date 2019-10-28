@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 254fd757bd16a72f597fa0c8183d66f9562625b4
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: ee9d47ef88f8281a707550b67cf976da29efe9e2
+ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67840711"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776545"
 ---
 # <a name="msix-packaging-tool"></a>MSIX 打包工具 
 
@@ -37,13 +37,13 @@ MSIX 打包工具现已在 Microsoft Store 中提供。 可以通过此工具运
 也可以从适用于企业的 Microsoft Store [Web 门户](https://businessstore.microsoft.com/)下载 MSIX 打包工具供离线使用。 可在[此处](https://docs.microsoft.com/en-us/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app)详细了解离线分发。
 
  
-## <a name="latest-public-version---120197010"></a>最新公共版本 - 1.2019.701.0
+## <a name="latest-public-version---1201910180"></a>最新公共版本 - 1.2019.1018.0
 
 ### <a name="new-features"></a>新增功能：
-
-- 能够在转换期间重启
-- 允许指定用于签名的默认证书
-- 允许指定用于重启的退出代码
+- Device Guard 签名功能现已提供。 此签名选项需要一个已为适用于企业的 Microsoft Store 配置的活动 Microsoft Azure Active Directory 帐户。 有关详细信息，请参阅[此文章](https://docs.microsoft.com/windows/msix/package/signing-package-device-guard-signing)。
+- **包编辑器**现在支持选择要执行某个操作的多个项目的功能。
+- 现在支持右键单击以编辑 MSIX 包。
+- 用户体验对打包工作流的改进。
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 

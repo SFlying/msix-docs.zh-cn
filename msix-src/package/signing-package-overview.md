@@ -5,18 +5,18 @@ ms.date: 07/03/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: d1a779be300de2b29703455874d823374bc8d708
-ms.sourcegitcommit: 2eb663be861f2eb29f4882a15a4913ced9da833a
+ms.openlocfilehash: ddd7a8769bd2d09122153cc42aecd4d686e25d40
+ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70014855"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72776465"
 ---
 # <a name="sign-a-windows-10-app-package"></a>为 Windows 10 应用包签名
 
 在创建可部署的 Windows 10 应用包过程中，应用包签名是必须执行的步骤。 Windows 10 要求使用有效的代码签名证书为所有应用程序签名。
 
-若要成功安装 Windows 10 应用程序，该包不仅需要签名，而且还需在设备上受信任。 这意味着，该证书必须链接到设备上的某个受信任根。 默认情况下，Windows 10 信任提供代码签名证书的大部分证书颁发机构的证书。 
+若要成功安装 Windows 10 应用程序，该包不仅需要签名，而且还需在设备上受信任。 这意味着，该证书必须链接到设备上的某个受信任根。 默认情况下，Windows 10 信任提供代码签名证书的大部分证书颁发机构的证书。
 
 |主题| 描述 |
 |:---|:---|
