@@ -1,17 +1,17 @@
 ---
-Description: 本文包含桌面桥的已知问题。
+description: 本文介绍为桌面应用程序创建 .MSIX 包时可能出现的已知问题。
 title: 打包桌面应用的已知问题
 ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: bdcc41c077433a02c39e6d9838fb6f4a7b9cb689
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: d82306906f09f5c07882da5a996a8a45a846e6c6
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685363"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328566"
 ---
 # <a name="known-issues-with-packaged-desktop-apps"></a>打包桌面应用的已知问题
 
@@ -25,9 +25,9 @@ ms.locfileid: "68685363"
 
 ``<AppxGeneratePrisForPortableLibrariesEnabled>false</AppxGeneratePrisForPortableLibrariesEnabled>``
 
-## <a name="blue-screen-with-error-code-0x139-kernelsecuritycheckfailure"></a>带有错误代码 0x139 (KERNEL_SECURITY_CHECK_FAILURE) 的蓝屏
+## <a name="blue-screen-with-error-code-0x139-kernel_security_check_failure"></a>带有错误代码 0x139 (KERNEL_SECURITY_CHECK_FAILURE) 的蓝屏
 
-在从 Microsoft Store 安装或启动某些应用后, 计算机可能会意外地重新启动, 并出现以下错误:**0x139 (内核\_安全\_检查\_失败)** 。
+在从 Microsoft Store 安装或启动某些应用后，计算机可能会意外重启，错误如下： **0x139 （内核\_安全\_检查\_ 故障）** 。
 
 已知受影响的应用包括 Kodi、JT2Go、Ear Trumpet、Teslagrad 和其他应用。
 
@@ -35,7 +35,7 @@ ms.locfileid: "68685363"
 
 如果更新未解决问题或者你不确定如何恢复电脑，请联系 [Microsoft 支持](https://support.microsoft.com/contactus/)。
 
-如果是开发人员，可能需要阻止在不包含此更新的 Windows 版本上安装打包应用程序。 请注意, 通过执行此操作, 你的应用程序将不能用于尚未安装此更新的用户。 若要将应用程序的可用性限制为已安装此更新的用户, 请按如下所示修改 Appxmanifest.xml 文件:
+如果是开发人员，可能需要阻止在不包含此更新的 Windows 版本上安装打包应用程序。 请注意，通过执行此操作，你的应用程序将不能用于尚未安装此更新的用户。 若要将应用程序的可用性限制为已安装此更新的用户，请按如下所示修改 Appxmanifest.xml 文件：
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -45,11 +45,11 @@ ms.locfileid: "68685363"
 
 ## <a name="common-errors-that-can-appear-when-you-sign-your-app"></a>对应用进行签名时可能会出现的常见错误
 
-### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>发布服务器和证书不匹配导致 Signtool 错误 "错误:SignerSign () Failed (-2147024885/0x8007000b)
+### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>发布者和证书不匹配导致 Signtool 错误“错误: SignerSign() 失败”(-2147024885/0x8007000b)
 
 Windows 应用包清单中的发布者条目必须与要用于签名的证书的使用者匹配。  可使用以下任一方法查看证书的使用者。
 
-**选项 1：Powershell**
+**选项1： Powershell**
 
 运行以下 PowerShell 命令。 可以将 .cer 或 .pfx 用作证书文件，因为它们具有相同的发布者信息。
 
@@ -57,13 +57,13 @@ Windows 应用包清单中的发布者条目必须与要用于签名的证书的
 (Get-PfxCertificate <cert_file>).Subject
 ```
 
-**选项 2：文件资源管理器**
+**选项2：文件资源管理器**
 
-在文件资源管理器中双击证书、选择“详细信息”选项卡，然后在列表中选择“使用者”字段。   接着，就可以复制内容。
+在文件资源管理器中双击证书、选择*详细信息*选项卡，然后在列表中选择*使用者*字段。 接着，就可以复制内容。
 
-**选项 3:CertUtil**
+**选项3： CertUtil**
 
-从 PFX 文件上的命令行运行**certutil** , 并从输出中复制 "*使用者*" 字段。
+从 PFX 文件上的命令行运行**certutil** ，并从输出中复制 "*使用者*" 字段。
 
 ```cmd
 certutil -dump <cert_file.pfx>
@@ -71,25 +71,25 @@ certutil -dump <cert_file.pfx>
 
 <a id="bad-pe-cert" />
 
-### <a name="bad-pe-certificate-0x800700c1"></a>错误的 PE 证书 (0x800700C1)
+### <a name="bad-pe-certificate-0x800700c1"></a>错误的 PE 证书（0x800700C1）
 
-当你的包包含具有损坏证书的二进制文件时, 会发生这种情况。 下面是导致此情况的一些原因:
+当你的包包含具有损坏证书的二进制文件时，会发生这种情况。 下面是导致此情况的一些原因：
 
 * 证书的开头不在映像的结尾。  
 
 * 证书大小不是肯定的。
 
-* 证书开始不在32位`IMAGE_NT_HEADERS32`可执行文件的结构之后或64位可`IMAGE_NT_HEADERS64`执行文件的结构之后。
+* 证书开始不在32位可执行文件的 `IMAGE_NT_HEADERS32` 结构之后或64位可执行文件的 `IMAGE_NT_HEADERS64` 结构之后。
 
-* 对于 WIN_CERTIFICATE 结构, 证书指针未正确对齐。
+* 对于 WIN_CERTIFICATE 结构，证书指针未正确对齐。
 
-若要查找包含错误 PE 证书的文件, 请打开**命令提示符**, 并将名`APPXSIP_LOG`为的环境变量设置为值1。
+若要查找包含错误 PE 证书的文件，请打开**命令提示符**，并将名为 `APPXSIP_LOG` 的环境变量设置为值1。
 
 ```
 set APPXSIP_LOG=1
 ```
 
-然后, 在**命令提示符下**再次对应用程序进行签名。 例如：
+然后，在**命令提示符下**再次对应用程序进行签名。 例如：
 
 ```
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx

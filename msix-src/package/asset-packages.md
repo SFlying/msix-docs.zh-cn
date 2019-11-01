@@ -1,16 +1,16 @@
 ---
 title: 资产包简介
-description: 资产包是一种用作应用程序公用文件集中存放位置的程序包，可有效消除整个体系结构程序包中的重复文件。
+description: 资产包是一种用作应用程序公用文件的集中位置的包类型。
 ms.date: 07/02/2019
 ms.topic: article
 keywords: windows 10、.msix、打包、包布局、资产包
 ms.localizationpriority: medium
-ms.openlocfilehash: cac5edaf940fad029f7f01d3ea2606569c7736fd
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 90cfd4f477333210f4347e029c239c4e173f26ee
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68690036"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328838"
 ---
 # <a name="introduction-to-asset-packages"></a>资产包简介
 
@@ -27,7 +27,7 @@ ms.locfileid: "68690036"
 
 资产包最明显的好处是减小了打包应用的大小。 较小的应用包可减少 Microsoft Store 处理的文件数量，从而加快应用发布过程；但这不是资产包最重要的好处。
 
-创建资产包后，你可以指定是否允许包执行。 由于资产包只应包含与体系结构无关的文件，通常不包含任何 .dll 或 .exe 文件，因此资产包通常不需要执行。 这种区别的重要性在于，在发布过程中，必须扫描所有可执行程序包以确保它们不包含恶意软件，而对于较大的程序包，扫描过程需要更长的时间。 但是，如果将程序包指定为不可执行，则应用的安装将确保该程序包中包含的文件无法执行。 这一保证消除了扫描整个程序包的需要，将大幅减少应用发布（以及更新）期间的恶意软件扫描时间，从而显著加快使用资产包的应用的发布速度。 请注意,[平面捆绑应用包](flat-bundles.md)还必须用于获取此发布权益, 因为这样可以使存储区以并行方式处理每个 .appx 或 .msix 包文件。 
+创建资产包后，你可以指定是否允许包执行。 由于资产包只应包含与体系结构无关的文件，通常不包含任何 .dll 或 .exe 文件，因此资产包通常不需要执行。 这种区别的重要性在于，在发布过程中，必须扫描所有可执行程序包以确保它们不包含恶意软件，而对于较大的程序包，扫描过程需要更长的时间。 但是，如果将程序包指定为不可执行，则应用的安装将确保该程序包中包含的文件无法执行。 这一保证消除了扫描整个程序包的需要，将大幅减少应用发布（以及更新）期间的恶意软件扫描时间，从而显著加快使用资产包的应用的发布速度。 请注意，[平面捆绑应用包](flat-bundles.md)还必须用于获取此发布权益，因为这样可以使存储区以并行方式处理每个 .appx 或 .msix 包文件。 
 
 ### <a name="should-i-use-asset-packages"></a>我应该使用资产包吗？
 
@@ -47,7 +47,7 @@ ms.locfileid: "68690036"
 "Video.mp4"         "Video.mp4"
 ```
 
-使用以下命令之一来创建使用 Makeappx.exe (适用于 AppX 和 .MSIX) 的资产包。
+使用以下命令之一来创建使用 Makeappx.exe （适用于 AppX 和 .MSIX）的资产包。
 
 ```cmd
 MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.appx

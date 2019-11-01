@@ -1,28 +1,28 @@
 ---
 title: 使用 SignTool 对应用包进行签名
-description: 使用带证书的 SignTool 手动对应用包签名。
+description: 本文介绍如何使用 SignTool 手动对应用包进行签名或捆绑证书。
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ece6feed1b012bd2f51e4211b8719fbb48e6d63
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 564492c8eb590680725d4a894126e8f825bf761b
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689976"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328710"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 对应用包进行签名
 
 **SignTool** 是命令行工具，用于对应用包或带有证书的捆绑包进行数字签名。 证书可以由用户创建（用于测试目的）或由公司颁发（用于分发）。 登录应用包可验证用户登录后应用数据未经更改，并且可确认登录用户或公司的身份。 **SignTool** 可对已加密或未加密的应用包和捆绑包进行签名。
 
 > [!IMPORTANT] 
-> 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包并对其进行签名。 有关详细信息, 请参阅使用[Visual Studio 打包 UWP 应用](packaging-uwp-apps.md)和[使用 visual Studio 从源代码打包桌面应用](../desktop/desktop-to-uwp-packaging-dot-net.md)。
+> 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包并对其进行签名。 有关详细信息，请参阅使用[Visual Studio 打包 UWP 应用](packaging-uwp-apps.md)和[使用 visual Studio 从源代码打包桌面应用](../desktop/desktop-to-uwp-packaging-dot-net.md)。
 
 有关代码签名和证书的一般详细信息，请参阅[代码签名简介](https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-tools)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 - **打包应用程序**  
     若要了解手动创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](create-app-package-with-makeappx-tool.md)。
@@ -32,8 +32,8 @@ ms.locfileid: "68689976"
 
 - **SignTool**  
     根据 SDK 的安装路径，以下是 **SignTool** 在 Windows 10 电脑上的位置：
-    - x86：C:\Program Files (x86) \Windows Kits\10\bin\x86\SignTool.exe
-    - 64C:\Program Files (x86) \Windows Kits\10\bin\x64\SignTool.exe
+    - x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
+    - x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>使用 SignTool
 
@@ -130,13 +130,13 @@ SignTool sign /debug [options]
  
 请执行以下操作，以便在事件日志中查找更多信息：
 - 运行 Eventvwr.msc
-- 打开事件日志:事件查看器 (本地)-> 的应用程序和服务日志-> Microsoft > Windows-> AppxPackagingOM-> AppxPackaging/Operational
+- 打开事件日志：事件查看器（本地）-> 应用程序和服务日志 -> Microsoft -> Windows -> AppxPackagingOM -> Microsoft-Windows-AppxPackaging/Operational
 - 查找最新的错误事件
 
 内部错误 0x8007000B 通常与以下值之一对应：
 
 | **事件 ID** | **示例事件字符串** | **仅供参考** |
 |--------------|--------------------------|----------------|
-| 150          | 错误 0x8007000B:应用程序清单发布者名称 (CN = Contoso) 必须匹配签名证书的使用者名称 (CN = Contoso, C = US)。 | 应用清单发布者名称必须与签名证书的使用者名称完全匹配。               |
-| 151          | 错误 0x8007000B:指定的签名哈希方法 (SHA512) 必须与应用包块映射 (SHA256) 中使用的哈希方法匹配。     | /fd 参数中指定的 hashAlgorithm 不正确。 使用与应用包块映射（创建应用包所用）匹配的 hashAlgorithm 重新运行 **SignTool**  |
-| 152          | 错误 0x8007000B:应用包内容必须针对其块映射进行验证。                                                           | 应用包已损坏，需要重建以生成新的块映射。 有关创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](create-app-package-with-makeappx-tool.md)。 |
+| 150          | 错误 0x8007000B：应用部件清单发布者名称 (CN=Contoso) 必须与签名证书的使用者名称 (CN=Contoso, C=US) 匹配。 | 应用清单发布者名称必须与签名证书的使用者名称完全匹配。               |
+| 151          | 错误 0x8007000B：指定的签名哈希方法 (SHA512) 必须与应用包块映射中使用的哈希方法 (SHA256) 匹配。     | /fd 参数中指定的 hashAlgorithm 不正确。 使用与应用包块映射（创建应用包所用）匹配的 hashAlgorithm 重新运行 **SignTool**  |
+| 152          | 错误 0x8007000B：应用包内容必须针对其块映射进行验证。                                                           | 应用包已损坏，需要重建以生成新的块映射。 有关创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](create-app-package-with-makeappx-tool.md)。 |

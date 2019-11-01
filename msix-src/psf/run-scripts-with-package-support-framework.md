@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ea76000a25fd8e3af76309cdd7c4b7cc28629c9a
-ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.openlocfilehash: 1ba8767e2fbbe5eb6ace39e14518462bfb7d853d
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776450"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328237"
 ---
 # <a name="run-scripts-with-the-package-support-framework"></a>使用包支持框架运行脚本
 
@@ -38,7 +38,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 * 32位计算机：
   * 32位可执行文件：%SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe
 
-有关 PowerShell 执行策略的详细信息，请参阅[此文](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6)。
+有关 PowerShell 执行策略的详细信息，请参阅[此文](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6)。
 
 请确保在包中包含以下 "StartingScriptWrapper"，并将其放置在可执行文件所在的同一文件夹中。 可以从包支持框架 NuGet 包（ https://www.nuget.org/packages/Microsoft.PackageSupportFramework/) 中复制它。
 

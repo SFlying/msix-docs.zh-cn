@@ -1,49 +1,49 @@
 ---
 title: 应用安装程序文件更新设置
-description: 了解如何使用应用安装程序文件配置应用更新。
+description: 本文介绍了有关如何使用应用安装程序文件配置应用更新行为的选项。
 ms.date: 12/12/2018
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b95398ad0a63dde2a29c83d233099441aa2c8809
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: f5e050c111cb7587a714b9335173fd4d7a385417
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828612"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328278"
 ---
 # <a name="configure-update-settings-in-the-app-installer-file"></a>在应用安装程序文件中配置更新设置
 
-如中所述[应用安装程序文件概述](app-installer-file-overview.md)，可以在应用安装程序文件中配置应用程序的更新行为。 本文探讨了更新选项和及其各自的利弊。
+如[应用安装程序文件概述](app-installer-file-overview.md)中所述，你可以在应用程序安装程序文件中配置应用程序的更新行为。 本文将探讨更新选项及其各自的利弊。
 
-可以通过配置应用程序的更新行为[UpdateSettings](https://docs.microsoft.com/uwp/schemas/appinstallerschema/element-update-settings)元素。 现在，我们探讨更新选项和及其各自的利弊。
+可以通过使用[UpdateSettings](https://docs.microsoft.com/uwp/schemas/appinstallerschema/element-update-settings)元素来配置应用程序的更新行为。 在这里，我们将探讨更新选项及其各自的利弊。
 
-简单地说，您可以选择检查更新两个不同的方式：
-1. 独立于用户启动应用。
-2. 仅当用户启动应用。
+简而言之，你可以选择通过两种不同的方式来检查更新：
+1. 独立于启动应用程序的用户。
+2. 仅当用户启动应用时。
 
-此外，您可以选择两个不同的方式应用更新：
-1. 通过通知提示用户。
-2. 以无提示方式，而不通知用户。
+此外，还可以选择采用两种不同的方式来应用更新：
+1. 通过向用户通知提示。
+2. 无提示通知用户。
 
-最后时通知用户更新，您可以强制他们采取 update，然后再允许他们启动应用，或可以允许它们进行启动该应用程序并将应用在扩大的更新。
+最后，当你向用户通知某一更新时，你可以在允许用户启动应用之前强制他们执行更新，也可以允许他们启动应用并在时机的时间应用更新。
 
-具体而言，以下是可供您的语法：
+具体而言，可以使用的语法如下所示：
 
-- [UpdateSettings](https://docs.microsoft.com/uwp/schemas/appinstallerschema/element-update-settings)元素可以具有以下元素：
+- [UpdateSettings](https://docs.microsoft.com/uwp/schemas/appinstallerschema/element-update-settings)元素可以包含以下元素：
 
-    - **OnLaunch**:在启动更新检查。 此类型的更新可以显示用户界面，具有以下属性：
+    - **OnLaunch**：启动时检查更新。 这种类型的更新可以显示 UI，并且具有以下属性：
 
-        - **ShowPrompt**:一个布尔值，确定是否将向用户显示 UI。 在 Windows 10，版本 1903年及更高版本上支持此值。
+        - **ShowPrompt**：确定 UI 是否向用户显示的布尔值。 Windows 10 版本1903及更高版本支持此值。
 
-        - **UpdateBlocksActivation**:一个布尔值，确定向用户显示的 UI 可让用户以启动应用而无需使更新，还是用户所必须执行的更新前启动应用程序。 此属性可以设置为"true"仅当**ShowPrompt**设置为"true"。 **UpdateBlocksActivation**="true"表示用户界面，用户将看到，允许用户执行更新或关闭应用程序。 **UpdateBlocksActivation**="false"表示用户界面，用户将看到，允许用户执行更新或启动应用程序而不更新。 在后一种情况下，更新将以无提示方式在应用扩大。 在 Windows 10，版本 1903年及更高版本上支持此值。
+        - **UpdateBlocksActivation**：一个布尔值，确定向用户显示的 UI 是否允许用户在不进行更新的情况下启动应用，或者用户必须在启动应用之前获取更新。 仅当**ShowPrompt**设置为 "true" 时，此属性才可设置为 "true"。 **UpdateBlocksActivation**= "true" 表示用户将看到的 UI，允许用户进行更新或关闭应用。 **UpdateBlocksActivation**= "false" 表示用户将看到的 UI，允许用户进行更新或启动应用而不进行更新。 在后一种情况下，将在时机时以静默方式应用更新。 Windows 10 版本1903及更高版本支持此值。
 
         > [!NOTE]
-        > ShowPrompt 需要设置为 true，如果 UpdateBlocksActivation 设置为 true。
+        > 如果 UpdateBlocksActivation 设置为 true，则需要将 ShowPrompt 设置为 true。
 
-        - **HoursBetweenUpdateChecks**:一个整数，指示频率 （以小时数） 系统会检查应用的更新。 "0"到"255"非独占。 （如果未指定此值），默认值为 24。 例如如果 HoursBetweenUpdateChecks = 3，则当用户启动应用时，如果在过去 3 小时内更新尚未检查系统，它将检查现在是否有更新。  
+        - **HoursBetweenUpdateChecks**：一个整数，该整数指示系统检查应用更新的频率（以多少小时为单位）。 "0" 到 "255" （含）。 如果未指定此值，则默认值为24。 例如，如果 HoursBetweenUpdateChecks = 3，则当用户启动应用程序时，如果系统未在过去3小时内检查更新，它将立即检查更新。  
 
-    - **AutomaticBackgroundTask**:在后台独立于用户是否启动了应用程序每隔 8 小时更新检查。 此类型的更新无法显示 UI。
+    - **AutomaticBackgroundTask**：每8小时检查一次后台更新，与用户是否启动应用无关。 此类型的更新无法显示 UI。
 
-    - **ForceUpdateFromAnyVersion**:允许应用从版本 x 更新到版本 x + + 或降级到版本 x-从版本 x。 如果没有该元素，该应用程序只能移动到更高版本。
+    - **ForceUpdateFromAnyVersion**：允许应用从版本 x 更新到版本 x + +，或从版本 x 降级到版本 x--。 如果没有此元素，应用只能转到较高的版本。

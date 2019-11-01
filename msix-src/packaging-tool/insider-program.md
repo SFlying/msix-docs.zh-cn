@@ -1,17 +1,17 @@
 ---
 title: MSIX 打包工具预览体验计划
-description: 了解打包工具预览体验计划以及如何加入该计划
+description: 本文介绍 .MSIX 打包工具预览体验计划，它提供 .MSIX 打包工具的早期访问版本。
 ms.date: 06/25/2019
 ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6584abe50111bba8215acae2d4ab34a8b9675be1
-ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.openlocfilehash: 7201d3907d84e4a42fbcb3d9f19adf84d5fe353f
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776546"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328479"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -38,8 +38,8 @@ ms.locfileid: "72776546"
 ### <a name="version-1201910180-public"></a>版本1.2019.1018.0 （公共）
 - Device Guard 签名功能现已提供。 此签名选项需要一个已为适用于企业的 Microsoft Store 配置的活动 Microsoft Azure Active Directory 帐户。 有关详细信息，请参阅[此文](https://docs.microsoft.com/windows/msix/package/signing-package-device-guard-signing)。
 - **包编辑器**现在支持选择要执行某个操作的多个项目的功能。
-- 右键单击以编辑 .MSIX 包现在受支持。
-- 打包工作流的 Ux 改进。
+- 现在支持右键单击以编辑 MSIX 包。
+- 用户体验对打包工作流的改进。
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 

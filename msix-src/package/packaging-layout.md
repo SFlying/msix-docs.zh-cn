@@ -1,18 +1,18 @@
 ---
-title: 使用包布局创建包
-description: 包布局是用于描述应用的包结构的单个文档。 它指定应用中的捆绑（主要和可选）、捆绑中的包以及包中的文件。
+title: 使用打包布局创建包
+description: 打包布局是一个文档，其中描述了应用的打包结构，如应用（主要和可选）的捆绑。
 ms.date: 04/30/2018
 ms.topic: article
 keywords: windows 10, 打包, 资产包布局, 资产包
 ms.localizationpriority: medium
-ms.openlocfilehash: 50284e2878a649380c842f82d03d6530aa493c99
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 92e14f8d7b8e1b3a7508f673b81a7ea6bb14ea42
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689956"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328775"
 ---
-# <a name="package-creation-with-the-packaging-layout"></a>使用包布局创建包  
+# <a name="package-creation-with-the-packaging-layout"></a>使用打包布局创建包  
 
 随着资产包的引入，开发人员现在有了构建更多包和更多包类型的工具。 当应用变得越来越大、越来越复杂时，通常会包含更多的包，管理这些包的难度也会增加（特别是在 Visual Studio 以外构建和使用映射文件的情况下）。 为了简化应用包结构的管理，你可以使用 MakeAppx.exe 支持的包布局。 
 
@@ -143,7 +143,7 @@ ms.locfileid: "68689956"
 
 每个可选包都有自己独特的包系列名称，必须使用 **PackageFamily** 元素进行定义，同时将 **Optional** 属性指定为 **true**。 **RelatedSet** 属性用于指定可选包是否在相关集中（默认为 true）- 可选包是否应随主包一起更新。
 
-**PrebuiltPackage**元素用于将打包布局中未定义的包添加到要在生成的应用包文件中包含或引用的包。 在这种情况下, 将在此处包含另一个 DLC 可选包, 以便主要应用程序包文件可以引用它并将其作为相关集的一部分。
+**PrebuiltPackage**元素用于将打包布局中未定义的包添加到要在生成的应用包文件中包含或引用的包。 在这种情况下，将在此处包含另一个 DLC 可选包，以便主要应用程序包文件可以引用它并将其作为相关集的一部分。
 
 ## <a name="build-app-packages-with-a-packaging-layout-and-makeappxexe"></a>使用包布局和 MakeAppx.exe 构建应用包
 
@@ -159,13 +159,13 @@ MakeAppx.exe build /f PackagingLayout.xml /op OutputPackages\
 MakeAppx.exe build /f PackagingLayout.xml /id "x64" /ip PreviousVersion\ /op OutputPackages\ /iv
 ```
 
-`/id` 标志可用于从包布局中选择要构建的包，它与布局中的 **ID** 属性相对应。 在本例中，`/ip` 用于指示包的以前版本所在的位置。 必须提供以前的版本, 因为应用捆绑包文件仍需要引用以前版本的**媒体**包。 `/iv` 标志用于自动递增要构建的包的版本（而不是在 **AppxManifest** 中更改版本）。 或者，也可以使用 `/pv` 和 `/bv` 开关分别直接提供包版本（用于要创建的所有包）和捆绑包版本（用于要创建的所有捆绑包）。
+`/id` 标志可用于从包布局中选择要构建的包，它与布局中的 **ID** 属性相对应。 在本例中，`/ip` 用于指示包的以前版本所在的位置。 必须提供以前的版本，因为应用捆绑包文件仍需要引用以前版本的**媒体**包。 `/iv` 标志用于自动递增要构建的包的版本（而不是在 **AppxManifest** 中更改版本）。 或者，也可以使用 `/pv` 和 `/bv` 开关分别直接提供包版本（用于要创建的所有包）和捆绑包版本（用于要创建的所有捆绑包）。
 以本页面上的高级包布局示例为例，要只构建 **Themes** 可选捆绑包和它引用的 **Themes.main** 应用包，可以使用以下命令：
 
 ```cmd
 MakeAppx.exe build /f PackagingLayout.xml /id "Themes" /op OutputPackages\ /bc /nbp
 ```
 
-`/bc` 标志用于表示还应该构建 **Themes** 捆绑包的子项（在本例中，这将构建 **Themes.main**）。 `/nbp` 标志用于表示不应该构建 **Themes** 捆绑包的父项。 **主题**的父项是一个可选的应用程序捆绑包, 它是主应用程序捆绑包:**MyGame**。 通常，对于相关集中的可选包，还必须构建主应用程序包以便能够安装可选包，因为当可选包位于相关集中时，主应用程序包也会引用它（以确保在主包和可选包之间实施版本控制）。 下图说明了包之间的父子关系：
+`/bc` 标志用于表示还应该构建 **Themes** 捆绑包的子项（在本例中，这将构建 **Themes.main**）。 `/nbp` 标志用于表示不应该构建 **Themes** 捆绑包的父项。 **Themes** 的父项是主应用程序包 **MyGame**，这是一个可选应用程序包。 通常，对于相关集中的可选包，还必须构建主应用程序包以便能够安装可选包，因为当可选包位于相关集中时，主应用程序包也会引用它（以确保在主包和可选包之间实施版本控制）。 下图说明了包之间的父子关系：
 
 ![包布局图](images/packaging-layout.png)

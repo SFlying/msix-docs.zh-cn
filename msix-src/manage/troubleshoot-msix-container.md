@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: c1a8d489ca93c075ce8b87e98fb2ada3bade7d91
-ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
+ms.openlocfilehash: bac524ead0db9d7c56502b534571989aa9e6d0d9
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70864018"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328911"
 ---
 # <a name="troubleshoot-runtime-issues-in-an-msix-container"></a>排查 .MSIX 容器中的运行时问题 
 
@@ -19,7 +19,7 @@ ms.locfileid: "70864018"
 
 在某些情况下，这些应用程序的安装顺序可能会导致意外问题，可能会覆盖所需的注册表项，并且可能会替换预期的文件。 
 
-为了帮助诊断此类问题， [CommandInDesktopPackage](https://docs.microsoft.com/en-us/powershell/module/appx/invoke-commandindesktoppackage?view=win10-ps)是一个 PowerShell cmdlet，可用于在 .msix 容器中运行应用程序。 这样，用户便可以在 .MSIX 容器中运行命令提示符、注册表编辑器、PowerShell，并获得合并文件系统和合并的注册表配置单元。 
+为了帮助诊断此类问题， [CommandInDesktopPackage](https://docs.microsoft.com/powershell/module/appx/invoke-commandindesktoppackage?view=win10-ps)是一个 PowerShell cmdlet，可用于在 .msix 容器中运行应用程序。 这样，用户便可以在 .MSIX 容器中运行命令提示符、注册表编辑器、PowerShell，并获得合并文件系统和合并的注册表配置单元。 
 
  > [!IMPORTANT]
  > CommandInDesktopPackage 要求设备处于18922之前的 Windows 10 内部版本的开发人员模式。

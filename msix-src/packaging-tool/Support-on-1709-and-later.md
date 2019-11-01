@@ -1,17 +1,17 @@
 ---
 title: Windows 10 版 1709 和更高版本中的 MSIX 包支持
-description: 在 1709 和更高版本中安装 MSIX 包。
+description: 本文介绍如何在 Windows 10 版本1709（版本16299）和更高版本中支持 .MSIX 包。
 ms.date: 04/04/2019
 ms.topic: article
 keywords: MSIX, MPT, MSIX 打包工具, 1709, 16299
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f4a27ce99eb949400b319bed6977a4e93338251a
-ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.openlocfilehash: 4dbb6fdb5893835475d79a8052e35fc902680425
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776510"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328754"
 ---
 # <a name="msix-package-support-on-windows-10-version-1709-and-later"></a>Windows 10 版 1709 及更高版本上的 MSIX 包支持
 

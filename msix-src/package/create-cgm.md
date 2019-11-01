@@ -1,23 +1,23 @@
 ---
 ms.assetid: ff2523cb-8109-42be-9dfc-cb5d09002574
 title: 创建和转换源内容组映射
-description: 若要为应用程序准备好进行流式处理, 需要创建内容组映射。 本文介绍有关创建和转换内容组映射的具体信息，同时提供一些相关提示和技巧。
+description: 本文介绍如何创建内容组映射。 准备应用以进行流式安装所需的内容组映射。
 ms.date: 07/02/2019
 author: dianmsft
 ms.author: diahar
 ms.topic: article
-keywords: windows 10, .msix, uwp, 内容组映射, 流安装, 应用程序流式安装, 源内容组映射
+keywords: windows 10，.msix，uwp，内容组映射，流安装，应用程序流式安装，源内容组映射
 ms.localizationpriority: medium
-ms.openlocfilehash: 4908c03e9c300b56ac21b7f8b268b78ee27af915
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 09b5d42033082971ee490ef83de59fb30837e227
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689886"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328826"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>创建和转换源内容组映射
 
-若要为应用程序准备好进行流式处理, 需要创建内容组映射。 本文介绍有关创建和转换内容组映射的具体信息，同时提供一些相关提示和技巧。
+若要为应用程序准备好进行流式处理，需要创建内容组映射。 本文介绍有关创建和转换内容组映射的具体信息，同时提供一些相关提示和技巧。
 
 ## <a name="creating-the-source-content-group-map"></a>创建源内容组映射
 
@@ -25,10 +25,10 @@ ms.locfileid: "68689886"
 
 让我们来看一看应用程序流式安装非常有用的简单方案。 
 
-假设您已经创建了一个游戏, 但最终应用程序的大小超过 100 GB。 这可能需要很长时间才能从 Microsoft Store 下载, 这可能很不方便。 如果选择使用应用程序流安装, 则可以指定应用程序文件的下载顺序。 告知应用商店先下载必要的文件，用户就能够尽快地使用应用，同时在后台下载其他不重要的文件。
+假设您已经创建了一个游戏，但最终应用程序的大小超过 100 GB。 这可能需要很长时间才能从 Microsoft Store 下载，这可能很不方便。 如果选择使用应用程序流安装，则可以指定应用程序文件的下载顺序。 告知应用商店先下载必要的文件，用户就能够尽快地使用应用，同时在后台下载其他不重要的文件。
 
 > [!NOTE]
-> 使用应用程序流安装很大程度上依赖于应用程序的文件组织。 建议你在应用程序流式处理安装时尽快考虑应用的内容布局, 以便更轻松地将应用程序的文件分段。
+> 使用应用程序流安装很大程度上依赖于应用程序的文件组织。 建议你在应用程序流式处理安装时尽快考虑应用的内容布局，以便更轻松地将应用程序的文件分段。
 
 首先，创建 `SourceAppxContentGroupMap.xml` 文件。
 
@@ -80,7 +80,7 @@ ms.locfileid: "68689886"
 要开始编写此文件，简单的方法是在最喜欢的文本编辑器中打开一个新页面，快速将文件“另存为”至应用的项目文件夹，并将新创建的文件命名为：`SourceAppxContentGroupMap.xml`。
 
 > [!IMPORTANT]
-> 如果要开发C++应用程序, 则需要调整的`SourceAppxContentGroupMap.xml`文件属性。 将 `Content` 属性设置为 **true**，`File Type` 属性设置为 **XML 文件**。
+> 如果要开发C++应用程序，则需要调整 `SourceAppxContentGroupMap.xml`的文件属性。 将 `Content` 属性设置为 **true**，`File Type` 属性设置为 **XML 文件**。
 
 创建 `SourceAppxContentGroupMap.xml` 时，在文件名中使用通配符会有所帮助，有关详细信息，请参阅[使用通配符的提示和技巧](#wildcards)部分。
 
@@ -168,4 +168,4 @@ MakeAppx convertCGM /s MyApp\SourceAppxContentGroupMap.xml /f MyApp\AppxContentG
 MakeAppx convertCGM /?
 ```
 
-这就是使最终 `AppxContentGroupMap.xml` 可供应用使用需要进行的所有操作！ 在应用完全准备好 Microsoft Store 之前, 还有更多工作要做。 有关将流式处理安装添加到应用的完整过程的详细信息, 请查看[此博客文章](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。
+这就是使最终 `AppxContentGroupMap.xml` 可供应用使用需要进行的所有操作！ 在应用完全准备好 Microsoft Store 之前，还有更多工作要做。 有关将流式处理安装添加到应用的完整过程的详细信息，请查看[此博客文章](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。

@@ -1,19 +1,19 @@
 ---
 title: 如何捆绑 MSIX 包
-description: 捆绑不同体系结构的 MSIX 包
+description: 本文介绍如何使用 .MSIX 打包工具在转换应用程序安装程序的 x86 和 x64 版本后创建捆绑包。
 ms.date: 10/25/2018
 ms.topic: article
 keywords: windows 10, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 7742ca5e52ed5ee435ee3c8765fa45cfbdc903dc
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
-ms.translationtype: HT
+ms.openlocfilehash: b8dfc909cd962e23970397bf673f9a3041cbcb4f
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68685432"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328741"
 ---
-# <a name="bundle-msix-packages"></a>捆绑 MSIX 包 
+# <a name="bundle-msix-packages"></a>捆绑 MSIX 包
 
 本文介绍在使用 MSIX 打包工具转换 Windows 安装程序的 x86 和 x64 版本之后，创建捆绑包的过程。 
 
@@ -21,30 +21,34 @@ ms.locfileid: "68685432"
 
 以下部分提供了生成 .msixbundle 的每个步骤。 其中假设已将 Windows 安装程序的[现有 x86 和 x64 版本转换为](https://docs.microsoft.com/windows/msix/mpt-best-practices) MSIX 包。 
 
-### <a name="setup"></a>安装
-需要完成以下设置才能成功生成 MSIX 捆绑包：
-- [Windows 10 SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)（1809 或更高版本）
-- 已转换的 x64 和 x86 MSIX 包 
+### <a name="setup"></a>“安装程序”
 
-## <a name="step-1-find-makeappxexe"></a>第 1 步：找到 MakeAppx.exe
-[MakeAppx.exe](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) 是 Windows 10 SDK 中提供的一个工具，可用于打包和捆绑 MSIX 包。 你将使用此工具将两个 MSIX 包捆绑到一起。 
+需要完成以下设置才能成功生成 MSIX 捆绑包：
+
+- [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)（1809 或更高版本）
+- 已转换的 x64 和 x86 MSIX 包
+
+## <a name="step-1-find-makeappxexe"></a>步骤1：查找 Makeappx.exe
+
+[MakeAppx.exe](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) 是 Windows 10 SDK 中提供的一个工具，可用于打包和捆绑 MSIX 包。 你将使用此工具将两个 MSIX 包捆绑到一起。
 
 MakeAppx.exe 可用于提取 Windows 10 应用包或捆绑包的文件内容。 它还可以加密和解密应用包与捆绑包。
 
-安装 Windows 10 SDK 后，通常可在以下位置找到 MakeAppx.exe： 
+安装 Windows 10 SDK 后，通常可在以下位置找到 MakeAppx.exe：
+
 - [x86] - C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\MakeAppx.exe
 - [x64] - C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x64\MakeAppx.exe
 
-## <a name="step-2-bundle-the-packages"></a>步骤 2：捆绑包
+## <a name="step-2-bundle-the-packages"></a>步骤2：捆绑包
 
-使用 MakeApp.exe 捆绑包的最简单方法是将要捆绑在一起的所有包添加到一个文件夹中。 该目录只能包含要捆绑的包，而不能包含其他任何内容。 
+使用 MakeApp.exe 捆绑包的最简单方法是将要捆绑在一起的所有包添加到一个文件夹中。 该目录只能包含要捆绑的包，而不能包含其他任何内容。
 
 将要捆绑的应用包移到一个目录中，如以下屏幕截图所示。
 
 ![在目录中捆绑包](images/bundle-pic1.png)
 
->[!NOTE] 
-> MakeAppx.exe 只会捆绑具有相同标识的包，这意味着，AppID、发布者和版本需要相同。 只有应用程序包的包处理器体系结构可以不同。 
+>[!NOTE]
+> MakeAppx.exe 只会捆绑具有相同标识的包，这意味着，AppID、发布者和版本需要相同。 只有应用程序包的包处理器体系结构可以不同。
 
 MakeAppx.exe 使用以下命令行语法。
 
@@ -62,7 +66,7 @@ C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\MakeAppx.exe" 
 
 运行该命令后，将在指定的路径中创建一个未签名的 .msixbundle。 绑定之前，不需要对包进行签名。  
 
-## <a name="step-3-sign-the-bundle"></a>步骤 3:为捆绑包签名
+## <a name="step-3-sign-the-bundle"></a>步骤3：为捆绑签名
 
 创建捆绑包后，必须先对包进行签名，然后才能将应用分发给用户或进行安装。 
 

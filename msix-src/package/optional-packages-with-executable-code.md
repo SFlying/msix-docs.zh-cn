@@ -5,32 +5,32 @@ ms.date: 07/02/2019
 ms.topic: article
 author: dianmsft
 ms.author: diahar
-keywords: windows 10, .msix, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选程序包
+keywords: windows 10，.msix，uwp，应用安装程序，AppInstaller，旁加载，相关集，可选程序包
 ms.localizationpriority: medium
-ms.openlocfilehash: 3549794387d63b668c3c6062a0c52a3df23ec46f
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 35ecf422e3a5b6db8b95d17011b46c09cbdb0218
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689756"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328787"
 ---
 # <a name="optional-packages-with-executable-code"></a>包含可执行代码的可选包
  
 包含可执行代码的可选包对于划分大型或复杂的应用，或者添加到已发布的应用很有用。 使用 Visual Studio 2017 版本 15.7 和 .NET Native 2.1，你可以从 C++ 和 C# 可选包加载可执行代码。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>必备条件
 
-- Visual Studio 2019 或 Visual Studio 2017 (版本15.7 或更高版本)
+- Visual Studio 2019 或 Visual Studio 2017 （版本15.7 或更高版本）
 - Windows 10 版本1709或更高版本
 - Windows 10 版本 1709 SDK 或更高版本
 
 若要获取最新的开发工具，请参阅[适用于 Windows 10 的下载和工具](https://developer.microsoft.com/windows/downloads)。
 
 > [!NOTE]
-> 若要将使用可选包和/或相关集的应用提交到 Microsoft Store，你需要权限。 可选包和相关集可用于业务线 (LOB) 或无合作伙伴中心权限的企业应用 (如果未提交到商店)。 请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)，获取提交使用可选包和相关集的应用的权限。
+> 若要将使用可选包和/或相关集的应用提交到 Microsoft Store，你需要权限。 可选包和相关集可用于业务线（LOB）或无合作伙伴中心权限的企业应用（如果未提交到商店）。 请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)，获取提交使用可选包和相关集的应用的权限。
 
 > [!NOTE]
-> 包含可执行代码的可选包必须是[相关集](optional-packages.md#related-sets)的一部分。 你将无法从可选包执行代码, 除非它是相关集的一部分。
+> 包含可执行代码的可选包必须是[相关集](optional-packages.md#related_sets)的一部分。 你将无法从可选包执行代码，除非它是相关集的一部分。
 
 ## <a name="c-optional-packages-with-executable-code"></a>包含可执行代码的 C++ 可选包
 
@@ -60,7 +60,7 @@ ms.locfileid: "68689756"
     <uap3:MainPackageDependency Name="12345.MainAppProjectTest" />
     ```
 
-6. 将 `Bundle.mapping.txt` 文件添加到主应用。 请按照此[相关集](optional-packages.md#related-sets)部分的步骤创建包含两个应用的相关集。
+6. 将 `Bundle.mapping.txt` 文件添加到主应用。 请按照此[相关集](optional-packages.md#related_sets)部分的步骤创建包含两个应用的相关集。
 
 7. 生成可选包项目，然后导航到生成输出中的包参考文件夹，位于 `..\[PathToOptionalPackageProject]\bin\[architecture]\[configuration]\Reference`。 请注意，你可以在参考文件夹路径中选择任何体系结构，因为 `.winmd` 文件（步骤 8）是体系结构独立文件。
 
@@ -68,4 +68,4 @@ ms.locfileid: "68689756"
 
 9. 在主应用项目中，导航到项目生成属性，然后选择**使用 .NET Native 工具链编译**。 目前，仅 .NET Native 中的调试支持在 C# 中创建可选代码包。 转到项目调试属性，然后选择**部署可选包**。 这将确保不论你何时部署主应用项目，这两个包均保持同步。
 
-完成这些步骤后, 可以将代码添加到可选包项目中, 就像它是一个托管 WinRT 组件项目一样。 若要访问主应用项目中的代码，调用可选包项目中公开的公共方法。
+完成这些步骤后，可以将代码添加到可选包项目中，就像它是一个托管 WinRT 组件项目一样。 若要访问主应用项目中的代码，调用可选包项目中公开的公共方法。

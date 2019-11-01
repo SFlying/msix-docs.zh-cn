@@ -1,19 +1,19 @@
 ---
 ms.assetid: 3a59ff5e-f491-491c-81b1-6aff15886aad
 title: 可选包和相关集创作
-description: 可选包中包含可与主要包相集成的内容。 这些内容可用于可下载内容 (DLC)，因为大小限制而划分大型应用，或者用于随附从原始应用中单独分隔出来的任何其他内容。
+description: 可选包中包含可与主要包相集成的内容。 这对于可下载内容（DLC）和其他方案非常有用。
 ms.date: 07/02/2019
 ms.topic: article
 author: dianmsft
 ms.author: diahar
-keywords: windows 10, .msix, uwp, 可选包, 相关集, 包扩展, visual studio
+keywords: windows 10，.msix，uwp，可选包，相关集，包扩展，visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 5106708742ec134e760db333ff939c456b124659
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 34922f5067d7e1c934b85745f7dc947149f024e2
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68690056"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328765"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>可选包和相关集创作
 
@@ -21,16 +21,16 @@ ms.locfileid: "68690056"
 
 相关集是可选包的扩展 - 它们使你能够跨主要包和可选包强制执行严格的一组版本。 它们还使你能够从可选包加载本机代码 (C++)。 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-- Visual Studio 2019 或 Visual Studio 2017 (版本15.1 或更高版本)
+- Visual Studio 2019 或 Visual Studio 2017 （版本15.1 或更高版本）
 - Windows 10 版本 1703 或更高版本
 - Windows 10 版本 1703 SDK 或更高版本
 
 若要获取所有最新的开发工具，请参阅[适用于 Windows 10 的下载和工具](https://developer.microsoft.com/windows/downloads)。
 
 > [!NOTE]
-> 若要将使用可选包和/或相关集的应用提交到 Microsoft Store, 你将需要权限。 可选包和相关集可用于业务线 (LOB) 或无合作伙伴中心权限的企业应用 (如果未提交到商店)。 请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)，获取提交使用可选包和相关集的应用的权限。
+> 若要将使用可选包和/或相关集的应用提交到 Microsoft Store，你将需要权限。 可选包和相关集可用于业务线（LOB）或无合作伙伴中心权限的企业应用（如果未提交到商店）。 请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)，获取提交使用可选包和相关集的应用的权限。
 
 ## <a name="code-sample"></a>代码示例
 
@@ -39,7 +39,7 @@ ms.locfileid: "68690056"
 ## <a name="optional-packages"></a>可选包
 
 若要在 Visual Studio 中创建可选包，你需要：
-1. 请确保应用的**目标平台最小版本**设置为:10.0.15063.0 或更高版本。
+1. 请确保应用的**目标平台最小版本**设置为：10.0.15063.0 或更高版本。
 2. 从**主要包**项目中打开 `Package.appxmanifest` 文件。 导航到“打包”选项卡，然后记下**包系列名称**，即“_”字符之前的所有内容。
 3. 在**可选包**项目中，右键单击 `Package.appxmanifest`，然后选择**打开方式 > XML(文本)编辑器**。
 4. 在文件中找到 `<Dependencies>` 元素。 添加以下内容：
@@ -80,7 +80,7 @@ ms.locfileid: "68690056"
 
 当用这种方式配置解决方案时，Visual Studio 将为主要包创建一个捆绑包清单，其中包含相关集的所有必需元数据。 
 
-请注意, 与可选包一样`Bundle.Mapping.txt` , 相关集的文件将仅适用于 Windows 10 版本1703或更高版本。 此外, 应用的目标平台最低版本应设置为10.0.15063.0 或更高版本。
+请注意，与可选包一样，适用集的 `Bundle.Mapping.txt` 文件将仅适用于 Windows 10 1703 版或更高版本。 此外，应用的目标平台最低版本应设置为10.0.15063.0 或更高版本。
 
 ## 已知问题<a name="known_issues"></a>
 

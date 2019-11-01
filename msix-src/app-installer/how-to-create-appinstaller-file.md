@@ -1,27 +1,27 @@
 ---
 title: 手动创建应用安装程序文件
-description: 本文介绍如何安装一组相关通过应用程序的安装程序。 我们还将完成相应的步骤以构建一个将定义相关集的 *.appinstaller 文件。
+description: 本文介绍如何通过应用安装程序安装相关集，其中包括如何创建定义相关集的 *. appinstaller 文件。
 ms.date: 1/4/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 61b98b924015f021950c5f6a022d383f940443c8
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 2e7e3752fbdf7ba16a6cd6ba0b6fae3aee41eacd
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828478"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328296"
 ---
 # <a name="create-an-app-installer-file-manually"></a>手动创建应用安装程序文件
 
-本文介绍如何手动创建定义的应用安装程序文件[相关集](install-related-set.md)。 相关集不是一个实体，而是主要包和可选包的组合。 
+本文介绍如何手动创建用于定义[相关集](install-related-set.md)的应用安装程序文件。 相关集不是一个实体，而是主要包和可选包的组合。 
 
-为了能够将相关集作为一个实体来安装，我们必须能够将主要包和可选包指定为一个整体。 若要执行此操作，我们将需要创建一个 XML 文件与 **.appinstaller**扩展来定义一组相关。 应用安装程序会占用 **.appinstaller**文件，并允许用户一次单击安装所有定义的包。 
+为了能够将相关集作为一个实体来安装，我们必须能够将主要包和可选包指定为一个整体。 为此，我们需要创建一个具有**appinstaller**扩展名的 XML 文件来定义相关集。 应用安装程序使用**appinstaller**文件，并允许用户通过单击来安装所有已定义的包。 
 
 ## <a name="app-installer-file-example"></a>应用安装程序文件示例
 
-我们转到更多详细信息之前，此处是一个完整的示例 msixbundle *.appinstaller 文件：
+在深入了解更多详细信息之前，下面是一个完整的示例 .msixbundle *. appinstaller 文件：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -71,10 +71,10 @@ ms.locfileid: "67828478"
 
 若要作为一个实体来分配相关集，你必须创建一个应用安装程序文件，其中包含该 [appinstaller 架构](https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file)所需的元素。
 
-### <a name="step-1-create-the-appinstaller-file"></a>步骤 1：创建 *.appinstaller 文件
+### <a name="step-1-create-the-appinstaller-file"></a>第 1 步：创建 *.appinstaller 文件
 使用文本编辑器，创建一个文件（其中将包含 XML）并将其命名为 &lt;文件名&gt;.appinstaller
 
-### <a name="step-2-add-the-basic-template"></a>步骤 2：添加基本模板
+### <a name="step-2-add-the-basic-template"></a>第 2 步：添加基本模板
 基本模板包括应用安装程序文件信息。
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -85,9 +85,9 @@ ms.locfileid: "67828478"
 </AppInstaller>
 ```
 
-### <a name="step-3-add-the-main-package-information"></a>步骤 3：将主包信息添加
+### <a name="step-3-add-the-main-package-information"></a>第 3 步：添加主要包信息
 
-如果主要应用程序包是.msix 或.appx 文件，然后使用`<MainPackage>`，如下所示。 务必包括 ProcessorArchitecture，因为它是必需的非捆绑包。
+如果主要应用程序包是 .msix 或 .appx 文件，请使用 `<MainPackage>`，如下所示。 请确保包含 ProcessorArchitecture，因为它对非捆绑包是必需的。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -106,7 +106,7 @@ ms.locfileid: "67828478"
 </AppInstaller>
 ```
 
-如果主要应用程序包是.msixbundle 或.appxbundle 或文件，然后使用`<MainBundle>`来代替`<MainPackage>`，如下所示。 对于捆绑包，ProcessorArchitecture 不是必需的。
+如果主应用包为 .msixbundle 或 .appxbundle 或文件，则使用 `<MainBundle>` 来代替 `<MainPackage>`，如下所示。 对于捆绑包，ProcessorArchitecture 不是必需的。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -126,7 +126,7 @@ ms.locfileid: "67828478"
 
 `<MainBundle>` 或 `<MainPackage>` 属性中的信息应该分别与应用程序包清单或应用包清单中的 [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 元素匹配。
 
-### <a name="step-4-add-the-optional-packages"></a>步骤 4：添加可选包
+### <a name="step-4-add-the-optional-packages"></a>第 4 步：添加可选包
 类似于主应用包属性，如果可选包可以是应用包或应用程序包，则 `<OptionalPackages>` 属性中的子元素应该分别是 `<Package>` 或 `<Bundle>`。 子元素中的包信息应该与程序包或程序包清单中的 Identity 元素相匹配。
 
 ``` xml
@@ -167,7 +167,7 @@ ms.locfileid: "67828478"
 </AppInstaller>
 ```
 
-### <a name="step-5-add-dependencies"></a>步骤 5：添加依赖项
+### <a name="step-5-add-dependencies"></a>第 5 步：添加依赖项
 在依赖项元素中，你可以指定主要包或可选包所需的框架包。
 
 ``` xml
@@ -213,9 +213,9 @@ ms.locfileid: "67828478"
 </AppInstaller>
 ```
 
-### <a name="step-6-add-update-setting"></a>步骤 6：添加的更新设置
+### <a name="step-6-add-update-setting"></a>第 6 步：添加更新设置
 
-应用安装程序文件还可以指定更新设置，以便在发布较新的应用安装程序文件时可以自动更新相关集。 **<UpdateSettings>** 是可选元素。 在 **<UpdateSettings>** 中，OnLaunch 选项指定应在应用启动时进行更细你检查，HoursBetweenUpdateChecks="12" 则指定应每隔 12 小时执行更新检查。 如果未指定 HoursBetweenUpdateChecks，则用于检查更新的默认时间间隔为 24 小时。 其他类型的更新，如后台更新可在更新设置[架构](https://docs.microsoft.com/en-us/uwp/schemas/appinstallerschema/element-update-settings);其他类型的上启动更新等提示更新位于 OnLaunch[架构](https://docs.microsoft.com/en-us/uwp/schemas/appinstallerschema/element-onlaunch)
+应用安装程序文件还可以指定更新设置，以便在发布较新的应用安装程序文件时可以自动更新相关集。 **<UpdateSettings>** 是一个可选元素。 在 **<UpdateSettings>** 中，OnLaunch 选项指定应在应用启动时进行更细你检查，HoursBetweenUpdateChecks="12" 则指定应每隔 12 小时执行更新检查。 如果未指定 HoursBetweenUpdateChecks，则用于检查更新的默认时间间隔为 24 小时。 其他类型的更新，如后台更新，可以在 "更新设置"[架构](https://docs.microsoft.com/uwp/schemas/appinstallerschema/element-update-settings)中找到;在 OnLaunch[架构](https://docs.microsoft.com/uwp/schemas/appinstallerschema/element-onlaunch)中可以找到其他类型的启动更新，如使用提示更新的更新。
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -267,4 +267,4 @@ ms.locfileid: "67828478"
 有关 XML 架构的所有详细信息，请参阅[应用安装程序文件参考](https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file)。
 
 > [!NOTE]
-> 应用安装程序文件类型为 Windows 10 版本 1709 (Windows 10 Fall Creators Update) 中的新增功能。 没有使用以前版本的 Windows 10 上的应用安装程序文件的 Windows 10 应用部署的支持。 **HoursBetweenUpdateChecks**元素是从 Windows 10，版本 1803年中开始提供。
+> 应用安装程序文件类型是 Windows 10 版本1709（Windows 10 秋季创建者更新）中的新类型。 在以前版本的 Windows 10 上，不支持使用应用安装程序文件部署 Windows 10 应用。 从 Windows 10 版本1803开始， **HoursBetweenUpdateChecks**元素可用。

@@ -1,17 +1,17 @@
 ---
 title: 适用于 MSIX 打包工具的最佳做法
-description: 适用于 MSIX 打包工具的最佳做法
+description: 本文介绍适用于将应用重新打包到 MSIX 以及使用 MSIX 打包工具的最佳做法。
 ms.date: 09/07/2018
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a6dbbb8fb70b0fb9db1941e3918abcaa873569ed
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
-ms.translationtype: HT
+ms.openlocfilehash: 85b01da2e8f36ebe632380cfbf87382c51a5c959
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67840721"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328486"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>适用于 MSIX 打包工具的最佳做法
 
@@ -34,9 +34,9 @@ ms.locfileid: "67840721"
 当使用 MSIX 打包工具时，还有一些事项是我们建议作为最佳做法来执行的：
 - 打包 ClickOnce 安装程序时，有必要将快捷方式发送到桌面（如果安装程序尚未执行该操作）。 一般情况下，始终记得为主应用可执行文件将快捷方式发送到桌面是很好的做法。
 - 当创建修改包时，需要在工具 UI 中声明父应用程序的包名称（标识名称），以便该工具在修改包的清单中设置正确的包依赖项。
-- 在“包信息”  页中声明一个安装位置字段，是可选但建议的做法。 请确保此路径与应用程序安装程序的安装位置相匹配。
-- 执行“准备计算机”  页中的准备步骤，是可选但强烈建议的做法。
-ms.custom:RS5
+- 在“包信息”页中声明一个安装位置字段，是可选但建议的做法。 请确保此路径与应用程序安装程序的安装位置相匹配。
+- 执行“准备计算机”页中的准备步骤，是可选但强烈建议的做法。
+ms-chap： RS5
 
 
 ## <a name="best-practices-while-bundling-msix-packages"></a>捆绑 MSIX 包时的最佳做法

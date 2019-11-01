@@ -1,17 +1,17 @@
 ---
 title: MSIX 打包工具中的远程转换设置
-description: 远程转换设置说明
+description: 本文介绍如何设置并连接到远程计算机，以便使用 .MSIX 打包工具运行应用转换。
 ms.date: 02/26/2019
 ms.topic: article
 keywords: MSIX, MPT, MSIX 打包工具, 远程 IP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 444b4a98d183f2473543c0ca2472f0fddf50052e
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
-ms.translationtype: HT
+ms.openlocfilehash: fa508c3e5729cc9910bb4e54398a45c1660e108e
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829138"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328429"
 ---
 # <a name="setup-instructions-for-remote-machine-conversions"></a>有关远程计算机转换的设置说明 
 
@@ -35,9 +35,9 @@ Enable-PSRemoting -Force -SkipNetworkProfileCheck
 
 #### <a name="azure"></a>Azure 
 
-1. 在 Azure 门户中，转到“网络” > “添加入站端口”   
-2. 单击“基本” 
-3. “服务”字段应保留设置为“自定义” 
+1. 在 Azure 门户中，转到“网络” > “添加入站端口” 
+2. 单击“基本”
+3. “服务”字段应保留设置为“自定义”
 4. 将端口号设置为 **1599**（MSIX 打包工具默认端口值 – 可以在工具的“设置”中更改），并指定规则的名称（例如 AllowMPTServerInBound） 
 
 #### <a name="other-infrastructure"></a>其他基础结构 
@@ -82,8 +82,8 @@ Import-Certificate -FilePath <path> -CertStoreLocation Cert:\LocalMachine\Root
 
 遵照说明为 MSIX 打包工具[添加自定义端口](#azure)，并为 WinRM HTTPS 添加网络安全规则 
 
-1. 在 Azure 门户中，转到“网络” > “添加入站端口”   
-2. 单击“基本”  
+1. 在 Azure 门户中，转到“网络” > “添加入站端口” 
+2. 单击“基本” 
 3. 将“服务”字段设置为 **WinRM**
 
 #### <a name="other-infrastructure"></a>其他基础结构 
