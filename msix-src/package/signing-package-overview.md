@@ -1,16 +1,16 @@
 ---
-Description: 本文介绍了 Windows 10 应用的签名要求。
+description: 本文介绍了 Windows 10 应用的签名要求。 在创建可部署的应用包过程中，签名是必须执行的步骤。
 title: 为 Windows 10 应用包签名
 ms.date: 07/03/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: ddd7a8769bd2d09122153cc42aecd4d686e25d40
-ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.openlocfilehash: f136235f5b67c6c987b44e9c2b10168103bf6ae6
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776465"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328731"
 ---
 # <a name="sign-a-windows-10-app-package"></a>为 Windows 10 应用包签名
 
@@ -43,4 +43,4 @@ Windows 10 允许用户在“设置”应用中选择运行设备的模式。 �
 
 “Microsoft Store 应用”是最安全的模式，因为它只允许从 Microsoft Store 安装应用。  Microsoft Store 中的应用会经历认证过程，确保应用可供安全使用。 
 
-“旁加载应用”和“开发人员模式”对其他证书签名的应用的宽容度更高，前提是这些证书受信任并已链接到设备上的某个受信任根。   仅当你是开发人员并在生成或调试 Windows 10 应用时，才能选择“开发人员模式”。 可在[此处](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development)找到有关“开发人员模式”及其提供的功能的详细信息。 
+“旁加载应用”和“开发人员模式”对其他证书签名的应用的宽容度更高，前提是这些证书受信任并已链接到设备上的某个受信任根。   仅当你是开发人员并在生成或调试 Windows 10 应用时，才能选择“开发人员模式”。 可在[此处](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)找到有关“开发人员模式”及其提供的功能的详细信息。 

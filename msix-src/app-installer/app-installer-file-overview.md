@@ -1,17 +1,17 @@
 ---
 title: 应用安装程序文件概述
-description: 了解应用安装程序文件的内容及其工作原理。
+description: 本文介绍应用安装程序文件的内容，以及如何使用它们来管理桌面应用的分发和安装。
 ms.date: 12/12/2018
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: a470b406c1e4f155e297fd0d278b89fd5d0fdab5
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 070d948417c01fbf4f278bf37959af58b368fa99
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828589"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328319"
 ---
 # <a name="app-installer-file-overview"></a>应用安装程序文件概述
 

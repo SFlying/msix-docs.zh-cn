@@ -1,18 +1,18 @@
 ---
 layout: LandingPage
 title: MSIX 视频
-description: MSIX 团队就 MSIX 相关主题展开的研讨会
+description: 本文提供的 MSIX 工程团队的会议谈话介绍与 MSIX 打包和部署相关的主题。
 ms.date: 09/07/2018
 ms.topic: landing-page
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a9a385bee27bae4e884ec71a8a4c449a9bcc216a
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: a11238ed231681c636c96a10b7dac2a03d00a891
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829067"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328131"
 ---
 # <a name="msix-videos"></a>MSIX 视频
 

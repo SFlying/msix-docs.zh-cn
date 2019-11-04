@@ -1,17 +1,17 @@
 ---
 title: 应用包更新
-description: 了解如何以差异方式更新应用。
+description: 介绍如何优化 MSIX 包，确保仅下载最重要的已更改应用位来更新现有的 Windows 应用。
 ms.date: 09/10/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用包, 应用更新, msix, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 3ea46f938440ae7265673d138373582083deffc4
-ms.sourcegitcommit: 9cb3d2cdbe03b300bef60ed949e5e4d3b24d35ba
+ms.openlocfilehash: 56db11754c5f9db0480abf0ec249b97486b3e614
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70863997"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328282"
 ---
 # <a name="app-package-updates"></a>应用包更新
 
@@ -55,7 +55,7 @@ ms.locfileid: "70863997"
 包系列由包名称和发布者构成。 为了能够更新，新包元数据需要与以前安装的包相同。 
 
 #### <a name="app-updates-must-increment-to-a-higher-version"></a>应用更新必须递增到更高版本
-一般情况下，应用更新要求新包的版本高于当前版本。 默认情况下，应用更新进程不允许安装版本更低的包。 自 Windows 10 版本 1809 起，当提供重写开关作为更新参数的一部分时，可以使用 ForceUpdateToAnyVersion 允许安装更低版本的包。 目前可以在 PowerShell 中使用 [ForceUpdateFromAnyVersion](https://docs.microsoft.com/en-us/powershell/module/appx/add-appxpackage?view=win10-ps) 选项、通过 [PackageManager API](https://docs.microsoft.com/en-us/uwp/api/windows.management.deployment.deploymentoptions)、[EnterpriseModernAppManagement CSP](https://docs.microsoft.com/en-us/windows/client-management/mdm/enterprisemodernappmanagement-csp)，以及在 [AppInstaller 文件](https://docs.microsoft.com/windows/msix/app-installer/update-settings)中执行此操作。  
+一般情况下，应用更新要求新包的版本高于当前版本。 默认情况下，应用更新进程不允许安装版本更低的包。 自 Windows 10 版本 1809 起，当提供重写开关作为更新参数的一部分时，可以使用 ForceUpdateToAnyVersion 允许安装更低版本的包。 目前可以在 PowerShell 中使用 [ForceUpdateFromAnyVersion](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) 选项、通过 [PackageManager API](https://docs.microsoft.com/uwp/api/windows.management.deployment.deploymentoptions)、[EnterpriseModernAppManagement CSP](https://docs.microsoft.com/windows/client-management/mdm/enterprisemodernappmanagement-csp)，以及在 [AppInstaller 文件](https://docs.microsoft.com/windows/msix/app-installer/update-settings)中执行此操作。  
 
 > [!NOTE]
 > 如果对来自 Windows Store 的应用使用 ForceUpdateToAnyVersion，Windows 更新会自动将该应用更新到最新的适用版本。

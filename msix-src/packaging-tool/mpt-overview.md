@@ -1,21 +1,21 @@
 ---
 title: MSIX 打包工具概述
-description: 有关如何开始使用 MSIX 打包工具的概述文档
+description: 本文介绍的 MSIX 打包工具可将现有的 Windows 桌面应用程序重新打包为 MSIX 格式。
 ms.date: 02/19/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: ee9d47ef88f8281a707550b67cf976da29efe9e2
-ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.openlocfilehash: b8afc46195c1c7f467ddf302edd9553a2ba0c049
+ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776545"
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73328466"
 ---
 # <a name="msix-packaging-tool"></a>MSIX 打包工具 
 
-<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取 MSIX 打包工具</a></p></div>
+<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取 MSIX 打包工具</a></p></div>
 
 使用 MSIX 打包工具可将现有的 Win32 应用程序重新打包为 MSIX 格式。 此工具提供交互式 UI 和命令行用于转换，并且可以在没有源代码的情况下转换应用程序。 我们希望 IT 专业人员能够将现有资产转换为 MSIX，使其能够更好地进行打包和应用管理。
 
@@ -32,9 +32,9 @@ MSIX 打包工具现已在 Microsoft Store 中提供。 可以通过此工具运
  
  ## <a name="install"></a>安装
  
-若要从 Microsoft Store 安装 MSIX 打包工具，请转[此处](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf)，并确保使用用于 Windows 预览体验计划的 MSA 登录。 接下来，转到产品说明页，并单击“安装”图标开始安装。
+若要从 Microsoft Store 安装 MSIX 打包工具，请转[此处](https://www.microsoft.com/p/msix-packaging-tool/9n5lw3jbcxkf)，并确保使用用于 Windows 预览体验计划的 MSA 登录。 接下来，转到产品说明页，并单击“安装”图标开始安装。
 
-也可以从适用于企业的 Microsoft Store [Web 门户](https://businessstore.microsoft.com/)下载 MSIX 打包工具供离线使用。 可在[此处](https://docs.microsoft.com/en-us/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app)详细了解离线分发。
+也可以从适用于企业的 Microsoft Store [Web 门户](https://businessstore.microsoft.com/)下载 MSIX 打包工具供离线使用。 可在[此处](https://docs.microsoft.com/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app)详细了解离线分发。
 
  
 ## <a name="latest-public-version---1201910180"></a>最新公共版本 - 1.2019.1018.0
