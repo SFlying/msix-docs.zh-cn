@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: cd79074fa8cd74d6a32d3fc2c517e1930ee7ff68
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 73ed0fcb5ef4bb1656eda01dcb8ecbdd2bb5b65e
+ms.sourcegitcommit: 073a228653f004914851c3461b9ad6eef343f915
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328698"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74309003"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>使用 Device Guard 签名功能对 MSIX 包进行签名
 
@@ -124,3 +124,4 @@ signtool sign /fd sha256 /dlib DgssLib.dll /dmdf <Azure AAD in .json format> /t 
 下面是你可能会遇到的常见错误。
 
 * 0x800700d：此常见错误表示 Azure AD JSON 文件的格式无效。
+* 你可能需要接受 Microsoft Store for Business 的条款和条件，然后 downloadidng 设备保护签名的根证书。 这可以通过在门户中获取免费应用来完成。

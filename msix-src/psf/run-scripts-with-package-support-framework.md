@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1ba8767e2fbbe5eb6ace39e14518462bfb7d853d
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 39a4731daece164b89f2c2df1df1965c2c0543e3
+ms.sourcegitcommit: 073a228653f004914851c3461b9ad6eef343f915
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328237"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74309010"
 ---
 # <a name="run-scripts-with-the-package-support-framework"></a>使用包支持框架运行脚本
 
@@ -21,11 +21,10 @@ ms.locfileid: "73328237"
 
 ## <a name="prerequisites"></a>必备条件
 
-若要使脚本能够运行，需要将 PowerShell 执行策略设置为 `Unrestricted` 或 `RemoteSigned`。 可以通过运行以下命令之一来执行此操作：
+若要使脚本能够运行，需要将 PowerShell 执行策略设置为 `RemoteSigned`。 可以通过运行以下命令来执行此操作：
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 ```
 
 需要为64位 PowerShell 可执行文件和32位 PowerShell 可执行文件设置执行策略。 请确保打开每个版本的 PowerShell，并运行上面所示的其中一个命令。
@@ -40,29 +39,29 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 有关 PowerShell 执行策略的详细信息，请参阅[此文](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6)。
 
-请确保在包中包含以下 "StartingScriptWrapper"，并将其放置在可执行文件所在的同一文件夹中。 可以从包支持框架 NuGet 包（ https://www.nuget.org/packages/Microsoft.PackageSupportFramework/) 中复制它。
+请确保在包中包含以下 "StartingScriptWrapper"，并将其放置在可执行文件所在的同一文件夹中。 可以从包支持框架 NuGet 包（ https://www.nuget.org/packages/Microsoft.PackageSupportFramework/)中复制它。
 
 ## <a name="enable-scripts"></a>启用脚本
 
-若要指定将为每个打包的应用程序可执行文件运行的脚本，需要修改[配置文件](package-support-framework.md#create-a-configuration-file)。 若要告诉 PSF 在执行打包应用程序之前运行脚本，请添加名为 `startScript` 的配置项目。 若要告诉 PSF 在打包的应用程序完成后运行脚本，请添加名为 `endScript` 的配置项目。
+若要指定将为每个打包的应用程序可执行文件运行的脚本，需要修改[配置文件](package-support-framework.md#create-a-configuration-file)。 若要告诉 PSF 在执行打包应用程序之前运行脚本，请添加名为 `startScript`的配置项目。 若要告诉 PSF 在打包的应用程序完成后运行脚本，请添加名为 `endScript`的配置项目。
 
 ### <a name="script-configuration-items"></a>编写配置项目脚本
 
 以下是可用于脚本的配置项目。 结束脚本将忽略 `waitForScriptToFinish` 和 `stopOnScriptError` 配置项目。
 
-| 项名称                | 值类型 | Required? | Default  | 描述
+| 项名称                | 值类型 | Required? | 默认  | 描述
 |-------------------------|------------|-----------|----------|---------|
-| `scriptPath`              | 字符串     | “是”       | N/A      | 脚本的路径，包括名称和扩展名。 路径从应用程序的根目录开始。
-| `scriptArguments`         | 字符串     | 无        | 空    | 空格分隔参数列表。 对于 PowerShell 脚本调用，格式是相同的。 此字符串将追加到 `scriptPath`，以便进行有效的 PowerShell .exe 调用。
-| `runInVirtualEnvironment` | 布尔型    | 无        | true     | 指定是否应在打包应用程序运行所在的虚拟环境中运行脚本。
-| `runOnce`                 | 布尔型    | 无        | true     | 指定脚本是否应每个用户每个版本运行一次。
-| `showWindow`              | 布尔型    | 无        | false    | 指定是否显示 PowerShell 窗口。
-| `stopOnScriptError`       | 布尔型    | 无        | false    | 指定在启动脚本失败时是否退出应用程序。
-| `waitForScriptToFinish`   | 布尔型    | 无        | true     | 指定打包的应用程序在启动前是否应等待开始脚本完成。
-| `timeout`                 | DWORD      | 无        | 无数 | 允许脚本执行的时间长度。 当时间结束时，脚本将停止。
+| `scriptPath`              | 字符串     | 是       | N/A      | 脚本的路径，包括名称和扩展名。 路径从应用程序的根目录开始。
+| `scriptArguments`         | 字符串     | 否        | 空    | 空格分隔参数列表。 对于 PowerShell 脚本调用，格式是相同的。 此字符串将追加到 `scriptPath`，以便进行有效的 PowerShell .exe 调用。
+| `runInVirtualEnvironment` | 布尔型    | 否        | true     | 指定是否应在打包应用程序运行所在的虚拟环境中运行脚本。
+| `runOnce`                 | 布尔型    | 否        | true     | 指定脚本是否应每个用户每个版本运行一次。
+| `showWindow`              | 布尔型    | 否        | false    | 指定是否显示 PowerShell 窗口。
+| `stopOnScriptError`       | 布尔型    | 否        | false    | 指定在启动脚本失败时是否退出应用程序。
+| `waitForScriptToFinish`   | 布尔型    | 否        | true     | 指定打包的应用程序在启动前是否应等待开始脚本完成。
+| `timeout`                 | DWORD      | 否        | 无数 | 允许脚本执行的时间长度。 当时间结束时，脚本将停止。
 
 > [!NOTE]
-> 不支持为示例应用程序设置 `stopOnScriptError: true` 和 `waitForScriptToFinish: false`。 如果你设置这两个配置项目，则 PSF 将返回错误 ERROR_BAD_CONFIGURATION。
+> 不支持为示例应用程序设置 `stopOnScriptError: true` 和 `waitForScriptToFinish: false`。 如果你设置这两个配置项目，则 PSF 将返回 ERROR_BAD_CONFIGURATION 的错误。
 
 
 ## <a name="sample-configuration"></a>示例配置
