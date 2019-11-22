@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix, 1709, 1803
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 9e2a4864d8f5f15f70a48eb04e787c80cd7c90a8
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 700656bb7a6de66a876d8d46a9ac724d01caa11a
+ms.sourcegitcommit: 073a228653f004914851c3461b9ad6eef343f915
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829389"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74309025"
 ---
 # <a name="msix-support-on-windows-10-version-1709-and-1803"></a>Windows 10 版本 1709 和 1803 上的 MSIX 支持
 
@@ -52,7 +52,7 @@ MSIX 包支持的最低 OS 版本已在包清单文件中的 `TargetDeviceFamily
 
 Windows 10 版本 1709、1803 和 1809 支持主流的企业部署方案。 这包括通过 SCCM、Microsoft Intune、PowerShell 或双击安装方法进行安装。
 
-目前，通过 Microsoft Store 和适用于企业的 Microsoft Store 安装 MSIX 需要使用 Windows 10 版本 1809。
+目前，通过 Microsoft Store 和适用于企业的 Microsoft Store 安装 MSIX 需要使用 Windows 10 版本 1803。
 
 ## <a name="packaging-and-signing"></a>打包和签名
 
