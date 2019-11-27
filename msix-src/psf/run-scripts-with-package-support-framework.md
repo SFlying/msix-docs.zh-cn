@@ -49,15 +49,15 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
 以下是可用于脚本的配置项目。 结束脚本将忽略 `waitForScriptToFinish` 和 `stopOnScriptError` 配置项目。
 
-| 项名称                | 值类型 | Required? | 默认  | 描述
+| 项名称                | 值类型 | 是否为必需？ | 默认  | 描述
 |-------------------------|------------|-----------|----------|---------|
 | `scriptPath`              | 字符串     | 是       | N/A      | 脚本的路径，包括名称和扩展名。 路径从应用程序的根目录开始。
 | `scriptArguments`         | 字符串     | 否        | 空    | 空格分隔参数列表。 对于 PowerShell 脚本调用，格式是相同的。 此字符串将追加到 `scriptPath`，以便进行有效的 PowerShell .exe 调用。
-| `runInVirtualEnvironment` | 布尔型    | 否        | true     | 指定是否应在打包应用程序运行所在的虚拟环境中运行脚本。
-| `runOnce`                 | 布尔型    | 否        | true     | 指定脚本是否应每个用户每个版本运行一次。
-| `showWindow`              | 布尔型    | 否        | false    | 指定是否显示 PowerShell 窗口。
-| `stopOnScriptError`       | 布尔型    | 否        | false    | 指定在启动脚本失败时是否退出应用程序。
-| `waitForScriptToFinish`   | 布尔型    | 否        | true     | 指定打包的应用程序在启动前是否应等待开始脚本完成。
+| `runInVirtualEnvironment` | 布尔值    | 否        | true     | 指定是否应在打包应用程序运行所在的虚拟环境中运行脚本。
+| `runOnce`                 | 布尔值    | 否        | true     | 指定脚本是否应每个用户每个版本运行一次。
+| `showWindow`              | 布尔值    | 否        | false    | 指定是否显示 PowerShell 窗口。
+| `stopOnScriptError`       | 布尔值    | 否        | false    | 指定在启动脚本失败时是否退出应用程序。
+| `waitForScriptToFinish`   | 布尔值    | 否        | true     | 指定打包的应用程序在启动前是否应等待开始脚本完成。
 | `timeout`                 | DWORD      | 否        | 无数 | 允许脚本执行的时间长度。 当时间结束时，脚本将停止。
 
 > [!NOTE]
