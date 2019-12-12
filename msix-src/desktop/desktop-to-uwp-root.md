@@ -7,18 +7,18 @@ keywords: windows 10, uwp, msix
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e6be05b4d935718046c33c4be64d4f66c7122e4a
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: fc70cab0074087d7ae2d2ea123ed9b41bfdac8ea
+ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328560"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75008087"
 ---
-# <a name="package-desktop-applications-desktop-bridge"></a>打包桌面应用程序（Desktop Bridge）
+# <a name="package-desktop-applications-msix"></a>打包桌面应用程序（.MSIX）
 
 获取现有的桌面应用程序，并为 Windows 10 用户添加新式体验。 然后，将应用发布到 Microsoft Store，以拓展国际市场。 你可以通过利用在应用商店中内置的功能，以更简单的方式盈利你的应用程序。 当然，您不必使用该商店。 你完全可以使用现有的渠道。
 
-当你为桌面应用程序创建包时，你的应用程序将获得标识并使用该标识，你的桌面应用程序可以访问 Windows 通用平台（UWP） Api。 你可以使用它们添加具有吸引力的现代体验，例如动态磁贴和通知。 仅当应用程序在 Windows 10 上运行时，才使用简单的条件编译和运行时检查来运行 UWP 代码。
+当你为桌面应用程序创建 .MSIX 包时，你的应用程序将获得标识并使用该标识，你的桌面应用程序可以访问 Windows 通用平台（UWP） Api。 你可以使用它们添加具有吸引力的现代体验，例如动态磁贴和通知。 仅当应用程序在 Windows 10 上运行时，才使用简单的条件编译和运行时检查来运行 UWP 代码。
 
 除了用于浅 Windows 10 体验的代码，你的应用程序仍保持不变，你可以继续将其分发给以前版本的 Windows 上的用户。 在 Windows 10 上，你的应用程序将继续在完全信任的用户模式下运行，就像现在正在执行的操作一样。
 
@@ -63,11 +63,11 @@ ms.locfileid: "73328560"
 
 :heavy_check_mark: 使用向导生成包。
 
-： heavy_check_mark：从[合作伙伴中心](https://partner.microsoft.com/dashboard)中已保留的名称轻松将标识分配给应用程序。
+： heavy_check_mark：从你在[合作伙伴中心](https://partner.microsoft.com/dashboard)中已保留的名称轻松将标识分配给你的应用程序。
 
 有关说明，请参阅[使用 Visual Studio 打包桌面应用程序](desktop-to-uwp-packaging-dot-net.md)。 下表显示了受支持的 Visual Studio、Windows 10 和包格式版本。
 
-|  受支持的 Visual Studio 版本 | 用于创建包的支持的操作系统版本  | 已安装包的支持的操作系统版本  |  支持的包格式  |
+|  支持的 Visual Studio 版本 | 用于创建包的支持的操作系统版本  | 已安装包的支持的操作系统版本  |  支持的包格式  |
 |-----------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------|
 |  Visual Studio 2019<br/>Visual Studio 2017 15.5 及更高版本       |  Windows 10 版本 1607 和更高版本           |  Windows 10 版本 1607 和更高版本            |  . .msix （适用于 Windows 10，版本1709及更高版本）<br/>.appx （适用于 Windows 10，版本1607及更高版本）                 |
 

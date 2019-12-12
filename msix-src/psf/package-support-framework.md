@@ -5,12 +5,12 @@ ms.date: 08/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a2427340b4de957ee25a1ce963990be30068da3
-ms.sourcegitcommit: f47c140e2eb410c2748be7912955f43e7adaa8f9
+ms.openlocfilehash: 0c280cbff2d2151cb2a791165df9dd5f23d10c7d
+ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72776533"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75008137"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用包支持框架将运行时修补程序应用于 .MSIX 包
 
@@ -105,7 +105,7 @@ makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 
 #### <a name="get-the-package-by-using-the-command-line-tool"></a>使用命令行工具获取包
 
-从以下位置安装 Nuget 命令行工具： https://www.nuget.org/downloads 。 然后，在 Nuget 命令行中运行以下命令：
+从以下位置安装 Nuget 命令行工具： https://www.nuget.org/downloads 。 然后，在 Nuget 命令行中运行以下命令： 
 
 ```powershell
 nuget install Microsoft.PackageSupportFramework
@@ -150,7 +150,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="create-a-configuration-file"></a>创建配置文件
 
-@No__t_0 创建文件名，并将该文件保存到包的根文件夹。 修改配置的 json 文件的已声明应用 ID，以指向刚才替换的可执行文件。 使用通过处理监视器获得的知识，还可以设置工作目录，并使用文件重定向修正将读取/写入操作重定向到包相对 "PSFSampleApp" 目录下的 .log 文件。
+``config.json``创建文件名，并将该文件保存到包的根文件夹。 修改配置的 json 文件的已声明应用 ID，以指向刚才替换的可执行文件。 使用通过处理监视器获得的知识，还可以设置工作目录，并使用文件重定向修正将读取/写入操作重定向到包相对 "PSFSampleApp" 目录下的 .log 文件。
 
 ```json
 {
@@ -188,16 +188,16 @@ nuget install Microsoft.PackageSupportFramework
 
 下面是有关配置 json 架构的指南：
 
-| 组成 | 键 | Value |
+| 数组 | 键 | Value |
 |-------|-----------|-------|
 | applications | id |  使用包清单中 `Application` 元素的 `Id` 属性的值。 |
-| applications | 可执行文件 | 要启动的可执行文件的包相对路径。 在大多数情况下，你可以在修改之前从包清单文件中获取此值。 它是 `Application` 元素的 `Executable` 属性的值。 |
-| applications | WorkingDirectory | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用 `System32` 目录作为应用程序的工作目录。 |
-| 工艺 | 可执行文件 | 在大多数情况下，这将是上面配置的 `executable` 的名称，其中包含已删除的路径和文件扩展名。 |
-| 修正 | .dll | 要加载的链接地址的包相对路径，.msix/.appx。 |
-| 修正 | config.xml | 可有可无控制修正 dll 的行为方式。 此值的准确格式因修正链接而异，因为每个修正都可以根据需要解释此 "blob"。 |
+| applications | 可执行文件 (executable) | 要启动的可执行文件的包相对路径。 在大多数情况下，你可以在修改之前从包清单文件中获取此值。 它是 `Application` 元素的 `Executable` 属性的值。 |
+| applications | workingDirectory | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用 `System32` 目录作为应用程序的工作目录。 |
+| 进程 | 可执行文件 (executable) | 在大多数情况下，这将是上面配置的 `executable` 的名称，其中包含已删除的路径和文件扩展名。 |
+| 修正 | dll | 要加载的链接地址的包相对路径，.msix/.appx。 |
+| 修正 | config | 可有可无控制修正 dll 的行为方式。 此值的准确格式因修正链接而异，因为每个修正都可以根据需要解释此 "blob"。 |
 
-@No__t_0、`processes` 和 `fixups` 键是数组。 这意味着，你可以使用配置 json 文件来指定多个应用程序、进程和修复 DLL。
+`applications`、`processes`和 `fixups` 键是数组。 这意味着，你可以使用配置 json 文件来指定多个应用程序、进程和修复 DLL。
 
 ### <a name="package-and-test-the-app"></a>打包并测试应用程序
 
@@ -328,7 +328,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 搜索*PSF** Nuget 包，并将其安装到此项目中。
 
-![nuget 包](images/psf-package.png)
+![NuGet 包](images/psf-package.png)
 
 如果你想要调试或扩展现有的运行时修补程序，请添加你使用本指南的[查找运行时修补程序](#find)部分中所述的指导来获取的运行时修补文件。
 
@@ -405,14 +405,14 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 为每个键提供一个值。 使用此表作为指南。
 
-| 组成 | 键 | Value |
+| 数组 | 键 | Value |
 |-------|-----------|-------|
 | applications | id |  使用包清单中 `Application` 元素的 `Id` 属性的值。 |
-| applications | 可执行文件 | 要启动的可执行文件的包相对路径。 在大多数情况下，你可以在修改之前从包清单文件中获取此值。 它是 `Application` 元素的 `Executable` 属性的值。 |
-| applications | WorkingDirectory | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用 `System32` 目录作为应用程序的工作目录。 |
-| 工艺 | 可执行文件 | 在大多数情况下，这将是上面配置的 `executable` 的名称，其中包含已删除的路径和文件扩展名。 |
-| 修正 | .dll | 要加载的链接地址 DLL 的包相对路径。 |
-| 修正 | config.xml | 可有可无控制修正 DLL 的行为方式。 此值的准确格式因修正链接而异，因为每个修正都可以根据需要解释此 "blob"。 |
+| applications | 可执行文件 (executable) | 要启动的可执行文件的包相对路径。 在大多数情况下，你可以在修改之前从包清单文件中获取此值。 它是 `Application` 元素的 `Executable` 属性的值。 |
+| applications | workingDirectory | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用 `System32` 目录作为应用程序的工作目录。 |
+| 进程 | 可执行文件 (executable) | 在大多数情况下，这将是上面配置的 `executable` 的名称，其中包含已删除的路径和文件扩展名。 |
+| 修正 | dll | 要加载的链接地址 DLL 的包相对路径。 |
+| 修正 | config | 可有可无控制修正 DLL 的行为方式。 此值的准确格式因修正链接而异，因为每个修正都可以根据需要解释此 "blob"。 |
 
 完成后，``config.json`` 文件将如下所示。
 
@@ -436,11 +436,11 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 ```
 
 >[!NOTE]
-> @No__t_0、`processes` 和 `fixups` 键是数组。 这意味着，你可以使用配置 json 文件来指定多个应用程序、进程和修复 DLL。
+> `applications`、`processes`和 `fixups` 键是数组。 这意味着，你可以使用配置 json 文件来指定多个应用程序、进程和修复 DLL。
 
 ### <a name="debug-a-runtime-fix"></a>调试运行时修补程序
 
-在 Visual Studio 中，按 F5 启动调试器。  第一件事是 PSF 启动器应用程序，该应用程序随后会启动目标桌面应用程序。  若要调试目标桌面应用程序，你必须选择 "**调试**" -> "**附加到进程**"，然后选择应用程序进程，手动附加到桌面应用程序进程。 若要允许使用本机运行时修复 DLL 调试 .NET 应用程序，请选择 "托管和本机代码类型（混合模式调试）"。  
+在 Visual Studio 中，按 F5 启动调试器。  第一件事是 PSF 启动器应用程序，该应用程序随后会启动目标桌面应用程序。  若要调试目标桌面应用程序，你必须选择 "**调试**"->"**附加到进程**"，然后选择应用程序进程，手动附加到桌面应用程序进程。 若要允许使用本机运行时修复 DLL 调试 .NET 应用程序，请选择 "托管和本机代码类型（混合模式调试）"。  
 
 完成此设置后，可以在桌面应用程序代码和运行时修复项目中的代码行旁边设置断点。 如果你的应用程序没有源代码，则只能在运行时修复项目中的代码行旁边设置断点。
 
