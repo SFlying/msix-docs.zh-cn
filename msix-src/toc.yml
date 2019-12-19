@@ -39,7 +39,17 @@
     - name: 1709 和 1803 上的 MSIX 支持
       href: msix-1709-and-1803-support.md
     - name: MSIX Core
-      href: msix-sdk/msixcore.md
+      items:
+        - name: 概述
+          href: msix-core/msixcore.md
+        - name: 更新现有 MSIX 以支持 MSIX Core
+          href: msix-core/support-msix-core.md
+        - name: 通过 MSIX Core 部署 MSIX 包
+          href: msix-core/deploy-with-msix-core.md
+        - name: 从源代码通过 MSIX Core 创建 MSIX 包
+          href: msix-core/msixcore-clickonce-solution.md
+        - name: 故障排除提示
+          href: msix-core/msixcore-troubleshoot.md
     - name: 组策略和 MSIX 打包应用
       href: group-policy-msix.md
 - name: 工具
@@ -104,7 +114,7 @@
               href: msix-sdk/release-notes/sdk-release-notes-1.6.md
             - name: MSIX SDK Release 1.7
               href: msix-sdk/release-notes/sdk-release-notes-1.7.md
-- name: 应用包
+- name: 程序包
   items:
     - name: 将桌面应用打包
       items:
@@ -182,7 +192,7 @@
       href: psf/package-support-framework.md
     - name: 使用包支持框架运行脚本
       href: psf/run-scripts-with-package-support-framework.md
-- name: 分配
+- name: 分发
   items:
     - name: 发布到 Microsoft Store
       href: 'https://docs.microsoft.com/windows/uwp/publish/?context=/windows/msix/render'
