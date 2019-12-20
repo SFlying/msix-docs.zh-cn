@@ -6,19 +6,20 @@ ms.topic: article
 keywords: windows 10、windows 7、windows 8、Windows Server、uwp、.msix、msixcore、1709、1703、1607、1511、1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 1833991c9f052e1379f79fa34332734fab46322b
-ms.sourcegitcommit: 0adaf0b61b5d259d3d157bc3255d56ead0655c60
+ms.openlocfilehash: abd3165eb23cf90e86a80ca685e5c3794648a54f
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/18/2019
-ms.locfileid: "75187474"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303274"
 ---
-# <a name="troubleshooting-tips-for-msix-core"></a>.MSIX 核心故障排除提示 
+# <a name="troubleshooting-issues-for-msix-core"></a>.MSIX 核心问题的疑难解答
 
-在各种版本的 Windows 上安装带有 .MSIX Core 的 .msix 包时，可能会遇到一些问题。 本文列出了要使用的错误代码和故障排除提示。 
+本文介绍了在安装带有 .MSIX 核心和故障排除提示的 .MSIX 包时可能会遇到的错误代码。
 
-## <a name="error-codes"></a>错误代码 
-下面是可能会遇到的常见错误消息。 
+## <a name="error-codes"></a>错误代码
+
+下面是可能会遇到的常见错误消息。
 
 | 错误代码 |描述 |
 |------------|------------|
@@ -26,8 +27,7 @@ ms.locfileid: "75187474"
 | 0x80070032 | 包中包含 .MSIX Core 不支持的注释。 例如，不支持包支持框架的某些功能。 这些是包支持框架，可调用在安装结束时运行的脚本，设置为运行的脚本等于 false 或格式不正确的包支持框架。 | 
 |0x8BAD0071 | 此错误表示您正在尝试安装捆绑包。 .MSIX Core 当前不支持捆绑。|
 
-
-当包格式有问题时，会出现以下错误。 
+当包格式有问题时，会出现以下错误。
 
 | 错误代码 |描述 |
 |------------|:------------|
@@ -37,7 +37,7 @@ ms.locfileid: "75187474"
 | 0x8BAD0034 | MissingAppxManifestXML|
 | 0x8BAD0035 | DuplicateFootprintFile |
 | 0x8BAD0036 | UnknownFileNameEncoding |
-| 0x8BAD0037 | DuplicateFile | 
+| 0x8BAD0037 | DuplicateFile |
 
 以下错误与文件问题相关
 
@@ -89,22 +89,28 @@ ms.locfileid: "75187474"
 | 0x8BAD1003 | XmlFatal |
 | 0x8BAD1004 | XmlInvalidData |
 
-若要[在此处](https://docs.microsoft.com/windows/win32/debug/system-error-codes)搜索其他错误代码，请参阅。 
+若要[在此处](https://docs.microsoft.com/windows/win32/debug/system-error-codes)搜索其他错误代码，请参阅。
 
 有关完整列表，请访问[.Msix Core 错误代码](https://github.com/microsoft/msix-packaging/blob/master/src/inc/public/MsixErrors.hpp)页。 
 
 ## <a name="msix-tracing-powershell-script"></a>.MSIX 跟踪 PowerShell 脚本
+
 请参阅我们的[发布页面](https://github.com/microsoft/msix-packaging/releases/tag/MSIX-Core-1.1-release)，并下载**msixtrace**。 这是 .MSIX 跟踪 PowerShell 脚本，它将生成日志，以帮助你在 .MSIX 安装过程中遇到问题。
 
 使用以下命令
-```
+
+```PowerShell
 msixtrace.ps1 -wait
 ``` 
-按照提示显示脚本来生成日志。 或使用以下命令。  
-```
+
+按照提示显示脚本来生成日志。 或使用以下命令。
+
+```PowerShell
 msixtrace.ps1 -start
 ```
-安装 .MSIX 包。 完成后，请完成以下命令。 
-```
+
+安装 .MSIX 包。 完成后，请完成以下命令。
+
+```PowerShell
 msixtrace.ps1 -stop
 ```

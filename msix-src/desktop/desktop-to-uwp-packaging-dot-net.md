@@ -1,33 +1,33 @@
 ---
-Description: 本指南介绍如何配置 Visual Studio 解决方案, 以编辑、调试和打包桌面应用程序。
+Description: 本指南介绍如何配置 Visual Studio 解决方案，以编辑、调试和打包桌面应用程序。
 title: 使用 Visual Studio 从源代码中将桌面应用打包
 ms.date: 07/18/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: f97fc474aa9c25a381362a55120797d2a3c5131c
-ms.sourcegitcommit: 6c28c590cd563ba69b2350e556dbd2ae55d9d7f4
+ms.openlocfilehash: cc4a113c53b9c061764d2cdbcc32c105c51de3fa
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68730403"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303146"
 ---
 # <a name="package-a-desktop-app-from-source-code-using-visual-studio"></a>使用 Visual Studio 从源代码中将桌面应用打包
 
-您可以使用 Visual Studio 中的 " **Windows 应用程序打包项目**" 项目为桌面应用程序生成包。 然后, 你可以将该包发布到 Microsoft Store 或将其旁加载到一个或多个电脑上。
+您可以使用 Visual Studio 中的 " **Windows 应用程序打包项目**" 项目为桌面应用程序生成包。 然后，你可以将该包发布到 Microsoft Store 或将其旁加载到一个或多个电脑上。
 
-**Windows 应用程序打包项目**项目在以下版本的 Visual Studio 中提供。 为了获得最佳体验, 建议使用最新版本。
+**Windows 应用程序打包项目**项目在以下版本的 Visual Studio 中提供。 为了获得最佳体验，建议使用最新版本。
 
 * Visual Studio 2019
 * Visual Studio 2017 15.5 及更高版本
 
 > [!IMPORTANT]
-> Windows 10 版本1607及更高版本支持 Visual Studio 中的**Windows 应用程序打包项目**项目。 它只能用于面向 Windows 10 周年更新的项目 (10.0;版本 14393) 或更高版本。
+> Windows 10 版本1607及更高版本支持 Visual Studio 中的**Windows 应用程序打包项目**项目。 它只能用于面向 Windows 10 周年更新的项目（10.0;版本14393）或更高版本。
 
 ## <a name="prepare-your-application"></a>准备应用程序
 
-开始为应用程序创建包之前, 请查看本指南:[准备打包桌面应用程序](desktop-to-uwp-prepare.md)。
+开始为应用程序创建包之前，请查看本指南：[准备打包桌面应用程序](desktop-to-uwp-prepare.md)。
 
 <a id="new-packaging-project"/>
 
@@ -45,7 +45,7 @@ ms.locfileid: "68730403"
 
    ![打包版本选择器对话框](images/packaging-version.png)
 
-4. 在解决方案资源管理器中, 右键单击打包项目下的 "**应用程序**" 文件夹, 然后选择 "**添加引用**"。
+4. 在解决方案资源管理器中，右键单击打包项目下的 "**应用程序**" 文件夹，然后选择 "**添加引用**"。
 
    ![添加项目引用](images/add-project-reference.png)
 
@@ -57,9 +57,9 @@ ms.locfileid: "68730403"
 
    ![设置入口点](images/entry-point-set.png)
 
-6. 如果打包的应用程序面向 .NET Core 3, 请按照以下步骤将新的生成目标添加到项目文件。 这仅适用于面向 .NET Core 3 的应用程序。  
+6. 如果打包的应用程序面向 .NET Core 3，请按照以下步骤将新的生成目标添加到项目文件。 这仅适用于面向 .NET Core 3 的应用程序。  
 
-    1. 在解决方案资源管理器中, 右键单击打包项目节点, 然后选择 "**编辑项目文件**"。
+    1. 在解决方案资源管理器中，右键单击打包项目节点，然后选择 "**编辑项目文件**"。
 
     2. 在文件中找到 `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` 元素。
 
@@ -89,7 +89,7 @@ ms.locfileid: "68730403"
 
     4. 保存并关闭项目文件。
 
-7. 生成打包项目，以确保未显示任何错误。 如果收到错误, 请打开**Configuration Manager**并确保项目面向同一平台。
+7. 生成打包项目，以确保未显示任何错误。 如果收到错误，请打开**Configuration Manager**并确保项目面向同一平台。
 
    ![配置管理器](images/config-manager.png)
 
@@ -107,10 +107,6 @@ ms.locfileid: "68730403"
 **查找问题的答案**
 
 有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
-
-**提供反馈或提出功能建议**
-
-请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
 **运行、调试或测试桌面应用程序**
 

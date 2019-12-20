@@ -1,21 +1,21 @@
 ---
 title: 通过源代码从 .MSIX Core 创建 .MSIX 包
-description: 本文提供了有关如何利用 .MSIX 核心引导程序的分步说明，该程序使用 ClickOnce 创建一个应用程序，该应用程序将允许用户仅下载 setup.exe 并通过 .MSIX 核心安装程序安装其 .MSIX 应用。
-ms.date: 11/15/2019
+description: 介绍如何使用 .MSIX Core 从源代码生成 .MSIX 包。
+ms.date: 12/19/2019
 ms.topic: article
 keywords: windows 10、windows 7、windows 8、Windows Server、uwp、.msix、msixcore、1709、1703、1607、1511、1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: b98a26ce313b0c828fbad788541ed42a975f40fc
-ms.sourcegitcommit: 8aafaa9ac4087ef2e95030343add8fe2ee1cccc9
+ms.openlocfilehash: 349eb1e99a752d56126936dde5517050fae9f090
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/18/2019
-ms.locfileid: "75186803"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303334"
 ---
-# <a name="creating-msix-package-with-msix-core-from-source-code"></a>通过源代码从 .MSIX Core 创建 .MSIX 包 
+# <a name="create-an-msix-package-with-msix-core-from-source-code"></a>使用 .MSIX Core 从源代码创建 .MSIX 包
 
-如果你有现成的桌面应用程序，并且想要支持使用 Windows 7 SP1、Windows 8.1、当前支持的 Windows Server （带有桌面体验）的客户以及1709（秋季周年更新）之前的 Windows 10 版本，则可以利用 .MSIX使用 ClickOnce 创建应用程序的核心安装程序。 这将允许用户下载 setup.exe 并通过 .MSIX Core 安装程序安装 .MSIX 应用。
+[.Msix Core](msixcore.md)引入了 .msix 部署来选择以前版本的 Windows。 可以利用 .MSIX 核心安装程序，使用 ClickOnce 创建应用程序。 这将允许用户下载 setup.exe 并通过 .MSIX Core 安装程序安装 .MSIX 应用。
 
 ## <a name="host-your-app-on-a-web-server"></a>在 web 服务器上托管你的应用程序
 
@@ -48,14 +48,13 @@ ms.locfileid: "75186803"
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
-    <system.webServer>
+  <system.webServer>
     <!--This is to allow the web server to serve resources with the appropriate file extensions-->
-        <staticContent>
-            <mimeMap fileExtension=".appx" mimeType="application/appx" />
-            <mimeMap fileExtension=".msix" mimeType="application/msix" />
-        </staticContent>
-    
-    </system.webServer>
+    <staticContent>
+      <mimeMap fileExtension=".appx" mimeType="application/appx" />
+      <mimeMap fileExtension=".msix" mimeType="application/msix" />
+    </staticContent>
+  </system.webServer>
 </configuration>
 ```
 
@@ -70,7 +69,7 @@ IIS 是一个可选的 Windows 功能。 若要安装 IIS：
 
 需要 Visual Studio 2017 （或更高版本）和 Web 开发工具。 如果已安装 Visual Studio 2017 或更高版本，请确保已安装 ASP.NET 和 Web 开发工作负荷。 否则，请从[此处](https://docs.microsoft.com/visualstudio/install/install-visual-studio)安装 Visual Studio。
 
-#### <a name="build-a-web-app"></a>生成 Web 应用
+#### <a name="build-a-web-app"></a>构建 web 应用
 
 以管理员身份启动 Visual Studio，并使用空项目模板创建新的**visual C# Web 应用程序**项目。
 
@@ -98,15 +97,15 @@ IIS 是一个可选的 Windows 功能。 若要安装 IIS：
 
 ```xml
 <system.webServer>
-    <!--This is to allow the web server to serve resources with the appropriate file extensions-->
-    <staticContent>
-        <mimeMap fileExtension=".appx" mimeType="application/appx" />
-        <mimeMap fileExtension=".msix" mimeType="application/msix" />
-    </staticContent>
+  <!--This is to allow the web server to serve resources with the appropriate file extensions-->
+  <staticContent>
+    <mimeMap fileExtension=".appx" mimeType="application/appx" />
+    <mimeMap fileExtension=".msix" mimeType="application/msix" />
+  </staticContent>
 </system.webServer>
 ```
 
-### <a name="amazon-web-services-aws"></a>Amazon Web Services (AWS)
+### <a name="amazon-web-services-aws"></a>Amazon Web Services （AWS）
 
 若要使用此选项，必须具有 AWS 成员身份。 有关详细信息，请参阅[AWS 帐户详细](https://aws.amazon.com/free/)信息。
 
@@ -119,7 +118,9 @@ Amazon 简单存储服务（S3）是用于收集、存储和分析数据的 AWS 
 3. 完成后，将 .MSIX 包和网页上传到 S3 存储桶。
 
 #### <a name="configure-the-web-app-for-app-package-mime-types"></a>为应用包 MIME 类型配置 web 应用
-使用类似于 [S3 browser](https://s3browser.com/features-content-mime-types-editor.aspx) 的 web 服务接口添加新的 **默认 HTTP 标头**。 
+
+使用类似于 [S3 browser](https://s3browser.com/features-content-mime-types-editor.aspx) 的 web 服务接口添加新的 **默认 HTTP 标头**。
+
 1. 导航到 "**工具**"，然后选择 "**默认 HTTP 标头**"。
 2. 在**默认的 HTTP 标头**对话框中，单击 "**添加**"。
 3. 在 "**添加新的默认 HTTP 标头**" 对话框中，指定 bucket 名称、文件名、标头名称和标头值，然后单击 "**添加新标头**"。
@@ -129,17 +130,19 @@ Amazon 简单存储服务（S3）是用于收集、存储和分析数据的 AWS 
     * **标头值**： application/.msix
 
 > [!NOTE]
-> AWS 具有一些必须遵循的严格指导原则。 例如，Bucket 名称必须是唯一的，因此，如果使用上面的示例，则需要更改存储桶名称。 
+> AWS 具有一些必须遵循的严格指导原则。 例如，Bucket 名称必须是唯一的，因此，如果使用上面的示例，则需要更改存储桶名称。
 
 ## <a name="use-the-msix-core-installer-to-build-the-clickonce-application"></a>使用 .MSIX 核心安装程序生成 ClickOnce 应用程序
 
-查找应用程序应用程序 ClickOnce setup.exe。 
-### <a name="run-url-command-to-create-new-setupexe"></a>运行 URL 命令以创建新的 setup.exe
-#### <a name="prerequisite"></a>先决条件 
-请确保按照说明在 Visual studio 中克隆、构建和发布 .MSIX Core 解决方案。 
+查找应用程序应用程序 ClickOnce setup.exe。
 
-导航到你在其中下载了 setup.exe 文件的目录，然后运行此命令： 
-```
+### <a name="run-url-command-to-create-new-setupexe"></a>运行 URL 命令以创建新的 setup.exe
+
+请确保按照说明在 Visual Studio 中克隆、构建和发布 .MSIX Core 解决方案。
+
+导航到你在其中下载了 setup.exe 文件的目录，然后运行此命令：
+
+```PowerShell
 setup-exe - url=<location of your msix in the webservice>
 ```
 
@@ -150,7 +153,6 @@ setup-exe - url=<location of your msix in the webservice>
 ### <a name="distribute-the-application-to-your-users"></a>向用户分发应用程序
 
 你现在可以使用其网站上的链接或下载按钮指向新的 setup.exe。 .MSIX Core 面向 Windows 10 版本1703及更早版本上的用户。 [应用程序安装程序](https://docs.microsoft.com/windows/msix/app-installer/installing-windows10-apps-web)是适用于 Windows 1709 或更高版本上的 .msix 包的理想安装过程。 应用安装程序可优化使用者端的磁盘空间，并可直接从 HTTP 位置安装应用。 .MSIX 核心将检测使用者是否在 Windows 1709 或更高版本上，并将其重定向到应用安装程序。 
-
 
 在 Microsoft Edge 上，你可以调用[getHostEnvironmentValue （）](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/mt795399%28v%3dvs.85%29)方法，并且返回值中的*os-生成*字段将指定该用户的操作系统版本。 然后，你可以在该处提示安装过程使用 .MSIX Core （适用于 Windows 10、版本1703及更低版本）或应用安装程序（适用于 Windows 10，版本1709及更高版本）。
 

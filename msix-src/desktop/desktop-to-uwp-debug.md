@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c8faa1ec1c6e8fcd86a59be46143d0d42b3b5ad
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 5a687e94182c2516040d0e061ed26e35b1b937a9
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328301"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303317"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>运行、调试和测试打包的桌面应用程序
 
@@ -121,10 +121,4 @@ Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [
 
 ## <a name="next-steps"></a>后续步骤
 
-**查找问题的答案**
-
 有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
-
-**提供反馈或提出功能建议**
-
-请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。

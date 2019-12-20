@@ -7,12 +7,12 @@ keywords: windows 10, uwp, msix
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fc70cab0074087d7ae2d2ea123ed9b41bfdac8ea
-ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
+ms.openlocfilehash: f43326b8465e2adb74487a4bf5302ec4b1c16d13
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75008087"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303267"
 ---
 # <a name="package-desktop-applications-msix"></a>打包桌面应用程序（.MSIX）
 
@@ -67,7 +67,7 @@ ms.locfileid: "75008087"
 
 有关说明，请参阅[使用 Visual Studio 打包桌面应用程序](desktop-to-uwp-packaging-dot-net.md)。 下表显示了受支持的 Visual Studio、Windows 10 和包格式版本。
 
-|  支持的 Visual Studio 版本 | 用于创建包的支持的操作系统版本  | 已安装包的支持的操作系统版本  |  支持的包格式  |
+|  受支持的 Visual Studio 版本 | 用于创建包的支持的操作系统版本  | 已安装包的支持的操作系统版本  |  支持的包格式  |
 |-----------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------|
 |  Visual Studio 2019<br/>Visual Studio 2017 15.5 及更高版本       |  Windows 10 版本 1607 和更高版本           |  Windows 10 版本 1607 和更高版本            |  . .msix （适用于 Windows 10，版本1709及更高版本）<br/>.appx （适用于 Windows 10，版本1607及更高版本）                 |
 
@@ -128,12 +128,6 @@ ms.locfileid: "75008087"
 
 请参阅[分发打包的桌面应用](/windows/apps/desktop/modernize/desktop-to-uwp-distribute)。
 
-## <a name="support-and-feedback"></a>支持和反馈
-
-**查找问题的答案**
+## <a name="find-answers-to-your-questions"></a>查找问题的答案
 
 有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
-
-**提供反馈或提出功能建议**
-
-请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。

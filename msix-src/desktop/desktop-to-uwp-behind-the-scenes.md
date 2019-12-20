@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
-ms.openlocfilehash: c3f2d5adb3bdd790b3fef7731faebd90089f8a59
-ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
+ms.openlocfilehash: e077459447f51f7ff784e532a4793e2823272e32
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75008097"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303299"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>打包桌面应用程序的幕后
 
@@ -104,10 +104,4 @@ HKCU 下的所有写入都在写入时复制到每用户、每应用位置。 �
 
 ## <a name="next-steps"></a>后续步骤
 
-**查找问题的答案**
-
 有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
-
-**提供反馈或提出功能建议**
-
-请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。

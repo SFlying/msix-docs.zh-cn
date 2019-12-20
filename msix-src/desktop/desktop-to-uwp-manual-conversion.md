@@ -1,35 +1,35 @@
 ---
 Description: 演示如何手动打包用于 Windows 10 的 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）。
-title: 手动打包应用程序 (桌面桥接)
+title: 手动打包应用程序（桌面桥接）
 ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e36cfe1a0ed1c16d2778d33599133d7bc9e06c1c
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 04b92d8b8665fb75f2484e5e0e1bebcf01e93d22
+ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68685384"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75303302"
 ---
 # <a name="package-a-desktop-app-manually"></a>手动打包桌面应用
 
 本文说明如何在不使用 Visual Studio 或 .MSIX 打包工具等工具的情况下打包应用程序。
 
-若要手动打包应用程序, 请创建包清单文件, 然后运行**makeappx.exe**命令行工具来生成 Windows 应用包。
+若要手动打包应用程序，请创建包清单文件，然后运行**makeappx.exe**命令行工具来生成 Windows 应用包。
 
-如果你使用 xcopy 命令安装应用程序, 或者你熟悉应用程序的安装程序对系统所做的更改, 并且想要更精细地控制进程, 请考虑使用手动打包。
+如果你使用 xcopy 命令安装应用程序，或者你熟悉应用程序的安装程序对系统所做的更改，并且想要更精细地控制进程，请考虑使用手动打包。
 
 如果不确定安装程序会对系统进行哪些更改，或如果更希望使用自动化工具来生成程序包清单，请考虑任一[这些](desktop-to-uwp-root.md#convert)选项。
 
 > [!IMPORTANT]
-> Windows 10 版本1607中引入了创建桌面应用程序的 Windows 应用包 (也称为桌面应用程序) 的功能, 并且该功能只能用在面向 Windows 10 周年更新的项目中 (10.0;版本 14393) 或更高版本的 Visual Studio。
+> Windows 10 版本1607中引入了创建桌面应用程序的 Windows 应用包（也称为桌面应用程序）的功能，并且该功能只能用在面向 Windows 10 周年更新的项目中（10.0;版本14393）或更高版本的 Visual Studio。
 
 ## <a name="first-prepare-your-application"></a>首先，准备应用程序
 
-开始为应用程序创建包之前, 请查看本指南:[准备打包桌面应用程序](desktop-to-uwp-prepare.md)。
+开始为应用程序创建包之前，请查看本指南：[准备打包桌面应用程序](desktop-to-uwp-prepare.md)。
 
 ## <a name="create-a-package-manifest"></a>创建程序包清单
 
@@ -83,11 +83,11 @@ ms.locfileid: "68685384"
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> 如果已在 Microsoft Store 中保留应用程序名称, 则可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)获取名称和发布者。 如果你计划将应用程序旁加载到其他系统, 则可以提供自己的名称, 前提是你所选择的发布者名称与用于对应用进行签名的证书上的名称相匹配。
+> 如果已在 Microsoft Store 中保留应用程序名称，则可以使用[合作伙伴中心](https://partner.microsoft.com/dashboard)获取名称和发布者。 如果你计划将应用程序旁加载到其他系统，则可以提供自己的名称，前提是你所选择的发布者名称与用于对应用进行签名的证书上的名称相匹配。
 
-### <a name="properties"></a>properties
+### <a name="properties"></a>“属性”
 
-[属性](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素具有 3 个所需子元素。 下面是一个带元素占位符文本的示例**属性**节点。 **DisplayName**是在存储中保留的应用程序的名称, 适用于已上传到应用商店的应用。
+[属性](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素具有 3 个所需子元素。 下面是一个带元素占位符文本的示例**属性**节点。 **DisplayName**是在存储中保留的应用程序的名称，适用于已上传到应用商店的应用。
 
 ```XML
 <Properties>
@@ -108,7 +108,7 @@ ms.locfileid: "68685384"
 ```
 ### <a name="dependencies"></a>依存关系
 
-对于为创建包的桌面应用, 始终将``Name``属性设置为。 ``Windows.Desktop``
+对于为其创建包的桌面应用，请始终将 ``Name`` 特性设置为 ``Windows.Desktop``。
 
 ```XML
 <Dependencies>
@@ -117,7 +117,7 @@ ms.locfileid: "68685384"
 ```
 
 ### <a name="capabilities"></a>功能
-对于为其创建包的桌面应用程序, 你必须添加``runFullTrust``功能。
+对于为其创建包的桌面应用程序，必须添加 ``runFullTrust`` 功能。
 
 ```XML
 <Capabilities>
@@ -130,7 +130,7 @@ ms.locfileid: "68685384"
 
 ### <a name="application-element"></a>应用程序元素
 
-对于为其创建包的桌面应用程序, ``EntryPoint``应用程序元素的特性始终``Windows.FullTrustApplication``为。
+对于为其创建包的桌面应用程序，始终 ``Windows.FullTrustApplication``应用程序元素的 ``EntryPoint`` 属性。
 
 ```XML
 <Applications>
@@ -173,7 +173,7 @@ ms.locfileid: "68685384"
 
 ### <a name="generate-a-package-resource-index-pri-file"></a>生成包资源索引 (PRI) 文件
 
-如果创建的是基于目标的资产 (如上一节所述), 或在创建包之后修改应用程序的任何视觉资产, 则必须生成新的 PRI 文件。
+如果创建的是基于目标的资产（如上一节所述），或在创建包之后修改应用程序的任何视觉资产，则必须生成新的 PRI 文件。
 
 1.  打开**适用于 VS 2017 的开发人员命令提示符**。
 
@@ -183,7 +183,7 @@ ms.locfileid: "68685384"
 
 5.  使用命令 ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml`` 创建 resources.pri 文件。
 
-    例如, 应用程序的命令可能如下所示: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``。
+    例如，应用程序的命令可能如下所示： ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``。
 
 6.  使用下一步中的说明打包 Windows 应用包。
 
@@ -197,14 +197,14 @@ ms.locfileid: "68685384"
 
 ## <a name="run-the-packaged-app"></a>运行打包的应用
 
-您可以运行应用程序以在本地测试它, 而无需获取证书并对其进行签名。 只需运行此 PowerShell cmdlet：
+您可以运行应用程序以在本地测试它，而无需获取证书并对其进行签名。 只需运行此 PowerShell cmdlet：
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
 若要更新应用的 .exe 或 .dll 文件，请将程序包中的现有文件替换为新文件、增加 AppxManifest.xml 中的版本号，然后再次运行上述命令。
 
 > [!NOTE]
-> 打包的应用程序始终以交互用户身份运行, 安装打包应用程序的任何驱动器都必须设置为 NTFS 格式。
+> 打包的应用程序始终以交互用户身份运行，安装打包应用程序的任何驱动器都必须设置为 NTFS 格式。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -212,14 +212,10 @@ ms.locfileid: "68685384"
 
 有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)向我们提问。
 
-**提供反馈或提出功能建议**
-
-请参阅 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
-
 **单步执行代码/查找并修复问题**
 
 请参阅[运行、调试和测试打包的桌面应用程序](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-debug)
 
-**对应用程序进行签名, 然后将其分发**
+**对应用程序进行签名，然后将其分发**
 
 请参阅[分发打包的桌面应用程序](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-distribute)
