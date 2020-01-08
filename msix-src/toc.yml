@@ -68,6 +68,8 @@
           href: packaging-tool/mpt-best-practices.md
         - name: 使用 Hyper-V Quick Create 进行打包
           href: packaging-tool/Quick-Create-VM.md
+        - name: 转换包含服务的安装程序
+          href: packaging-tool/convert-an-installer-with-services.md
         - name: 已知问题和疑难解答
           href: packaging-tool/mpt-known-issues.md
         - name: 跨多个设备复制 MSIX 打包工具设置
@@ -114,7 +116,7 @@
               href: msix-sdk/release-notes/sdk-release-notes-1.6.md
             - name: MSIX SDK Release 1.7
               href: msix-sdk/release-notes/sdk-release-notes-1.7.md
-- name: 应用包
+- name: 程序包
   items:
     - name: 将桌面应用打包
       items:
@@ -192,7 +194,7 @@
       href: psf/package-support-framework.md
     - name: 使用包支持框架运行脚本
       href: psf/run-scripts-with-package-support-framework.md
-- name: 分配
+- name: 分发
   items:
     - name: 发布到 Microsoft Store
       href: 'https://docs.microsoft.com/windows/uwp/publish/?context=/windows/msix/render'
