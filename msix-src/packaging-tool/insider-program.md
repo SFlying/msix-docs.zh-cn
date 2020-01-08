@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 7201d3907d84e4a42fbcb3d9f19adf84d5fe353f
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 0d5c124f4f7655fb3685ee13eeef8c116f8432d6
+ms.sourcegitcommit: 44b9510ea76623d668d87ddca575a7921c60a19a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328479"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75322634"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -19,7 +19,7 @@ ms.locfileid: "73328479"
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://aka.ms/MSIXPackagingPreviewProgram" data-linktype="external">单击此处加入该计划</a></p></div>
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 - Windows 10 版本 1809（或更高版本）。
 - 用于访问 Microsoft Store 中的应用的有效 Microsoft 帐户别名。
@@ -35,11 +35,10 @@ ms.locfileid: "73328479"
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-### <a name="version-1201910180-public"></a>版本1.2019.1018.0 （公共）
-- Device Guard 签名功能现已提供。 此签名选项需要一个已为适用于企业的 Microsoft Store 配置的活动 Microsoft Azure Active Directory 帐户。 有关详细信息，请参阅[此文](https://docs.microsoft.com/windows/msix/package/signing-package-device-guard-signing)。
-- **包编辑器**现在支持选择要执行某个操作的多个项目的功能。
-- 现在支持右键单击以编辑 MSIX 包。
-- 用户体验对打包工作流的改进。
+## <a name="version-1201912180"></a>版本1.2019.1218。0
+- 添加了拖放文件以将其移动到包编辑器中的功能
+- 将包完整性添加到应用的新设置
+- 在 "创建包" 页上显示默认保存位置
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
@@ -51,7 +50,7 @@ ms.locfileid: "73328479"
 
 此外，通过“反馈中心”还能方便地分享有关你希望在应用中添加的新功能的看法和建议。  
 
-## <a name="faqs"></a>常见问题解答
+## <a name="faqs"></a>常见问题
 
 1. 我没有收到有关已将我登记到预览体验计划的确认电子邮件。 
     - 请再次[加入该计划](https://aka.ms/MSIXPackagingPreviewProgram)。  

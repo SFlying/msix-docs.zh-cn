@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 975ed03b8c3a0e436dff9dac8469e24556557b3c
-ms.sourcegitcommit: 073a228653f004914851c3461b9ad6eef343f915
+ms.openlocfilehash: 9fb1d6d4c11449809c4b82bd43f0e693f69a3095
+ms.sourcegitcommit: 44b9510ea76623d668d87ddca575a7921c60a19a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74309023"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75322633"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>适用于 MSIX 打包工具的最佳做法
 
@@ -21,17 +21,19 @@ ms.locfileid: "74309023"
 
 ## <a name="best-practices-during-setup"></a>安装过程中的最佳做法
  
-首先，请确保具有[最新版本的 .Msix 打包工具](https://docs.microsoft.com/en-us/windows/msix/packaging-tool/mpt-overview#latest-public-version---1201910180)。 对于转换过程，我们建议你在开始之前考虑其他一些事项。 
+首先，请确保具有[最新版本的 .Msix 打包工具](mpt-overview.md#latest-public-version---1201910180)。 对于转换过程，我们建议你在开始之前考虑其他一些事项。
 
-- .MSIX 打包工具的最低操作系统版本要求为 Windows 10 1809。 我们了解，并非每个人都用的是 Windows 10 2018 年 10 月更新或甚至是 Windows 10。 因此，我们建议你创建已预先配置为提供 MSIX 最低版支持的全新 VM。 如果不是这样，我们还提供了一个快速创建 VM，即 Hyper-v 中的[.Msix 打包工具环境](https://docs.microsoft.com/en-us/windows/msix/packaging-tool/quick-create-vm)，该环境已准备好进行转换。 
+- .MSIX 打包工具的最低操作系统版本要求为 Windows 10 1809。 我们了解，并非每个人都用的是 Windows 10 2018 年 10 月更新或甚至是 Windows 10。 因此，我们建议你创建已预先配置为提供 MSIX 最低版支持的全新 VM。 如果不是这样，我们还提供了一个快速创建 VM，即 Hyper-v 中的[.Msix 打包工具环境](quick-create-vm.md)，该环境已准备好进行转换。 
 
 - 这样建议的另一个原因是，在使用 MSIX 打包工具进行交互式 GUI 转换期间，我们将会侦听设备上的所有内容，它将有助于防止包中出现无关数据。 
 
 - 此外，也最好知道你有哪一类型的依赖项，以便了解哪些依赖项应随应用运行，以及哪些依赖项应以修改包的形式打包。 例如，如果有运行时依赖项，那么最好将这些依赖项包含在主应用程序中。 如果你有一个插件，则应将其打包为一个修改包，以便与你的主应用程序相关联。 
 
 
-## <a name="best-practices-during-repackaging"></a>重新打包过程中的最佳做法 
+## <a name="best-practices-during-repackaging"></a>重新打包过程中的最佳做法
+
 当使用 MSIX 打包工具时，还有一些事项是我们建议作为最佳做法来执行的：
+
 - 打包 ClickOnce 安装程序时，有必要将快捷方式发送到桌面（如果安装程序尚未执行该操作）。 一般情况下，始终记得为主应用可执行文件将快捷方式发送到桌面是很好的做法。
 - 当创建修改包时，需要在工具 UI 中声明父应用程序的包名称（标识名称），以便该工具在修改包的清单中设置正确的包依赖项。
 - 在 "**准备计算机**" 页中执行准备步骤是可选的，但强烈建议这样做，因为这将有助于减少包中的任何无关数据。 
