@@ -132,8 +132,6 @@
               href: packaging-tool/create-other-installer.md
             - name: 使用命令行创建 MSIX 包
               href: packaging-tool/package-conversion-cli.md
-            - name: 使用命令行自动进行转换
-              href: packaging-tool/automate-conversion.md
             - name: 在远程计算机上创建 MSIX 包
               href: packaging-tool/remote-conversion-setup.md
             - name: 使用 Desktop App Converter 进行打包
