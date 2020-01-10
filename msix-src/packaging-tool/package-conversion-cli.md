@@ -6,16 +6,24 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5206c4e90ca780c80e1ac6dd4e3ae33aa6c4c0e0
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 4ebdb73779821c1ba0dc5fbae844b02df4d204cb
+ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328450"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754832"
 ---
 # <a name="conversion-with-command-line-interface-cli"></a>使用命令行接口 (CLI) 进行转换
 
+## <a name="automate-conversion-of-windows-installers-to-msix-packages-using-scripts"></a>使用脚本自动将 Windows 安装程序转换为 .MSIX 包
+
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取 MSIX 打包工具</a></p></div>
+
+MSIX 打包工具支持用于创建 MSIX 应用程序包的命令行接口。 这样，你便可以自动执行将应用安装程序重新打包的过程并执行批量转换。
+
+有关演示如何自动执行打包、签名、管理和分发 MSIX 包的过程的示例 PowerShell 和 Bash 脚本，请参阅 MSIX 工具包的 [scripts](https://github.com/microsoft/MSIX-Toolkit/tree/master/Scripts) 文件夹。
+
+## <a name="use-the-command-line-interface-cli-with-the-command-prompt"></a>在命令提示符下使用命令行接口（CLI）
 
 若要为应用程序创建新的 .MSIX 包，请在管理员命令提示符窗口中运行 `MsixPackagingTool.exe create-package` 命令。
 
@@ -28,7 +36,7 @@ ms.locfileid: "73328450"
 |--virtualMachinePassword   | [可选] 转换环境使用的虚拟机的密码。 注意：模板文件必须包含 VirtualMachine 元素，并且 Settings：： AllowPromptForPassword 特性不得设置为 true。|
 |-v --verbose   |[可选] 在控制台中输出详细日志。|
 
-示例：
+例如：
 
 ```console
 

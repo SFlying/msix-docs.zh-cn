@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dde98d7e5d92b3f3e9fe3afe5dc5eb9485f7b57
-ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
+ms.openlocfilehash: 3511b3f7bef1bc3a8ace27b5bc2eb6bd5b47cb45
+ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303288"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754850"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>准备打包桌面应用程序
 
@@ -30,6 +30,8 @@ ms.locfileid: "75303288"
 + __应用程序需要内核模式驱动程序或 Windows 服务__。 桌面桥适用于应用程序，但它不支持需要在系统帐户下运行的内核模式驱动程序或 Windows 服务。 使用[后台任务](/windows/uwp/launch-resume/create-and-register-a-background-task)，而不是 Windows 服务。
 
 + __在进程内将应用的模块加载到不在 Windows 应用包中的进程__。 不允许此操作，这意味着不支持进程中扩展，如 [shell 扩展](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx)。 但是，如果你在同一个程序包中有两个应用，则可以在它们之间执行进程间通信。
+
++ __确保应用程序安装的任何扩展将安装应用程序__的安装位置。 Windows 允许用户和 IT 管理员更改包的默认安装位置。  请参阅 "设置-> 系统 > 存储-> 更多存储设置-> 更改保存新内容的位置-> 新应用将保存到"。  如果要使用应用程序安装扩展，请确保该扩展没有其他安装文件夹限制。  例如，某些扩展可能禁止将其扩展安装到非系统驱动器。  如果默认位置已更改，这将导致错误0x80073D01 （ERROR_DEPLOYMENT_BLOCKED_BY_POLICY）。 
 
 + __应用程序使用自定义应用程序用户模型 ID （AUMID）__ 。 如果你的过程调用[SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx)来设置其自己的 AUMID，则它可能仅使用应用程序模型环境/Windows 应用包为其生成的 AUMID。 无法定义自定义 AUMID。
 

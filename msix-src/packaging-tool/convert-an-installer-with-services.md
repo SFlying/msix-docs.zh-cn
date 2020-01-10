@@ -5,12 +5,12 @@ ms.date: 12/19/2019
 ms.topic: article
 keywords: windows 10、.MSIX、.MSIX 打包工具、服务
 ms.localizationpriority: medium
-ms.openlocfilehash: b37b9066dd9b3edc889457002953fc4f9a344dcd
-ms.sourcegitcommit: 44b9510ea76623d668d87ddca575a7921c60a19a
+ms.openlocfilehash: 9cbc748311222d27cc6da946bc88add7744915e9
+ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75322776"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754861"
 ---
 # <a name="convert-an-installer-that-includes-services"></a>转换包含服务的安装程序
 
@@ -35,8 +35,10 @@ Windows 10 版本2004引入了对运行包含服务的 .MSIX 包的支持。 可
 
 修复了某个服务后，可以将其移动到**包含**的表中，或者，如果不希望在最终包中使用它，也可以选择将它保留在**排除**的表中。 然后，可以继续执行最后一个步骤来创建 .MSIX 包。
 
-## <a name="known-issues"></a>已知问题
+## <a name="known-limitations"></a>已知限制
 
 服务可执行文件路径（也称为图像路径）当前不可编辑。 若要解决与路径有关的任何问题，必须在转换安装程序之前手动编辑服务可执行文件路径。 或者，在转换后，可以使用 .MSIX 打包工具中的**包编辑器**手动编辑清单。
 
 **服务**报表当前在**包编辑器**中不可用。 你必须手动编辑清单以更改 .MSIX 包中包含的服务。
+
+目前，我们不支持在包外具有依赖关系的服务。

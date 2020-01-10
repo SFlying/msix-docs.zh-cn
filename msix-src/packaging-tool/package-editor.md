@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8d93cc9ecb8c56ca00cf003c598e95fd62726580
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 66e140987fda894d8eb3af8df8594acf07f33059
+ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328456"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754921"
 ---
 # <a name="modify-a-package-using-package-editor"></a>使用包编辑器修改包
 
@@ -20,6 +20,8 @@ ms.locfileid: "73328456"
 若要对现有的 MSIX 包进行更改，例如，在无需再次将安装程序打包的情况下修改清单中的属性或包的内容，可以使用 MSIX 打包工具中的**包编辑器**。
 
 从 MSIX 打包工具的主页中选择“包编辑器”图标，浏览到你的 MSIX 包并选择“打开包”。
+
+可以通过底部的 "解压缩" 按钮，从包编辑器中解压缩 .MSIX 包。 然后，可以选择要在其中解压缩 .MSIX 包的位置。 
 
 ## <a name="package-information-page"></a>“包信息”页
 
@@ -72,4 +74,3 @@ ms.locfileid: "73328456"
 - 移动：将文件重命名或移动到新位置。
 
 ![pic13](images/pic13.png)
-

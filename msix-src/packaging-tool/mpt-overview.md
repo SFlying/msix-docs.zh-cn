@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: b8afc46195c1c7f467ddf302edd9553a2ba0c049
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 0dd681286b8bfcec432b566e11e6234854301a71
+ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328466"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754814"
 ---
 # <a name="msix-packaging-tool"></a>MSIX 打包工具 
 
@@ -36,6 +36,12 @@ MSIX 打包工具现已在 Microsoft Store 中提供。 可以通过此工具运
 
 也可以从适用于企业的 Microsoft Store [Web 门户](https://businessstore.microsoft.com/)下载 MSIX 打包工具供离线使用。 可在[此处](https://docs.microsoft.com/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app)详细了解离线分发。
 
+有了应用程序的脱机版本后，可以使用 [PowerShell](https://docs.microsoft.com/powershell/module/dism/add-appxprovisionedpackage?view=win10-ps) 将应用包和许可证添加到计算机。 
+
+### <a name="example-of-offline-installation"></a>脱机安装的示例
+```
+PS C:\> Add-AppxProvisionedPackage -Path C:\offline -PackagePath C:\MSIX\MyPackage.msix -LicensePath C:\MSIX\MyLicense.xml
+```
  
 ## <a name="latest-public-version---1201910180"></a>最新公共版本 - 1.2019.1018.0
 
@@ -55,14 +61,13 @@ MSIX 打包工具现已在 Microsoft Store 中提供。 可以通过此工具运
 - 通过启动该工具并选择“修改包”图标，为 MSIX 包创建修改包。  
 - 通过选择“包编辑器”图标，浏览到 MSIX 包并选择“打开包”，来打开 MSIX 包以查看和编辑其内容/属性。  
 
-## <a name="try-it-out"></a>试用 
+## <a name="try-it-out"></a>试试吧 
 
 以下文章是有关如何使用 MSIX 打包工具转换桌面应用程序的教程： 
 
-| 文章 | 描述 |
+| 文章 | 说明 |
 |-------|-------------|
 | [从 MSI/App-V 文件创建 MSIX 包](create-app-package-MSI-VM.md) | 此教程介绍如何使用 MSIX 打包工具的 UI 将桌面应用程序（具体而言，是 MSI、EXE 或 App-V 等安装程序）转换为 MSIX 包。 |
-| [从其他安装程序类型创建 MSIX 包](create-other-installer.md) | 此教程介绍如何使用 MSIX 打包工具的 UI 将桌面应用程序（批处理脚本、PowerShell 等安装程序）转换为 MSIX 包。 |
+| [从其他安装程序类型创建 MSIX 包](create-other-installer.md) | 此教程介绍如何使用 MSIX 打包工具的 UI 将桌面应用程序（批量转换脚本、PowerShell 等安装程序）转换为 MSIX 包。 |
 | [使用 MSIX 打包工具的命令行接口创建 MSIX 包](package-conversion-cli.md) | 此教程介绍如何使用 MSIX 打包工具的命令行接口将桌面应用程序转换为 MSIX 包。 |
-| [自动执行 MSIX 包转换](automate-conversion.md) | 此教程介绍如何使用命令行接口将桌面应用程序自动转换为 MSIX 包。 |
 | [在远程设备上创建 MSIX 包](remote-conversion-setup.md) | 此文提供有关如何在远程设备上将桌面应用程序转换为 MSIX 包的说明。 |
