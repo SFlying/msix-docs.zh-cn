@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: e151cf2edb41b8a26b48189e4ab91a342a3ddaa8
-ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
+ms.openlocfilehash: 548981deb38ce651367bec2207013eff56cf511d
+ms.sourcegitcommit: 90eed7d23240aefa3761085955a193323f4661d4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75008127"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75831489"
 ---
 # <a name="package-an-msix-app-with-visual-studio"></a>使用 Visual Studio 打包 .MSIX 应用
 
@@ -89,10 +89,12 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 ## <a name="create-an-app-package-upload-file"></a>创建应用包上传文件
 
-若要通过 Microsoft Store 分发应用，必须创建应用包（.appx 或 .msix）、应用程序包（.appxbundle 或 .msixbundle）或应用包上传文件（.appxupload 或 msixupload），并[将打包的应用提交到合作伙伴中心](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 虽然可将应用包或应用捆绑包仅提交给合作伙伴中心，但建议提交应用包上传文件。 你可以使用 Visual Studio 中的 "**创建应用包**" 向导创建应用包上传文件，也可以从现有应用包或应用捆绑中手动创建。
+若要通过 Microsoft Store 分发应用，必须创建应用包（.appx 或 .msix）、应用程序包（.appxbundle 或 .msixbundle）或应用包上传文件（.appxupload 或 msixupload），并[将打包的应用提交到合作伙伴中心](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 
 
->[!NOTE]
+> [!NOTE]
 > 如果要手动创建应用程序包（.appx 或 .msix）或应用捆绑包（.appxbundle 或 .msixbundle），请参阅[使用 makeappx.exe 工具创建应用包](create-app-package-with-makeappx-tool.md)。
+
+虽然可将应用包或应用捆绑包仅提交给合作伙伴中心，但建议提交**应用包上传文件**。 你可以通过使用 Visual Studio 中的 "**创建应用包**" 向导来创建应用包上传文件，或者可以从现有应用包或应用捆绑中手动创建一个文件，请参阅[手动创建应用包上传文件](#create-your-app-package-upload-file-manually)。
 
 ### <a name="create-your-app-package-upload-file-using-visual-studio"></a>使用 Visual Studio 创建应用包上传文件
 
@@ -138,11 +140,11 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
     - 一个或多个应用包（. .msix 或 .appx）或应用捆绑包（. .msixbundle 或 .appxbundle）。
     - .Appxsym 文件。 这是包含应用的公共符号的压缩 .pdb 文件，用于合作伙伴中心的[故障分析](https://docs.microsoft.com/windows/uwp/publish/health-report)。 您可以省略此文件，但如果您这样做，您的应用程序将不会有任何崩溃分析或调试信息。
 
-2. 压缩文件夹。
+2. 选择文件夹中的所有文件，右键单击文件，然后选择 "**发送到** -> **压缩（zipped）文件夹**"。
 
-3. 将压缩的文件夹扩展名称从 .zip 更改为 msixupload 或 .appxupload。
+3. 将新的 zip 文件的扩展名从 .zip 更改为 msixupload 或 .appxupload。
 
-## <a name="validate-your-app-package"></a>验证应用包
+## <a name="validate-your-app-package"></a>验证应用程序包
 
 在将应用提交到合作伙伴中心以便在本地或远程计算机上进行认证之前验证应用。 你只能验证应用包的发布版本而不是调试版本。 有关将应用提交到合作伙伴中心的详细信息，请参阅[应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 

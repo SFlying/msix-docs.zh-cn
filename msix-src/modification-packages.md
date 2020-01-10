@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 89a3e99d1ac7c10993570763add20b92f5cd1685
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 6db2a7aa009f0a4bce9a2aa8950e029473df63aa
+ms.sourcegitcommit: 90eed7d23240aefa3761085955a193323f4661d4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328594"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75831459"
 ---
 # <a name="customize-your-enterprise-apps-with-modification-packages"></a>利用修改包自定义企业应用 
 
@@ -53,6 +53,9 @@ ms.locfileid: "73328594"
 2. 使用 API 创建必要的文件。 可以使用[ORSaveHive](https://docs.microsoft.com/windows/win32/devnotes/orsavehive)函数保存 .dat 文件。 请确保将该文件命名为网或 Userclass。
 
 进行必要的更改后，可以像创建任何其他 .MSIX 包一样创建修改包。 然后，你可以通过当前的部署设置部署包。 重新启动主应用时，可以看到修改包所做的更改。 如果你选择删除修改包，则主应用将恢复为不带修改包的状态。 
+
+## <a name="find-out-what-modification-packages-are-installed-on-your-device"></a>查明设备上安装了哪些修改包
+使用 PowerShell，可以看到已安装的修改包，使用： AppPackage-PackageTypeFilter 可选
 
 ## <a name="see-also"></a>另请参阅
 - [Windows 10 版本1809上的修改包](modification-package-1809-update.md)
