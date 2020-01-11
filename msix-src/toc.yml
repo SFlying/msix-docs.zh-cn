@@ -1,7 +1,7 @@
 - name: MSIX
   items:
     - name: 概述
-      href: index.md
+      href: index.yml
     - name: 什么是 MSIX？
       href: overview.md
     - name: 应用包格式
