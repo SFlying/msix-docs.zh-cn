@@ -1,0 +1,150 @@
+### YamlMime:Hub
+title: MSIX 文档
+summary: MSIX 是一种 Windows 应用包格式，它将 MSI、AppX、App-V 和 ClickOnce 的最佳功能组合在一起，以提供新式的可靠打包体验。
+metadata:
+  title: MSIX 文档
+  description: MSIX 是已构建为安全可靠的 Windows 应用打包格式。 它基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合。
+  ms.topic: hub-page
+  ms.date: 11/06/2019
+  keywords: windows 10, uwp, MSIX
+  ms.localizationpriority: medium
+  ms.custom: RS5, seodec18
+  ms.openlocfilehash: 69b19ec505394514740ead523d2b56804834bb2b
+  ms.sourcegitcommit: f095305b47b5ba14f96413ee520777be45090e3b
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 01/10/2020
+  ms.locfileid: "75886084"
+highlightedContent:
+  items:
+  - title: 什么是 MSIX？
+    itemType: overview
+    url: overview.md
+  - title: 获取 MSIX 打包工具
+    itemType: download
+    url: https://www.microsoft.com/p/msix-packaging-tool/9n5lw3jbcxkf
+  - title: MSIX 视频
+    itemType: video
+    url: team-video.md
+  - title: MSIX 技术社区
+    itemType: overview
+    url: https://techcommunity.microsoft.com/t5/MSIX/ct-p/MSIX
+additionalContent:
+  sections:
+  - title: 最常见的任务
+    items:
+    - title: 从现有安装程序创建 MSIX 包
+      summary: 可以使用 MSIX 打包工具将现有的桌面应用程序包更新为 MSIX 格式。
+      url: packaging-tool/mpt-overview.md
+    - title: 从源代码创建 MSIX 包
+      summary: 使用 Visual Studio 从源代码将桌面应用打包。
+      url: desktop/desktop-to-uwp-packaging-dot-net.md
+    - title: 在任何平台上使用 MSIX
+      summary: MSIX SDK 提供在任何平台（包括非 Windows 10 平台）上验证和解包 MSIX 包所需的全部 API。
+      url: msix-sdk/sdk-overview.md
+    - title: 通过应用安装程序安装 MSIX 包
+      summary: 安装或更新在本地或任何内容分发网络上提供的任何 MSIX 应用包。
+      url: app-installer/app-installer-root.md
+    - title: 从动手实验中了解 MSIX
+      summary: MSIX 实验室存储库提供了有关创建、打包、分发和安装 MSIX 包的教程。
+      url: https://github.com/microsoft/MSIX-Labs
+  - title: 适用于 IT 专业人员的 MSIX
+    items:
+    - title: 入门
+      links:
+      - text: 使用 MSIX 打包工具创建包
+        url: packaging-tool/create-app-package-msi-vm.md
+      - text: 自动创建 MSIX 包
+        url: packaging-tool/package-conversion-cli.md
+    - title: 程序包
+      links:
+      - text: “将桌面应用程序打包”概述
+        url: desktop/desktop-to-uwp-root.md
+      - text: MSIX 打包工具概述
+        url: packaging-tool/mpt-overview.md
+      - text: 修改 MSIX 包
+        url: packaging-tool/package-editor.md
+      - text: MSIX 打包工具最佳做法
+        url: packaging-tool/mpt-best-practices.md
+      - text: 为 MSIX 包签名
+        url: package/sign-app-package-using-signtool.md
+    - title: 验证
+      links:
+      - text: 程序包外部测试
+        url: https://docs.microsoft.com/windows/uwp/publish/package-flights
+      - text: 测试处于 S 模式的 Windows 10
+        url: https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s
+      - text: 为已打包的应用创建运行时修补程序
+        url: psf/package-support-framework-overview.md
+    - title: 分发
+      links:
+      - text: Microsoft Store
+        url: https://docs.microsoft.com/windows/uwp/publish/app-submissions
+      - text: 适用于企业的 Microsoft Store
+        url: https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises
+      - text: Microsoft Endpoint Configuration Manager
+        url: https://docs.microsoft.com/configmgr/apps/understand/introduction-to-application-management
+      - text: Microsoft Intune
+        url: https://docs.microsoft.com/intune/fundamentals/what-is-intune
+      - text: 使用应用安装程序安装 MSIX 包
+        url: app-installer/app-installer-file-overview.md
+    - title: 相关资源
+      links:
+      - text: MSIX 工具包
+        url: https://github.com/microsoft/MSIX-Toolkit
+      - text: MSIX 实验室
+        url: https://github.com/microsoft/MSIX-Labs
+  - title: 面向开发人员的 MSIX
+    items:
+    - title: 入门
+      links:
+      - text: 使用 Visual Studio 打包桌面应用
+        url: desktop/desktop-to-uwp-packaging-dot-net.md
+      - text: 使用 Visual Studio 打包 UWP 应用
+        url: package/packaging-uwp-apps.md
+    - title: 生成
+      links:
+      - text: “将桌面应用程序打包”概述
+        url: desktop/desktop-to-uwp-root.md
+      - text: 准备打包桌面应用程序
+        url: desktop/desktop-to-uwp-prepare.md
+      - text: 手动创建包
+        url: package/manual-packaging-root.md
+      - text: 为 MSIX 包签名
+        url: package/sign-app-package-using-signtool.md
+      - text: 应用流式安装
+        url: package/streaming-install.md
+    - title: 验证
+      links:
+      - text: Windows 应用认证工具包
+        url: https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit
+      - text: Windows 设备门户
+        url: https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal
+      - text: 程序包外部测试
+        url: https://docs.microsoft.com/windows/uwp/publish/package-flights
+      - text: 测试处于 S 模式的 Windows 10
+        url: https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s
+    - title: 分发
+      links:
+      - text: Microsoft Store
+        url: https://docs.microsoft.com/windows/uwp/publish/app-submissions
+      - text: 适用于企业的 Microsoft Store
+        url: https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises
+      - text: 使用应用安装程序安装 MSIX 包
+        url: app-installer/app-installer-file-overview.md
+    - title: API 和架构参考
+      links:
+      - text: 程序包管理器 API
+        url: https://docs.microsoft.com/uwp/api/windows.management.deployment
+      - text: 应用清单架构
+        url: https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest
+      - text: 应用安装程序文件架构
+        url: https://docs.microsoft.com/uwp/schemas/appinstallerschema/schema-root
+    - title: 相关资源
+      links:
+      - text: MSIX 合作伙伴
+        url: partners.md
+      - text: MSIX SDK
+        url: https://github.com/microsoft/msix-packaging/
+      - text: 包支持框架
+        url: https://github.com/Microsoft/MSIX-PackageSupportFramework
