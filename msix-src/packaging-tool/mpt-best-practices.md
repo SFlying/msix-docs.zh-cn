@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 21f12e081dbda622be7d6f3d5800425fdf1f2305
-ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
+ms.openlocfilehash: 00c3831995383cea4b558c6353f4b545ae5b94ac
+ms.sourcegitcommit: 0bd5ebc32feba8a4f4669f232129a8953d5cf773
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754821"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022010"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>适用于 MSIX 打包工具的最佳做法
 
@@ -21,7 +21,7 @@ ms.locfileid: "75754821"
 
 ## <a name="best-practices-for-environment-setup"></a>环境设置的最佳实践
  
-请确保具有[最新版本的 .Msix 打包工具](mpt-overview.md#latest-public-version---1201910180)。 对于转换过程，我们建议你在开始之前考虑其他一些事项。
+请确保具有[最新版本的 .Msix 打包工具](mpt-overview.md#latest-public-version---1201912200)。 对于转换过程，我们建议你在开始之前考虑其他一些事项。
 
 - .MSIX 打包工具的最低操作系统版本要求为 Windows 10 1809。 我们了解，并非每个人都用的是 Windows 10 2018 年 10 月更新或甚至是 Windows 10。 因此，我们建议你创建已预先配置为提供 MSIX 最低版支持的全新 VM。
 

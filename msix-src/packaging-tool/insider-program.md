@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0d5c124f4f7655fb3685ee13eeef8c116f8432d6
-ms.sourcegitcommit: 44b9510ea76623d668d87ddca575a7921c60a19a
+ms.openlocfilehash: 5f354ac1ffa74c0fc17bda210b0abb12fd736528
+ms.sourcegitcommit: 0bd5ebc32feba8a4f4669f232129a8953d5cf773
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75322634"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76021994"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -35,10 +35,8 @@ ms.locfileid: "75322634"
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-## <a name="version-1201912180"></a>版本1.2019.1218。0
-- 添加了拖放文件以将其移动到包编辑器中的功能
-- 将包完整性添加到应用的新设置
-- 在 "创建包" 页上显示默认保存位置
+## <a name="version-1201912200"></a>版本1.2019.1220。0
+- .MSIX 打包工具刚刚发布了应用程序的公共版本。 预览版本将很快返回。
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
