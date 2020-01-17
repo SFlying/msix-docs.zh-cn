@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 0dd681286b8bfcec432b566e11e6234854301a71
-ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
+ms.openlocfilehash: 71ce462f6c696d500b5627a1bf96ab04d336ac3f
+ms.sourcegitcommit: 0bd5ebc32feba8a4f4669f232129a8953d5cf773
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754814"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76021928"
 ---
 # <a name="msix-packaging-tool"></a>MSIX 打包工具 
 
@@ -43,13 +43,12 @@ MSIX 打包工具现已在 Microsoft Store 中提供。 可以通过此工具运
 PS C:\> Add-AppxProvisionedPackage -Path C:\offline -PackagePath C:\MSIX\MyPackage.msix -LicensePath C:\MSIX\MyLicense.xml
 ```
  
-## <a name="latest-public-version---1201910180"></a>最新公共版本 - 1.2019.1018.0
+## <a name="latest-public-version---1201912200"></a>最新公共版本 - 1.2019.1220.0
 
 ### <a name="new-features"></a>新增功能：
-- Device Guard 签名功能现已提供。 此签名选项需要一个已为适用于企业的 Microsoft Store 配置的活动 Microsoft Azure Active Directory 帐户。 有关详细信息，请参阅[此文章](https://docs.microsoft.com/windows/msix/package/signing-package-device-guard-signing)。
-- **包编辑器**现在支持选择要执行某个操作的多个项目的功能。
-- 现在支持右键单击以编辑 MSIX 包。
-- 用户体验对打包工作流的改进。
+- 对转换带有服务的现有安装程序的支持现已提供
+  - 在新的[“服务”报表页](https://docs.microsoft.com/windows/msix/packaging-tool/convert-an-installer-with-services)中查看检测到的所有服务并对其进行修改
+- 用于将“包完整性”添加到应用的新设置
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
