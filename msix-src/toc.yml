@@ -35,11 +35,18 @@
             - name: 应用包体系结构
               href: package/device-architecture.md
     - name: 应用包更新
-      href: app-package-updates.md
+      items:
+        - name: 概述
+          href: app-package-updates.md
+        - name: 从代码更新 Store 发布的应用
+          href: store-developer-package-update.md
+        - name: 从代码更新非 Store 发布的应用
+          href: non-store-developer_updates.md
+    - name: 1709 和 1803 上的 MSIX 支持
+      href: msix-1709-and-1803-support.md
     - name: Windows Server 2019 上的 MSIX 支持
       href: msix-server-2019.md
     - name: Windows 10 版本 1709 和 1803 上的 MSIX 支持
-      href: msix-1709-and-1803-support.md
     - name: MSIX Core
       items:
         - name: 概述
@@ -144,8 +151,6 @@
               href: desktop/desktop-to-uwp-packaging-dot-net.md
             - name: 使用本机映像优化二进制文件
               href: desktop/desktop-to-uwp-r2r.md
-        - name: 手动打包桌面应用
-          href: desktop/desktop-to-uwp-manual-conversion.md
         - name: 使用第三方安装程序将桌面应用打包
           href: desktop/desktop-to-uwp-third-party-installer.md
         - name: 在打包桌面应用幕后
@@ -158,6 +163,8 @@
       items:
         - name: 概述
           href: package/manual-packaging-root.md
+        - name: 生成包
+          href: desktop/desktop-to-uwp-manual-conversion.md
         - name: 使用 MakeAppx.exe 工具创建应用包
           href: package/create-app-package-with-makeappx-tool.md
         - name: 为程序包签名创建证书
@@ -190,6 +197,8 @@
           href: desktop/desktop-to-uwp-debug.md
         - name: 测试处于 S 模式的 Windows 10
           href: desktop/desktop-to-uwp-test-windows-s.md
+        - name: 检测包标识和运行时上下文
+          href: detect-package-identity.md
     - name: 将运行时修补程序应用到桌面应用包
       href: psf/package-support-framework.md
     - name: 使用包支持框架运行脚本
