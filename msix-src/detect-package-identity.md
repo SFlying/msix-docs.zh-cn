@@ -4,7 +4,7 @@ description: 描述应用如何确定其在 Win 1709 或更高版本上是否作
 author: Huios
 ms.date: 01/23/2020
 ms.topic: article
-keywords: windows 10, uwp, app package, app update, msix, appx
+keywords: windows 10, uwp, 应用包, 应用更新, msix, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: 0fe0a721368b10f68ba30665883e9070692dbb04

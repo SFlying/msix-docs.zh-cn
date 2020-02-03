@@ -1,10 +1,10 @@
 ---
-title: 从代码更新商店发布的应用
+title: 从代码更新 Store 发布的应用
 description: 介绍开发人员如何在代码中更新 .MSIX 包。
 author: Huios
 ms.date: 01/24/2020
 ms.topic: article
-keywords: windows 10, uwp, app package, app update, msix, appx
+keywords: windows 10, uwp, 应用包, 应用更新, msix, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: 1d387789c072782199b85d52c79b57c1c94e8312
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76726627"
 ---
-# <a name="update-store-published-apps-from-your-code"></a>从代码更新商店发布的应用
+# <a name="update-store-published-apps-from-your-code"></a>从代码更新 Store 发布的应用
 
 从 Windows 10 版本1607（版本14393）开始，Windows 10 允许开发人员更好地保证应用商店中的应用更新。 执行此操作需要几个简单的 Api，创建一致且可预测的用户体验，并使开发人员能够专注于他们最能完成的工作，同时允许 Windows 执行繁重的工作。
 
@@ -79,7 +79,7 @@ private async void DownloadUpdatesAsync()
 }
 ```
 
-### <a name="install-updates"></a>업데이트 설치
+### <a name="install-updates"></a>安装更新
 
 ```csharp
 private async void InstallUpdatesAsync()
@@ -131,7 +131,7 @@ private async void InstallUpdatesAsync()
 
 然后，需要创建一个自定义的应用程序对话框，以通知用户有必需的更新，并且必须安装它以继续充分利用应用。 如果用户拒绝更新，应用程序可能会降低功能（例如，阻止联机访问）或完全终止（例如仅联机游戏）。
 
-### <a name="partner-center"></a>파트너 센터
+### <a name="partner-center"></a>合作伙伴中心
 
 若要确保[StorePackageUpdate](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StorePackageUpdate)对强制更新显示 true，则需要在 "**包**" 页面的 "合作伙伴中心" 中将更新标记为必需。
 

@@ -1,10 +1,10 @@
 ---
-title: 从代码更新非存储已发布的应用
+title: 从代码更新非 Store 发布的应用
 description: 介绍如何在代码中由开发人员更新在商店外发货的 .MSIX 包。
 author: Huios
 ms.date: 01/24/2020
 ms.topic: article
-keywords: windows 10, uwp, app package, app update, msix, appx
+keywords: windows 10, uwp, 应用包, 应用更新, msix, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
 ms.openlocfilehash: 3dea6cf0f60846fd35190c642a1686134895d364
@@ -14,7 +14,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76726607"
 ---
-# <a name="update-non-store-published-apps-from-your-code"></a>从代码更新非存储已发布的应用
+# <a name="update-non-store-published-apps-from-your-code"></a>从代码更新非 Store 发布的应用
 
 以 .MSIX 的形式交付应用时，可以通过编程方式启动应用程序的更新。 如果你将应用程序部署到应用商店外部，你只需在服务器上检查是否有新版本的应用程序并安装新版本。 可以通过利用[PackageManager. UpdatePackageAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.updatepackageasync)方法更新为新版本。 执行此操作需要应用声明 `packageManagement` 功能。
 
