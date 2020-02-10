@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5f354ac1ffa74c0fc17bda210b0abb12fd736528
-ms.sourcegitcommit: 0bd5ebc32feba8a4f4669f232129a8953d5cf773
+ms.openlocfilehash: a373ecc4801402ba72ba64e51ab4e6dfffb02499
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76021994"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072678"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -25,22 +25,24 @@ ms.locfileid: "76021994"
 - 用于访问 Microsoft Store 中的应用的有效 Microsoft 帐户别名。
 - 电脑上的管理员特权（可运行该工具）。
 
-## <a name="install"></a>“安装”
+## <a name="install"></a>安装
 
 加入该计划后，你会收到一封电子邮件，确认已将你登记。 
 
-在[此处](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf)通过 Microsoft Store 安装 MSIX 打包工具。 请确保使用注册 MSIX 打包工具预览体验计划时所用的 Microsoft 帐户登录。 接下来，转到产品说明页，并单击“安装”开始安装。
+在[此处](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf)通过 Microsoft Store 安装 MSIX 打包工具。 请确保使用注册 MSIX 打包工具预览体验计划时所用的 Microsoft 帐户登录。 接下来，转到产品说明页，并单击“安装”开始安装。 内部版本不能用于离线分发。
 
 如果计算机上已安装该工具，请检查安装的版本。 运行 MSIX 打包工具，单击右上角的齿轮图标，然后单击“关于”选项卡查看版本。 应用版本应该与[以下](#current-insider-preview-build)部分所述的当前 Insider Preview 内部版本相匹配。
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-## <a name="version-1201912200"></a>版本1.2019.1220。0
-- .MSIX 打包工具刚刚发布了应用程序的公共版本。 预览版本将很快返回。
+## <a name="version-120202030"></a>版本1.2020.203。0
+
+-默认情况下启用包完整性设置
+- 能够导出注册表文件（.reg）
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
-## <a name="share-your-feedback"></a>共享你的反馈
+## <a name="share-your-feedback"></a>分享反馈
 
 如果使用该应用时遇到问题，请按 **Windows 键 + F** 启动“反馈中心”。 尽量多提供一些有关该问题的详细信息，以帮助我们诊断并解决问题。
 

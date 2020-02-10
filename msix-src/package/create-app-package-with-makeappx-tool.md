@@ -7,30 +7,30 @@ keywords: windows 10, uwp, 打包
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 120bcf7216948deee6c50f44bc12d308d5d1c3b9
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 6ea1e3bc5dbea0531d2d397a523db8b76063d4fe
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689906"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072897"
 ---
-# <a name="create-an-app-package-with-the-makeappxexe-tool"></a>使用 MakeAppx.exe 工具创建应用包
+# <a name="create-an-msix-package-or-bundle-with-makeappxexe"></a>使用 Makeappx.exe 创建 .MSIX 包或捆绑包
 
-**Makeappx.exe**创建应用程序包 (.msix 或 .appx) 和应用程序包包 (. .msixbundle 或 .appxbundle)。 **MakeAppx.exe** 还从应用包或捆绑包中提取文件，并加密或解密应用程序包和捆绑包。 此工具包含在 Windows 10 SDK 中，并且可以从命令提示符或脚本文件中使用。
+**Makeappx.exe**创建应用程序包（.msix 或 .appx）和应用程序包包（. .msixbundle 或 .appxbundle）。 **MakeAppx.exe** 还从应用包或捆绑包中提取文件，并加密或解密应用程序包和捆绑包。 此工具包含在 Windows 10 SDK 中，并且可以从命令提示符或脚本文件中使用。
 
-有关如何使用**MakeApp**打包桌面应用的信息, 请参阅[手动打包桌面应用](../desktop/desktop-to-uwp-manual-conversion.md)。
-
-> [!IMPORTANT]
-> 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包。 有关详细信息, 请参阅使用[Visual Studio 打包 UWP 应用](packaging-uwp-apps.md)和[使用 visual Studio 从源代码打包桌面应用](../desktop/desktop-to-uwp-packaging-dot-net.md)。
+有关如何使用**MakeApp**打包桌面应用的信息，请参阅[手动打包桌面应用](../desktop/desktop-to-uwp-manual-conversion.md)。
 
 > [!IMPORTANT]
-> 请注意, **makeappx.exe**不会创建[应用包上传文件 (.appxupload 或 msixupload)](packaging-uwp-apps.md#types-of-app-packages), 这是用于[提交到合作伙伴中心](https://docs.microsoft.com/windows/uwp/publish/upload-app-packages)的有效应用包的建议类型。 应用包上传文件通常[作为 Visual Studio 打包过程的一部分创建](packaging-uwp-apps.md#create-an-app-package-upload-file), 但也可以手动创建。
+> 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包。 有关详细信息，请参阅使用[Visual Studio 打包 UWP 应用](packaging-uwp-apps.md)和[使用 visual Studio 从源代码打包桌面应用](../desktop/desktop-to-uwp-packaging-dot-net.md)。
+
+> [!IMPORTANT]
+> 请注意， **makeappx.exe**不会创建[应用包上传文件（.appxupload 或 msixupload）](packaging-uwp-apps.md#types-of-app-packages)，这是用于[提交到合作伙伴中心](https://docs.microsoft.com/windows/uwp/publish/upload-app-packages)的有效应用包的建议类型。 应用包上传文件通常[作为 Visual Studio 打包过程的一部分创建](packaging-uwp-apps.md#generate-an-app-package-upload-file-for-store-submission)，但也可以手动创建。
 
 ## <a name="using-makeappxexe"></a>使用 MakeAppx.exe
 
 根据 SDK 的安装路径，以下是 **MakeAppx.exe** 在 Windows 10 电脑上的位置：
-- x86：C:\Program Files (x86) \windows kits\10\bin arch>\\&lt;内部版本号&gt;\x86\makeappx.exe
-- 64C:\Program Files (x86) \windows kits\10\bin arch>\\&lt;内部版本号&gt;\x64\makeappx.exe
+- x86： C:\Program Files （x86） \Windows Kits\10\bin arch>\\&gt;\x86\makeappx.exe &lt;生成号
+- x64： C:\Program Files （x86） \Windows Kits\10\bin arch>\\&gt;\x64\makeappx.exe &lt;生成号
 
 没有此工具的 ARM 版本。
 
@@ -44,10 +44,10 @@ MakeAppx <command> [options]
 
 下表介绍了 **MakeAppx.exe** 的命令。
 
-| **Command**   | **说明**                       |
+| **Command**   | **描述**                       |
 |---------------|---------------------------------------|
 | pack          | 创建程序包。                    |
-| unpack        | 将指定程序包中的所有文件提取到指定的输出目录。 |
+| 解压缩        | 将指定程序包中的所有文件提取到指定的输出目录。 |
 | bundle        | 创建捆绑包。                     |
 | unbundle      | 将所有程序包解压到以捆绑包完整名称命名的指定输出路径下的子目录中。 |
 | encrypt       | 在指定的输出程序包/捆绑包中，从输入程序包/捆绑包中创建加密的应用包或捆绑包。 |
@@ -56,7 +56,7 @@ MakeAppx <command> [options]
 
 此选项列表适用于所有命令：
 
-| **选项**    | **说明**                       |
+| **选**    | **描述**                       |
 |---------------|---------------------------------------|
 | /d            | 指定输入、输出或内容目录。 |
 | /l            | 用于本地化的程序包。 本地化程序包上的默认验证过程。 此选项仅禁用特定验证，无需禁用所有验证。 |
@@ -72,11 +72,11 @@ MakeAppx <command> [options]
 
 下面的列表包含可能的参数：
 
-| **参数**                          | **说明**                       |
+| **实际**                          | **描述**                       |
 |---------------------------------------|---------------------------------------|
 | &lt;output package name&gt;           | 创建的程序包的名称。 这是 .msix 或 .appx 后面追加的文件名。 |
 | &lt;encrypted output package name&gt; | 创建的加密包的名称。 这是追加了. emsix 或. eappx 的文件名。 |
-| &lt;input package name&gt;            | 程序包的名称。 这是 .msix 或 .appx 后面追加的文件名。 |
+| &lt;input package name&gt;            | 程序包名称。 这是 .msix 或 .appx 后面追加的文件名。 |
 | &lt;encrypted input package name&gt;  | 加密包的名称。 这是追加了. emsix 或. eappx 的文件名。 |
 | &lt;output bundle name&gt;            | 创建的捆绑包的名称。 这是 .msixbundle 或 .appxbundle 后面追加的文件名。 |
 | &lt;encrypted output bundle name&gt;  | 创建的加密捆绑包的名称。 这是追加了. emsixbundle 或. eappxbundle 的文件名。 |
@@ -86,19 +86,19 @@ MakeAppx <command> [options]
 | &lt;mapping file&gt;                  | 指定程序包源和目标的文件名。 |
 | &lt;output directory&gt;              | 输出程序包和捆绑包的目录路径。 |
 | &lt;密钥文件&gt;                      | 含有加密或解密的密钥的文件名。 |
-| &lt;algorithm ID&gt;                  | 创建块映射时使用的算法。 有效算法包括:SHA256 (默认值)、SHA384、SHA512。 |
+| &lt;algorithm ID&gt;                  | 创建块映射时使用的算法。 有效算法包括：SHA256（默认值）、SHA384、SHA512。 |
 
 
-### <a name="create-an-app-package"></a>创建应用包
+### <a name="create-an-app-package"></a>创建应用程序包
 
 应用包是打包到 .msix 或 .appx 包文件中的应用文件的完整集。 若要使用 **pack** 命令创建应用包，必须提供程序包位置的内容目录或映射文件。 你还可以在创建它时加密程序包。 如果你想要加密程序包，必须使用 /ep 并指定是否使用密钥文件 (/kf) 或全局测试密钥 (/kt)。 有关创建加密程序包的详细信息，请参阅[加密或解密程序包或捆绑包](#encrypt-or-decrypt-a-package-or-bundle)。
 
 特定于 **pack** 命令的选项：
 
-| **选项**    | **说明**                       |
+| **选**    | **描述**                       |
 |---------------|---------------------------------------|
 | /f            | 指定映射文件。           |
-| /h            | 指定创建块映射时使用的哈希算法。 它仅可以与 pack 命令一起使用。 有效算法包括:SHA256 (默认值)、SHA384、SHA512。 |
+| /h            | 指定创建块映射时使用的哈希算法。 它仅可以与 pack 命令一起使用。 有效算法包括：SHA256（默认值）、SHA384、SHA512。 |
 | /m            | 指定输入应用清单的路径，该清单将用于生成输出应用包或资源包清单的基础。  当使用此选项时，还必须使用 /f 并在映射文件中包含 [ResourceMetadata] 部分，来指定要包含在生成的清单中的资源维度。|
 | /nc           | 阻止程序包文件的压缩。 默认情况下，将基于检测到的文件类型压缩文件。 |
 | /r            | 生成资源包。 它必须与 /m 一起使用，并表示使用 /l 选项。 |  
@@ -132,9 +132,9 @@ MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kt
 
 特定于 **bundle** 命令的选项：
 
-| **选项**    | **说明**                       |
+| **选**    | **描述**                       |
 |---------------|---------------------------------------|
-| /bv           | 指定捆绑包的版本号。 版本号必须采用以下格式: 以句点分隔的四部分组成:&lt;主要&gt;。&lt;次要&gt;。&lt;生成&gt;。&lt;修订版&gt;。 |
+| /bv           | 指定捆绑包的版本号。 版本号必须以句号分为四部分，格式为：&lt;主要&gt;.&lt;次要&gt;.&lt;内部版&gt;.&lt;修订版&gt;。 |
 | /f            | 指定映射文件。           |
 
 请注意，如果未指定捆绑包版本，或如果已设置为“0.0.0.0”，则使用当前日期时间创建捆绑包。
@@ -162,7 +162,7 @@ MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /
 
 特定于 **unpack** 和 **unbundle** 命令的选项：
 
-| **选项**    | **说明**                       |
+| **选**    | **描述**                       |
 |---------------|---------------------------------------|
 | /nd           | 解压缩或解包软件包/捆绑包时，不执行解密。 |
 | /pfn          | 将所有文件解压缩/解包到指定输出路径下的子目录中，以程序包或捆绑包的完整名称命名 |
@@ -199,7 +199,7 @@ Visual Studio 打包向导不提供加密和解密。
 
 特定于 **encrypt** 和 **decrypt** 命令的选项：
 
-| **选项**    | **说明**                       |
+| **选**    | **描述**                       |
 |---------------|---------------------------------------|
 | /ep           | 指定加密的应用包或捆绑包。 |
 
@@ -269,6 +269,6 @@ MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile
 此验证确保：
 - 在程序包清单中引用的所有文件都包含在应用包中。
 - 应用程序没有两个相同的密钥。
-- 应用程序未从此列表中注册禁止的协议:SMB、文件、WWA、WWA。
+- 应用程序不会注册此列表中的禁用协议：SMB、FILE、MS-WWA-WEB、MS-WWA。
 
 这不是完整的语义式验证，因为它仅用于捕获常见错误。 不能保证通过 **MakeAppx.exe** 生成的程序包均可安装。

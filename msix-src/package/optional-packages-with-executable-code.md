@@ -7,18 +7,18 @@ author: dianmsft
 ms.author: diahar
 keywords: windows 10，.msix，uwp，应用安装程序，AppInstaller，旁加载，相关集，可选程序包
 ms.localizationpriority: medium
-ms.openlocfilehash: 35ecf422e3a5b6db8b95d17011b46c09cbdb0218
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 17c225c13f026f2707c392ccaf4d77655faaeebb
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328787"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072537"
 ---
 # <a name="optional-packages-with-executable-code"></a>包含可执行代码的可选包
  
-包含可执行代码的可选包对于划分大型或复杂的应用，或者添加到已发布的应用很有用。 使用 Visual Studio 2017 版本 15.7 和 .NET Native 2.1，你可以从 C++ 和 C# 可选包加载可执行代码。
+包含可执行代码的[可选包](optional-packages.md)可用于划分大型或复杂的应用，或将添加到已发布的应用。 使用 Visual Studio 2017 版本 15.7 和 .NET Native 2.1，你可以从 C++ 和 C# 可选包加载可执行代码。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 - Visual Studio 2019 或 Visual Studio 2017 （版本15.7 或更高版本）
 - Windows 10 版本1709或更高版本
@@ -50,7 +50,7 @@ ms.locfileid: "73328787"
 
 5. 打开可选应用包的 `Package.appxmanifest` 文件并查找 `uap3:MainAppPackageDependency Name` 值。 更新 `uap3:MainAppPackageDependency Name` 值以匹配上一步中主应用包的 `Identity Name` 值。 
 
-    以下是主应用的 `Package.appxmanifest` 的 `Identity` 示例。
+    以下是主应用的 `Identity` 的 `Package.appxmanifest` 示例。
     ```XML
     <Identity Name="12345.MainAppProject" Publisher="CN=PublisherName" Version="1.0.0.0" />
     ```

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: b8dfc909cd962e23970397bf673f9a3041cbcb4f
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: d7eaa493577c4a83739829c1bee51acbb41640a8
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328741"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072927"
 ---
 # <a name="bundle-msix-packages"></a>捆绑 MSIX 包
 
@@ -19,9 +19,9 @@ ms.locfileid: "73328741"
 
 将安装程序的多个体系结构版本捆绑成一个实体后，只需将该捆绑包上传到 Store 或另一个分发位置。 Windows 10 部署平台可以识别 .msixbundle 包类型，只会下载适用于你设备的体系结构的文件。 请记住，如果你决定分发特定应用的 .msixbundle，则再也不能像以前一样只是分发某个 MSIX 包。 
 
-以下部分提供了生成 .msixbundle 的每个步骤。 其中假设已将 Windows 安装程序的[现有 x86 和 x64 版本转换为](https://docs.microsoft.com/windows/msix/mpt-best-practices) MSIX 包。 
+以下部分提供了生成 .msixbundle 的每个步骤。 其中假设已将 Windows 安装程序的[现有 x86 和 x64 版本转换为](https://docs.microsoft.com/windows/msix/tool-best-practices) MSIX 包。 
 
-### <a name="setup"></a>“安装程序”
+### <a name="setup"></a>安装
 
 需要完成以下设置才能成功生成 MSIX 捆绑包：
 

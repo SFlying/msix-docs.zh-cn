@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 564492c8eb590680725d4a894126e8f825bf761b
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 484f2ba6df7044b628154fd73990089652cede20
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328710"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072547"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 对应用包进行签名
 
@@ -22,7 +22,7 @@ ms.locfileid: "73328710"
 
 有关代码签名和证书的一般详细信息，请参阅[代码签名简介](https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-tools)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 - **打包应用程序**  
     若要了解手动创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](create-app-package-with-makeappx-tool.md)。
@@ -32,8 +32,8 @@ ms.locfileid: "73328710"
 
 - **SignTool**  
     根据 SDK 的安装路径，以下是 **SignTool** 在 Windows 10 电脑上的位置：
-    - x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
-    - x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
+    - x86： C:\Program Files （x86） \Windows Kits\10\bin arch>\\&lt;sdk 版本&gt;\x86\SignTool.exe
+    - x64： C:\Program Files （x86） \Windows Kits\10\bin arch>\\&lt;sdk 版本&gt;\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>使用 SignTool
 
@@ -109,34 +109,3 @@ SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 请注意，某些证书不使用密码。 如果你的证书没有密码，可忽略示例命令中的“/p &lt;你的密码&gt;”。
 
 使用有效证书对应用包进行签名后即可将你的应用包上传至应用商店。 有关将应用上传和提交至应用商店的详细指南，请参阅[应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
-
-## <a name="common-errors-and-troubleshooting"></a>常见错误和疑难解答
-使用 **SignTool** 的最常见错误类型为内部错误，通常如下所示：
-
-```syntax
-SignTool Error: An unexpected internal error has occurred.
-Error information: "Error: SignerSign() failed." (-2147024885 / 0x8007000B) 
-```
-
-如果错误代码开头为 0x8008，如 0x80080206 (APPX_E_CORRUPT_CONTENT)，则表示已签名的应用包无效。 如果你收到此类错误，必须重新生成软件包，并再次运行 **SignTool**。
-
-**SignTool** 具有可用于显示证书错误和筛选的调试选项。 若要使用调试功能，则在 `sign`（签名）（后跟完整的 **SignTool** 命令）后直接放置 `/debug`（调试）选项。
-
-```syntax
-SignTool sign /debug [options]
-``` 
-
-更常见错误为 0x8007000B。 关于此类错误，可以在事件日志中查找更多信息。
- 
-请执行以下操作，以便在事件日志中查找更多信息：
-- 运行 Eventvwr.msc
-- 打开事件日志：事件查看器（本地）-> 应用程序和服务日志 -> Microsoft -> Windows -> AppxPackagingOM -> Microsoft-Windows-AppxPackaging/Operational
-- 查找最新的错误事件
-
-内部错误 0x8007000B 通常与以下值之一对应：
-
-| **事件 ID** | **示例事件字符串** | **仅供参考** |
-|--------------|--------------------------|----------------|
-| 150          | 错误 0x8007000B：应用部件清单发布者名称 (CN=Contoso) 必须与签名证书的使用者名称 (CN=Contoso, C=US) 匹配。 | 应用清单发布者名称必须与签名证书的使用者名称完全匹配。               |
-| 151          | 错误 0x8007000B：指定的签名哈希方法 (SHA512) 必须与应用包块映射中使用的哈希方法 (SHA256) 匹配。     | /fd 参数中指定的 hashAlgorithm 不正确。 使用与应用包块映射（创建应用包所用）匹配的 hashAlgorithm 重新运行 **SignTool**  |
-| 152          | 错误 0x8007000B：应用包内容必须针对其块映射进行验证。                                                           | 应用包已损坏，需要重建以生成新的块映射。 有关创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](create-app-package-with-makeappx-tool.md)。 |

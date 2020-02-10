@@ -5,12 +5,12 @@ ms.date: 07/02/2019
 ms.topic: article
 keywords: windows 10、.msix、打包、包布局、资产包
 ms.localizationpriority: medium
-ms.openlocfilehash: 90cfd4f477333210f4347e029c239c4e173f26ee
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 0571f61579f95dbe3465f106b4d8860be636dea8
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328838"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072797"
 ---
 # <a name="introduction-to-asset-packages"></a>资产包简介
 
@@ -47,7 +47,7 @@ ms.locfileid: "73328838"
 "Video.mp4"         "Video.mp4"
 ```
 
-使用以下命令之一来创建使用 Makeappx.exe （适用于 AppX 和 .MSIX）的资产包。
+使用以下命令之一来创建使用 Makeappx.exe （适用于 .MSIX 和 .appx）的资产包。
 
 ```cmd
 MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.appx
@@ -58,7 +58,7 @@ MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.msix
 
 资产包也不应该包含 resources.pri；MRT 不能用于访问资产包文件。 有关如何访问资产包文件以及为什么资产包要求将你的应用安装到 NTFS 驱动器的详细信息，请参阅[使用资产包和包折叠进行开发](Package-Folding.md)。
 
-要控制是否允许资产包执行，你可以在 AppxManifest 中使用 **Properties** 元素中的 **[uap6:AllowExecution](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution)** 。此外，你还必须将 **uap6** 添加到顶层的 **Package** 元素，如下所示： 
+要控制是否允许资产包执行，你可以在 AppxManifest 中使用 **Properties[ 元素中的 ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution)** uap6:AllowExecution。此外，你还必须将 **uap6** 添加到顶层的 **Package** 元素，如下所示： 
 
 ```XML
 <Package IgnorableNamespaces="uap uap6" 

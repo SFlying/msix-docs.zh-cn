@@ -5,12 +5,12 @@ ms.date: 07/02/2019
 ms.topic: article
 keywords: windows 10、.msix、uwp、desktop、package
 ms.localizationpriority: medium
-ms.openlocfilehash: 14edefeffa26749f504a629919386a9e5cc0639d
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: eb21995fc382aa45d51caa5fed47d71bc6ae0c50
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328890"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072917"
 ---
 # <a name="app-package-formats"></a>应用包格式
 
@@ -57,6 +57,9 @@ ms.locfileid: "73328890"
 Windows 应用服务通过允许应用向其他应用提供服务，实现应用到应用的通信。 应用服务允许你创建应用可在同一设备上调用的无 UI 服务，从 Windows 10 版本 1607 开始，应用可在远程设备上调用这些服务。 有关详细信息，请参阅[创建和使用应用服务](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)。
 
 应用服务类似于设备上的 web 服务。 应用服务作为后台任务在主机应用中运行，并可向其他应用提供其服务。 例如，应用服务可能会提供其他应用可能使用的条形码扫描仪服务。 应用的企业套件中可能有一个通用的拼写检查应用服务，该服务可供套件中的其他应用使用。
+
+## <a name="modification-packages"></a>修改包 
+修改包允许 IT 专业人员自定义应用，而无需重新打包。 在 Windows 10 版本1809中，我们引入了一种称为*修改包*的新类型的 .msix 包。 修改包还可以是可能没有激活点的插件/加载项。 IT 专业人员可以使用此功能灵活地更改 .MSIX 容器，以便应用程序可以通过其企业的自定义进行重叠。 
 
 ## <a name="see-also"></a>另请参阅
 

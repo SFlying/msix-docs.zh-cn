@@ -1,25 +1,25 @@
 ---
-title: 使用包编辑器修改包
-description: 本文介绍如何使用 .MSIX 包中的包编辑器 Toolto 修改包信息，如清单中的属性。
+title: 使用包编辑器编辑包
+description: 本文介绍如何使用 .MSIX 包工具中的包编辑器来编辑包信息，如清单中的属性。
 ms.date: 09/07/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 66e140987fda894d8eb3af8df8594acf07f33059
-ms.sourcegitcommit: 71c49de79d061909fb1ab632ec7550227d2287bd
+ms.openlocfilehash: 4d1f2083be1d665ade3c5e39fe06a92d8de38e8c
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754921"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072937"
 ---
-# <a name="modify-a-package-using-package-editor"></a>使用包编辑器修改包
+# <a name="edit-a-package-using-package-editor"></a>使用包编辑器编辑包
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取 MSIX 打包工具</a></p></div>
 
-若要对现有的 MSIX 包进行更改，例如，在无需再次将安装程序打包的情况下修改清单中的属性或包的内容，可以使用 MSIX 打包工具中的**包编辑器**。
+若要对现有的 .MSIX 包进行更改（例如编辑清单中的属性或包的内容，而无需重新打包安装程序），可以在 .MSIX 打包工具中使用**包编辑器**。
 
-从 MSIX 打包工具的主页中选择“包编辑器”图标，浏览到你的 MSIX 包并选择“打开包”。
+在 .MSIX 打包工具的 "欢迎" 页中，选择 "**包编辑器**" 图标，浏览到 .msix 包，然后选择 "**打开包**"。 你还可以右键单击 .MSIX 包，并选择 "**使用 .Msix 打包工具编辑**" （在版本1.2019.1018.0 和更高版本中提供）。
 
 可以通过底部的 "解压缩" 按钮，从包编辑器中解压缩 .MSIX 包。 然后，可以选择要在其中解压缩 .MSIX 包的位置。 
 
@@ -27,7 +27,7 @@ ms.locfileid: "75754921"
 
 在“包信息”页上，可以通过 UI 中的字段更改包信息，或者在所选的编辑器中手动打开 MSIX 清单文件，以便对清单字段进行更改。 编辑清单时，包编辑器页不可编辑。 保存清单后，UI 将会更新。
 
-可以导航到包编辑器的其他部分，以修改功能、虚拟注册表或包文件。 编辑完包后，请务必为包签名并更新版本，然后保存更改。
+你可以导航到包编辑器的其他部分，以编辑你的功能、虚拟注册表或包文件。 编辑完包后，请务必为包签名并更新版本，然后保存更改。
 
 ![pic10](images/pic10.png)
 

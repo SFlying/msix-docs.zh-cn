@@ -5,12 +5,12 @@ ms.date: 07/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 打包, 体系结构, 包配置
 ms.localizationpriority: medium
-ms.openlocfilehash: dc34d397a613f62bbf75799923954b4114573460
-ms.sourcegitcommit: 8a75eca405536c5f9f7c4fd35dd34c229be7fa3e
+ms.openlocfilehash: 4c48653e66bb01bda2c5da3b2f17544add8e6992
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689876"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072727"
 ---
 # <a name="app-package-architectures"></a>应用包体系结构
 
@@ -25,11 +25,12 @@ ms.locfileid: "68689876"
 ## <a name="windows-10-devices-and-architectures"></a>Windows 10 设备和体系结构
 
 > [!div class="mx-tableFixed"]
-| UWP 体系结构 | 桌面 (x86)      | 桌面 (x64)      | 桌面 (ARM)      | 移动电话             | Windows Mixed Reality 和 HoloLens           | Xbox               | IoT Core（与设备相关） | Surface Hub        |
+| UWP 体系结构 | 桌面 (x86)      | 桌面 (x64)      | 桌面 (ARM)      | 移动设备             | Windows Mixed Reality 和 HoloLens           | Xbox               | IoT Core（与设备相关） | Surface Hub        |
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|--------------------|
 | x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          | :heavy_check_mark: |
 | x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          | :heavy_check_mark: |
-| ARM 和 ARM64              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          | :x:                |
+| ARM               | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          | :x:                |
+| ARM64              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          | :x:                |
 
 
 下面我们更详细地讨论这些体系结构。
@@ -44,8 +45,8 @@ ms.locfileid: "68689876"
 ARM 上的 Windows 10 配置包括桌面 PC、移动设备，以及一些 IoT Core 设备（Rasperry Pi 2、Raspberry Pi 3 和 DragonBoard）。 在 ARM 桌面 PC 上的 Windows 10 是 Windows 系列的新增产品，因此，如果你是 UWP 应用开发人员，则应将 ARM 包提交到应用商店，以便在这些 PC 上提供最佳体验。
 
 >[!NOTE]
-> 若要生成 UWP 应用程序以本机方式面向 ARM64 平台, 你必须安装有 Visual Studio 2017 版本15.9 或更高版本。 有关详细信息, 请参阅[此博客文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/)。
+> 若要生成 UWP 应用程序以本机方式面向 ARM64 平台，你必须安装有 Visual Studio 2017 版本15.9 或更高版本。 有关详细信息，请参阅[此博客文章](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/)。
 
-有关详细信息, 请参阅[ARM 上的 Windows 10](https://docs.microsoft.com/windows/uwp/porting/apps-on-arm.md)。 查看此“构建”相关讨论，观看 [ARM 上的 Windows 10](https://channel9.msdn.com/Events/Build/2017/P4171)演示，并详细了解它的工作原理。
+有关详细信息，请参阅[ARM 上的 Windows 10](https://docs.microsoft.com/windows/uwp/porting/apps-on-arm.md)。 查看此“构建”相关讨论，观看 [ARM 上的 Windows 10](https://channel9.msdn.com/Events/Build/2017/P4171)演示，并详细了解它的工作原理。
 
-有关 IoT 特定主题的详细信息, 请参阅[使用 Visual Studio 部署应用](https://developer.microsoft.com/windows/iot/Docs/AppDeployment)。
+有关 IoT 特定主题的详细信息，请参阅[使用 Visual Studio 部署应用](https://developer.microsoft.com/windows/iot/Docs/AppDeployment)。

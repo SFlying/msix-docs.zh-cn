@@ -1,34 +1,31 @@
 ---
 ms.assetid: ee51eae3-ed55-419e-ad74-6adf1e1fb8b9
-title: 手动打包应用
+title: 从命令行打包
 description: 本部分包含或链接，指向有关手动打包 Windows 应用的文章。
-ms.date: 07/30/2019
+ms.date: 01/30/2020
 ms.topic: article
 keywords: windows 10, uwp, 打包
 ms.localizationpriority: medium
-ms.openlocfilehash: 95b84bb77a99a5bec8138eed8267aebf7d5c377c
-ms.sourcegitcommit: 97166b4a273cea789aedcfbb3cba4ce074958ed8
+ms.openlocfilehash: 9bbc940360ed7c3c0a428ba4aa3f981274c0a5d7
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76723334"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072679"
 ---
-# <a name="manual-app-packaging"></a>手动打包应用
+# <a name="package-from-the-command-line"></a>从命令行打包
 
-如果要创建 Windows 应用包并对其进行签名，但未使用 Visual Studio 来开发应用，则需要使用手动应用打包工具。
+如果不在 Visual Studio 中开发应用程序，可以使用 .MSIX 命令行工具对应用程序进行打包和签名。
 
-> [!IMPORTANT] 
-> 如果使用 Visual Studio 开发 Windows 应用，建议使用 Visual Studio 向导来创建应用程序包并对其进行签名。 有关详细信息，请参阅使用[Visual Studio 打包 UWP 应用](packaging-uwp-apps.md)和[使用 visual Studio 从源代码打包桌面应用](../desktop/desktop-to-uwp-packaging-dot-net.md)。
 
 ## <a name="purpose"></a>用途
 
-本部分包含或链接，指向有关手动打包 Windows 应用的文章。
+本部分链接到有关使用命令行工具手动将应用打包为 .MSIX 的文章。
 
 | 主题 | 说明 |
 |-------|-------------|
-| [生成包项目](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-manual-conversion) | 创建包清单并添加基于目标的未着色资产（可选） |
-| [使用 Makeappx.exe 工具创建应用包](create-app-package-with-makeappx-tool.md) | MakeAppx.exe 创建、加密、解密应用程序包和捆绑包，并从中提取文件。 |
-| [手动打包桌面应用](../desktop/desktop-to-uwp-manual-conversion.md) | 了解如何使用**MakeApp**打包桌面应用程序。 |
+| [正在生成包组件](../desktop/desktop-to-uwp-manual-conversion.md) | 创建包清单并添加基于目标的未着色资产（可选） |
+| [使用 Makeappx.exe 工具创建 .MSIX 包或捆绑包](create-app-package-with-makeappx-tool.md) | MakeAppx.exe 创建、加密、解密应用程序包和捆绑包，并从中提取文件。 |
 | [为包签名创建证书](create-certificate-package-signing.md) | 使用 PowerShell 工具为应用包签名创建和导出证书。 |
 | [使用 SignTool 对应用包进行签名](sign-app-package-using-signtool.md) | 使用带证书的 SignTool 手动对应用包签名。 |
 
@@ -42,7 +39,8 @@ ms.locfileid: "76723334"
 
 | 主题 | 说明 |
 |-------|-------------|
+| [打包布局的包创建](packaging-layout.md) | 包布局是用于描述应用的包结构的单个文档。 它指定应用中的捆绑（主要和可选）、捆绑中的包以及包中的文件。 |
 | [资产包简介](asset-packages.md) | 资产包是一种用作应用程序公用文件集中存放位置的程序包，可有效消除整个体系结构程序包中的重复文件。 |
 | [用资产包和包折叠进行开发](package-folding.md) | 了解如何使用资产包和包折叠高效组织你的应用。 |
 | [平面绑定应用包](flat-bundles.md) | 描述如何为应用的包文件创建平面束。 |
-| [打包布局的包创建](packaging-layout.md) | 包布局是用于描述应用的包结构的单个文档。 它指定应用中的捆绑（主要和可选）、捆绑中的包以及包中的文件。 |
+
