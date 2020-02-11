@@ -8,20 +8,22 @@ author: dianmsft
 ms.author: diahar
 keywords: windows 10，.msix，uwp，可选包，相关集，包扩展，visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 34922f5067d7e1c934b85745f7dc947149f024e2
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 2e314c9c64588fdfd95ba7775fd40ca0bd2f0088
+ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328765"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77072907"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>可选包和相关集创作
 
 可选包中包含可与主要包相集成的内容。 这些内容可用于可下载内容 (DLC)，因为大小限制而划分大型应用，或者用于随附从原始应用中单独分隔出来的任何其他内容。
 
-相关集是可选包的扩展 - 它们使你能够跨主要包和可选包强制执行严格的一组版本。 它们还使你能够从可选包加载本机代码 (C++)。 
+相关集是可选包的扩展 - 它们使你能够跨主要包和可选包强制执行严格的一组版本。 它们还使你能够从可选包加载本机代码 (C++)。 如果在应用商店外部部署，则相关集可以具有不同于主应用的发布者。
 
-## <a name="prerequisites"></a>必备条件
+可选包和相关集全部在主应用的 .MSIX 容器中运行。
+
+## <a name="prerequisites"></a>先决条件
 
 - Visual Studio 2019 或 Visual Studio 2017 （版本15.1 或更高版本）
 - Windows 10 版本 1703 或更高版本
@@ -81,6 +83,28 @@ ms.locfileid: "73328765"
 当用这种方式配置解决方案时，Visual Studio 将为主要包创建一个捆绑包清单，其中包含相关集的所有必需元数据。 
 
 请注意，与可选包一样，适用集的 `Bundle.Mapping.txt` 文件将仅适用于 Windows 10 1703 版或更高版本。 此外，应用的目标平台最低版本应设置为10.0.15063.0 或更高版本。
+
+## <a name="removing-optional-packages"></a>删除可选包 
+用户可以进入其 "**设置**" 应用，并删除可选包。 同样，开发人员可以使用[RemoveOptionalPackageAsync](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.PackageCatalog)删除可选包的列表。 
+
+```
+ 
+    PackageCatalog catalog = PackageCatalog.OpenForCurrentPackage();
+    List<string> optionalList = new List<string>();
+    optionalList.Add("FabrikamAgeAnalysis_kwpnjs8c36mz0");
+    
+     //Warn user that application will be restarted. 
+    var result = await catalog.RemoveOptionalPackagesAsync(optionalList);
+    if(result.ExtendedError != null)
+    {
+        throw removalResult.ExtendedError;
+    }
+    
+```
+> [!NOTE]
+> 对于相关集，平台将需要重新启动主应用程序以完成删除操作，以避免应用包含从正在删除的包加载的内容的情况。 应用必须通知用户，应用程序在应用调用 API 之前需要重新启动。
+
+如果可选包仅为内容，则开发人员应明确告知平台应用程序在删除可选包之前，应用程序不会将其删除。 这也允许开发人员在不重新启动的情况下删除包。
 
 ## 已知问题<a name="known_issues"></a>
 
