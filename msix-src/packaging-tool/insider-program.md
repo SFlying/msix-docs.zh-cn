@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a373ecc4801402ba72ba64e51ab4e6dfffb02499
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 3dc664ede52dc757bc3a74ba3e5fb5ebc17141d3
+ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072678"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77544733"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -42,11 +42,11 @@ ms.locfileid: "77072678"
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
-## <a name="share-your-feedback"></a>分享反馈
+## <a name="share-your-feedback"></a>共享你的反馈
 
-如果使用该应用时遇到问题，请按 **Windows 键 + F** 启动“反馈中心”。 尽量多提供一些有关该问题的详细信息，以帮助我们诊断并解决问题。
+如果使用该应用时遇到问题，请按 **Windows 键 + F** 启动“反馈中心”。 尽量多提供一些有关该问题的详细信息，以帮助我们诊断并解决问题。 使用类别**应用程序** >  **.msix 打包工具**直接向我们提供反馈。
 
-也可以直接从应用内部共享反馈。 单击主页屏幕上的“设置”（齿轮图标），选择“反馈”选项卡，然后选择最能代表该问题的按钮。 随后会直接启动“反馈中心”，系统会自动填充所需的类别信息。 
+你还可以从应用内共享反馈。 单击主页屏幕上的“设置”（齿轮图标），选择“反馈”选项卡，然后选择最能代表该问题的按钮。 随后会直接启动“反馈中心”，系统会自动填充所需的类别信息。 
 
 此外，通过“反馈中心”还能方便地分享有关你希望在应用中添加的新功能的看法和建议。  
 

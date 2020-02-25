@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9eddb31a6be06afb824bee5bdb6534adef44996c
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: a22f4cbc2f96746fea48cb1bca1199e6006f938b
+ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073793"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77544606"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>适用于 MSIX 打包工具的最佳做法
 
@@ -21,10 +21,10 @@ ms.locfileid: "77073793"
 
 ### <a name="tool-defaults"></a>工具默认值
 
-- **生成包含每个包的命令行**此设置将使你自动生成一个命令行模板文件，以便在稍后通过命令行重新打包同一应用程序（例如新版本）时，你可以为该应用程序预配置的命令行 temmplate 文件。 你将需要提供安装程序，以便在工作流期间生成模板文件。 
+- **生成包含每个包的命令行**此设置将使你自动生成一个命令行模板文件，以便在稍后通过命令行重新打包同一应用程序（例如新版本）时，你可以为该应用程序预配置的命令行模板文件。 你将需要提供安装程序，以便在工作流期间生成模板文件。
 - **默认情况下，选择 "准备计算机" 的所有修补程序**此设置允许你预先选择所有建议的修复程序，以便在 "准备计算机" 阶段，你只需选择禁用所有修复，无需单独选择它们。
 - **强制实施 Microsoft Store 版本控制要求**如果打算通过 Microsoft Store 来部署应用程序，则应确保选中此选项，使其符合应用商店要求（这将影响包版本要求和最低操作系统版本支持）。 如果未选中此选项，则包的最低版本设置为 Windows 10 1709，你将对包版本4位数字具有完全控制。 如果选中此选项，则包的最低版本设置为 Windows 10 1809，版本必须以. 0 （例如1.5.6.0）结束。
-- **生成包时添加包完整性**如果选择此选项，则包完整性将自动添加到生成的所有包中。 Windows 10 2004 及更高版本支持包的完整性。
+- **生成包时添加包完整性**如果选择此选项，则包完整性将自动添加到生成的所有包中。 Windows 10 2004 及更高版本支持[包的完整性](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-packageintegrity)。
 - **默认保存位置**指定将保存生成的包和关联文件的默认保存位置。
 - **默认安装程序浏览位置**指定用于查找要转换的安装程序的默认位置。
 - **服务器端口号**指定 .MSIX 打包工具的服务器端口号。 如果你打算使用[远程计算机](remote-conversion-setup.md)进行转换，则这一点很有用。 
@@ -38,7 +38,7 @@ ms.locfileid: "77073793"
 
 ### <a name="other-settings"></a>其他设置
 
-- **文件和注册表 exlusions**尽管我们有一组默认的排除项，但我们建议你根据特定需求查看并添加或删除任何排除项。 
+- **文件和注册表排除**项尽管我们有一组默认的排除项，但我们建议你根据特定需求查看并添加或删除任何排除项。 
 - **安装程序退出代码**如果要在转换过程中触发重启的特定安装程序退出代码，可以在此处指定这些代码。 默认情况下，我们已添加了常用文件，但如果你不希望触发重新启动，则可以将其删除。 请注意，如果您使用的是 UI，则打包工具将永远不会自动触发重新启动，但如果您使用的是命令行选项，则会重新启动。 
  
 你还可以使用这些[说明](duplicate-tool-settings-across-devices.md)导入或导出你的设置以进行共享。 

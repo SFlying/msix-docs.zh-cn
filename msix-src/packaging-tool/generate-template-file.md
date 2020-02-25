@@ -5,12 +5,12 @@ ms.date: 01/28/2020
 ms.topic: article
 keywords: msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e5fd913de5e1c057e335c8b3102a14a9b75adf3
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 00c7997673f6c0ed3fc79f425c90e283b7a1f25c
+ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073503"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77544614"
 ---
 # <a name="how-to-generate-a-template-file-for-command-line-conversions"></a>如何生成用于命令行转换的模板文件
 
@@ -23,19 +23,17 @@ ms.locfileid: "77073503"
 
 ## <a name="generate-a-conversion-template-file-from-the-msix-packaging-tool"></a>从 .MSIX 打包工具生成转换模板文件
 
-- 启动 .MSIX 打包工具
-- 在应用程序的右上角中转到 "设置"
-- 确保 "为每个包生成转换模板文件"
-- 对所需的设置进行其他更改或修改（例如排除项、退出代码）
-- 保存设置
-
-- 使用安装程序浏览应用程序包工作流
-    - 如果未选择安装程序，则将无法生成转换模板文件
-    - 如果你使用的是 exe，则需要将无提示标志传递到安装程序以生成转换模板文件
-- 转换结束时，你将拥有一个模板文件，该文件是根据你选择的安装程序配置的，以及你现在可以重新用于未来转换的当前设置
-    - 默认情况下，转换模板文件将保存在与 .MSIX 包相同的位置，但你可以在 "创建包" 页上为模板文件指定单独的保存位置
+1. 启动 .MSIX 打包工具。
+2. 请在应用程序的右上角中转到 "设置"。
+3. 请确保选中 "生成包含每个包的命令行文件" 选项。
+4. 对所需的设置进行其他更改或修改（例如排除项、退出代码）。
+5. 保存设置
+6. 使用安装程序浏览应用程序包工作流。
+    - 如果未选择安装程序，则将无法生成转换模板文件。
+    - 如果使用的是 exe，则需要将缄默标志传递到安装程序以生成转换模板文件。
+7. 在转换结束时，你将拥有一个基于所选安装程序配置的模板文件，以及你现在可以用于将来转换的当前设置。
+    - 默认情况下，转换模板文件将保存在与 .MSIX 包相同的位置，但你可以在 "创建包" 页上为模板文件指定单独的保存位置。
     - 你仍需要根据要在每次转换结束时输出的 .MSIX 进行一些修改。
-
 
 ## <a name="manually-edit-the-conversion-template-file"></a>手动编辑转换模板文件
 

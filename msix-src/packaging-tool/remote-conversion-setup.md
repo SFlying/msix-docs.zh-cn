@@ -6,12 +6,12 @@ ms.topic: article
 keywords: MSIX, MPT, MSIX 打包工具, 远程 IP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 14b33ecb6f204b496065723e160f7a475b4eeb8a
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: a13b2a2725cc8c3750cbd22d4238ae41f5406fdc
+ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073463"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77544771"
 ---
 # <a name="setup-instructions-for-remote-machine-conversions"></a>有关远程计算机转换的设置说明
 

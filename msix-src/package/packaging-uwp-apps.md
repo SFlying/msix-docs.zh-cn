@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 18530e9f2b0c75c62bf41d5240350685ef7dbfad
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 7ecdc839618d7a0e050b89623bf106c2554463f3
+ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072959"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77544786"
 ---
 # <a name="package-a-desktop-or-uwp-app-in-visual-studio"></a>在 Visual Studio 中打包桌面或 UWP 应用
 
@@ -74,7 +74,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
     你可以从**打包**选项卡中输入发布数据。 可在此处选择要使用哪个证书来签名你的应用。 必须使用证书对所有 .MSIX 应用进行签名。
 
     > [!NOTE]
-    > 从 Visual Studio 2019 开始，已打包的桌面或 UWP 项目中不再生成临时证书。 若要创建或导出证书，请使用[本文](create-certificate-package-signing.md)中介绍的 PowerShell cmdlet。
+    > 从 Visual Studio 2019 开始，已打包的桌面或 UWP 项目中不再生成临时证书。 若要创建或导出证书，请使用[此文](create-certificate-package-signing.md)中所述的 PowerShell cmdlet。
 
     > [!IMPORTANT]
     > 如果你是在 Microsoft Store 中发布应用，将使用你的受信任的证书进行签名。 这让用户能够安装和运行你的应用，而不必安装关联的应用签名证书。
@@ -103,8 +103,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 3. 在向导的第一页中选择 "**旁加载**"，然后单击 "**下一步**"。
 
-    ![显示的“创建程序包”对话框窗口](images/packaging-screen10.png
-)
+    ![显示的“创建程序包”对话框窗口](images/packaging-screen10.png)
 
 4. 在 "**选择签名方法**" 页上，选择是跳过打包签名还是选择证书进行签名。 你可以从本地证书存储中选择证书、选择证书文件或创建新证书。 若要将 .MSIX 包安装在最终用户的计算机上，必须使用计算机上受信任的证书对其进行签名。 
 
@@ -135,12 +134,12 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 ## <a name="generate-an-app-package-upload-file-for-store-submission"></a>为应用商店提交生成应用程序包上传文件
 
-若要将应用分发到 Microsoft Store，建议生成应用程序包上传文件（. msixupload 或 .appxupload）。
+若要将你的应用分发到 Microsoft Store，建议你生成一个**应用包上传文件**（msixupload 或 .appxupload），并将此文件提交到合作伙伴中心。 虽然可将应用包或应用捆绑包仅提交给合作伙伴中心，但建议改为提交应用包上传文件。
+
+你可以使用 Visual Studio 中的 "**创建应用包**" 向导创建应用包上传文件，也可以从现有应用包或应用捆绑中手动创建。
 
 > [!NOTE]
 > 如果要手动创建应用程序包（. .msix 或 .appx）或应用捆绑包（. .msixbundle 或 .appxbundle），请参阅[使用 makeappx.exe 工具创建应用包](create-app-package-with-makeappx-tool.md)。
-
-虽然可将应用包或应用捆绑包仅提交给合作伙伴中心，但建议提交**应用包上传文件**。 你可以使用 Visual Studio 中的 "**创建应用包**" 向导创建应用包上传文件，也可以从现有应用包或应用捆绑中手动创建。
 
 ### <a name="create-your-app-package-upload-file-using-visual-studio"></a>使用 Visual Studio 创建应用包上传文件
 
@@ -234,7 +233,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 1. [将合作伙伴中心帐户与组织的 Azure Active Directory 相关联](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center)。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则，你可以在合作伙伴中心内创建新的 Azure AD 租户，无额外费用。
 
-2. [将 Azure AD 应用程序添加到合作伙伴中心帐户](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account)。 此 Azure AD 应用程序表示将用于访问开发人员中心帐户的提交的应用或服务。 必须将此应用程序分配给**管理员**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在“添加 Azure AD 应用程序”页面上创建新的 Azure AD 应用程序。
+2. [将 Azure AD 应用程序添加到合作伙伴中心帐户](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account)。 此 Azure AD 应用程序表示将用于访问开发人员中心帐户的提交的应用或服务。 必须将此应用程序分配给**管理员**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。
 
 ### <a name="retrieve-the-credentials-required-for-submissions"></a>检索提交所需的凭据
 
@@ -268,4 +267,3 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 WACK 测试完成后，将启动该提交。 可以在 "**验证和发布**" 窗口中跟踪提交进度。
 
 ![验证和发布进度](images/packaging-screen9.jpg)
-
