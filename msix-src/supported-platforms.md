@@ -1,5 +1,5 @@
 ---
-title: 支持的平台
+title: 受支持的平台
 description: 本文介绍适用于 .MSIX 的支持平台。
 author: dianmsft
 ms.date: 12/02/2019
@@ -7,14 +7,14 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3918f583a8462a0813bd4104448111c322e739eb
-ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
+ms.openlocfilehash: 3e01fa41354e8c6fa0b1d1096a597dc0b16fa9a9
+ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77544730"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779075"
 ---
-# <a name="supported-platforms"></a>支持的平台
+# <a name="supported-platforms"></a>受支持的平台
 
 以下 Windows 版本目前支持 .MSIX：
 
@@ -25,7 +25,7 @@ ms.locfileid: "77544730"
 本文介绍了这些 Windows 版本中的 .MSIX 的主要功能。
 
 > [!NOTE]
-> Windows Server 2019 LTSC 和 Windows Enterprise 2019 LTSC 需要**应用安装程序**应用程序只需支持双击安装或直接从网站 .msix、.msixbundle、.appx 或 .appxbundle 安装。 如果没有此应用，可以通过 PowerShell、API 或使用受支持的系统管理产品来安装包。 有关 Windows Server 2019 LTSC 的更多注意事项，请参阅[此文](msix-server-2019.md)。
+> Windows Server 2019 LTSC 和 Windows Enterprise 2019 LTSC 要求**应用安装**程序应用支持双击安装或直接从 .msix、.msixbundle、.appx 或 .appxbundle 网站上安装。 如果没有此应用，可以通过 PowerShell、API 或使用受支持的系统管理产品来安装包。 有关 Windows Server 2019 LTSC 的更多注意事项，请参阅[此文](msix-server-2019.md)。
 
 > [!NOTE]
 > 对于早于 Windows 10 版本1709的 Windows 版本，请使用[.Msix Core](msix-core/msixcore.md)安装 .msix 包。
@@ -65,7 +65,7 @@ ms.locfileid: "77544730"
 
 | 功能 | 1709 | 1803 | 1809 | 1903 | 1909 | 2004
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| Publishing             | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| 发布             | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | 更新通知| :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | 流式安装 | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| 
 | 增量更新 | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
