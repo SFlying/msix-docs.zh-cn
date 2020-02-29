@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ded407cb57d9697ad87719aab5fed4687a132ed7
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: d1c3e4c0b9ff6a0617755a2f7a0ad1674a8ea72e
+ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073058"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779065"
 ---
 # <a name="what-is-msix"></a>什么是 MSIX？
 

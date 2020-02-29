@@ -6,15 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f2761b87db7b9f6f69d9cda20b63b45c5184ccf6
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: aa43076c9ef3e0c8af5735b7a01b39c11f2c703b
+ms.sourcegitcommit: a7f677e024e415168f8bf0080f4e115307833a1d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77074073"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576898"
 ---
 # <a name="package-your-app-as-an-msix-in-visual-studio"></a>在 Visual Studio 中将应用打包为 MSIX
-使用 Visual Studio 可以轻松生成 MSIX 程序包，并且这是在开发时推荐用于打包应用程序的工具。 桌面应用（Windows 窗体、WPF、Win32，等等）可以使用 Windows 应用程序打包项目生成 MSIX 程序包，UWP 应用具有内置到其默认项目类型中的 MSIX 生成。 若要为桌面应用程序生成 MSIX 程序包，首先需要将 Windows 应用程序打包项目添加到解决方案中，UWP应用程序不需要此步骤。
+
+Visual Studio 可用于轻松生成 MSIX 程序包，并且是建议在开发时用于将应用程序打包的工具。 桌面应用（Windows 窗体、WPF、Win32，等等）可以使用 Windows 应用程序打包项目生成 MSIX 包。 通用 Windows 平台 (UWP) 应用可以生成内置到其默认项目类型中的 MSIX 包。 若要为桌面应用程序生成 MSIX 包，首先需要将 Windows 应用程序打包项目添加到解决方案中。 UWP 应用不需要此步骤。
 
 |主题| 说明 |
 |:---|:---|

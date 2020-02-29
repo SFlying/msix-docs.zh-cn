@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 67eac6151eda2ad53fe37d4635d8b7f94c4290c3
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 432017a083ae3f9553bea88902378ca3e6556bcb
+ms.sourcegitcommit: a7f677e024e415168f8bf0080f4e115307833a1d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072619"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77576907"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>准备打包桌面应用程序
 
@@ -25,7 +25,7 @@ ms.locfileid: "77072619"
 
   + 2.0 和 3.5：根据我们的测试，以这些 .NET Framework 版本为目标的打包桌面应用程序通常可以正常运行，但某些情况下可能会出现性能问题。 要使这些打包的应用程序能够安装和运行，必须在目标计算机上安装 [.NET Framework 3.5 功能](https://docs.microsoft.com/dotnet/framework/install/dotnet-35-windows-10)（此功能还包括 .NET Framework 2.0 和 3.0）。 打包这些应用程序后，还应该对其进行全面的测试。
 
-+ __应用程序始终使用提升的安全特权运行__。 应用程序需要在以交互用户身份运行时工作。 安装应用程序的用户可能不是系统管理员，因此需要应用程序以提升的权限运行意味着它无法对标准用户正确运行。 如果你打算将应用发布到 Mcirosoft Store，请注意，Store 不接受需要对任何功能部分提升权限的应用。
++ __应用程序始终使用提升的安全特权运行__。 应用程序需要在以交互用户身份运行时工作。 安装应用程序的用户可能不是系统管理员，因此需要应用程序以提升的权限运行意味着它无法对标准用户正确运行。 如果打算将应用发布到 Mcirosoft Store，请注意，Store 不接受任何功能部分需要提升权限的应用。
 
 + __应用程序需要内核模式驱动程序或 Windows 服务__。 MSIX 不支持内核模式驱动程序或需要在系统帐户下运行的 Windows 服务。 使用[后台任务](/windows/uwp/launch-resume/create-and-register-a-background-task)，而不是 Windows 服务。
 
