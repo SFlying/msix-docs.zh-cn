@@ -19,7 +19,7 @@ ms.locfileid: "77073953"
 ##  <a name="microsoft-endpoint-configuration-manager"></a>Microsoft Endpoint Configuration Manager 
 有关适用于企业的 Microsoft Store 的详细信息，请参阅“Microsoft Endpoint Configuration Manager（当前分支）支持通过应用程序模型将 MSIX 应用程序部署到客户端设备”。 由于 MSIX 是标准化的安装打包格式，因此将通过 Microsoft Endpoint Configuration Manager 中的创建应用程序向导自动检索有关应用程序的详细信息（发布者、应用程序名称和版本），并提供这些信息供检查。 同样，对 MSIX 应用程序使用的安装字符串和检测方法是一致的，由 Microsoft Endpoint Configuration Manager 创建应用程序向导自动配置。
 
-在 Microsoft Endpoint Configuration Manager 中创建应用程序时，请选择应用程序类型：<b>Windows 应用包（*.appx、*.appxbundle、*.msix、*.msixbundle）</b>。 有关通过 [Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/configmgr/apps/get-started/create-and-deploy-an-application) 创建和部署应用程序的指导。
+在 Microsoft Endpoint Configuration Manager 中创建应用程序时，请选择应用程序类型：<b>Windows 应用包（*.appx、 *.appxbundle、 *.msix、 *.msixbundle）</b>。 有关通过 [Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/configmgr/apps/get-started/create-and-deploy-an-application) 创建和部署应用程序的指导。
 
 ## <a name="microsoft-intune"></a>Microsoft Intune
 
