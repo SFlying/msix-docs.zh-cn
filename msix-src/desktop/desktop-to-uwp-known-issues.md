@@ -7,11 +7,11 @@ keywords: windows 10, uwp, msix
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f56cc122f82f2806b0cc1d014c9ab4c14307895
-ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
+ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303190"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78909633"
 ---
 # <a name="known-issues-with-packaged-desktop-apps"></a>打包桌面应用的已知问题
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.openlocfilehash: 73ed0fcb5ef4bb1656eda01dcb8ecbdd2bb5b65e
-ms.sourcegitcommit: 073a228653f004914851c3461b9ad6eef343f915
+ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74309003"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78909648"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>使用 Device Guard 签名功能对 MSIX 包进行签名
 
