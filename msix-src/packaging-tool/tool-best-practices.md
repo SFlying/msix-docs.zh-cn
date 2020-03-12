@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a22f4cbc2f96746fea48cb1bca1199e6006f938b
-ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
+ms.openlocfilehash: b4c78d47a2e9adb53f80090b685583636e064458
+ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78909611"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79129027"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>适用于 MSIX 打包工具的最佳做法
 
@@ -34,7 +34,10 @@ ms.locfileid: "78909611"
     - 使用证书签名（.pfx）-如果已有在企业中使用的受信任证书，建议使用此选项。
     - 指定 .cer 文件（不签名）-如果不想在转换时进行签名，但要确保发布服务器信息在签名时有效，则可以选择此选项。
     - 不对包进行签名。 -如果你想要使用其他方法对包进行签名，或者稍后在生成包后进行签名，则可以选择此选项。
-    我们还建议你向签名首选项添加一个时间戳服务器 url （如果适用），以便即使你的证书过期也能安装应用程序。
+    我们还建议你向签名首选项添加一个时间戳服务器 url （如果适用），以便即使你的证书过期也能安装应用程序。   
+
+> [!Note]
+> 不支持使用 SHA1 证书对 .MSIX 包格式应用程序进行签名。
 
 ### <a name="other-settings"></a>其他设置
 

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3e01fa41354e8c6fa0b1d1096a597dc0b16fa9a9
-ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
+ms.openlocfilehash: 5929bbef4e1b3b6d2199031700ecf94e9a743103
+ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77779075"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79097853"
 ---
 # <a name="supported-platforms"></a>受支持的平台
 
@@ -37,16 +37,17 @@ ms.locfileid: "77779075"
 > [!div class="mx-tableFixed"]
 | 功能 | 1709 | 1803 | 1809 | 1903 | 1909 | 2004| Windows Server 2019 LTSC | Windows Enterprise 2019 LTSC|
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| 本机 .MSIX 安装和卸载 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark: |
+| [允许提升](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) | x-blade                | x-blade                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
 | [应用安装程序文件支持](app-installer/installing-windows10-apps-web.md)| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| [延迟注册标志](desktop/managing-your-msix-deployment-update.md) |  x-blade | x-blade | x-blade | x-blade| x-blade | :heavy_check_mark:| x-blade | x-blade |
+| [从任何版本降级强制更新](desktop/managing-your-msix-deployment-targetdevices.md) |  x-blade                | x-blade                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
+| 强制预配 |  x-blade | x-blade | x-blade | x-blade| x-blade | :heavy_check_mark:| x-blade | x-blade |
 | 打包桌面应用的标识 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
-| 允许提升 | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
-| 修改包 | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
-| 从任何版本降级强制更新 |  :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
-| 包支持框架（PSF） | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:|  :heavy_check_mark: | :heavy_check_mark:|  
-| Windows 服务 | :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x:| :x: | 
-| 延迟注册标志 |  :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x: | :x: |
-| 强制预配 |  :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x: | :x: |
+| [修改包](modification-packages.md) | x-blade                | x-blade                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
+| 本机 .MSIX 安装和卸载 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark: |
+| [包支持框架（PSF）](psf/package-support-framework-overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:|  :heavy_check_mark: | :heavy_check_mark:|  
+| [Windows 服务](packaging-tool/convert-an-installer-with-services.md) | x-blade | x-blade | x-blade | x-blade| x-blade | :heavy_check_mark:| x-blade| x-blade | 
+
 
 ## <a name="package-format-support"></a>包格式支持
 
@@ -55,7 +56,7 @@ ms.locfileid: "77779075"
 | 包格式 | 1709 | 1803 | 1809 | 1903 | 1909 | 2004
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
 | .msix              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
-| .msixbundle| :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:|
+| .msixbundle| x-blade                | x-blade                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:|
 | .appx | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | .appxbundle | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 
@@ -65,10 +66,10 @@ ms.locfileid: "77779075"
 
 | 功能 | 1709 | 1803 | 1809 | 1903 | 1909 | 2004
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| 发布             | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
-| 更新通知| :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
-| 流式安装 | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| 
-| 增量更新 | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| 发布             | x-blade | x-blade | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| 更新通知| x-blade | x-blade | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| 流式处理安装 | x-blade                | x-blade                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| 
+| 增量更新 | x-blade | x-blade | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 
 > [!NOTE]
 > 对于上面列出的所有版本的 Windows 10，.appx 或 .appxbundle 都适用。 该表仅反映 .msix 或 .msixbundle 行为。

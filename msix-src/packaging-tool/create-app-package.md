@@ -1,17 +1,17 @@
 ---
-title: 从任何桌面安装程序创建 .MSIX 包
+title: 通过任何桌面安装程序创建 MSIX 包
 description: 从任何桌面安装程序（MSI、EXE、ClickOnce 或 App-v）创建 .MSIX 包
 ms.date: 02/11/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2ed4c6121f27541babda2e64731c3738f4390741
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 125dd3dab5fc2884b48dceeac1006614156a8ba8
+ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073833"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79097902"
 ---
 # <a name="create-an-msix-package-from-any-desktop-installer-msi-exe-clickonce-or-app-v"></a>从任何桌面安装程序（MSI、EXE、ClickOnce 或 App-v）创建 .MSIX 包
 
@@ -115,6 +115,8 @@ ms.locfileid: "77073833"
 - **指定 .cer 文件（进行注释签名）** 此选项允许您指定 .cer 文件。 如果你不希望对包进行签名，但你想要确保发布服务器信息与将用于签名的证书的使用者匹配，这会很有用。 
 - **不对包进行签名**如果以后要对包进行签名，请选择此选项。 注意：如果未对 .MSIX 包进行签名，则无法安装该程序包
 - 签名时，强烈建议向证书添加**时间戳**，以便证书的有效性可 outlast 其到期日期。 接受的格式为 RFC 3161 [时间戳服务器 URL](https://docs.microsoft.com/windows/win32/seccrypto/signtool)。
+
+> 纪录不支持使用 SHA1 证书对 .MSIX 包格式应用程序进行签名。
 
 单击 "**下一步**" 继续。
 

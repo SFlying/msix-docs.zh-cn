@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3dc664ede52dc757bc3a74ba3e5fb5ebc17141d3
-ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
+ms.openlocfilehash: 8280ad784fad1547b43db14124f1118dfff846f5
+ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77544733"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79097836"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -35,14 +35,14 @@ ms.locfileid: "77544733"
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-## <a name="version-120202030"></a>版本1.2020.203。0
+## <a name="version-120202250"></a>版本1.2020.225。0
 
--默认情况下启用包完整性设置
-- 能够导出注册表文件（.reg）
+- .MSIX 核心支持可自动添加到生成的包
+- 能够在包编辑器中导入注册表文件（.reg）
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
-## <a name="share-your-feedback"></a>共享你的反馈
+## <a name="share-your-feedback"></a>分享反馈
 
 如果使用该应用时遇到问题，请按 **Windows 键 + F** 启动“反馈中心”。 尽量多提供一些有关该问题的详细信息，以帮助我们诊断并解决问题。 使用类别**应用程序** >  **.msix 打包工具**直接向我们提供反馈。
 

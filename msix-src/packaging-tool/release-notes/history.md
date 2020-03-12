@@ -6,14 +6,23 @@ ms.topic: article
 keywords: windows 10、uwp、.msix、.msix 打包工具、预览体验计划
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: be79b90229ed23b04cfa58f12ee3372491f4b818
-ms.sourcegitcommit: b54bb64bcc05a91b4444b62d52586f8a794e7267
+ms.openlocfilehash: d35eb8712d5830c879011c7d3610d95ab019b9bd
+ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77027660"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79097888"
 ---
-# <a name="release-notes-for-the-msix-packaging-tool"></a>.MSIX 打包工具的发行说明
+# <a name="release-notes-for-the-msix-packaging-tool"></a>MSIX 打包工具发行说明
+## <a name="version-120202250"></a>版本1.2020.225。0
+- 能够在包编辑器中导入注册表文件（.reg）
+- 能够自动将[.Msix Core 支持](../../msix-core/msixcore.md)添加到 .msix
+- 添加 InstalledLocationVirtualization 扩展修复的 bug：
+- 编辑后验证清单格式 
+- 第一次启动任务失败时发出消息 
+- 禁止解压缩相对路径 
+- 更新了文件筛选器，因此它们显示了有效的格式（例如，对于它*使用的安装程序， ，* 现在 `*.msi, *.exe, ...`） 
+- 修复了解包时将路径中的空格转换为 "%20"
 
 ## <a name="version-120202030"></a>版本1.2020.203。0
 - 默认情况下启用包完整性设置

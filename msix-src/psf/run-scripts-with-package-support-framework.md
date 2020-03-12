@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5de118ddf9e55567c80b38ffe4a453e2391cfff9
-ms.sourcegitcommit: 90eed7d23240aefa3761085955a193323f4661d4
+ms.openlocfilehash: 9dcf8358cf96ab628d0b947aeb291ed63792d05d
+ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75831468"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79097917"
 ---
 # <a name="run-scripts-with-the-package-support-framework"></a>使用包支持框架运行脚本
 
@@ -35,7 +35,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 * 64 位计算机：
   * 64位可执行文件：%SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe
   * 32位可执行文件：%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe
-* 32 位计算机：
+* 32位计算机：
   * 32位可执行文件：%SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe
 
 有关 PowerShell 执行策略的详细信息，请参阅[此文](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6)。
@@ -50,16 +50,16 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
 以下是可用于脚本的配置项目。 结束脚本将忽略 `waitForScriptToFinish` 和 `stopOnScriptError` 配置项目。
 
-| 项名称                | 值类型 | Required? | 默认值  | 描述
+| 项名                | 值类型 | 必需？ | 默认  | 说明
 |-------------------------|------------|-----------|----------|---------|
-| `scriptPath`              | 字符串     | “是”       | N/A      | 脚本的路径，包括名称和扩展名。 路径从应用程序的根目录开始。
-| `scriptArguments`         | 字符串     | 无        | 空    | 空格分隔参数列表。 对于 PowerShell 脚本调用，格式是相同的。 此字符串将追加到 `scriptPath`，以便进行有效的 PowerShell .exe 调用。
-| `runInVirtualEnvironment` | 布尔型    | 无        | true     | 指定是否应在打包应用程序运行所在的虚拟环境中运行脚本。
-| `runOnce`                 | 布尔型    | 无        | true     | 指定脚本是否应每个用户每个版本运行一次。
-| `showWindow`              | 布尔型    | 无        | 否    | 指定是否显示 PowerShell 窗口。
-| `stopOnScriptError`       | 布尔型    | 无        | 否    | 指定在启动脚本失败时是否退出应用程序。
-| `waitForScriptToFinish`   | 布尔型    | 无        | true     | 指定打包的应用程序在启动前是否应等待开始脚本完成。
-| `timeout`                 | DWORD      | 无        | INFINITE | 允许脚本执行的时间长度。 当时间结束时，脚本将停止。
+| `scriptPath`              | string     | 是       | 不可用      | 脚本的路径，包括名称和扩展名。 路径相对于应用程序的工作目录（如果已指定），否则在包的根目录处启动。
+| `scriptArguments`         | string     | 是        | empty    | 空格分隔参数列表。 对于 PowerShell 脚本调用，格式是相同的。 此字符串将追加到 `scriptPath`，以便进行有效的 PowerShell .exe 调用。
+| `runInVirtualEnvironment` | boolean    | 是        | true     | 指定是否应在打包应用程序运行所在的虚拟环境中运行脚本。
+| `runOnce`                 | boolean    | 是        | true     | 指定脚本是否应每个用户每个版本运行一次。
+| `showWindow`              | boolean    | 是        | false    | 指定是否显示 PowerShell 窗口。
+| `stopOnScriptError`       | boolean    | 是        | false    | 指定在启动脚本失败时是否退出应用程序。
+| `waitForScriptToFinish`   | boolean    | 是        | true     | 指定打包的应用程序在启动前是否应等待开始脚本完成。
+| `timeout`                 | DWORD      | 是        | 无数 | 允许脚本执行的时间长度。 当时间结束时，脚本将停止。
 
 > [!NOTE]
 > 不支持为示例应用程序设置 `stopOnScriptError: true` 和 `waitForScriptToFinish: false`。 如果你设置这两个配置项目，则 PSF 将返回 ERROR_BAD_CONFIGURATION 的错误。
