@@ -274,8 +274,12 @@
       items:
         - name: 概述
           href: msix-core/msixcore.md
+        - name: 使用 Microsoft Endpoint Configuration Manager 部署 MSIX Core
+          href: msix-core/deploy-msix-core-with-configmgr.md
         - name: 更新 MSIX 包以支持 MSIX Core
           href: msix-core/support-msix-core.md
+        - name: 使用 Microsoft Endpoint Configuration Manager 部署 MSIX Core 应用
+          href: msix-core/deploy-msix-core-app-with-configmgr.md
         - name: 通过 MSIX Core 部署 MSIX 包
           href: msix-core/deploy-with-msix-core.md
         - name: 从源代码通过 MSIX Core 创建 MSIX 包
