@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 73ed0fcb5ef4bb1656eda01dcb8ecbdd2bb5b65e
-ms.sourcegitcommit: 536d6969cde057877ecdd8345cfb0dc12c9582f2
+ms.openlocfilehash: 7fa356679943afd8267a1e8df8527a2179f61b98
+ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78909648"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80108230"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>使用 Device Guard 签名功能对 MSIX 包进行签名
 
@@ -30,7 +30,10 @@ Device Guard 签名需要 Microsoft Store for Business 中的权限，并使用 
 
 ## <a name="configure-permissions-for-device-guard-signing"></a>配置 Device Guard 签名的权限
 
-若要在 Microsoft Store for Business 或 Microsoft Store 教育中使用 Device Guard 签名，需要**Device guard 签名者**角色。 这是可以签名的最小特权角色。 其他角色（如**全局管理员**和**计费帐户所有者**）也可以对其进行签名。
+若要在 Microsoft Store for Business 或 Microsoft Store 教育中使用 Device Guard 签名，需要**Device guard 签名者**角色。 这是可以签名的最小特权角色。 其他角色（如**全局管理员**和**计费帐户所有者**）也可以对其进行签名。 
+
+ > [!NOTE]
+ > 当你作为应用进行签名时，将使用 Device Guard 签名者角色。 当你作为已登录用户进行签名时，将使用全局管理员和计费帐户所有者。
 
 确认或重新分配角色：
 
@@ -78,6 +81,7 @@ function GetToken()
     $Body = @{
       'grant_type' = 'password'
       'client_id'= '<application-id>'
+      'client_secret' = '<client_secret>'
       'resource' = 'https://onestore.microsoft.com'
       'username' = $user
       'password' = $password

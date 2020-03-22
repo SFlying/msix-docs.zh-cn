@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
 ms.openlocfilehash: 484f2ba6df7044b628154fd73990089652cede20
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072547"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80108170"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 对应用包进行签名
 

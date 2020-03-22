@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c280cbff2d2151cb2a791165df9dd5f23d10c7d
-ms.sourcegitcommit: d749fa662214bddaa6854f1ee95761c547db8dae
+ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75008137"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80108180"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用包支持框架将运行时修补程序应用于 .MSIX 包
 
@@ -105,7 +105,7 @@ makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 
 #### <a name="get-the-package-by-using-the-command-line-tool"></a>使用命令行工具获取包
 
-从以下位置安装 Nuget 命令行工具： https://www.nuget.org/downloads 。 然后，在 Nuget 命令行中运行以下命令： 
+从以下位置安装 Nuget 命令行工具： https://www.nuget.org/downloads。 然后，在 Nuget 命令行中运行以下命令： 
 
 ```powershell
 nuget install Microsoft.PackageSupportFramework
@@ -188,11 +188,11 @@ nuget install Microsoft.PackageSupportFramework
 
 下面是有关配置 json 架构的指南：
 
-| 数组 | 键 | Value |
+| Array | key | 值 |
 |-------|-----------|-------|
-| applications | id |  使用包清单中 `Application` 元素的 `Id` 属性的值。 |
-| applications | 可执行文件 (executable) | 要启动的可执行文件的包相对路径。 在大多数情况下，你可以在修改之前从包清单文件中获取此值。 它是 `Application` 元素的 `Executable` 属性的值。 |
-| applications | workingDirectory | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用 `System32` 目录作为应用程序的工作目录。 |
+| 应用程序 | id |  使用包清单中 `Application` 元素的 `Id` 属性的值。 |
+| 应用程序 | 可执行文件 (executable) | 要启动的可执行文件的包相对路径。 在大多数情况下，你可以在修改之前从包清单文件中获取此值。 它是 `Application` 元素的 `Executable` 属性的值。 |
+| 应用程序 | workingDirectory | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用 `System32` 目录作为应用程序的工作目录。 |
 | 进程 | 可执行文件 (executable) | 在大多数情况下，这将是上面配置的 `executable` 的名称，其中包含已删除的路径和文件扩展名。 |
 | 修正 | dll | 要加载的链接地址的包相对路径，.msix/.appx。 |
 | 修正 | config | 可有可无控制修正 dll 的行为方式。 此值的准确格式因修正链接而异，因为每个修正都可以根据需要解释此 "blob"。 |
@@ -269,7 +269,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 让我们看看此示例中的每个项目。
 
-| 项目 | 用途 |
+| 项目 | 目标 |
 |-------|-----------|
 | DesktopApplicationPackage | 此项目基于[Windows 应用程序打包项目](../desktop/desktop-to-uwp-packaging-dot-net.md)，并输出 .msix 包。 |
 | Runtimefix | 这是一个C++动态链接库项目，其中包含一个或多个用于运行时修复的替换函数。 |
@@ -328,7 +328,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 搜索*PSF** Nuget 包，并将其安装到此项目中。
 
-![NuGet 包](images/psf-package.png)
+![nuget 包](images/psf-package.png)
 
 如果你想要调试或扩展现有的运行时修补程序，请添加你使用本指南的[查找运行时修补程序](#find)部分中所述的指导来获取的运行时修补文件。
 
@@ -352,7 +352,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 右键单击该引用，然后在 "**属性**" 窗口中应用这些值。
 
-| 属性 | Value |
+| 属性 | 值 |
 |-------|-----------|
 | 复制本地 | True |
 | 复制本地附属程序集 | True |
@@ -405,11 +405,11 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 为每个键提供一个值。 使用此表作为指南。
 
-| 数组 | 键 | Value |
+| Array | key | 值 |
 |-------|-----------|-------|
-| applications | id |  使用包清单中 `Application` 元素的 `Id` 属性的值。 |
-| applications | 可执行文件 (executable) | 要启动的可执行文件的包相对路径。 在大多数情况下，你可以在修改之前从包清单文件中获取此值。 它是 `Application` 元素的 `Executable` 属性的值。 |
-| applications | workingDirectory | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用 `System32` 目录作为应用程序的工作目录。 |
+| 应用程序 | id |  使用包清单中 `Application` 元素的 `Id` 属性的值。 |
+| 应用程序 | 可执行文件 (executable) | 要启动的可执行文件的包相对路径。 在大多数情况下，你可以在修改之前从包清单文件中获取此值。 它是 `Application` 元素的 `Executable` 属性的值。 |
+| 应用程序 | workingDirectory | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用 `System32` 目录作为应用程序的工作目录。 |
 | 进程 | 可执行文件 (executable) | 在大多数情况下，这将是上面配置的 `executable` 的名称，其中包含已删除的路径和文件扩展名。 |
 | 修正 | dll | 要加载的链接地址 DLL 的包相对路径。 |
 | 修正 | config | 可有可无控制修正 DLL 的行为方式。 此值的准确格式因修正链接而异，因为每个修正都可以根据需要解释此 "blob"。 |

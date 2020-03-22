@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、windows 7、windows 8、Windows Server、uwp、.msix、msixcore、1709、1703、1607、1511、1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: fb12dcc8513753f8e44bd1141523c913ca91e244
-ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
+ms.openlocfilehash: b338f9bb5b994b21164278a62983cf9f7cb531df
+ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79111299"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070022"
 ---
 # <a name="deploy-msix-core-apps-with-microsoft-endpoint-configuration-manager"></a>通过 Microsoft 终结点部署 .MSIX Core 应用 Configuration Manager
 使用 Microsoft 端点 Configuration Manager 传递 .MSIX 应用程序允许 IT 专业人员将其他应用程序链接为依赖项，并强制它们在之前安装。 通过创建 .MSIX Core 应用程序的依赖项，我们强制仅在设备需要时才安装 .MSIX Core 应用程序。 有关 Micosoft 终结点中的应用程序依赖关系的详细信息 Configuration Manager 参阅：[创建应用程序：部署类型依赖关系](https://docs.microsoft.com/configmgr/apps/deploy-use/create-applications#bkmk_dt-depend)。
@@ -50,9 +50,9 @@ ms.locfileid: "79111299"
 ```
 1. 将 "卸载程序" 字段设置为： 
 ```batch
-"C:\Program Files\msixmgr\msixmgr.exe" -RemovePackage [Application Family Name] -quietUX
+"C:\Program Files\msixmgr\msixmgr.exe" -RemovePackage [Package Family Name] -quietUX
 ```
-1. 将 [Application 家族 Name] 替换为 .MSIX 应用程序的应用程序家族名称。
+1. 将 [Package 家族 Name] 替换为 .MSIX 应用程序的包系列名称。
 1. 选择 "**下一步**" 按钮。
 1. 选择 "**使用自定义脚本检测此部署类型的状态"** 单选按钮。
 1. 选择 "**编辑**" 按钮。
@@ -63,7 +63,7 @@ Set-Location "C:\Program Files\msixmgr"
 
 IF([Boolean]$(get-item "msixmgr.exe"))
 {
-    $Result = $(.\msixmgr.exe -FindPackage [Application Family Name]*)
+    $Result = $(.\msixmgr.exe -FindPackage [Package Family Name]*)
 
     IF($($Result.GetType().Name) -eq "Object[]")
     {
@@ -71,7 +71,7 @@ IF([Boolean]$(get-item "msixmgr.exe"))
     }
 }
 ```
-1. 用应用程序的 .MSIX 包系列名称更新 [Application 家族 Name]。
+1. 用应用程序的 .MSIX 包系列名称更新 [包系列名称]。
 1. 选择 "**确定"** 按钮。
 1. 选择 "**下一步**" 按钮。
 1. 设置要**为用户安装**的安装行为。

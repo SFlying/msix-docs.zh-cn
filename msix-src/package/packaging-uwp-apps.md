@@ -10,11 +10,11 @@ f1_keywords:
 - vs.storeassociationwizard
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ecdc839618d7a0e050b89623bf106c2554463f3
-ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
+ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77544786"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80108190"
 ---
 # <a name="package-a-desktop-or-uwp-app-in-visual-studio"></a>在 Visual Studio 中打包桌面或 UWP 应用
 
@@ -233,7 +233,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 1. [将合作伙伴中心帐户与组织的 Azure Active Directory 相关联](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center)。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则，你可以在合作伙伴中心内创建新的 Azure AD 租户，无额外费用。
 
-2. [将 Azure AD 应用程序添加到合作伙伴中心帐户](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account)。 此 Azure AD 应用程序表示将用于访问开发人员中心帐户的提交的应用或服务。 必须将此应用程序分配给**管理员**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在**添加 Azure AD 应用程序**页面上创建新的 Azure AD 应用程序。
+2. [将 Azure AD 应用程序添加到合作伙伴中心帐户](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account)。 此 Azure AD 应用程序表示将用于访问开发人员中心帐户的提交的应用或服务。 必须将此应用程序分配给**管理员**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在“添加 Azure AD 应用程序”页面上创建新的 Azure AD 应用程序。
 
 ### <a name="retrieve-the-credentials-required-for-submissions"></a>检索提交所需的凭据
 
