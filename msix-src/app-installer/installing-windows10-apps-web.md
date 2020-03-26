@@ -1,19 +1,19 @@
 ---
-title: 在网页上安装 Windows 10 应用
+title: 从网页安装 Windows 10 应用
 description: 在此部分中，我们将查看允许用户直接从网页中安装应用所需执行的步骤。
 ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c6007dfb124e308dad5d17bf7643a7021957e277
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 35081a4d2ff45e12c7cb6eff3365e5c41b7d8d08
+ms.sourcegitcommit: f5936c95c0f5b6f080e51b8d47a7cd62ccf6a600
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828705"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80241945"
 ---
-# <a name="installing-windows-10-apps-from-a-web-page"></a>在网页上安装 Windows 10 应用
+# <a name="installing-windows-10-apps-from-a-web-page"></a>从网页安装 Windows 10 应用
 
 通常，在使用应用安装程序安装应用之前，应用需要在设备上本地可用。 对于 Web 方案，这意味着用户必须从 Web 服务器中下载应用包，然后才能使用应用安装程序安装该应用包。 这样做效率低下并且浪费磁盘空间，这就是应用安装程序现在具有用于简化过程的内置功能的原因。
 
@@ -29,10 +29,10 @@ ms.locfileid: "67828705"
 
 ### <a name="requirements-for-protocol-activation-scheme"></a>协议激活方案的要求
 
-1. Web 服务器需要具有对字节范围请求 (HTTP/1.1) 的支持
-    - 支持 HTTP/1.1 协议的服务器都必须支持字节范围请求
-2. Web 服务器将需要了解的有关 Windows 10 应用包的内容类型
-    - 下面介绍了如何将新内容类型声明的一部分为[web 配置文件](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
+1. Web 服务器需要支持字节范围请求（HTTP/1.1）
+    - 支持 HTTP/1.1 协议的服务器应该支持字节范围请求
+2. Web 服务器需要了解 Windows 10 应用包内容类型
+    - 下面介绍了如何在[web 配置文件](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)中声明新的内容类型
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>如何在网页上启用它
 想要在其网站上托管应用包的应用开发人员需要执行以下步骤：
@@ -42,8 +42,8 @@ ms.locfileid: "67828705"
 <html>
     <body>
         <h1> MyApp Web Page </h1>
-        <a href="ms-appinstaller:?source=http://mywebservice.azureedge.net/HubApp.appx"> Install app package </a>
-        <a href="ms-appinstaller:?source=http://mywebservice.azureedge.net/HubAppBundle.appxbundle"> Install app bundle  </a>
+        <a href="ms-appinstaller:?source=http://mywebservice.azureedge.net/HubApp.msix"> Install app package </a>
+        <a href="ms-appinstaller:?source=http://mywebservice.azureedge.net/HubAppBundle.msixbundle"> Install app bundle  </a>
         <a href="ms-appinstaller:?source=http://mywebservice.azureedge.net/HubAppSet.appinstaller"> Install related set </a>
     </body>
 </html>
@@ -54,11 +54,11 @@ ms.locfileid: "67828705"
 
 如果要将应用部署到企业内的员工，可以使用企业颁发的证书对应用签名。 请务必注意，必须将企业证书部署到要安装该应用的所有设备。 有关部署企业应用的详细信息，请参阅[企业应用管理](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management)。
 
-## 在 Windows 10 早期版本中的 Web 安装体验<a name="web-install-experience"></a>
+## <a name="web-install-experience-on-previous-versions-of-windows-10"></a>在 Windows 10 早期版本中的 Web 安装体验<a name="web-install-experience"></a>
 
 在应用安装程序可用的所有版本的 Windows 10（从周年更新开始）上支持从浏览器调用应用安装程序。 但是，只有 Windows 10 Fall Creators Update 中才有无需先下载程序包即可直接从 Web 安装的功能。  
 
-以前版本的 Windows 10 （包含可用的应用安装程序） 的用户还可以充分利用 web 安装的应用安装程序通过 Windows 10 应用，但将具有不同的用户体验。 当这些用户单击 Web 链接时，应用安装程序将提示**下载**程序包，而不是提示**安装**。 下载后，应用安装程序将自动发起已下载程序包的启动。 由于应用包是从 Web 中下载的，因此这些文件将通过 Microsoft SmartScreen 进行安全检查。 一旦用户提供继续操作的权限，然后再一次单击**安装**，该应用即可使用！
+以前版本的 Windows 10 中的用户（有可用的应用程序），还可以通过应用安装程序利用 Windows 10 应用的 web 安装，但用户体验会有所不同。 当这些用户单击 Web 链接时，应用安装程序将提示**下载**程序包，而不是提示**安装**。 下载后，应用安装程序将自动发起已下载程序包的启动。 由于应用包是从 Web 中下载的，因此这些文件将通过 Microsoft SmartScreen 进行安全检查。 一旦用户提供继续操作的权限，然后再一次单击**安装**，该应用即可使用！
 
 虽然此流程并不像在 Windows 10 Fall Creators Update 上直接安装那么完美，但用户仍然可以快速使用该应用。 另外，使用此流程，用户不必担心应用包文件会不必要地占用驱动器空间。 应用安装程序通过将程序包下载到其应用数据文件夹并在不再需要时清除程序包，来有效地管理空间。
 

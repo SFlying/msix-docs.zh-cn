@@ -1,23 +1,23 @@
 ---
 title: 从 AWS Web 服务分发 Windows 10 应用
-description: 设置 AWS web 服务器以验证通过应用安装程序应用程序的应用程序安装教程
+description: 设置 AWS web 服务器以通过应用安装程序应用验证应用安装的教程
 ms.date: 05/30/2018
 ms.topic: article
-keywords: windows 10 中，Windows 10 UWP，应用程序安装程序中，应用安装旁, 加载，相关设置此选项，可选包，AWS
+keywords: windows 10、Windows 10、UWP、应用安装程序、AppInstaller、旁加载、相关集、可选包、AWS
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 81d2d4afa0e6f8834461c5d561c23edf578bd24b
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: 4e999f4939432c6490da380c722c31ae87d669d8
+ms.sourcegitcommit: f5936c95c0f5b6f080e51b8d47a7cd62ccf6a600
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828779"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80241954"
 ---
 # <a name="distribute-a-windows-10-app-from-an-aws-web-service"></a>从 AWS Web 服务分发 Windows 10 应用
 
 通过应用安装程序，开发人员和 IT 专业人员可以通过在各自的内容分发网络 (CDN) 上托管应用的方式来分发 Windows 10 应用。 这种方式适用于不希望或不需要将应用发布到 Microsoft Store，但仍希望利用 Windows 10 打包和部署平台的企业。
 
-本主题概述了配置为主机 Windows 10 应用包时，将 Amazon Web Services (AWS) 网站以及如何使用应用程序安装程序应用来安装应用程序包的步骤。
+本主题概述了配置 Amazon Web Services （AWS）网站以托管 Windows 10 应用包的步骤，以及如何使用应用安装程序应用安装应用程序包。
 
 ## <a name="setup"></a>安装
 
@@ -25,56 +25,54 @@ ms.locfileid: "67828779"
  
 1. AWS 订阅 
 2. 网页
-3. Windows 10 应用包的分发的应用程序包
+3. Windows 10 应用包-将分发的应用包
 
-可选：[初学者项目](https://github.com/AppInstaller/MySampleWebApp)GitHub 上。 如果没有应用包或网页可以使用，但仍想学习如何使用此功能，这个初学者项目很有用。
+可选：GitHub 上的[初学者项目](https://github.com/AppInstaller/MySampleWebApp)。 如果没有应用包或网页可以使用，但仍想学习如何使用此功能，这个初学者项目很有用。
 
-本教程将详细阐述如何设置 web 页面和 AWS 上的承载包。 这将需要使用 AWS 订阅。 具体取决于您的操作的小数位数，可以使用其可用的成员资格要遵循本教程。 
+本教程将介绍如何在 AWS 上设置网页和主机包。 这将需要 AWS 订阅。 根据操作的规模，可以使用其免费成员身份来完成本教程。 
 
 ## <a name="step-1---aws-membership"></a>步骤 1-AWS 成员身份
 若要获取 AWS 成员身份，请访问[AWS 帐户详细信息页](https://aws.amazon.com/free/)。 可以使用免费会员资格获得此教程。
 
 ## <a name="step-2---create-an-amazon-s3-bucket"></a>步骤 2-创建 Amazon S3 存储桶
 
-Amazon 简单存储服务 (S3) 是 AWS 提供用于收集、 存储和分析数据。 S3 存储桶是指向承载 Windows 10 应用包和分发 web 页的简便方法。 
+Amazon 简单存储服务（S3）是用于收集、存储和分析数据的 AWS 产品。 使用 S3 存储桶，可以方便地托管 Windows 10 应用包和网页以进行分发。 
 
-之后在登录到 AWS 与你的凭据下,`Services`查找`S3`。 
+用凭据登录到 AWS 后，请在 "`Services` 查找" `S3`。 
 
-选择**创建存储桶**，并输入**存储桶名称**为你的网站。 按照对话框提示用于设置属性和权限。 若要确保 Windows 10 应用，可以分发从你的网站，启用**读**并**编写**权限存储桶并选择**授予对此存储桶的公共读取访问权限**.
+选择 "**创建存储桶**"，然后输入你的网站的**存储桶名称**。 按照提示设置属性和权限的对话框。 若要确保你的 Windows 10 应用可以从你的网站分发，请为你的 bucket 启用 "**读取**" 和 "**写入**" 权限，然后选择 "**授予此 bucket 的公共读取**权限"。
 
-![对 Amazon S3 存储桶设置权限](images/aws-permissions.png) 
+![设置 Amazon S3 存储桶上的权限](images/aws-permissions.png) 
 
-查看摘要，以确保反映所选的选项。 单击**创建存储桶**来完成此步骤。 
+查看摘要，确保所选选项已反映。 单击 "**创建存储桶**" 完成此步骤。 
 
-## <a name="step-3---upload-windows-10-app-package-and-web-pages-to-an-s3-bucket"></a>第 3 步-将 Windows 10 应用包和 web 页面上传到 S3 存储桶
+## <a name="step-3---upload-windows-10-app-package-and-web-pages-to-an-s3-bucket"></a>步骤 3-将 Windows 10 应用包和网页上传到 S3 存储桶
 
-一个已创建 Amazon S3 存储桶，你将能够在 Amazon S3 视图中看到它。 下面是我们演示存储桶如下所示的示例：
+你已创建一个 Amazon S3 存储桶，你将能够在 Amazon S3 视图中看到它。 下面是演示存储桶外观的示例：
 
-![屏幕截图的 Amazon S3 存储桶视图](images/aws-post-create.png)
+![Amazon S3 bucket 视图的屏幕截图](images/aws-post-create.png)
 
-我们现已准备要上传应用包和我们想要托管在我们的 Amazon S3 存储桶中的网页。 
+现在，我们已准备好上传要在 Amazon S3 存储桶中托管的应用包和网页。 
 
-单击新创建的存储桶上, 传内容。 存储桶是当前为空，因为具有尚未上载任何内容。 单击**上传**按钮，然后选择应用包和网页要上传的文件。
+单击新创建的存储桶上传内容。 Bucket 当前为空，因为尚未上传任何内容。 单击 "**上传**" 按钮，然后选择要上传的应用程序包和网页文件。
 
 > [!NOTE]
 > 如果没有可用的应用包，可以使用 GitHub 上提供的[初学者项目](https://github.com/AppInstaller/MySampleWebApp)库中包含的应用包。 该应用包签名所用的证书 (MySampleApp.cer) 也随 GitHub 上的示例提供。 在安装应用之前，必须在设备上安装该证书。
 
-![上载应用包的用户体验的屏幕截图](images/aws-upload-package.png)
+![上载应用包 UX 的屏幕截图](images/aws-upload-package.png)
 
-类似于用于创建 Amazon S3 存储桶的权限，存储桶中的内容还必须具有**读取**，**编写**，并**授予对此对象的公共读取访问权限**权限。
+与创建 Amazon S3 存储桶的权限类似，存储桶中的内容还必须具有对此对象权限的**读取**、**写入**和**授予公共读取访问**权限。
 
-如果你想要测试上载网页，但还没有，则可以从使用示例 html 页面 (default.html)[初学者项目](https://github.com/AppInstaller/MySampleWebApp/blob/master/MySampleWebApp/default.html)。
+如果要测试是否上传网页，但没有，则可以使用[初学者项目](https://github.com/AppInstaller/MySampleWebApp/blob/master/MySampleWebApp/default.html)中的示例 html 页面（.html）。
 
 > [!IMPORTANT]
-> 上传 web 页之前，请确认在网页中的应用包引用不正确。 
+> 在上传网页之前，请确认网页中的应用程序包引用正确。 
 
-若要获取应用程序包引用，请首先上载应用程序包并复制应用包 URL。 编辑 html web 页面以反映正确的应用程序的包路径。 请参阅更多详细信息的代码示例。 
+若要获取应用程序包引用，请先上传应用程序包，然后复制应用包 URL。 编辑 html 网页以反映正确的应用程序包路径。 有关更多详细信息，请参阅代码示例。 
 
-选择要获取应用程序包的引用链接的已上载的应用包文件，它应该类似于以下示例。
+选择上传的应用程序包文件，获取应用程序包的引用链接。 
 
-![上载的包路径的屏幕截图](images/aws-package-path.png)
-
-**复制**指向应用程序的包并在网页中添加引用。 
+**将链接复制**到应用包，并在网页中添加引用。 
 
 ```html
 <html>
@@ -83,21 +81,21 @@ Amazon 简单存储服务 (S3) 是 AWS 提供用于收集、 存储和分析数�
         <title> Install My Sample App</title>
     </head>
     <body>
-        <a href="ms-appinstaller:?source=https://s3-us-west-2.amazonaws.com/appinstaller-aws-demo/MySampleApp.appxbundle"> Install My Sample App</a>
+        <a href="ms-appinstaller:?source=https://s3-us-west-2.amazonaws.com/appinstaller-aws-demo/MySampleApp.msixbundle"> Install My Sample App</a>
     </body>
 </html>
 ```
-将 html 文件上载到 Amazon S3 存储桶。 请记住要设置权限以允许**读取**并**编写**访问。
+将 html 文件上传到 Amazon S3 存储桶。 请记住，将权限设置为**read**允许读**写**访问。
 
 ## <a name="step-4---test"></a>步骤 4-测试
 
-一旦 web 页上载到 Amazon S3 存储桶中，选择已上传的 html 文件获取到 web 页的链接。
+将网页上传到 Amazon S3 存储桶中后，通过选择上传的 html 文件来获取指向网页的链接。
 
-使用以下链接以打开 web 页。 由于我们设置权限以授予公共访问权限的应用包和网页，网页的链接的任何人都将能够对其进行访问和安装使用的应用安装程序在 Windows 10 应用包。 请注意，应用安装程序的 Windows 10 平台的一部分。 作为开发人员，您不必将任何其他代码或功能添加到你的应用启用的应用安装程序使用。 
+使用链接打开网页。 由于我们设置权限以授予对应用包和网页的公共访问权限，因此任何具有网页链接的用户都可以使用应用安装程序访问它和安装 Windows 10 应用包。 请注意，应用安装程序属于 Windows 10 平台。 作为开发人员，无需向应用程序添加任何其他代码或功能即可使用应用程序安装程序。 
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
-### <a name="app-installer-fails-to-install"></a>应用安装程序安装失败 
+### <a name="app-installer-fails-to-install"></a>应用安装程序无法安装 
 
-如果使用的应用程序包进行签名的证书未安装在设备上，应用程序安装将失败。 若要解决此问题，需要在安装应用之前安装该证书。 如果要在托管公开分发的应用包，建议使用来自证书颁发机构的证书在应用包进行签名。 
+如果设备上未安装用于对应用程序包进行签名的证书，应用安装将失败。 若要解决此问题，需要在安装应用之前安装该证书。 如果要托管公用分发的应用包，建议使用证书颁发机构颁发的证书对应用包进行签名。 
 

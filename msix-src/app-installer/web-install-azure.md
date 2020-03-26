@@ -1,23 +1,23 @@
 ---
-title: 分发 Windows 10 应用从 Azure web 应用
+title: 从 Azure Web 应用分发 Windows 10 应用
 description: 阅读此教程，了解如何设置 Azure Web 服务器、如何验证 Web 应用可以托管应用包，以及如何有效调用和使用应用安装程序。
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用安装程序, AppInstaller, 旁加载, 相关集, 可选包, Azure web 服务器
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 63c7163c9db550293da93b56434694c742462562
-ms.sourcegitcommit: 25811dea7b2b4daa267bbb2879ae9ce3c530a44a
+ms.openlocfilehash: cd1bbbe7061f1dd695a115caa51c1c3620079edb
+ms.sourcegitcommit: f5936c95c0f5b6f080e51b8d47a7cd62ccf6a600
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67828815"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80241938"
 ---
-# <a name="distribute-a-windows-10-app-from-an-azure-web-app"></a>分发 Windows 10 应用从 Azure web 应用
+# <a name="distribute-a-windows-10-app-from-an-azure-web-app"></a>从 Azure Web 应用分发 Windows 10 应用
 
 通过应用安装程序，开发人员和 IT 专业人员可以通过在各自的内容分发网络 (CDN) 上托管应用的方式来分发 Windows 10 应用。 这种方式适用于不希望或不需要将应用发布到 Microsoft Store，但仍希望利用 Windows 10 打包和部署平台的企业。
 
-本主题概述了配置 Azure Web 服务器来承载 Windows 10 应用包，以及如何使用应用程序安装程序应用来安装应用程序包的步骤。
+本主题概述了配置 Azure Web 服务器以托管 Windows 10 应用包的步骤，以及如何使用应用安装程序应用安装应用程序包。
 
 在此教程中，将介绍如何设置 IIS 服务器以在本地验证 Web 应用程序能否正常托管应用包，并有效地调用和使用应用安装程序。 我们还另外提供了教程，介绍如何在外部的常用云 Web 服务（Azure 和 AWS）中正确托管 Web 应用程序，以确保其满足应用安装程序的 Web 安装要求。 此分步教程不需要任何专家知识，很容易学习。 
 
@@ -26,9 +26,9 @@ ms.locfileid: "67828815"
 要成功学习此教程，你将需要以下内容：
  
 1. Microsoft Azure 订阅 
-2. Windows 10 应用包的分发的应用程序包
+2. Windows 10 应用包-将分发的应用包
 
-可选：[初学者项目](https://github.com/AppInstaller/MySampleWebApp)GitHub 上。 如果没有应用包或网页可以使用，但仍想学习如何使用此功能，这个初学者项目很有用。
+可选：GitHub 上的[初学者项目](https://github.com/AppInstaller/MySampleWebApp)。 如果没有应用包或网页可以使用，但仍想学习如何使用此功能，这个初学者项目很有用。
 
 ### <a name="step-1---get-an-azure-subscription"></a>步骤 1 - 获得 Azure 订阅
 若要获得 Azure 订阅，请访问 [Azure 帐户页面](https://azure.microsoft.com/free/)。 可以使用免费会员资格获得此教程。
@@ -52,7 +52,7 @@ ms.locfileid: "67828815"
 > [!NOTE]
 > 如果没有可用的应用包，可以使用 GitHub 上提供的[初学者项目](https://github.com/AppInstaller/MySampleWebApp)库中包含的应用包。 该应用包签名所用的证书 (MySampleApp.cer) 也随 GitHub 上的示例提供。 在安装应用之前，必须在设备上安装该证书。
 
-![包上传屏幕截图](images/azure-upload-file.png)
+![上载包的屏幕截图](images/azure-upload-file.png)
 
 在文件资源管理器面板的空白区域右键单击，并选择**新建文件**创建一个新文件。 为文件命名：`default.html`。
 
@@ -65,7 +65,7 @@ ms.locfileid: "67828815"
     <title> Install My Sample App</title>
 </head>
 <body>
-    <a href="ms-appinstaller:?source=https://appinstaller-azure-demo.azurewebsites.net/MySampleApp.appxbundle"> Install My Sample App</a>
+    <a href="ms-appinstaller:?source=https://appinstaller-azure-demo.azurewebsites.net/MySampleApp.msixbundle"> Install My Sample App</a>
 </body>
 </html>
 ```
@@ -98,7 +98,7 @@ ms.locfileid: "67828815"
 
 单击“安装我的示例应用”启动应用安装程序并安装应用包。 
 
-## <a name="troubleshooting-issues"></a>解决问题
+## <a name="troubleshooting-issues"></a>故障排除问题
 
 ### <a name="app-installer-app-fails-to-install"></a>应用安装程序无法安装 
 如果未在设备上安装为应用包签名所用的证书，应用安装将失败。 若要解决此问题，需要在安装应用之前安装该证书。 如果出于公开分发目的托管应用包，建议使用证书颁发机构的证书对应用包签名。 

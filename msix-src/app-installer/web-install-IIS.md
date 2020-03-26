@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10，uwp，应用安装程序，AppInstaller，旁加载，相关集，可选程序包，IIS 服务器
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: bacf7ab3125d651ef30320072dd45a94bffc677f
-ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
+ms.openlocfilehash: 7a8f07613b111b95d96b9556be560b6ba4522644
+ms.sourcegitcommit: f5936c95c0f5b6f080e51b8d47a7cd62ccf6a600
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108160"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80241967"
 ---
 # <a name="distribute-a-windows-10-app-from-an-iis-server"></a>从 IIS 服务器分发 Windows 10 应用
 
@@ -94,7 +94,7 @@ ms.locfileid: "80108160"
     <title> Install Page </title>
 </head>
 <body>
-    <a href="ms-appinstaller:?source=http://localhost/SampleWebApp/packages/MySampleApp.appxbundle"> Install My Sample App</a>
+    <a href="ms-appinstaller:?source=http://localhost/SampleWebApp/packages/MySampleApp.msixbundle"> Install My Sample App</a>
 </body>
 </html>
 ```
