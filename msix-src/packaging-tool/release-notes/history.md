@@ -1,19 +1,25 @@
 ---
 title: .MSIX 打包工具发行说明
 description: 本文提供了 .MSIX 打包工具不同版本发行说明的完整历史记录。
-ms.date: 12/19/2019
+ms.date: 03/25/2020
 ms.topic: article
 keywords: windows 10、uwp、.msix、.msix 打包工具、预览体验计划
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: d35eb8712d5830c879011c7d3610d95ab019b9bd
-ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
+ms.openlocfilehash: 2fb911d4515816a02ad74064e4f7db78efbcb5eb
+ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79097888"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391661"
 ---
 # <a name="release-notes-for-the-msix-packaging-tool"></a>MSIX 打包工具发行说明
+
+## <a name="version-120203190"></a>版本1.2020.319。0
+- 已提取的图标的改进质量
+- 从快捷方式改进了图标提取
+- 一般 bug 修复
+
 ## <a name="version-120202250"></a>版本1.2020.225。0
 - 能够在包编辑器中导入注册表文件（.reg）
 - 能够自动将[.Msix Core 支持](../../msix-core/msixcore.md)添加到 .msix

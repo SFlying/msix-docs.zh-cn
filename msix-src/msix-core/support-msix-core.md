@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、windows 7、windows 8、Windows Server、uwp、.msix、msixcore、1709、1703、1607、1511、1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: d21d350e6df7f0b0860a5c0b428a42e8d4517cef
-ms.sourcegitcommit: 44b9510ea76623d668d87ddca575a7921c60a19a
+ms.openlocfilehash: 3fb4d333c0ed84a4d54522e17b7e4ab54c6e28be
+ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75322652"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391624"
 ---
 # <a name="update-your-existing-msix-package-to-support-msix-core"></a>更新现有的 .MSIX 包以支持 .MSIX 核心
 
@@ -31,7 +31,7 @@ ms.locfileid: "75322652"
 所有**MSIXCore**应用都将部署到 Windows Server，并且具有具有相同内部版本号的基于桌面体验的操作系统。 如果应用仅适用于服务器操作系统，请指定名为**MSIXCore**的**y** 。 不支持部署到 Windows Server Core。
 
 ## <a name="update-manifest-using-the-msix-packaging-tool"></a>使用 .MSIX 打包工具更新清单 
-如果有 .MSIX 包，可以使用 .MSIX 包工具更新包以支持 .MSIX Core。 下面是相关步骤： 
+如果有 .MSIX 包，可以使用 .MSIX 包工具更新包以支持 .MSIX Core。 步骤如下： 
 1. 打开 **.Msix 打包工具**应用
 2. 选择**包编辑器** 
 3. 单击 "**浏览 ...** " 找到你的包
@@ -39,7 +39,7 @@ ms.locfileid: "75322652"
 5. 在 "**清单文件**" 下，单击 "**打开文件**"
 6. 你正在查看包的清单。 在 "**依赖项**" 下，将 .msix Core 添加为目标设备系列（参见上文）
 7. 保存并关闭清单 
-8. 放弃包 
+8. 对包进行重新签名 
 9. 单击 "**保存**" 并选择是否希望包递增 
 
 ## <a name="windows-versions-supported-by-msix-core"></a>.MSIX Core 支持的 Windows 版本
@@ -51,6 +51,6 @@ ms.locfileid: "75322652"
 | Windows 10 2015 LTSB （1507）|10.0.10240.0|
 | Windows 10 2016 LTSB （1607）|10.0.14393.0|
 | Windows Server 2008 R2| 6.1.7601.0|
-| Windows Server 2012| 6.2.9200.0|
+| Windows Server 2012| 6.2.9200.0|
 | Windows Server 2012 R2| 6.3.9600.0|
-| WIN ENT LTSB 2016 Finnish 64 Bits | 10.0.14393.0|
+| Windows Server 2016 | 10.0.14393.0|

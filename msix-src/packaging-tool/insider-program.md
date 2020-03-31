@@ -1,17 +1,17 @@
 ---
 title: MSIX 打包工具预览体验计划
 description: 本文介绍 .MSIX 打包工具预览体验计划，它提供 .MSIX 打包工具的早期访问版本。
-ms.date: 06/25/2019
+ms.date: 03/25/2020
 ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8280ad784fad1547b43db14124f1118dfff846f5
-ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
+ms.openlocfilehash: b6c62eea20f47072492cf0bb5bb0b12632e4ec94
+ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79097836"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391587"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -35,14 +35,14 @@ ms.locfileid: "79097836"
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-## <a name="version-120202250"></a>版本1.2020.225。0
+## <a name="version-120203190"></a>版本1.2020.319。0
 
-- .MSIX 核心支持可自动添加到生成的包
-- 能够在包编辑器中导入注册表文件（.reg）
+- 已提取的图标的改进质量
+- 从快捷方式改进了图标提取
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
-## <a name="share-your-feedback"></a>分享反馈
+## <a name="share-your-feedback"></a>共享你的反馈
 
 如果使用该应用时遇到问题，请按 **Windows 键 + F** 启动“反馈中心”。 尽量多提供一些有关该问题的详细信息，以帮助我们诊断并解决问题。 使用类别**应用程序** >  **.msix 打包工具**直接向我们提供反馈。
 
