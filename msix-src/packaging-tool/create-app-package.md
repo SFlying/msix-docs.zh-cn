@@ -1,17 +1,17 @@
 ---
 title: 通过任何桌面安装程序创建 MSIX 包
 description: 从任何桌面安装程序（MSI、EXE、ClickOnce 或 App-v）创建 .MSIX 包
-ms.date: 02/11/2019
+ms.date: 03/25/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 125dd3dab5fc2884b48dceeac1006614156a8ba8
-ms.sourcegitcommit: fa41875f6c2b79db3d7dde29b10c0f24765532bc
+ms.openlocfilehash: 56b01b3081e1271a79728a7b9a32ddb060c99039
+ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79097902"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391614"
 ---
 # <a name="create-an-msix-package-from-any-desktop-installer-msi-exe-clickonce-or-app-v"></a>从任何桌面安装程序（MSI、EXE、ClickOnce 或 App-v）创建 .MSIX 包
 
@@ -116,7 +116,8 @@ ms.locfileid: "79097902"
 - **不对包进行签名**如果以后要对包进行签名，请选择此选项。 注意：如果未对 .MSIX 包进行签名，则无法安装该程序包
 - 签名时，强烈建议向证书添加**时间戳**，以便证书的有效性可 outlast 其到期日期。 接受的格式为 RFC 3161 [时间戳服务器 URL](https://docs.microsoft.com/windows/win32/seccrypto/signtool)。
 
-> 纪录不支持使用 SHA1 证书对 .MSIX 包格式应用程序进行签名。
+> [!NOTE]
+> 不支持使用 SHA1 证书对 .MSIX 包格式应用程序进行签名。
 
 单击 "**下一步**" 继续。
 
