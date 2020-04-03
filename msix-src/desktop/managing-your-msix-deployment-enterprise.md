@@ -6,26 +6,27 @@ ms.topic: article
 keywords: windows 10, 部署, msix
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: acfdf9346f5d1a482733671b0b9dbe206a4c42ff
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: df42f17642e054ab720a6e0c81bf9639173a1dc6
+ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073953"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391641"
 ---
 #   <a name="msix-app-distribution"></a>MSIX 应用分发
 可以使用 Microsoft Intune 和 Microsoft Endpoint Configuration Manager 等设备与应用程序管理工具，将 MSIX 打包格式传送到客户端设备。 
 
 ##  <a name="microsoft-endpoint-configuration-manager"></a>Microsoft Endpoint Configuration Manager 
-有关适用于企业的 Microsoft Store 的详细信息，请参阅“Microsoft Endpoint Configuration Manager（当前分支）支持通过应用程序模型将 MSIX 应用程序部署到客户端设备”。 由于 MSIX 是标准化的安装打包格式，因此将通过 Microsoft Endpoint Configuration Manager 中的创建应用程序向导自动检索有关应用程序的详细信息（发布者、应用程序名称和版本），并提供这些信息供检查。 同样，对 MSIX 应用程序使用的安装字符串和检测方法是一致的，由 Microsoft Endpoint Configuration Manager 创建应用程序向导自动配置。
 
-在 Microsoft Endpoint Configuration Manager 中创建应用程序时，请选择应用程序类型：<b>Windows 应用包（*.appx、 *.appxbundle、 *.msix、 *.msixbundle）</b>。 有关通过 [Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/configmgr/apps/get-started/create-and-deploy-an-application) 创建和部署应用程序的指导。
+由于 MSIX 是标准化的安装打包格式，因此将通过 Microsoft Endpoint Configuration Manager 中的创建应用程序向导自动检索有关应用程序的详细信息（发布者、应用程序名称和版本），并提供这些信息供检查。 同样，对 MSIX 应用程序使用的安装字符串和检测方法是一致的，由 Microsoft Endpoint Configuration Manager 创建应用程序向导自动配置。
+
+在 Microsoft Endpoint Configuration Manager 中创建应用程序时，请选择应用程序类型：Windows 应用包（*.appx、*.appxbundle、*.msix、*.msixbundle）  。 有关如何通过 Microsoft Endpoint Configuration Manager 创建和部署应用程序的指南，请参阅[创建和部署应用程序](https://docs.microsoft.com/configmgr/apps/get-started/create-and-deploy-an-application)。
 
 ## <a name="microsoft-intune"></a>Microsoft Intune
 
 Microsoft Intune 支持通过客户端应用模型将 MSIX 应用程序部署到客户端设备。 由于 MSIX 是标准化的安装打包格式，因此会在应用信息中自动填充有关应用程序的详细信息（应用程序名称、说明和发布者）。
 
-MSIX 应用程序的安装是标准化的，因此，在将新的<b>业务线应用</b>添加到 Microsoft Intune 时，无需配置安装所需的无提示安装参数。 有关通过 Microsoft Intune 创建和部署应用程序的指导： 
+MSIX 应用程序的安装已标准化。 因此，在将新的业务线应用添加到 Microsoft Intune 时，无需配置安装所需的无提示安装参数。 有关如何通过 Microsoft Intune 创建和部署应用程序的指南，请参阅[在 Intune 中创建业务线应用](https://docs.microsoft.com/mem/intune/apps/lob-apps-windows)。
 
 ## <a name="web-app-installer"></a>Web（应用安装程序）
 
