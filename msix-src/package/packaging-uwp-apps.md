@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ecdc839618d7a0e050b89623bf106c2554463f3
-ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
+ms.openlocfilehash: a78a7b09ebf11f4c6ddaeead6cd987bd724d548b
+ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108190"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81433773"
 ---
 # <a name="package-a-desktop-or-uwp-app-in-visual-studio"></a>在 Visual Studio 中打包桌面或 UWP 应用
 
@@ -49,7 +49,7 @@ ms.locfileid: "80108190"
 
 2. **优化您的应用程序。** 可以使用 Visual Studio 的分析和调试工具来优化打包应用程序的性能。 例如，用于 UI 响应能力的时间线工具、内存使用工具、CPU 使用工具等。 有关这些工具的详细信息，请参阅[分析功能教程](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour)主题。
 
-3. **检查 .NET Native 兼容性（适用于C# VB 和应用）。** 在通用 Windows 平台中，有一个本机编译器可以提升应用的运行时性能。 通过这项更改，你应在该编译环境中测试你的应用。 默认情况下，**Release** 版本配置会启用 .NET 本机工具链，因此请务必使用此 **Release** 配置测试应用并检查应用是否按预期运行。
+3. **检查 .NET Native 兼容性（适用于C# VB 和应用）。** 在通用 Windows 平台中，有一个本机编译器可以提升应用的运行时性能。 通过这项更改，你应在该编译环境中测试你的应用。 默认情况下，**Release** 版本配置会启用 .NET 本机工具链，因此请务必使用此 **Release** 配置测试应用并检查应用是否按预期运行。 可以通过 .NET Native 来了解有关[编译应用](https://docs.microsoft.com/dotnet/framework/net-native/)的详细信息。
 
 
 ## <a name="configure-your-project"></a>配置项目

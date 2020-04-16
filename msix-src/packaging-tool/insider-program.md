@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b6c62eea20f47072492cf0bb5bb0b12632e4ec94
-ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
+ms.openlocfilehash: 57519a22974b083068af7c353426b987afa30022
+ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391587"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81433783"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -35,10 +35,10 @@ ms.locfileid: "80391587"
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-## <a name="version-120203190"></a>版本1.2020.319。0
-
-- 已提取的图标的改进质量
-- 从快捷方式改进了图标提取
+## <a name="version-120204020---public-release"></a>版本 1.2020.402.0-公共版本
+- 默认情况下启用包完整性设置
+- 能够自动将[.Msix Core 支持](../msix-core/msixcore.md)添加到 .msix
+- 能够在包编辑器中导入或导出注册表文件（.reg）
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 

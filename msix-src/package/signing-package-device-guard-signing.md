@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fa356679943afd8267a1e8df8527a2179f61b98
-ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
+ms.openlocfilehash: c489a4bed1598c0fecca7f20d33aee4880201b96
+ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108230"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81433743"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>使用 Device Guard 签名功能对 MSIX 包进行签名
 
@@ -113,7 +113,7 @@ signtool sign /fd sha256 /dlib DgssLib.dll /dmdf <Azure AAD in .json format> /t 
 
 ## <a name="test"></a>测试
 
-若要测试 Device Guard 签名，请从 Microsoft Store for Business Portal 下载组织的根证书。
+若要测试 Device Guard 签名，请从企业门户的 Microsoft Store 下载组织的根证书。
 
 1. 请登录[适用于企业的 Microsoft Store](https://businessstore.microsoft.com/)。
 2. 选择 "**管理**"，然后选择 "**设置**"。
@@ -128,4 +128,4 @@ signtool sign /fd sha256 /dlib DgssLib.dll /dmdf <Azure AAD in .json format> /t 
 下面是你可能会遇到的常见错误。
 
 * 0x800700d：此常见错误表示 Azure AD JSON 文件的格式无效。
-* 你可能需要接受 Microsoft Store for Business 的条款和条件，然后 downloadidng 设备保护签名的根证书。 这可以通过在门户中获取免费应用来完成。
+* 在下载 Device Guard 签名的根证书之前，你可能需要接受 Microsoft Store for Business 的条款和条件。 可以通过在门户中获取免费应用来完成此操作。

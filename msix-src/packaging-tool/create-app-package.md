@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 56b01b3081e1271a79728a7b9a32ddb060c99039
-ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
+ms.openlocfilehash: 034abce3f240275e2c4be87b62e6fe9e8e6345ee
+ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391614"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81433763"
 ---
 # <a name="create-an-msix-package-from-any-desktop-installer-msi-exe-clickonce-or-app-v"></a>从任何桌面安装程序（MSI、EXE、ClickOnce 或 App-v）创建 .MSIX 包
 
@@ -112,7 +112,7 @@ ms.locfileid: "80391614"
 
 - **用 Device Guard 签名签名**此选项允许你登录到已配置为与 Device Guard 签名一起使用的 Microsoft Active Directory 帐户，该帐户是 Microsoft 提供的一种签名服务，你无需提供自己的证书。 [在此处](../package/signing-package-device-guard-signing.md)了解有关如何设置帐户和 Device Guard 签名的详细信息。 
 - **使用证书签名（.pfx）** 浏览并选择 .pfx 证书文件。 如果证书受密码保护，请在密码框中键入密码。
-- **指定 .cer 文件（进行注释签名）** 此选项允许您指定 .cer 文件。 如果你不希望对包进行签名，但你想要确保发布服务器信息与将用于签名的证书的使用者匹配，这会很有用。 
+- **指定 .cer 文件（不进行签名）** 此选项允许您指定 .cer 文件。 如果你不希望对包进行签名，但你想要确保发布服务器信息与将用于签名的证书的使用者匹配，这会很有用。 
 - **不对包进行签名**如果以后要对包进行签名，请选择此选项。 注意：如果未对 .MSIX 包进行签名，则无法安装该程序包
 - 签名时，强烈建议向证书添加**时间戳**，以便证书的有效性可 outlast 其到期日期。 接受的格式为 RFC 3161 [时间戳服务器 URL](https://docs.microsoft.com/windows/win32/seccrypto/signtool)。
 
@@ -127,7 +127,6 @@ ms.locfileid: "80391614"
 
 - 包名称：
     - 必填字段，对应于清单中的包标识名称，用于描述包的内容。
-    - 必须与用于对包签名的证书的使用者名称信息相匹配。
     - 不会向最终用户显示。
     - 区分大小写，不能包含空格。
     - 可以接受由字母数字、句点和短划线字符构成的，长度为 3 到 50 个字符的字符串。
@@ -145,13 +144,13 @@ ms.locfileid: "80391614"
 - 版本：
     - 必填字段，对应于清单中的包，用于描述包的版本号。
     - 此字段接受采用四部分表示法的版本字符串：“Major.Minor.Build.Revision”。
+- 说明：
+    - 此为可选字段。
 - 安装位置：
     - 这是安装程序要将应用程序有效负载复制到的位置（通常是 Programs Files 文件夹）。
     - 此字段是可选的，但建议在 "Program Files" 文件夹外安装应用负载时使用。
     - 浏览到并选择文件夹路径。
-    - 在执行每项应用程序安装操作时，请确保此文件与安装程序的安装位置相匹配。
-- 说明：
-    - 此为可选字段。 
+    - 在执行每项应用程序安装操作时，请确保此文件与安装程序的安装位置相匹配。 
 
 ## <a name="installation"></a>安装
 

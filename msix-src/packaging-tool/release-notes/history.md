@@ -6,35 +6,29 @@ ms.topic: article
 keywords: windows 10、uwp、.msix、.msix 打包工具、预览体验计划
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: 2fb911d4515816a02ad74064e4f7db78efbcb5eb
-ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
+ms.openlocfilehash: c9221464799aba0744e5b6f0acaef59aebd850cf
+ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391661"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81433753"
 ---
 # <a name="release-notes-for-the-msix-packaging-tool"></a>MSIX 打包工具发行说明
 
-## <a name="version-120203190"></a>版本1.2020.319。0
-- 已提取的图标的改进质量
-- 从快捷方式改进了图标提取
-- 一般 bug 修复
-
-## <a name="version-120202250"></a>版本1.2020.225。0
-- 能够在包编辑器中导入注册表文件（.reg）
+## <a name="version-120204020---public-release"></a>版本 1.2020.402.0-公共版本
+- 默认情况下启用包完整性设置
 - 能够自动将[.Msix Core 支持](../../msix-core/msixcore.md)添加到 .msix
-- 添加 InstalledLocationVirtualization 扩展修复的 bug：
+- 能够在包编辑器中导入或导出注册表文件（.reg）
+- "创建包" 页现在显示默认保存位置
+- 添加 InstalledLocationVirtualization 扩展
+- 已提取的图标的改进质量
+- 从快捷方式修复的 bug 中改进了图标提取：
 - 编辑后验证清单格式 
 - 第一次启动任务失败时发出消息 
 - 禁止解压缩相对路径 
 - 更新了文件筛选器，因此它们显示了有效的格式（例如，对于它*使用的安装程序， ，* 现在 `*.msi, *.exe, ...`） 
 - 修复了解包时将路径中的空格转换为 "%20"
-
-## <a name="version-120202030"></a>版本1.2020.203。0
-- 默认情况下启用包完整性设置
-- "创建包" 页现在显示默认保存位置
-- 能够导出注册表文件（.reg）
-- 一般 bug 修复改进
+- 一般 bug 修复
 
 ## <a name="version-1201912200---public-release"></a>版本 1.2019.1220.0-公共版本
 - 对转换带有服务的现有安装程序的支持现已提供
