@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, msix, uwp, 扩展
 ms.localizationpriority: medium
 ms.openlocfilehash: 126fa9b8f897e543d0418ea39d35cd088f0aeace
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77073873"
 ---
 # <a name="using-custom-properties-for-app-extensions"></a>使用应用扩展的自定义属性
@@ -33,7 +33,7 @@ ms.locfileid: "77073873"
 > [!NOTE]
 > Visual Studio 中的清单设计器不支持定义属性的功能。 必须直接编辑 Package.appxmanifest 才能定义属性。
 
-若要声明属性，请将其放入 `<uap3:AppExtension>` 声明下的 `<uap3:Properties/>` 元素中。 下面是使用 Edge 支持的属性的 Microsoft Edge 示例 `<uap3:AppExtension>` 声明。
+若要声明属性，请将其放入 `<uap3:Properties/>` 声明下的 `<uap3:AppExtension>` 元素中。 下面是使用 Edge 支持的属性的 Microsoft Edge 示例 `<uap3:AppExtension>` 声明。
 
 ```xml
 <uap3:AppExtension Name="com.microsoft.edge.extension" Id="FirstExtension" PublicFolder="Extension" DisplayName="MyExtension">

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, 部署, msix
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: df42f17642e054ab720a6e0c81bf9639173a1dc6
-ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
+ms.openlocfilehash: b0cabc375e89e0c811826c04798aed252d4a6dc1
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391641"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "81613987"
 ---
 #   <a name="msix-app-distribution"></a>MSIX 应用分发
 可以使用 Microsoft Intune 和 Microsoft Endpoint Configuration Manager 等设备与应用程序管理工具，将 MSIX 打包格式传送到客户端设备。 
@@ -39,18 +39,17 @@ MSIX 应用程序的安装已标准化。 因此，在将新的业务线应用�
 
 ## <a name="app-center"></a>应用中心
 
-利用[应用中心](https://appcenter.ms/)可以自动生成应用，在真实设备上测试该应用，以及将其分发给 beta 测试人员。  使用应用中心可以更频繁、以更高的质量且更自信地交付应用。  使用应用中心可以连接存储库，在几分钟内自动化生成，在云中的真实设备上进行测试，将应用分发给 beta 测试人员，以及通过崩溃和分析数据监视现实使用情况。 它是一站式的服务。
-
+利用[应用中心](https://appcenter.ms/)可以自动生成应用，在真实设备上测试该应用，以及将其分发给 beta 测试人员。  使用应用中心可以更频繁、以更高的质量且更自信地交付应用。  使用应用中心可以连接存储库，在几分钟内自动化生成，在云中的真实设备上进行测试，将应用分发给 beta 测试人员，以及通过崩溃和分析数据监视现实使用情况。 一站式服务。
 
 ## <a name="deployment-image-servicing-and-management-dismexe-and-provisioning"></a>部署映像服务和管理 (DISM.exe) 与预配
 
 ### <a name="dism"></a>DISM
 在部署之前，IT 专业人员可以使用部署映像服务和管理 (DISM) cmdlet 在 Windows 映像中安装、卸载和配置 MSIX 包。  
-有关预配的详细信息，请参阅[部署映像服务和管理与预配](managing-your-msix-deployment-dism-provisioning.md)。
+有关预配的详细信息，请参阅[部署映像服务和管理与预配](deploy-preinstalled-apps.md)。
 
 ### <a name="provisioning"></a>设置
 IT 专业人员可以使用预配来配置最终用户的设备，而无需重建映像。  IT 专业人员可在其最终用户系统上预先安装 MSIX 包。
-有关预配的详细信息，请参阅[部署映像服务和管理与预配](managing-your-msix-deployment-dism-provisioning.md)。
+有关预配的详细信息，请参阅[部署映像服务和管理与预配](deploy-preinstalled-apps.md)。
 
 ## <a name="managing-your-msix-app"></a>管理 MSIX 应用
 

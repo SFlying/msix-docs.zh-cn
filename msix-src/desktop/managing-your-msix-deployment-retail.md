@@ -1,19 +1,19 @@
 ---
 Description: 本文提供了在零售环境中管理 MSIX 应用程序部署所需的所有详细信息。  本文的目标读者是开发人员。
-title: 在消费者环境中分发 MSIX
+title: 在使用者环境中分发 MSIX
 ms.date: 2/3/2020
 ms.topic: article
 keywords: windows 10, 部署, msix
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a27a4804786ce82485ba3e7de9c855a2bf2e23c
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77073853"
 ---
-# <a name="distribute-your-msix-in-a-consumer-environment"></a>在消费者环境中分发 MSIX
+# <a name="distribute-your-msix-in-a-consumer-environment"></a>在使用者环境中分发 MSIX
 
 如果你不是企业开发人员，可以通过正常的零售渠道完成 MSIX 的零售分发。  这包括在网页上托管 MSIX。  
 
@@ -27,7 +27,7 @@ ms.locfileid: "77073853"
 
 ## <a name="app-center"></a>应用中心
 
-利用[应用中心](https://appcenter.ms/)，你可以自动生成应用程序，在实际设备上测试它，以及将其分发给 beta 测试人员。  利用应用中心，你可以更频繁、更高质量且更有信心地交付应用。  利用应用中心，你可以连接你的存储库，在几分钟内自动化你的生成，在云中的真实设备上进行测试，将应用分发给 beta 测试人员，以及通过崩溃和分析数据监视真实的使用情况。 一站式服务。
+利用[应用中心](https://appcenter.ms/)可以自动生成应用，在真实设备上测试该应用，以及将其分发给 beta 测试人员。  使用应用中心可以更频繁、以更高的质量且更自信地交付应用。  使用应用中心可以连接存储库，在几分钟内自动化生成，在云中的真实设备上进行测试，将应用分发给 beta 测试人员，以及通过崩溃和分析数据监视现实使用情况。 一站式服务。
 有关应用中心的详细信息，请参阅[应用中心](https://docs.microsoft.com/appcenter/)。
 
 ## <a name="web-install"></a>Web 安装

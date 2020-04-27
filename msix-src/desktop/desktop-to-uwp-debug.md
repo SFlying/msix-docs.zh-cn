@@ -7,10 +7,10 @@ keywords: windows 10, uwp, msix
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: f778c51afe1e25bbadca48dc2d9644e8645bdde3
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77072807"
 ---
 # <a name="run-debug-and-test-an-msix-package"></a>运行、调试和测试 MSIX 包
@@ -57,7 +57,7 @@ Add-AppxPackage –Register AppxManifest.xml
 
    若要使用提升的权限调试应用程序，请使用“以管理员身份运行”选项启动 Visual Studio。 
 
-3. 在 Visual Studio 中，选择“调试”->“其他调试目标”->“调试安装的应用包”。   
+3. 在 Visual Studio 中，选择“调试” **“其他调试目标”** “调试安装的应用包”。->  -> 
 
 4. 在“安装的应用包”列表中选择你的应用包，然后选择“附加”按钮。  
 

@@ -8,10 +8,10 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ce394fa310da995a59289bfb463d643bf2b46413
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77074083"
 ---
 # <a name="building-an-msix-package-from-your-code"></a>基于代码生成 MSIX 程序包 
@@ -30,19 +30,19 @@ ms.locfileid: "77074083"
 
 ## <a name="add-modern-windows-10-experiences"></a>添加新式 Windows 10 体验
 
-为桌面应用创建 MSIX 程序包后，可以使用 UWP API、程序包扩展和 UWP 组件来让新式且引入注目的 Windows 10 体验（例如动态磁贴和通知）闪亮登场。
+为桌面应用创建 MSIX 包后，可以使用 UWP API、包扩展和 UWP 组件来为引入注目的新式 Windows 10 体验增加亮点（例如动态磁贴和通知）。
 
 ### <a name="enhance-with-uwp-apis"></a>使用 UWP API 进行增强
 
-将应用打包后，就可以通过添加动态磁贴和推送通知等功能对应用进行完善。 其中一些功能可显著提高应用程序的参与度，并且只需花费很少的时间即可添加。 某些增强功能需要更多的代码。
+将应用打包后，可以通过添加动态磁贴和推送通知等功能来为其增加亮点。 其中某些功能可以显著提高应用程序的参与度，并且只需花费很少的时间即可添加。 某些增强功能需要更多的代码。
 
 请参阅[在桌面应用程序中使用 UWP API](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
 
 ### <a name="integrate-with-package-extensions"></a>集成包扩展
 
-如果你的应用程序需要与系统集成（例如：建立防火墙规则），请在应用程序的程序包清单中描述集成任务，系统将完成其余操作。 对于其中大多数任务，你根本不必编写任何代码。 在清单中添加 XML，你就可以执行一些操作，如在用户登录时启动进程、将应用程序集成到“文件资源管理器”中，以及为应用程序添加显示在其他应用中的打印目标列表。
+如果应用程序需要与系统集成（例如，建立防火墙规则），请在应用程序的包清单中描述集成任务，系统将完成其余操作。 对于其中的大多数任务，根本不必编写任何代码。 在清单中添加少量的 XML 后，可以执行一些操作，例如，在用户登录时启动进程、将应用程序集成到文件资源管理器中，以及为应用程序添加显示在其他应用中的打印目标列表。
 
-请参阅[将桌面应用程序与程序包扩展集成](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions)。
+请参阅[将桌面应用程序与包扩展集成](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions)。
 
 ### <a name="extend-with-uwp-components"></a>使用 UWP 组件进行扩展
 
