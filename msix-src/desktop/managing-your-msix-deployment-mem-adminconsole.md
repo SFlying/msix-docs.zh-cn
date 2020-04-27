@@ -7,10 +7,10 @@ keywords: windows 10, uwp, mem, mem ac, mem 管理控制台, 应用
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: f0ed835c3eb94dda358fbf88fe587bcb44277af1
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77073913"
 ---
 # <a name="microsoft-endpoint-manager-admin-console"></a>Microsoft 终结点管理器管理控制台

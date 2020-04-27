@@ -1,5 +1,5 @@
 ---
-Description: 本文提供了在企业环境中管理 MSIX 应用程序部署所需的所有详细信息。  本文的目标读者是企业和 IT 专业人员。
+Description: 本文提供在企业环境中管理 MSIX 应用程序部署所需的所有详细信息。  本文的目标读者是企业和 IT 专业人员。
 title: 管理 MSIX 部署
 ms.date: 2/3/2020
 ms.topic: article
@@ -7,10 +7,10 @@ keywords: windows 10, 部署, msix
 ms.assetid: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: d0de2ee7b65fcb77c06ec40fb0f6adb57a3f2bdf
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/24/2020
 ms.locfileid: "77073963"
 ---
 # <a name="msix-validation-and-troubleshooting"></a>MSIX 验证和故障排除
