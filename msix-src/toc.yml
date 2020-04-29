@@ -132,6 +132,8 @@
               href: psf/package-support-framework.md
             - name: 使用包支持框架运行脚本
               href: psf/run-scripts-with-package-support-framework.md
+            - name: 启动具有参数的应用
+              href: psf\psf-launch-apps-with-parameters.md
         - name: 捆绑 MSIX 包
           href: packaging-tool/bundle-msix-packages.md
     - name: MSIX 工具包
@@ -220,10 +222,8 @@
           href: desktop/powershell-msix-cmdlets.md
         - name: 使用组策略
           href: group-policy-msix.md
-        - name: 部署预安装的应用
+        - name: 预安装已打包的应用
           href: desktop/deploy-preinstalled-apps.md
-        - name: 为所有用户安装应用
-          href: desktop/managing-your-msix-deployment-dism-provisioning.md
         - name: 安装 MSIX 应用包的早期版本
           href: desktop/managing-your-msix-deployment-downgrading.md
     - name: 通过应用安装程序文件部署 MSIX
@@ -298,6 +298,8 @@
       href: manage/troubleshoot-msix-container.md
     - name: 调试和测试打包的应用
       items:
+        - name: 对 Windows 应用的打包、部署和查询进行故障排除
+          href: 'https://docs.microsoft.com/windows/win32/appxpkg/troubleshooting?context=/windows/msix/render'
         - name: 运行、调试和测试打包的桌面应用程序
           href: desktop/desktop-to-uwp-debug.md
         - name: 检测包标识和运行时上下文
