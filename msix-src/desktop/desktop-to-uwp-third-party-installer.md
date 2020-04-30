@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 010e14fa34852656dc0a117d84dae2b73e594e7d
-ms.sourcegitcommit: 4d912f89e385268757e87bf8fd9ca1828b99e109
+ms.openlocfilehash: 8c753e40c6ccf1e20458159f863bbd17a8617f5b
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77544776"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "81613976"
 ---
 # <a name="package-a-desktop-app-using-third-party-installers"></a>使用第三方安装程序将桌面应用打包
 
@@ -54,7 +54,21 @@ FireGiant MSIX 扩展使用 WiX 项目的静态分析和智能模拟来创建 Wi
 
 因为 FireGiant MSIX 扩展不会通过运行安装程序来转换它，所以你可以保留 WiX 安装程序，而无需重复将其转换为 Windows 应用包。 你的使用不同版本 Windows 的所有用户都可获取最新改进功能，你无需担心 MSI 和 Windows 应用包不同步。
 
-查看此[视频](https://www.youtube.com/watch?v=AFBpdBiAYQE)，了解 CEO Rob Mensching 如何通过几行 FireGiant 代码创建 Appx（Windows 应用包）版本的热门开源 7-Zip 压缩工具，然后他又如何通过更改相同 WiX 源代码改进了 Windows 应用程序和 MSI 包。
+查看此[视频](https://www.youtube.com/watch?v=AFBpdBiAYQE)，了解 CEO Rob Mensching 如何通过几行 FireGiant 代码创建 Appx（Windows 应用包）版本的热门开源 7-Zip 压缩工具，然后他又如何通过更改相同 WiX 源代码改进了 Windows 应用程序和 MSI 包。 
+
+## <a name="installaware"></a>InstallAware
+
+安装 Aware 及快速支持 Microsoft 创新的[跟踪记录](https://www.installaware.com/press-room.htm)，通过单个来源构建 [Windows 应用包（桌面桥）](https://www.installaware.com/appx-builder.htm)、App-V（应用程序虚拟化）、MSI (Windows Installer) 和 EXE（本机代码）包。
+
+<img width="20%" src="images/installaware.png">
+
+InstallAware 为 2012-2017 版本的 Visual Studio 提供了免费的 InstallAware 扩展。 你可以直接从 [Visual Studio 工具栏](https://www.installaware.com/visual-studio-installer-2015.htm)单击一下，就可使用它们来创建 Windows 应用包。
+
+即使你没有设置的源代码，你也可以通过使用 PackageAware 或数据库导入向导（适用于所有 MSI 安装程序和 MSM 合并模块）导入任何设置（无快照设置捕获）。 你可以使用 [GUI 工具](https://www.installaware.com/scripting-two-way-integrated-ide.htm) 来以可视形式或脚本形式维护和增强你的导入。
+
+[高级 APPX 创建选项](https://www.installaware.com/mhtml5/desktop/appx.htm)可帮助你应对 Microsoft Store 提交，或生成签名 Windows 应用包二进制文件以旁加载形式分发给最终用户。 你甚至可以生成从单个来源定向部署到 **Nano 服务器**的 WSA（Windows Server 应用程序）安装程序包，并且，除了 GUI 之外，还完全支持[命令行自动化](https://www.installaware.com/scripting-automation-interface.htm)。
+
+InstallAware 还对一个 APPX 生成器库进行了[开源](https://www.installaware.com/gnu.asp)，并在 GNU Affero GPL 许可证下提供了示例应用行小程序。  这些都是专为用于开源平台（如 WiX）而设计。
 
 ## <a name="installshield"></a>InstallShield
 
