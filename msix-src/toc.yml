@@ -132,6 +132,8 @@
               href: psf/package-support-framework.md
             - name: 使用包支持框架运行脚本
               href: psf/run-scripts-with-package-support-framework.md
+            - name: 当前工作目录
+              href: psf\psf-current-working-directory.md
             - name: 启动具有参数的应用
               href: psf\psf-launch-apps-with-parameters.md
         - name: 捆绑 MSIX 包
