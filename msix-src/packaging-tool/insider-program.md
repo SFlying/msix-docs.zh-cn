@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 57519a22974b083068af7c353426b987afa30022
-ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
+ms.openlocfilehash: 9d00543c21350f31447012afe2399c018734e81c
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81433783"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726537"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
 想要将现有桌面应用程序转换为 MSIX 包的 IT 专业人员和开发人员可以通过 MSIX 打包工具预览体验计划预先访问该工具。 在 MSIX 打包工具正式版发布之前，可以通过该计划评估新功能。 此外，你可以提供反馈，以帮助我们根据你的具体业务需求打造该工具。 
 
-<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://aka.ms/MSIXPackagingPreviewProgram" data-linktype="external">单击此处加入该计划</a></p></div>
+<div class="nextstepaction"><p><a class="x-hidden-focus" href="https://aka.ms/MSIXPackagingPreviewProgram" data-linktype="external">单击此处加入</a></p></div>
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -29,26 +29,26 @@ ms.locfileid: "81433783"
 
 加入该计划后，你会收到一封电子邮件，确认已将你登记。 
 
-在[此处](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf)通过 Microsoft Store 安装 MSIX 打包工具。 请确保使用注册 MSIX 打包工具预览体验计划时所用的 Microsoft 帐户登录。 接下来，转到产品说明页，并单击“安装”开始安装。 内部版本不能用于离线分发。
+在[此处](https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf)通过 Microsoft Store 安装 MSIX 打包工具。 请确保使用注册 MSIX 打包工具预览体验计划时所用的 Microsoft 帐户登录。 接下来，转到产品说明页，并单击“安装”开始安装。**** 内部版本不能用于离线分发。
 
-如果计算机上已安装该工具，请检查安装的版本。 运行 MSIX 打包工具，单击右上角的齿轮图标，然后单击“关于”选项卡查看版本。 应用版本应该与[以下](#current-insider-preview-build)部分所述的当前 Insider Preview 内部版本相匹配。
+如果计算机上已安装该工具，请检查安装的版本。 运行 MSIX 打包工具，单击右上角的齿轮图标，然后单击“关于”选项卡查看版本。**** 应用版本应该与[以下](#current-insider-preview-build)部分所述的当前 Insider Preview 内部版本相匹配。
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-## <a name="version-120204020---public-release"></a>版本 1.2020.402.0-公共版本
-- 默认情况下启用包完整性设置
-- 能够自动将[.Msix Core 支持](../msix-core/msixcore.md)添加到 .msix
-- 能够在包编辑器中导入或导出注册表文件（.reg）
+## <a name="version-120204230"></a>版本1.2020.423。0
+- 能够从包编辑器中排除项
+- 在包编辑器中使用 ctrl 键选择多个选项
+- 覆盖文件时添加提示
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
-## <a name="share-your-feedback"></a>共享你的反馈
+## <a name="share-your-feedback"></a>分享反馈
 
-如果使用该应用时遇到问题，请按 **Windows 键 + F** 启动“反馈中心”。 尽量多提供一些有关该问题的详细信息，以帮助我们诊断并解决问题。 使用类别**应用程序** >  **.msix 打包工具**直接向我们提供反馈。
+如果使用该应用时遇到问题，请按 **Windows 键 + F** 启动“反馈中心”。**** 尽量多提供一些有关该问题的详细信息，以帮助我们诊断并解决问题。 使用类别**应用程序** > **.msix 打包工具**直接向我们提供反馈。
 
-你还可以从应用内共享反馈。 单击主页屏幕上的“设置”（齿轮图标），选择“反馈”选项卡，然后选择最能代表该问题的按钮。 随后会直接启动“反馈中心”，系统会自动填充所需的类别信息。 
+你还可以从应用内共享反馈。 单击主页屏幕上的“设置”（齿轮图标），选择“反馈”选项卡，然后选择最能代表该问题的按钮。**** 随后会直接启动“反馈中心”，系统会自动填充所需的类别信息。**** 
 
-此外，通过“反馈中心”还能方便地分享有关你希望在应用中添加的新功能的看法和建议。  
+此外，通过“反馈中心”还能方便地分享有关你希望在应用中添加的新功能的看法和建议。****  
 
 ## <a name="faqs"></a>常见问题
 

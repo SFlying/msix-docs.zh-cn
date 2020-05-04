@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4d1f2083be1d665ade3c5e39fe06a92d8de38e8c
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: a64a25074f8ff20c9eff461cdbad541548c6c284
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072937"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726505"
 ---
 # <a name="edit-a-package-using-package-editor"></a>使用包编辑器编辑包
 
@@ -25,21 +25,23 @@ ms.locfileid: "77072937"
 
 ## <a name="package-information-page"></a>“包信息”页
 
-在“包信息”页上，可以通过 UI 中的字段更改包信息，或者在所选的编辑器中手动打开 MSIX 清单文件，以便对清单字段进行更改。 编辑清单时，包编辑器页不可编辑。 保存清单后，UI 将会更新。
+在 "**包信息**" 页上，您可以通过 UI 中的字段更改您的包信息，也可以选择在所选编辑器中手动打开 .msix 清单文件以更改清单字段。 编辑清单时，包编辑器页不可编辑。 保存清单后，UI 将会更新。
 
 你可以导航到包编辑器的其他部分，以编辑你的功能、虚拟注册表或包文件。 编辑完包后，请务必为包签名并更新版本，然后保存更改。
 
-![pic10](images/pic10.png)
+![packageeditorpkginfo1](images/PackageEditorPkgInfo1.png)
+
+![packageeditorpkginfo2](images/PackageEditorPkgInfo2.png)
 
 ## <a name="capabilities-page"></a>“功能”页
 
-在“功能”页上，可以添加或删除包的[功能](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-capability)。 如果包中存在某项功能，则相应的复选框将会选中。 如果选择或取消选择某项功能，则会更新清单。 这相当于 MSIX 清单中的 <capability> 元素。
+在 "**功能**" 页上，可以添加或删除包的[功能](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-capability)。 如果包中存在某项功能，则相应的复选框将会选中。 如果选择或取消选择某项功能，则会更新清单。 这相当于 MSIX 清单中的 <capability> 元素。
 
 ![pic11](images/pic11.png)
 
 ## <a name="virtual-registry-page"></a>“虚拟注册表”页
 
-“虚拟注册表”页显示应用程序的所有已打包虚拟注册表项。
+"**虚拟注册表**" 页将显示该应用程序的所有打包虚拟注册表项。
 
 在左侧窗口中右键单击某个节点可执行以下操作：
 
@@ -58,7 +60,7 @@ ms.locfileid: "77072937"
 
 ## <a name="package-files-page"></a>“包文件”页
 
-在“包文件”页上，可以双击以展开包内容的文件系统。 例如，可以使用此页[编辑应用图标和资产](edit-icons-and-assets.md)。
+在“包文件”**** 页上，可以双击以展开包内容的文件系统。 例如，可以使用此页[编辑应用图标和资产](edit-icons-and-assets.md)。
 
 右键单击某个文件夹可执行以下操作：
 

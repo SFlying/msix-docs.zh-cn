@@ -5,12 +5,12 @@ ms.date: 08/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c280cbff2d2151cb2a791165df9dd5f23d10c7d
-ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
+ms.openlocfilehash: 2cd467939cbcd757a3a0f584486abb4da82cc8e0
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108180"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726586"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用包支持框架将运行时修补程序应用于 .MSIX 包
 
@@ -86,7 +86,7 @@ PSF 包含可立即使用的运行时修补程序，如文件重定向修正。
 
 ### <a name="create-the-package-layout-folder"></a>创建包布局文件夹
 
-如果已经有 .msix （或 .appx）文件，可以将其内容解压缩到一个布局文件夹中，该文件夹将用作包的暂存区域。 你可以在命令提示符下使用 Makeappx.exe 工具执行此操作，具体取决于 SDK 的安装路径，你可以在 Windows 10 电脑上找到 makeappx.exe 工具： x86： C:\Program Files （x86） \Windows Kits\10\bin\x86\makeappx.exe x64： C:\Program Files （x86） \Windows Kits\10\bin\x64\makeappx.exe
+如果已经有 .msix （或 .appx）文件，可以将其内容解压缩到一个布局文件夹中，该文件夹将用作包的暂存区域。 可以在命令提示符下使用 Makeappx.exe 工具执行此操作，具体取决于 SDK 的安装路径，你可以在 Windows 10 电脑上找到 makeappx.exe 工具： x86： C:\Program Files （x86） \Windows Kits\10\bin\x86\makeappx.exe x64： C:\Program Files （x86） \Windows Kits\10\bin\x64\makeappx.exe
 
 ```powershell
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -133,7 +133,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="modify-the-package-manifest"></a>修改包清单
 
-在文本编辑器中打开包清单，然后将 `Application` 元素的 `Executable` 特性设置为 PSF 启动器可执行文件的名称。  如果你知道目标应用程序的体系结构，请选择适当的版本 PSFLauncher32 或 PSFLauncher64。  否则，PSFLauncher32 将适用于所有情况。  下面提供了一个示例。
+在文本编辑器中打开包清单，并将`Executable` `Application`元素的属性设置为 PSF 启动程序可执行文件的名称。  如果你知道目标应用程序的体系结构，请选择适当的版本 PSFLauncher32 或 PSFLauncher64。  否则，PSFLauncher32 将适用于所有情况。  下面是一个示例。
 
 ```xml
 <Package ...>
@@ -150,7 +150,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="create-a-configuration-file"></a>创建配置文件
 
-``config.json``创建文件名，并将该文件保存到包的根文件夹。 修改配置的 json 文件的已声明应用 ID，以指向刚才替换的可执行文件。 使用通过处理监视器获得的知识，还可以设置工作目录，并使用文件重定向修正将读取/写入操作重定向到包相对 "PSFSampleApp" 目录下的 .log 文件。
+创建文件名``config.json``，并将该文件保存到包的根文件夹。 修改配置的 json 文件的已声明应用 ID，以指向刚才替换的可执行文件。 使用通过处理监视器获得的知识，还可以设置工作目录，并使用文件重定向修正将读取/写入操作重定向到包相对 "PSFSampleApp" 目录下的 .log 文件。
 
 ```json
 {
@@ -188,16 +188,16 @@ nuget install Microsoft.PackageSupportFramework
 
 下面是有关配置 json 架构的指南：
 
-| Array | key | 值 |
+| Array | 键 | “值” |
 |-------|-----------|-------|
-| 应用程序 | id |  使用包清单中 `Application` 元素的 `Id` 属性的值。 |
-| 应用程序 | 可执行文件 (executable) | 要启动的可执行文件的包相对路径。 在大多数情况下，你可以在修改之前从包清单文件中获取此值。 它是 `Application` 元素的 `Executable` 属性的值。 |
-| 应用程序 | workingDirectory | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用 `System32` 目录作为应用程序的工作目录。 |
-| 进程 | 可执行文件 (executable) | 在大多数情况下，这将是上面配置的 `executable` 的名称，其中包含已删除的路径和文件扩展名。 |
+| 服务 | id |  使用包清单中`Id` `Application`元素的属性的值。 |
+| 服务 | 可执行文件 | 要启动的可执行文件的包相对路径。 在大多数情况下，你可以在修改之前从包清单文件中获取此值。 它是`Executable` `Application`元素的属性的值。 |
+| 服务 | workingDirectory | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用`System32`目录作为应用程序的工作目录。 |
+| 进程 | 可执行文件 | 在大多数情况下，这将是上面配置的`executable`名称，其中包含已删除的路径和文件扩展名。 |
 | 修正 | dll | 要加载的链接地址的包相对路径，.msix/.appx。 |
 | 修正 | config | 可有可无控制修正 dll 的行为方式。 此值的准确格式因修正链接而异，因为每个修正都可以根据需要解释此 "blob"。 |
 
-`applications`、`processes`和 `fixups` 键是数组。 这意味着，你可以使用配置 json 文件来指定多个应用程序、进程和修复 DLL。
+`applications`、 `processes`和`fixups`键是数组。 这意味着，你可以使用配置 json 文件来指定多个应用程序、进程和修复 DLL。
 
 ### <a name="package-and-test-the-app"></a>打包并测试应用程序
 
@@ -272,8 +272,8 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 | 项目 | 目标 |
 |-------|-----------|
 | DesktopApplicationPackage | 此项目基于[Windows 应用程序打包项目](../desktop/desktop-to-uwp-packaging-dot-net.md)，并输出 .msix 包。 |
-| Runtimefix | 这是一个C++动态链接库项目，其中包含一个或多个用于运行时修复的替换函数。 |
-| PSFLauncher | 这是C++空项目。 此项目是用于收集包支持框架的运行时可分发文件的位置。 它输出可执行文件。 该可执行文件是在启动解决方案时运行的第一件事。 |
+| Runtimefix | 这是一个 c + + 动态链接库项目，其中包含一个或多个用于运行时修复的替换函数。 |
+| PSFLauncher | 这是 c + + 空项目。 此项目是用于收集包支持框架的运行时可分发文件的位置。 它输出可执行文件。 该可执行文件是在启动解决方案时运行的第一件事。 |
 | WinFormsDesktopApplication | 此项目包含桌面应用程序的源代码。 |
 
 若要查看包含所有这些类型项目的完整示例，请参阅[PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)。
@@ -312,13 +312,13 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 ### <a name="add-project-for-the-runtime-fix"></a>为运行时修复添加项目
 
-将一个C++ **动态链接库（DLL）** 项目添加到解决方案。
+将 c + +**动态链接库（DLL）** 项目添加到解决方案。
 
 ![运行时修复库](images/runtime-fix-library.png)
 
 右键单击该项目，然后选择 "**属性**"。
 
-在属性页中，找到 "  **C++语言标准**" 字段，然后在该字段旁边的下拉列表中，选择 " **ISO c + + 17 标准（/std： c + + 17）** " 选项。
+在属性页中，找到 " **c + + 语言标准**" 字段，然后在该字段旁边的下拉列表中，选择 " **ISO c + + 17 标准（/std： c + + 17）** " 选项。
 
 ![ISO 17 选项](images/iso-option.png)
 
@@ -328,7 +328,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 搜索*PSF** Nuget 包，并将其安装到此项目中。
 
-![nuget 包](images/psf-package.png)
+![NuGet 包](images/psf-package.png)
 
 如果你想要调试或扩展现有的运行时修补程序，请添加你使用本指南的[查找运行时修补程序](#find)部分中所述的指导来获取的运行时修补文件。
 
@@ -336,13 +336,13 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 ### <a name="add-a-project-that-starts-the-psf-launcher-executable"></a>添加启动 PSF 启动器可执行文件的项目
 
-向解决方案C++中添加一个**空的项目**项目。
+向解决方案中添加一个 c + +**空项目**项目。
 
 ![空项目](images/blank-app.png)
 
 使用上一节中所述的相同指南，将**PSF** Nuget 包添加到此项目中。
 
-打开该项目的属性页，然后在 "**常规**设置" 页中，将 "**目标名称**" 属性设置为 ``PSFLauncher32`` 或 ``PSFLauncher64``，具体取决于应用程序的体系结构。
+打开该项目的属性页，然后在 "**常规**设置" 页中，将 "**目标名称**" ``PSFLauncher32``属性``PSFLauncher64``设置为或，具体取决于应用程序的体系结构。
 
 ![PSF 启动器引用](images/shim-exe-reference.png)
 
@@ -352,7 +352,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 右键单击该引用，然后在 "**属性**" 窗口中应用这些值。
 
-| 属性 | 值 |
+| Property | “值” |
 |-------|-----------|
 | 复制本地 | True |
 | 复制本地附属程序集 | True |
@@ -377,7 +377,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 ![设置入口点](images/set-startup-project.png)
 
-向打包项目添加一个名为 ``config.json`` 的文件，然后将以下 json 文本复制并粘贴到该文件中。 将 "**包操作**" 属性设置为 "**内容**"。
+向打包项目添加``config.json``一个名为的文件，然后将以下 json 文本复制并粘贴到该文件中。 将 "**包操作**" 属性设置为 "**内容**"。
 
 ```json
 {
@@ -405,16 +405,16 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 为每个键提供一个值。 使用此表作为指南。
 
-| Array | key | 值 |
+| Array | 键 | “值” |
 |-------|-----------|-------|
-| 应用程序 | id |  使用包清单中 `Application` 元素的 `Id` 属性的值。 |
-| 应用程序 | 可执行文件 (executable) | 要启动的可执行文件的包相对路径。 在大多数情况下，你可以在修改之前从包清单文件中获取此值。 它是 `Application` 元素的 `Executable` 属性的值。 |
-| 应用程序 | workingDirectory | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用 `System32` 目录作为应用程序的工作目录。 |
-| 进程 | 可执行文件 (executable) | 在大多数情况下，这将是上面配置的 `executable` 的名称，其中包含已删除的路径和文件扩展名。 |
+| 服务 | id |  使用包清单中`Id` `Application`元素的属性的值。 |
+| 服务 | 可执行文件 | 要启动的可执行文件的包相对路径。 在大多数情况下，你可以在修改之前从包清单文件中获取此值。 它是`Executable` `Application`元素的属性的值。 |
+| 服务 | workingDirectory | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用`System32`目录作为应用程序的工作目录。 |
+| 进程 | 可执行文件 | 在大多数情况下，这将是上面配置的`executable`名称，其中包含已删除的路径和文件扩展名。 |
 | 修正 | dll | 要加载的链接地址 DLL 的包相对路径。 |
 | 修正 | config | 可有可无控制修正 DLL 的行为方式。 此值的准确格式因修正链接而异，因为每个修正都可以根据需要解释此 "blob"。 |
 
-完成后，``config.json`` 文件将如下所示。
+完成后， ``config.json``文件将如下所示。
 
 ```json
 {
@@ -436,11 +436,11 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 ```
 
 >[!NOTE]
-> `applications`、`processes`和 `fixups` 键是数组。 这意味着，你可以使用配置 json 文件来指定多个应用程序、进程和修复 DLL。
+> `applications`、 `processes`和`fixups`键是数组。 这意味着，你可以使用配置 json 文件来指定多个应用程序、进程和修复 DLL。
 
 ### <a name="debug-a-runtime-fix"></a>调试运行时修补程序
 
-在 Visual Studio 中，按 F5 启动调试器。  第一件事是 PSF 启动器应用程序，该应用程序随后会启动目标桌面应用程序。  若要调试目标桌面应用程序，你必须选择 "**调试**"->"**附加到进程**"，然后选择应用程序进程，手动附加到桌面应用程序进程。 若要允许使用本机运行时修复 DLL 调试 .NET 应用程序，请选择 "托管和本机代码类型（混合模式调试）"。  
+在 Visual Studio 中，按 F5 启动调试器。  第一件事是 PSF 启动器应用程序，该应用程序随后会启动目标桌面应用程序。  若要调试目标桌面应用程序，必须通过选择 "**调试**->" "**附加到进程**"，然后选择应用程序进程，手动附加到桌面应用程序进程。 若要允许使用本机运行时修复 DLL 调试 .NET 应用程序，请选择 "托管和本机代码类型（混合模式调试）"。  
 
 完成此设置后，可以在桌面应用程序代码和运行时修复项目中的代码行旁边设置断点。 如果你的应用程序没有源代码，则只能在运行时修复项目中的代码行旁边设置断点。
 
@@ -457,7 +457,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 在 Visual Studio 中，打开你在本指南前面部分中创建的 "运行时修复项目"。
 
-声明 ``FIXUP_DEFINE_EXPORTS`` 宏，然后在每个 `fixup_framework.h` 顶部添加包含语句。要在其中添加运行时修补程序的函数的 CPP 文件。
+声明``FIXUP_DEFINE_EXPORTS``宏，然后在每个的`fixup_framework.h`顶部添加包含语句。要在其中添加运行时修补程序的函数的 CPP 文件。
 
 ```c++
 #define FIXUP_DEFINE_EXPORTS
@@ -465,9 +465,9 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 ```
 
 >[!IMPORTANT]
->请确保 `FIXUP_DEFINE_EXPORTS` 宏出现在 include 语句前面。
+>确保`FIXUP_DEFINE_EXPORTS`宏出现在 include 语句之前。
 
-创建一个函数，该函数具有要修改其行为的函数的签名。 下面是用来替换 `MessageBoxW` 函数的示例函数。
+创建一个函数，该函数具有要修改其行为的函数的签名。 下面是用来替换`MessageBoxW`函数的示例函数。
 
 ```c++
 auto MessageBoxWImpl = &::MessageBoxW;
@@ -483,19 +483,19 @@ int WINAPI MessageBoxWFixup(
 DECLARE_FIXUP(MessageBoxWImpl, MessageBoxWFixup);
 ```
 
-对的调用 `DECLARE_FIXUP` 将 `MessageBoxW` 函数映射到新的替换函数。 当应用程序尝试调用 `MessageBoxW` 函数时，它将改为调用替换函数。
+调用将`DECLARE_FIXUP` `MessageBoxW`函数映射到新的替换函数。 当应用程序尝试调用`MessageBoxW`函数时，它将改为调用替换函数。
 
 #### <a name="protect-against-recursive-calls-to-functions-in-runtime-fixes"></a>避免对运行时修复中函数的递归调用
 
-您可以选择将 `reentrancy_guard` 类型应用于函数，以防止递归调用运行时修复程序中的函数。
+您可以选择将该`reentrancy_guard`类型应用于函数，以防止递归调用运行时修复程序中的函数。
 
-例如，你可能会为 `CreateFile` 函数生成替换函数。 您的实现可能会调用 `CopyFile` 函数，但 `CopyFile` 函数的实现可能会调用 `CreateFile` 函数。 这可能会导致无限递归调用 `CreateFile` 函数。
+例如，你可能会生成`CreateFile`函数的替换函数。 您的实现可能调用`CopyFile`函数，但`CopyFile`函数的实现可能调用`CreateFile`函数。 这可能会导致无限递归调用`CreateFile`函数。
 
-有关 `reentrancy_guard` 的详细信息，请参阅[authoring.md](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/Authoring.md)
+有关详细信息， `reentrancy_guard`请参阅[authoring.md](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/Authoring.md)
 
 ### <a name="configuration-data"></a>配置数据
 
-如果要将配置数据添加到运行时修补程序，请考虑将其添加到 ``config.json``。 这样，就可以使用 `FixupQueryCurrentDllConfig` 轻松分析该数据。 此示例分析该配置文件中的布尔值和字符串值。
+如果要将配置数据添加到运行时修补程序，请考虑将其添加``config.json``到中。 这样，你就可以使用`FixupQueryCurrentDllConfig`轻松分析该数据。 此示例分析该配置文件中的布尔值和字符串值。
 
 ```c++
 if (auto configRoot = ::FixupQueryCurrentDllConfig())
@@ -531,19 +531,19 @@ if (auto configRoot = ::FixupQueryCurrentDllConfig())
 
 首先，F5 调试通过从包布局文件夹路径部署松散文件来运行应用程序，而不是从 .msix/.appx 包安装。  布局文件夹通常与已安装的包文件夹具有相同的安全限制。 因此，在应用运行时修补程序之前，可能无法重现包路径访问拒绝错误。
 
-若要解决此问题，请使用 .msix/.appx 包部署，而不是按 F5 松散文件部署。  如前文所述，若要创建 .msix/.appx 包文件，请使用 Windows SDK 中的[makeappx.exe](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)实用程序。 或者，在 Visual Studio 中，右键单击应用程序项目节点，然后选择 "应用**商店**->**创建应用包**"。
+若要解决此问题，请使用 .msix/.appx 包部署，而不是按 F5 松散文件部署。  如前文所述，若要创建 .msix/.appx 包文件，请使用 Windows SDK 中的[makeappx.exe](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)实用程序。 或者，在 Visual Studio 中，右键单击应用程序项目节点，然后选择 "应用**商店**->**创建应用程序包**"。
 
 Visual Studio 的另一个问题是，它没有为附加到调试器启动的任何子进程提供内置支持。   这使得难以在目标应用程序的启动路径中调试逻辑，必须在启动后由 Visual Studio 手动附加。
 
 若要解决此问题，请使用支持子进程附加的调试程序。  请注意，通常不能将实时（JIT）调试器附加到目标应用程序。  这是因为大多数 JIT 技术都涉及到通过 ImageFileExecutionOptions 注册表项启动调试器来代替目标应用。  这违背了 PSFLauncher 用于将 FixupRuntime 注入目标应用程序的 detouring 机制。  WinDbg 包含在[Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)中，并从[Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)获取，它支持子进程附加。  它现在还支持直接[启动和调试 UWP 应用](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app)。
 
-若要将目标应用程序启动调试为子进程，请启动 ``WinDbg``。
+若要将目标应用程序启动调试为子进程``WinDbg``，请启动。
 
 ```powershell
 windbg.exe -plmPackage PSFSampleWithFixup_1.0.59.0_x86__7s220nvg1hg3m -plmApp PSFSample
 ```
 
-在 ``WinDbg`` 提示符下，启用子调试并设置相应的断点。
+在``WinDbg``提示符下，启用子调试并设置相应的断点。
 
 ```powershell
 .childdbg 1
@@ -568,4 +568,4 @@ bp ...
 
 ## <a name="support"></a>支持
 
-有问题？ 请在 .MSIX 技术社区网站上的 "[包支持框架](https://techcommunity.microsoft.com/t5/Package-Support-Framework/bd-p/Package-Support)" 会话空间询问我们。
+有任何疑问吗？ 请在 .MSIX 技术社区网站上的 "[包支持框架](https://techcommunity.microsoft.com/t5/Package-Support-Framework/bd-p/Package-Support)" 会话空间询问我们。

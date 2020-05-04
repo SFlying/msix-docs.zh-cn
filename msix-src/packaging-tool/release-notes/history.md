@@ -6,14 +6,19 @@ ms.topic: article
 keywords: windows 10、uwp、.msix、.msix 打包工具、预览体验计划
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: c9221464799aba0744e5b6f0acaef59aebd850cf
-ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
+ms.openlocfilehash: f156b0f6dc48a7b36c19844cd35a265b9de38f74
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81433753"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726403"
 ---
 # <a name="release-notes-for-the-msix-packaging-tool"></a>MSIX 打包工具发行说明
+
+## <a name="version-120204230"></a>版本1.2020.423。0
+- 将项从包编辑器添加到排除列表的功能
+- 在包编辑器中使用 ctrl 键选择多个选项
+- 在移动或添加时覆盖文件时添加了提示
 
 ## <a name="version-120204020---public-release"></a>版本 1.2020.402.0-公共版本
 - 默认情况下启用包完整性设置
@@ -26,7 +31,7 @@ ms.locfileid: "81433753"
 - 编辑后验证清单格式 
 - 第一次启动任务失败时发出消息 
 - 禁止解压缩相对路径 
-- 更新了文件筛选器，因此它们显示了有效的格式（例如，对于它*使用的安装程序， ，* 现在 `*.msi, *.exe, ...`） 
+- 更新了文件筛选器，因此它们显示了哪些格式有效（例如，用于表示的安装程序） *。* 现在`*.msi, *.exe, ...`） 
 - 修复了解包时将路径中的空格转换为 "%20"
 - 一般 bug 修复
 

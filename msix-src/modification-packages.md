@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 21dc0d3f5100641253455f2af24ef19c0fa41270
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 4af514f0027efba09b2ffcdbeaff55d729c39c53
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073117"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726554"
 ---
 # <a name="customize-your-enterprise-apps-with-modification-packages"></a>利用修改包自定义企业应用
 
@@ -44,7 +44,7 @@ ms.locfileid: "77073117"
 
 ```
 
-如果修改包和主程序包之间的关系是一对一的，则这是一种简单的配置。 典型的自定义通常需要 HKEY_CURRENT_USER 或 HKEY_CURRENT_USERCLASS 下的注册表项。 在我们的 .MSIX 包中，我们有用户 .dat 和 Userclass 文件来捕获注册表项。 如果需要 HKCU\Software 下的注册表项，需要创建用户 .dat\* （就像 Registry 一样使用 HKLM\Software\*）。 如果需要 Userclass\*下的密钥，请使用。 
+如果修改包和主程序包之间的关系是一对一的，则这是一种简单的配置。 典型的自定义通常需要 HKEY_CURRENT_USER 或 HKEY_CURRENT_USERCLASS 下的注册表项。 在我们的 .MSIX 包中，我们有用户 .dat 和 Userclass 文件来捕获注册表项。 如果需要 HKCU\Software\*下的注册表项，需要创建用户 .dat （就像 registry 使用 HKLM\Software\*）。 如果需要 HKCU\Sofware\Classes\*下的密钥，请使用 Userclass。 
 
 下面是创建 .dat 文件的典型方法：
 
@@ -87,7 +87,7 @@ Windows 10 版本 1903 中添加了以下功能。
 
 为了确保修改包可在 1903 或更高版本中正常运行，修改包的清单必须包含此元素。 如果使用 MSIX 打包工具一月版打包 MSIX 修改包，则系统会自动包含此元素。 如果使用更低版本的工具转换了某个包，可以在工具中编辑现有的包以添加此新元素。 此外，当用户安装修改包时，系统将发出警报，指出该包可能会修改主应用程序。
 
-如果使用的是在版本1903之前创建的修改包，则需要编辑包清单以将 `MaxVersionTested` 属性更新为10.0.18362.0。
+如果使用的是在版本1903之前创建的修改包，则需要编辑包清单，将`MaxVersionTested`属性更新为10.0.18362.0。
 
 ```xml
 <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17701.0" MaxVersionTested="10.0.18362.0" />
@@ -118,5 +118,3 @@ Windows 10 版本 1903 中添加了以下功能。
 * 创建 Registry.dat、User.dat 和 Userclass.dat，以创建加载修改包所需的任何注册表项。 仅当需要主应用程序查看自定义注册表项时，才需要执行此操作。 请记住，由于所有程序都在容器中运行，因此，在运行时，主包和修改包虚拟注册表将会合并，使主包可以查看修改包的虚拟注册表。  
 
 此过程还支持文件系统插件和自定义，只要主应用程序的可执行文件不在虚拟文件系统 (VFS) 中即可。 这是为了确保主包可以获得主包和修改包的所有 VFS。
-
-我们已计划在下一主要版本的 Windows 中，推出当主应用程序的可执行文件位于 VFS 中时，对文件系统插件和自定义的支持。 从 Windows 10 Insider Preview 内部版本 18312 或更高版本开始即可预览此项支持。 有关详细信息，请参阅[此文章](modification-package-1903.md)。 

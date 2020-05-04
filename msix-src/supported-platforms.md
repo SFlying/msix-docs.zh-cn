@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 702dd154fee357bf616fca4a4babe408ed7a6e2f
-ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
+ms.openlocfilehash: ad03f17ce2a34347959f2723ea83408ae97f623c
+ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81433733"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81614019"
 ---
 # <a name="supported-platforms"></a>支持的平台
 
@@ -21,6 +21,8 @@ ms.locfileid: "81433733"
 * Windows 10 版本1709及更高版本。
 * Windows Server 2019 LTSC 及更高版本。
 * Windows Enterprise 2019 LTSC 及更高版本。
+
+有关 Windows 生命周期支持的更多详细信息，如服务日期结束，请访问[windows 生命周期事实数据表](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
 
 本文介绍了这些 Windows 版本中的 .MSIX 的主要功能。
 
@@ -65,7 +67,7 @@ ms.locfileid: "81433733"
 
 | 功能 | 1709 | 1803 | 1809 | 1903 | 1909 | 2004
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| Publishing             | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
+| 发布             | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | 更新通知| :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | 流式安装 | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| 
 | 增量更新 | :x: | :x: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
@@ -75,7 +77,7 @@ ms.locfileid: "81433733"
 
 ### <a name="microsoft-store-submissions"></a>Microsoft Store 提交
 
-MSIX 包支持的最低 OS 版本已在包清单文件中的 `MinVersion` 元素内以 `TargetDeviceFamily` 形式列出。 例如，.MSIX 包可能会列出 `MinVersion="10.0.17701.0"` 作为支持的最低版本，这意味着 .MSIX 包可以在此版本和更高版本的操作系统上运行。
+MSIX 包支持的最低 OS 版本已在包清单文件中的 `TargetDeviceFamily` 元素内以 `MinVersion` 形式列出。 例如，.MSIX 包可能列出`MinVersion="10.0.17701.0"`为支持的最低版本，这意味着 .msix 包可以在此版本和更高版本的操作系统上运行。
 
 Windows 10 版本 1709、1803 和 1809 支持主流的企业部署方案。 其中包括通过 Microsoft 终结点 Configuration Manager、Microsoft Intune、PowerShell 或双击安装进行安装。
 

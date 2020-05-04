@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: a78a7b09ebf11f4c6ddaeead6cd987bd724d548b
-ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
+ms.openlocfilehash: 247871fab660ca0afa976e1a233cf731b8d13735
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81433773"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726563"
 ---
 # <a name="package-a-desktop-or-uwp-app-in-visual-studio"></a>在 Visual Studio 中打包桌面或 UWP 应用
 
@@ -43,13 +43,14 @@ ms.locfileid: "81433773"
 4. [运行、调试和测试打包的应用程序](../desktop/desktop-to-uwp-debug.md)。 通过 Visual Studio 或直接安装包来运行和调试应用程序包。
 
 
-## <a name="before-packaging-your-app"></a>在打包应用之前
+## <a name="before-packaging-your-app"></a>在打包应用前
 
 1. **测试您的应用程序。** 打包应用程序之前，请确保它在你打算支持的所有设备家族上按预期工作。 这些设备系列可能包括桌面设备、移动设备、Surface Hub、Xbox、IoT 设备或其他设备。 有关使用 Visual Studio 部署和测试应用的详细信息，请参阅[部署和调试 UWP 应用](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)（也适用于打包的桌面应用）。
 
-2. **优化您的应用程序。** 可以使用 Visual Studio 的分析和调试工具来优化打包应用程序的性能。 例如，用于 UI 响应能力的时间线工具、内存使用工具、CPU 使用工具等。 有关这些工具的详细信息，请参阅[分析功能教程](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour)主题。
+2. **优化你的应用。** 可以使用 Visual Studio 的分析和调试工具来优化打包应用程序的性能。 例如，用于 UI 响应能力的时间线工具、内存使用工具、CPU 使用工具等。 有关这些工具的详细信息，请参阅[分析功能教程](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour)主题。
 
-3. **检查 .NET Native 兼容性（适用于C# VB 和应用）。** 在通用 Windows 平台中，有一个本机编译器可以提升应用的运行时性能。 通过这项更改，你应在该编译环境中测试你的应用。 默认情况下，**Release** 版本配置会启用 .NET 本机工具链，因此请务必使用此 **Release** 配置测试应用并检查应用是否按预期运行。 可以通过 .NET Native 来了解有关[编译应用](https://docs.microsoft.com/dotnet/framework/net-native/)的详细信息。
+3. **检查 .NET Native 兼容性（对于 VB 和 C# 应用）。** 在通用 Windows 平台中，有一个本机编译器可以提升应用的运行时性能。 通过这项更改，你应在该编译环境中测试你的应用。 默认情况下，"**发布**" 生成配置启用[.net native](https://docs.microsoft.com/dotnet/framework/net-native/)工具链，因此，请务必使用此**版本**配置来测试应用程序，并检查应用程序的行为是否符合预期。
+
 
 
 ## <a name="configure-your-project"></a>配置项目
@@ -58,23 +59,23 @@ ms.locfileid: "81433773"
 
 Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑文件的原始 XML。
 
-### <a name="configure-a-package-with-the-manifest-designer"></a>使用清单设计器配置包
+### <a name="configure-a-package-with-the-manifest-designer"></a>使用清单设计器配置程序包
 
 1. 在**解决方案资源管理器**中，展开应用程序项目的项目节点。
 
-2. 双击 **Package.appxmanifest** 文件。 如果清单文件已经在 XML 代码视图中打开，Visual Studio 会提示你关闭该文件。
+2. 双击**appxmanifest.xml**文件。 如果清单文件已经在 XML 代码视图中打开，Visual Studio 会提示你关闭该文件。
 
-3. 现在可以决定如何配置你的应用。 每个选项卡都包含应用配置的相关信息以及在必要时可获取详细信息的链接。
+3. 现在，你可以确定如何配置你的应用。 每个选项卡都包含可以配置的有关应用的信息，以及更多信息的链接（如果需要）。
 
 
     ![Visual Studio 中的清单设计器](images/packaging-screen1.jpg)
 
-    检查 "**视觉资产**" 选项卡上的应用所需的所有映像。
+    检查 "**视觉资产**" 选项卡上的应用所需的所有映像。 你将在此处提供[应用图标和徽标](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos)。
 
-    你可以从**打包**选项卡中输入发布数据。 可在此处选择要使用哪个证书来签名你的应用。 必须使用证书对所有 .MSIX 应用进行签名。
+    从 "**打包**" 选项卡中，你可以输入发布数据。 你可以从此位置选择用于对你的应用进行签名的证书。 必须使用证书对所有 .MSIX 应用进行签名。
 
     > [!NOTE]
-    > 从 Visual Studio 2019 开始，已打包的桌面或 UWP 项目中不再生成临时证书。 若要创建或导出证书，请使用[此文](create-certificate-package-signing.md)中所述的 PowerShell cmdlet。
+    > 从 Visual Studio 2019 开始，已打包的桌面或 UWP 项目中不再生成临时证书。 若要创建或导出证书，请使用[本文](create-certificate-package-signing.md)中介绍的 PowerShell cmdlet。
 
     > [!IMPORTANT]
     > 如果你是在 Microsoft Store 中发布应用，将使用你的受信任的证书进行签名。 这让用户能够安装和运行你的应用，而不必安装关联的应用签名证书。
@@ -83,7 +84,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 4. 在你对应用进行必要的编辑后，请保存你的 **Package.appxmanifest** 文件。
 
-如果通过 Microsoft Store 分发应用，则 Visual Studio 可以将你的包与应用商店相关联。 为此，请在解决方案资源管理器中右键单击项目名称，然后选择 "**发布**"->**将应用与应用商店关联**（Visual Studio 2019 版本16.3 之前，"**发布**" 菜单的名称为 "**存储**"）。 您也可以在 "**创建应用程序包**" 向导中执行此操作，如下一节中所述。 在关联应用时，会自动更新清单设计器的“打包”选项卡中的某些字段。
+如果通过 Microsoft Store 分发应用，则 Visual Studio 可以将你的包与应用商店相关联。 为此，请在解决方案资源管理器中右键单击项目名称，然后选择 "**发布**->**" "将应用与应用商店关联**" （在 Visual Studio 2019 版本16.3 之前，"**发布**" 菜单的名称为 "**存储**"）。 您也可以在 "**创建应用程序包**" 向导中执行此操作，如下一节中所述。 在关联应用时，会自动更新清单设计器的“打包”选项卡中的某些字段。
 
 ## <a name="generate-an-app-package"></a>生成应用程序包
 
@@ -97,17 +98,17 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 1. 在**解决方案资源管理器**中，打开应用程序项目的解决方案。
 
-2. 右键单击该项目，然后选择 "**发布**->**创建应用包**" （Visual Studio 2019 版本16.3 之前，"**发布**" 菜单的名称为 "**存储**"）。
+2. 右键单击该项目，然后选择 "**发布**->" "**创建应用包**" （Visual Studio 2019 版本16.3 之前，"**发布**" 菜单的名称为 "**存储**"）。
 
     ![上下文菜单，可导航到“创建应用包”](images/packaging-screen2.jpg)
 
 3. 在向导的第一页中选择 "**旁加载**"，然后单击 "**下一步**"。
 
-    ![显示的“创建程序包”对话框窗口](images/packaging-screen10.png)
+    ![显示的“创建应用包”对话框窗口](images/packaging-screen10.png)
 
 4. 在 "**选择签名方法**" 页上，选择是跳过打包签名还是选择证书进行签名。 你可以从本地证书存储中选择证书、选择证书文件或创建新证书。 若要将 .MSIX 包安装在最终用户的计算机上，必须使用计算机上受信任的证书对其进行签名。 
 
-    ![显示的“创建程序包”对话框窗口](images/package-signing2.png)
+    ![显示的“创建应用包”对话框窗口](images/package-signing2.png)
 
 5. 完成 "[使用 Visual Studio 创建应用包上传文件](#create-your-app-package-upload-file-using-visual-studio)" 部分中所述的 "**选择和配置包**" 页。
 
@@ -122,7 +123,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 1. 打开 `*_Test` 文件夹。
 2. 右键单击 **Add-AppDevPackage.ps1** 文件。 选择**使用 PowerShell 运行**并按照提示操作。  
-    ![导航到 PowerShell 脚本的文件资源管理器](images/packaging-screen7.jpg)
+    ![显示的文件资源管理器，已导航到 PowerShell 脚本](images/packaging-screen7.jpg)
 
     安装应用包后，PowerShell 窗口显示消息：**已成功安装你的应用。**
 
@@ -146,17 +147,17 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 > [!NOTE]
 > 以下说明和屏幕截图介绍 Visual Studio 2019 版本16.3 中的处理过程。 如果使用的是早期版本，则某些 UI 的外观可能会有所不同。
 
-1. 在**解决方案资源管理器**中，打开适用于你的 UWP 应用项目的解决方案。
+1. 在**解决方案资源管理器**中，打开 UWP 应用项目的解决方案。
 
-2. 右键单击该项目，然后选择 "**发布**->**创建应用包**" （Visual Studio 2019 版本16.3 之前，"**发布**" 菜单的名称为 "**存储**"）。 如果此选项已禁用或完全不显示，请检查该项目是否为通用 Windows 项目。  
+2. 右键单击该项目，然后选择 "**发布**->" "**创建应用包**" （Visual Studio 2019 版本16.3 之前，"**发布**" 菜单的名称为 "**存储**"）。 如果此选项处于禁用状态或根本没有显示，请检查该项目是否为通用 Windows 项目。  
 
     ![上下文菜单，可导航到“创建应用包”](images/packaging-screen2.jpg)
 
-    将显示**创建应用包**向导。
+    此时将显示 "**创建应用包**" 向导。
 
 3. 在第一个对话框中选择 " **Microsoft Store** "，然后单击 "**下一步**"。  
 
-    ![显示的“创建程序包”对话框窗口](images/packaging-screen3.jpg)
+    ![显示的“创建应用包”对话框窗口](images/packaging-screen3.jpg)
 
     如果已将项目与应用商店中的应用相关联，则还可以选择为关联的应用商店应用创建包。 如果选择**旁加载**，Visual Studio 将不会生成适用于合作伙伴中心提交的应用包上传（. msixupload 或 .appxupload）文件。 如果只想为非存储分发创建 .MSIX 程序包或捆绑包，可以选择此选项。
 
@@ -166,9 +167,9 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 5. 从当前注册到你的帐户的应用列表中选择你的包的应用程序名称，或者保留一个新的应用程序名称（如果你尚未在合作伙伴中心保留一个）。  
 
-6. 确保在 **Select and Configure Packages** 对话框中选择全部三种体系结构配置（x86、x64 和 ARM），以确保你的应用能够部署到最广泛的设备上。 在**生成应用程序包**列表框中，选择**始终**。 应用捆绑包（.appxbundle 或 .msixbundle）优于单个应用包文件，因为它包含为每种类型的处理器体系结构配置的应用包的集合。 选择生成应用捆绑包时，应用捆绑包将包含在最终的应用包上传（. .appxupload 或 msixupload）文件中，同时包含调试和崩溃分析信息。 如果你不确定该选择哪种体系结构，或者想了解有关各种设备使用哪种体系结构的详细信息，请参阅[应用包体系结构](device-architecture.md)。  
+6. 确保在 **Select and Configure Packages** 对话框中选择全部三种体系结构配置（x86、x64 和 ARM），以确保你的应用能够部署到最广泛的设备上。 在 "**生成应用捆绑包**" 列表框中，选择 "**始终**"。 应用捆绑包（.appxbundle 或 .msixbundle）优于单个应用包文件，因为它包含为每种类型的处理器体系结构配置的应用包的集合。 选择生成应用捆绑包时，应用捆绑包将包含在最终的应用包上传（. .appxupload 或 msixupload）文件中，同时包含调试和崩溃分析信息。 如果你不确定该选择哪种体系结构，或者想了解有关各种设备使用哪种体系结构的详细信息，请参阅[应用包体系结构](device-architecture.md)。  
 
-    ![使用显示的程序包配置创建应用包窗口](images/packaging-screen5.jpg)
+    ![显示的创建应用包窗口及包配置](images/packaging-screen5.jpg)
 
 7. 在发布应用后，包括公共符号文件以分析合作伙伴中心的[应用性能](https://docs.microsoft.com/windows/uwp/publish/analytics)。 配置任何其他详细信息，例如版本编号或包输出位置。
 
@@ -199,21 +200,21 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
     Windows 应用程序认证工具包（WACK）执行各种测试并返回结果。 有关更具体的信息，请参阅 [Windows 应用认证工具包测试](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests)。
 
-    如果你有想要用于测试的远程 Windows 10 设备，则需要在该设备上手动安装 Windows 应用认证工具包。 下一节将引导你完成这些步骤。 完成该操作后，你可以选择**远程计算机**并单击**启动 Windows 应用认证工具包**，以连接到远程设备并运行验证测试。
+    如果你拥有要用于测试的远程 Windows 10 设备，你将需要在该设备上手动安装 Windows 应用认证工具包。 下一节将指导你完成这些步骤。 完成此操作后，可以选择 "**远程计算机**"，然后单击 "**启动 Windows 应用认证工具包**" 以连接到远程设备并运行验证测试。
 
-2. 当 WACK 完成并且你的应用已通过认证后，你就可以将你的应用程序提交到合作伙伴中心了。 请确保上载正确的文件。 文件的默认位置可以在解决方案的根文件夹中找到 `\[AppName]\AppPackages` 并且以 .appxupload 或 msixupload 文件扩展名结尾。 如果选择了已选择所有包体系结构的应用捆绑，则名称将采用格式 `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` 或 `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload`。
+2. 当 WACK 完成并且你的应用已通过认证后，你就可以将你的应用程序提交到合作伙伴中心了。 请确保上传正确的文件。 可以在解决方案`\[AppName]\AppPackages`的根文件夹中找到该文件的默认位置，该位置将以. .appxupload 或 msixupload 文件扩展名结尾。 该名称的格式`[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`为， `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload`如果你选择了所有选定的包体系结构的应用捆绑包，则为。
 
-### <a name="validate-your-app-package-on-a-remote-windows10-device"></a>在远程 Windows 10 设备上验证应用包
+### <a name="validate-your-app-package-on-a-remote-windows10-device"></a>在远程 Windows 10 设备上验证你的应用包
 
-1. 按照[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)说明，启用 Windows 10 设备以进行开发。
+1. 按照[启用设备进行开发](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)说明启用 Windows 10 设备进行开发。
     >[!IMPORTANT]
-    > 你无法在适用于 Windows 10 的远程 ARM 设备上验证你的应用程序包。
+    > 在适用于 Windows 10 的远程 ARM 设备上验证应用包。。
 
-2. 为 Visual Studio 下载和安装远程工具。 这些工具用于远程运行 Windows 应用认证工具包。 可以通过访问[远程计算机上的 RUN .msix applicationss](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015)，获取有关这些工具的详细信息，包括下载位置。
+2. 下载并安装适用于 Visual Studio 的远程工具。 这些工具用于远程运行 Windows 应用认证工具包。 可以通过访问[远程计算机上的 RUN .msix applicationss](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-on-a-remote-machine?view=vs-2015)，获取有关这些工具的详细信息，包括下载位置。
 
-3. 下载所需的[Windows 应用程序认证工具包](https://go.microsoft.com/fwlink/p/?LinkID=309666)，并将其安装在远程 Windows 10 设备上。
+3. 下载所需的 [Windows 应用认证工具包](https://go.microsoft.com/fwlink/p/?LinkID=309666)，然后将它安装在远程 Windows 10 设备上。
 
-4. 在向导的**程序包创建已完成**页面上，选择**远程计算机**选项按钮，然后选择**测试连接**按钮旁边的省略号按钮。
+4. 在向导的 "**已创建包**" 页上，选择 "**远程计算机**" 选项按钮，然后选择 "**测试连接**" 按钮旁的省略号按钮。
     >[!NOTE]
     > 仅当你至少选择了一个支持验证的解决方案配置时，"**远程计算机**" 选项按钮才可用。 有关使用 WACK 测试应用的详细信息，请参阅 [Windows 应用认证工具包](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit)。
 
@@ -221,7 +222,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 6. 在**身份验证模式**列表中，如果你的设备没有要求你使用 Windows 凭据登录该设备，请选择**无**。
 
-7. 选择**选择**按钮，然后选择**启动 Windows 应用认证工具包**按钮。 如果远程工具正在该设备上运行，Visual Studio 将与其连接，然后执行验证测试。 请参阅 [Windows 应用认证工具包测试](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests)。
+7. 选择 "**选择**" 按钮，然后选择 "**启动 Windows 应用程序认证包**" 按钮。 如果远程工具正在该设备上运行，Visual Studio 将与其连接，然后执行验证测试。 请参阅 [Windows 应用认证工具包测试](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit-tests)。
 
 ## <a name="automate-store-submissions"></a>自动应用商店提交
 
@@ -233,7 +234,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 1. [将合作伙伴中心帐户与组织的 Azure Active Directory 相关联](https://docs.microsoft.com/windows/uwp/publish/associate-azure-ad-with-partner-center)。 如果你的组织已经使用 Office 365 或 Microsoft 的其他业务服务，则你已经具有 Azure AD。 否则，你可以在合作伙伴中心内创建新的 Azure AD 租户，无额外费用。
 
-2. [将 Azure AD 应用程序添加到合作伙伴中心帐户](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account)。 此 Azure AD 应用程序表示将用于访问开发人员中心帐户的提交的应用或服务。 必须将此应用程序分配给**管理员**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在“添加 Azure AD 应用程序”页面上创建新的 Azure AD 应用程序。
+2. [将 Azure AD 应用程序添加到合作伙伴中心帐户](https://docs.microsoft.com/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account)。 此 Azure AD 应用程序表示将用于访问开发人员中心帐户的提交的应用或服务。 必须将此应用程序分配给**管理员**角色。 如果此应用程序已存在于你的 Azure AD 目录中，你可以在**添加 Azure AD 应用程序**页面上选择它，以将其添加到你的开发人员中心帐户。 如果没有此应用程序，你可以在“添加 Azure AD 应用程序”页面上创建新的 Azure AD 应用程序。****
 
 ### <a name="retrieve-the-credentials-required-for-submissions"></a>检索提交所需的凭据
 
@@ -262,7 +263,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
     > [!Important]
     > 可以将你的凭据保存到你的配置文件中，以便在将来提交时使用
 
-3. 单击“确定”。
+3. 单击 **“确定”** 。
 
 WACK 测试完成后，将启动该提交。 可以在 "**验证和发布**" 窗口中跟踪提交进度。
 

@@ -6,14 +6,14 @@ ms.topic: article
 keywords: msix 打包工具, 已知问题, 故障排除
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a8a5c6071b0b507a77fa6c5f590ac40f7bd0ecd0
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 4ae2efbc30106e8a5cf6a2861f7577ecae73048a
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77073813"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726399"
 ---
-# <a name="known-issues-and-troubleshooting-tips-for-the-msix-packaging-tool"></a>.MSIX 打包工具的已知问题和故障排除提示
+# <a name="known-issues-and-troubleshooting-tips-for-the-msix-packaging-tool"></a>MSIX 打包工具的已知问题和故障排除提示
 
 本文描述使用 MSIX 打包工具将应用转换为 MSIX 时存在的已知问题，并提供故障排除提示供用户参考。 如果需要在[断开连接的环境](disconnected-environment.md)中获取 .Msix 打包工具或驱动程序，请查看其他文档。
 
@@ -31,15 +31,21 @@ ms.locfileid: "77073813"
 
 ### <a name="minimum-version"></a>最低版本
 
+需要注意一些功能，这些功能会自动更改 .MSIX 包中的最小版本支持。 
+
+#### <a name="enforce-microsoft-store-versioning-requirements"></a>强制 Microsoft store 版本控制要求
 如果使用早于**1.2019.701.0**的[.msix 打包工具](tool-overview.md)版本转换现有的安装程序，则该工具将强制实施 Microsoft Store 版本控制要求，或使用其他工具来创建未将最低版本设置为10.0.16299.0 的包（Windows 10，版本1709）。 将应用部署到 Windows 10 版本1709或更高版本时，这将导致错误消息。
 
-若要解决此问题，请打开 **.Msix 打包工具**并通过**包编辑器**编辑应用。 打开清单，将 `TargetDeviceFamily` 元素的 `MinVersion` 特性设置为 "10.0.16299.0"。
+若要解决此问题，请打开 **.Msix 打包工具**并通过**包编辑器**编辑应用。 打开清单并将`MinVersion` `TargetDeviceFamily`元素的属性设置为 "10.0.16299.0"。
 
 ```xml
 <Dependencies>
     <TargetDeviceFamily> Name="Windows.Desktop" MinVersion="10.0.16299.0" MaxVersionTested = "10.0.17763.0" />
 </Dependencies>
 ```
+
+#### <a name="msix-with-services"></a>.MSIX 服务
+在 .MSIX 打包工具的1.2019.1220.0 版本中，我们添加了有关[使用服务创建 .msix 包](convert-an-installer-with-services.md)的支持。 由于服务支持的操作系统限制，.MSIX 打包工具会自动将 .MSIX 包支持的最低版本更改为10.0.19025.0。 这意味着，你不能在低于 Windows 10 版本2004的操作系统上安装 .MSIX 和服务，但你可以使用 .MSIX 打包工具向下创建 Windows 10 1809。 如果需要在较低的操作系统上安装此应用，请相应地更新最小版本，但请注意，对服务的支持将不起作用。
 
 ### <a name="frameworks-and-drivers"></a>框架和驱动程序
 
@@ -55,20 +61,20 @@ ms.locfileid: "77073813"
 
 #### <a name="bad-pe-certificate-0x800700c1"></a>错误的 PE 证书（0x800700C1）
 
-当包包含具有损坏证书的二进制文件时，会出现此问题。 若要解决此问题，请使用 `dumpbin.exe /headers` 命令转储文件头，并检查是否有错误的元素。 手动重写标头以解决问题。 通常，.MSIX 打包工具会自动检测错误的标头。 如果此问题仍然存在，请提供文件反馈。 可以在[此处](../desktop/desktop-to-uwp-known-issues.md#bad-pe-certificate-0x800700c1)查找详细信息。
+当包包含具有损坏证书的二进制文件时，会出现此问题。 若要解决此问题，请`dumpbin.exe /headers`使用命令转储文件头，并检查是否有错误的元素。 手动重写标头以解决问题。 通常，.MSIX 打包工具会自动检测错误的标头。 如果此问题仍然存在，请提供文件反馈。 可在[此处](../desktop/desktop-to-uwp-known-issues.md#bad-pe-certificate-0x800700c1)找到详细信息。
 
 #### <a name="device-guard-signing"></a>Device Guard 签名
 
 请确保按照下列[步骤](../package/signing-package-device-guard-signing.md)操作，并且要在 Microsoft Store for Business 中分配适当的角色。
 
-#### <a name="expired-certificate"></a>过期的证书
+#### <a name="expired-certificate"></a>证书已过期
 
 - 在对包进行签名时使用时间戳。
 - 您可以使用有效的签名或时间戳证书来让步。
 
 您可以使用[批处理转换脚本](https://github.com/microsoft/MSIX-Toolkit/tree/master/Scripts)来让步您的应用程序。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="log-files"></a>日志文件
 
@@ -94,7 +100,7 @@ ms.locfileid: "77073813"
 
 #### <a name="file-not-found"></a>找不到文件
 
-该文件可以是打开的或不存在的。 若要解决此问题，请添加相应的文件或关闭当前正在使用的文件。 请注意，如果它处于打开状态，则不会收到 `File not Found` 错误。 相反，您将收到 `Access Denied` 或 `File in Use` 错误。
+该文件可以是打开的或不存在的。 若要解决此问题，请添加相应的文件或关闭当前正在使用的文件。 请注意，如果它处于打开`File not Found`状态，则不会收到错误消息。 相反，您会收到`Access Denied`或`File in Use`错误。
 
 #### <a name="file-type-associations"></a>文件类型关联
 
@@ -114,14 +120,14 @@ ms.locfileid: "77073813"
 
 发送反馈的最佳方式是通过[**反馈中心**](https://www.microsoft.com/p/feedback-hub/9nblggh4r32n?activetab=pivot:overviewtab)。
 
-1. 打开“反馈中心”或按 **Windows 键 + F**。
+1. 打开“反馈中心”或按 **Windows 键 + F**。****
 2. 提供标题和必要的步骤以重现问题。
-3. 在“类别”下选择“应用”，然后选择“MSIX 打包工具”。
+3. 在“类别”下选择“应用”，然后选择“MSIX 打包工具”。************
 4. 附加与转换相关的任何[日志文件](#log-files)。 可以在上面提供的文件夹中找到日志。
 5. 附加转换的 MSIX 包（如果可能）。
-6. 单击 **“提交”** 。
+6. 单击“提交”  。
 
-也可以直接在 MSIX 打包工具中向我们发送反馈，方法是转到“设置”下的“反馈”选项卡。 
+也可以直接在 MSIX 打包工具中向我们发送反馈，方法是转到“设置”下的“反馈”选项卡。******** 
 
 > [!NOTE]
 > 可能需要等待 24 小时，我们才能收到你的反馈。 因此，如果使用 VM 来转换包，可能需要在转换后，持续打开 VM 并使其保持当前状态 24 小时。 此外，还可以手动将转换日志附加到反馈。

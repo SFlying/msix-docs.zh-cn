@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b19c4f7c3d898bb3c1a1ed319de6ae0dbd359af0
-ms.sourcegitcommit: f6cee51b46fc36a57b5cf9c8cb3fd24a40ae858a
+ms.openlocfilehash: 5e73ecb893ccddacf28f87a7080382eeb02f80c3
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391629"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726592"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>适用于 MSIX 打包工具的最佳做法
 
@@ -24,7 +24,8 @@ ms.locfileid: "80391629"
 - **生成包含每个包的命令行**此设置将使你自动生成一个命令行模板文件，以便在稍后通过命令行重新打包同一应用程序（例如新版本）时，你可以为该应用程序预配置的命令行模板文件。 你将需要提供安装程序，以便在工作流期间生成模板文件。
 - **默认情况下，选择 "准备计算机" 的所有修补程序**此设置允许你预先选择所有建议的修复程序，以便在 "准备计算机" 阶段，你只需选择禁用所有修复，无需单独选择它们。
 - **强制实施 Microsoft Store 版本控制要求**如果打算通过 Microsoft Store 来部署应用程序，则应确保选中此选项，使其符合应用商店要求（这将影响包版本要求和最低操作系统版本支持）。 如果未选中此选项，则包的最低版本设置为 Windows 10 1709，你将对包版本4位数字具有完全控制。 如果选中此选项，则包的最低版本设置为 Windows 10 1809，版本必须以. 0 （例如1.5.6.0）结束。
-- **生成包时添加包完整性**如果选择此选项，则包完整性将自动添加到生成的所有包中。 Windows 10 2004 及更高版本支持[包的完整性](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-packageintegrity)。
+- **生成包时添加包完整性**如果选择此选项，则包完整性将自动添加到生成的所有包中。 Windows 10 2004 及更高版本支持[包的完整性](../package/signing-package-overview.md#package-integrity-enforcement)。
+- **生成包时添加对 .Msix Core 的支持**此选项允许你添加 9MSIX Core] （.。。/msix-core/msixcore.md）对生成的每个包的支持。 选择后，将提供一个下拉列表，您可以使用该下拉列表指定要支持的 Windows 版本。 
 - **默认保存位置**指定将保存生成的包和关联文件的默认保存位置。
 - **默认安装程序浏览位置**指定用于查找要转换的安装程序的默认位置。
 - **服务器端口号**指定 .MSIX 打包工具的服务器端口号。 如果你打算使用[远程计算机](remote-conversion-setup.md)进行转换，则这一点很有用。 
