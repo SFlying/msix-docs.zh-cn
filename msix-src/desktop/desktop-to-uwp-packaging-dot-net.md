@@ -6,21 +6,31 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c34ec830981e9d9907dba9ec4ea124f800cbc02
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: ac24e33a1580aa8a3ddac6899f4b37829e625620
+ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "80108431"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82726475"
 ---
 # <a name="set-up-your-desktop-application-for-msix-packaging-in-visual-studio"></a>在 Visual Studio 中设置用于 MSIX 打包的桌面应用程序
 
-你可以使用 Visual Studio 中的 **Windows 应用程序打包项目**项目为桌面应用生成程序包。 然后，可以将该程序包发布到 Microsoft Store 或将其旁加载到一台或多台电脑中。
+你可以使用 Visual Studio 中的 **Windows 应用程序打包项目**项目为桌面应用生成程序包。 然后，可以将你的程序包分发到 Microsoft Store、Web、你的企业或你所使用的任何其他分发机制中。
 
-**Windows 应用程序打包项目**项目在以下 Visual Studio 版本中可用。 为了获得最佳体验，建议使用最新版本。
+## <a name="required-visual-studio-version-and-workload"></a>必需的 Visual Studio 版本和工作负载
+
+以下 Visual Studio 版本中提供了“Windows 应用程序打包项目”项目  ：
 
 * Visual Studio 2019
 * Visual Studio 2017 15.5 和更高版本
+
+若要在“添加新项目”菜单中看到“Windows 应用程序打包项目”模板，需要确保至少安装了以下 Visual Studio 工作负载之一  ：
+
+* “通用 Windows 平台开发”工作负载
+* NET Core 工作负载中的可选组件“MSIX 打包工具”。
+* .NET 桌面开发工作负载中的可选组件“MSIX 打包工具”。
+
+ 为了获得最佳体验，建议使用最新 Visual Studio 版本。
 
 > [!IMPORTANT]
 > Visual Studio 中的 **Windows 应用程序打包项目**项目在 Windows 10 版本 1607 和更高版本中受支持。 它只能用于面向 Windows 10 周年更新（10.0；内部版本 14393）或更高版本的项目中。
@@ -68,11 +78,43 @@ ms.locfileid: "80108431"
 
    ![设置入口点](images/entry-point-set.png)
 
-6. 生成打包项目，以确保未显示任何错误。 如果收到错误，请打开**配置管理器**并确保你的项目以同一平台为应用目标。
+6. 如果你要打包的应用程序以 .NET Core 3 作为应用目标，请按照以下步骤向项目文件中添加一个新的生成目标。 只有对于以 .NET Core 3 作为应用目标的应用程序才需要执行此操作。  
+
+    1. 在“解决方案资源管理器”中，右键单击打包项目节点并选择“编辑项目文件”。 
+
+    2. 在文件中找到 `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` 元素。
+
+    3. 将此元素替换为以下 XML。
+
+        ``` xml
+        <ItemGroup>
+          <SDKReference Include="Microsoft.VCLibs,Version=14.0">
+            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
+            <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
+            <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
+            <Implicit>true</Implicit>
+          </SDKReference>
+        </ItemGroup>
+        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
+          <ItemGroup>
+            <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
+            <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
+            <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
+              <SourceProject>
+              </SourceProject>
+            </_FilteredNonWapProjProjectOutput>
+          </ItemGroup>
+        </Target>
+        ```
+
+    4. 保存并关闭项目文件。
+
+7. 生成打包项目，以确保未显示任何错误。 如果收到错误，请打开**配置管理器**并确保你的项目以同一平台为应用目标。
 
    ![配置管理器](images/config-manager.png)
 
-7. 使用[创建应用程序包](../package/packaging-uwp-apps.md)向导生成 MSIX 程序包/捆绑包或 .msixupload/.appxupload 文件（用于发布到应用商店）。
+8. 使用[创建应用程序包](../package/packaging-uwp-apps.md)向导生成 MSIX 程序包/捆绑包或 .msixupload/.appxupload 文件（用于发布到应用商店）。
 
 
 ## <a name="next-steps"></a>后续步骤
