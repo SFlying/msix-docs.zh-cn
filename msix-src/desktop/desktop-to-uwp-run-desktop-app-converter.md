@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 45c6bbf652768054f5ae13d3b662792723ffea76
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: e5fafa90820eed04e33ff3405a8aaf21588e89e5
+ms.sourcegitcommit: 4593ba54c2c75ce82878e948566c92e21c27699d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75303344"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83383647"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>使用 Desktop App Converter 打包桌面应用程序
 
@@ -368,7 +368,7 @@ Desktop App Converter 不支持 Unicode；因此，没有用于该工具的任�
 
 ## <a name="known-issues-with-the-desktop-app-converter"></a>Desktop App Converter 的已知问题
 
-### <a name="e_creating_isolated_env_failed-an-e_starting_isolated_env_failed-errors"></a>E_CREATING_ISOLATED_ENV_FAILED 和 E_STARTING_ISOLATED_ENV_FAILED 错误    
+### <a name="e_creating_isolated_env_failed-and-e_starting_isolated_env_failed-errors"></a>E_CREATING_ISOLATED_ENV_FAILED 和 E_STARTING_ISOLATED_ENV_FAILED 错误    
 
 如果收到任一错误，请确保你正在使用的是从[下载中心](https://aka.ms/converterimages)下载的有效基础映像。
 如果使用的是有效的基础映像，请尝试在命令中使用 ``-Cleanup All``。
