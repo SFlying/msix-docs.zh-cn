@@ -54,6 +54,8 @@
           href: 'https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file?context=/windows/msix/render'
     - name: MSIX 资源
       href: resources.md
+    - name: MSIX 客户的旅程
+      href: customer-journey.md
     - name: MSIX SDK
       items:
         - name: 概述
@@ -124,18 +126,22 @@
           href: packaging-tool/edit-icons-and-assets.md
     - name: 创建 MSIX 包后的任务
       items:
-        - name: 包支持框架
+        - name: 包支持框架 (PSF)
           items:
             - name: 概述
               href: psf/package-support-framework-overview.md
-            - name: 将运行时修补程序应用到桌面应用包
+            - name: 开始使用包支持框架
               href: psf/package-support-framework.md
+            - name: 当前工作目录 PSF
+              href: psf\psf-current-working-directory.md
+            - name: 使用 PSF 启动具有参数的应用
+              href: psf\psf-launch-apps-with-parameters.md
+            - name: 在 Visual Studio 中应用包支持框架
+              href: psf\package-support-framework-vs.md
             - name: 使用包支持框架运行脚本
               href: psf/run-scripts-with-package-support-framework.md
-            - name: 当前工作目录
-              href: psf\psf-current-working-directory.md
-            - name: 启动具有参数的应用
-              href: psf\psf-launch-apps-with-parameters.md
+            - name: 创建包支持框架修复
+              href: psf/create-package-support-framework.md
         - name: 捆绑 MSIX 包
           href: packaging-tool/bundle-msix-packages.md
     - name: MSIX 工具包

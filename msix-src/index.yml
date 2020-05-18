@@ -1,6 +1,6 @@
 ### YamlMime:Hub
 title: MSIX 文档
-summary: MSIX 是一种 Windows 应用包格式，它将 MSI、.appx、App-V 和 ClickOnce 的最佳功能组合在一起，以便提供新式的可靠打包体验。
+summary: MSIX 是一种 Windows 应用包格式，它将 MSI、.appx、App-V 和 ClickOnce 的最佳功能组合在一起，提供新式的可靠打包体验。
 metadata:
   title: MSIX 文档
   description: MSIX 是已构建为安全可靠的 Windows 应用打包格式。 它基于 .msi、.appx、App-V 和 ClickOnce 安装技术的组合。
@@ -9,12 +9,12 @@ metadata:
   keywords: windows 10, uwp, MSIX
   ms.localizationpriority: medium
   ms.custom: RS5, seodec18
-  ms.openlocfilehash: ba52f4840f8fb65d2ff7f2952250e88b0ed947c0
-  ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+  ms.openlocfilehash: 54a3d1507b35c47364a49ac2d9860cf081031e7b
+  ms.sourcegitcommit: 8d6bc53d5f5ae80d9ce191fe81660407e9f11e0e
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/24/2020
-  ms.locfileid: "77073453"
+  ms.lasthandoff: 05/15/2020
+  ms.locfileid: "83427320"
 highlightedContent:
   items:
   - title: 什么是 MSIX？
@@ -33,6 +33,9 @@ additionalContent:
   sections:
   - title: 最常见的任务
     items:
+    - title: 了解 MSIX 客户的旅程
+      summary: 了解客户经历的有关 MSIX 如何改进 Windows 应用程序部署的旅程。
+      url: customer-journey.md
     - title: 从现有安装程序创建 MSIX 包
       summary: 可以使用 MSIX 打包工具将现有的桌面应用程序包更新为 MSIX 格式。
       url: packaging-tool/create-an-msix-overview.md
