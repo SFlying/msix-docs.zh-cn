@@ -57,7 +57,7 @@ Add-AppxPackage –Register AppxManifest.xml
 
    若要使用提升的权限调试应用程序，请使用“以管理员身份运行”选项启动 Visual Studio。 
 
-3. 在 Visual Studio 中，选择“调试”->“其他调试目标”->“调试安装的应用包”。   
+3. 在 Visual Studio 中，选择“调试”->“其他调试目标”->“调试安装的应用包”。
 
 4. 在“安装的应用包”列表中选择你的应用包，然后选择“附加”按钮。  
 
