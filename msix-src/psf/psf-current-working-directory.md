@@ -1,19 +1,19 @@
 ---
 Description: 包支持框架有助于使用工作目录。
 title: 包支持框架当前工作目录
-ms.date: 09/05/2018
+ms.date: 05/14/2020
 ms.topic: article
 keywords: windows 10、uwp、.msix、psf
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 50b58af26d826b7dd09828b3a6705590d992068b
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 69c5d73ad3be28f1c138553b6f8da27c0820940a
+ms.sourcegitcommit: 8d6bc53d5f5ae80d9ce191fe81660407e9f11e0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726661"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83427354"
 ---
-# <a name="package-support-framework---current-working-directory"></a>包支持框架-当前工作目录
+# <a name="current-working-directory-psf"></a>当前工作目录 PSF
 包支持框架使用配置 json 文件来配置应用程序的行为。
 
 ## <a name="proceedure"></a>过程
@@ -29,7 +29,7 @@ ms.locfileid: "82726661"
 可以使用独立的 Nuget 命令行工具或通过 Visual Studio 检索包支持框架。
 
 ### <a name="nuget-comandline-tool"></a>Nuget comandline 工具：
-从 nuget 网站上安装 Nuget 命令行工具： [https://www.nuget.org/downloads](https://www.nuget.org/downloads)。 安装之后，在管理 PowerShell 窗口中运行以下命令行。
+从 nuget 网站上安装 Nuget 命令行工具： [https://www.nuget.org/downloads](https://www.nuget.org/downloads) 。 安装之后，在管理 PowerShell 窗口中运行以下命令行。
 
 ``` powershell
 nuget install Microsoft.PackageSupportFramework
@@ -45,13 +45,13 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="json-schema"></a>Json 架构
 
-|Array          | 键               | “值”  |
+|Array          | 键               | Value  |
 |---------------|-------------------|--------|
-| 服务  | id                | 使用包清单中的应用程序元素的 ID 属性的值。|
-| 服务  | 可执行文件        | 要启动的可执行文件的包相对路径。 它是应用程序元素的可执行属性的值。 |
-| 服务  | 参数         | 可有可无可执行文件的命令行参数参数。 |
-| 服务  | workingDirectory  | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用 System32 目录作为应用程序的工作目录。 如果以空字符串的形式提供值，则它将使用所引用的可执行文件的目录。 |
-| 服务  | 监视           | 可有可无如果存在此监视器，则该监视器将标识在启动主应用程序之前要启动的辅助程序。 |
+| applications  | id                | 使用包清单中的应用程序元素的 ID 属性的值。|
+| applications  | 可执行文件        | 要启动的可执行文件的包相对路径。 它是应用程序元素的可执行属性的值。 |
+| applications  | 参数         | 可有可无可执行文件的命令行参数参数。 |
+| applications  | workingDirectory  | 可有可无要用作启动的应用程序的工作目录的包相对路径。 如果未设置此值，操作系统将使用 System32 目录作为应用程序的工作目录。 如果以空字符串的形式提供值，则它将使用所引用的可执行文件的目录。 |
+| applications  | 监视           | 可有可无如果存在此监视器，则该监视器将标识在启动主应用程序之前要启动的辅助程序。 |
 | 进程     | 可执行文件        | 在大多数情况下，这将是上面配置的可执行文件的名称，其中包含已删除的路径和文件扩展名。 |
 | 修正        | dll               | 可有可无要加载的链接地址的包相对路径，.msix/.appx。 |
 | 修正        | config            | 可有可无控制修正 dl 的行为方式。 此值的准确格式因修正链接而异，因为每个修正都可以根据需要解释此 "blob"。|
@@ -87,10 +87,10 @@ nuget install Microsoft.PackageSupportFramework
 
 可在默认位置找到 Makeappx.exe 工具：
 
-| OS 体系结构 | Directory                                                   |
+| OS 体系结构 | 目录                                                   |
 |-----------------|-------------------------------------------------------------|
-| Windows 10 x86  | C:\Program Files\Windows kits\10\bin arch>\[**版本**] \x86\makeappx.exe       |
-| Windows 10 x64  | C:\Program Files （x86） \windows kits\10\bin arch>\[**版本**] \x64\makeappx.exe |
+| Windows 10 x86  | C:\Program Files\Windows Kits\10\bin arch> \[ **版本**] \x86\makeappx.exe       |
+| Windows 10 x64  | C:\Program Files （x86） \Windows Kits\10\bin arch> \[ **版本**] \x64\makeappx.exe |
 
 ```powershell
 makeappx unpack /p PrimaryApp.msix /d PackageContents

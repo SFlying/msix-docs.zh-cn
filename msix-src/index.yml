@@ -9,12 +9,12 @@ metadata:
   keywords: windows 10, uwp, MSIX
   ms.localizationpriority: medium
   ms.custom: RS5, seodec18
-  ms.openlocfilehash: 54a3d1507b35c47364a49ac2d9860cf081031e7b
-  ms.sourcegitcommit: 8d6bc53d5f5ae80d9ce191fe81660407e9f11e0e
+  ms.openlocfilehash: 38d9e7c76e999bd8f9544788fa7f588957594ff1
+  ms.sourcegitcommit: 8b02a0d376ab16873607ed84d1560b1c69c9e915
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/15/2020
-  ms.locfileid: "83427320"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83632610"
 highlightedContent:
   items:
   - title: 什么是 MSIX？
@@ -33,8 +33,8 @@ additionalContent:
   sections:
   - title: 最常见的任务
     items:
-    - title: 了解 MSIX 客户的旅程
-      summary: 了解客户经历的有关 MSIX 如何改进 Windows 应用程序部署的旅程。
+    - title: 了解 MSIX 客户旅程
+      summary: 了解 MSIX 如何改进 Windows 应用程序的客户部署。
       url: customer-journey.md
     - title: 从现有安装程序创建 MSIX 包
       summary: 可以使用 MSIX 打包工具将现有的桌面应用程序包更新为 MSIX 格式。
