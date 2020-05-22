@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ad03f17ce2a34347959f2723ea83408ae97f623c
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 9cece807e2206f754e96f6a394c5da626129c177
+ms.sourcegitcommit: d65b3457343e0590f53e36fc2710863cc2f13897
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81614019"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790585"
 ---
 # <a name="supported-platforms"></a>支持的平台
 
@@ -47,7 +47,7 @@ ms.locfileid: "81614019"
 | 打包桌面应用的标识 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | [修改包](modification-packages.md) | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
 | 本机 .MSIX 安装和卸载 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark: |
-| [包支持框架（PSF）](psf/package-support-framework-overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:|  :heavy_check_mark: | :heavy_check_mark:|  
+| [包支持框架 (PSF)](psf/package-support-framework-overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:|  :heavy_check_mark: | :heavy_check_mark:|  
 | [Windows 服务](packaging-tool/convert-an-installer-with-services.md) | :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x:| :x: | 
 | [非存储包的包完整性强制](package/signing-package-overview.md#package-integrity-enforcement) | :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x:| :x: | 
 ## <a name="package-format-support"></a>包格式支持
@@ -77,8 +77,11 @@ ms.locfileid: "81614019"
 
 ### <a name="microsoft-store-submissions"></a>Microsoft Store 提交
 
-MSIX 包支持的最低 OS 版本已在包清单文件中的 `TargetDeviceFamily` 元素内以 `MinVersion` 形式列出。 例如，.MSIX 包可能列出`MinVersion="10.0.17701.0"`为支持的最低版本，这意味着 .msix 包可以在此版本和更高版本的操作系统上运行。
+MSIX 包支持的最低 OS 版本已在包清单文件中的 `TargetDeviceFamily` 元素内以 `MinVersion` 形式列出。 例如，.MSIX 包可能列出 `MinVersion="10.0.17701.0"` 为支持的最低版本，这意味着 .msix 包可以在此版本和更高版本的操作系统上运行。
 
 Windows 10 版本 1709、1803 和 1809 支持主流的企业部署方案。 其中包括通过 Microsoft 终结点 Configuration Manager、Microsoft Intune、PowerShell 或双击安装进行安装。
 
 目前，通过 Microsoft Store 和 Microsoft Store for Business 进行 .MSIX 安装需要 Windows 10 版本1809及更高版本。
+
+### <a name="non-windows-platform"></a>非 Windows 平台
+[.MSIX SDK](https://github.com/Microsoft/msix-packaging)是一个开源项目，使开发人员可以在所有平台上广泛使用 .msix 包格式。 SDK 可用于任何允许第三方生成插件或扩展的跨平台客户端应用。 客户端应用开发人员可以使用 Windows 10 平台上提供的应用扩展模型，并在非 Windows 10 平台（如 macOS、iOS、Android 和 Linux）上使用 .MSIX SDK。 
