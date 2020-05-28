@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、windows 7、windows 8、Windows Server、uwp、.msix、msixcore、1709、1703、1607、1511、1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: a916cdf10b6fcf97f4e96f029bf7a2ad883615b9
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: df3a15600257487f89416a80307baae37e8f3d1b
+ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726428"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84107345"
 ---
 # <a name="update-your-existing-msix-package-to-support-msix-core"></a>更新现有的 .MSIX 包以支持 .MSIX 核心
 
@@ -47,7 +47,6 @@ ms.locfileid: "82726428"
 5. 在 "**清单文件**" 下，单击 "**打开文件**"
 6. 你正在查看包的清单。 在 "**依赖项**" 下，将 .msix Core 添加为目标设备系列（参见上文）
 7. 保存并关闭清单 
-
 8. 对包进行重新签名 
 9. 单击 "**保存**" 并选择是否希望包递增 
 
