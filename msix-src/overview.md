@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d1c3e4c0b9ff6a0617755a2f7a0ad1674a8ea72e
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 2cd4de777c7fc45a62e511d76916d61a46d5492a
+ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77779065"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84107335"
 ---
 # <a name="what-is-msix"></a>什么是 MSIX？
 
 MSIX 是一种 Windows 应用包格式，可以为所有 Windows 应用提供现代打包体验。 MSIX 包格式保留了现有应用包和/或安装文件的功能，此外，它还为 Win32、WPF 和 Windows 窗体应用启用了全新的现代打包和部署功能。
 
-MSIX 可使企业掌握最新信息，并确保其应用程序始终保持最新状态。 它使 IT 专业人员和开发人员能够交付以用户为中心的解决方案，同时通过减少重新打包的需求，来降低应用程序的拥有成本。
+MSIX 可使企业掌握最新信息，并确保其应用程序始终保持最新状态。 它使 IT 专业人员和开发人员能够交付以用户为中心的解决方案，同时通过减少重新打包的需求，来降低应用程序的所有权成本。
 
 ## <a name="key-features"></a>关键功能
 

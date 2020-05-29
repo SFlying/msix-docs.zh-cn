@@ -5,21 +5,23 @@ ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10 S, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 195f202595a4c1474f5fc1c3f5389ad8657889a7
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: ed5df7ed7655bf08ab8e1401f55bd88988be9768
+ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "75303329"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84107365"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>测试 Windows 应用是否适用于 S 模式下的 Windows 10
 
-可以对 Windows 应用进行测试，以确保其在以 S 模式运行 Windows 10 的设备上正常运行。 事实上，如果准备将应用发布到 Microsoft Store，则必须这样做，因为这是 Microsoft Store 的一项要求。 若要测试你的应用，可以在运行 Windows 10 专业版的设备上应用 Device Guard 代码完整性策略。
+可以对 Windows 应用进行测试，以确保其在以 S 模式运行 Windows 10 的设备上正常运行。 事实上，如果准备将应用发布到 Microsoft Store，则必须这样做，因为这是 Microsoft Store 的一项要求。 若要测试应用，可以在运行 Windows 10 专业版的设备上应用 Windows Defender 应用程序控制 (WDAC) 策略。
 
 > [!NOTE]
-> 应用 Device Guard 代码完整性策略的设备必须运行 Windows 10 创意者版本（10.0；内部版本 15063）或更高版本。
+> 在应用了该策略的设备上，可以对 Windows 应用进行测试，以确保其在以 S 模式运行 Windows 10 的设备上正常运行。 事实上，如果准备将应用发布到 Microsoft Store，则必须这样做，因为这是 Microsoft Store 的一项要求。 若要测试应用，可以在运行 Windows 10 专业版的设备上应用 WDAC 策略。
 
-Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行所必须遵守的规则。
+
+此 WDAC 策略强制执行一些规则，应用必须遵守这些规则才能在 Windows 10 S 上运行。
+
 
 > [!IMPORTANT]
 >我们建议你将这些策略应用于虚拟机，但如果你想要将它们应用于本地计算机，则请确保在应用策略之前，先查看本主题“下一步，安装策略并重启系统”部分中的最佳实践指南。
@@ -28,7 +30,7 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 
 ## <a name="first-download-the-policies-and-then-choose-one"></a>首先，下载这些策略，然后从中选择一个
 
-在[此处](https://go.microsoft.com/fwlink/?linkid=849018)下载 Device Guard 代码完整性策略。
+请在[此处](https://go.microsoft.com/fwlink/?linkid=849018)下载 WDAC 策略。
 
 然后，选择对你最有意义的一个策略。 以下是每个策略的摘要。
 
@@ -45,7 +47,7 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 ### <a name="audit-mode-policy"></a>审核模式策略
 在此模式下，即使你的应用执行 Windows 10 S 上不支持的任务，应用也会运行。Windows 将任何可能已被阻止的可执行文件记录到代码完整性事件日志中。
 
-可以通过打开“事件查看器”  并浏览到此位置来找到这些日志：应用程序和服务日志->Microsoft->Windows->CodeIntegrity->Operational。
+可以通过打开“事件查看器”并浏览到此位置来找到这些日志：应用程序和服务日志->Microsoft->Windows->CodeIntegrity->Operational。
 
 ![代码完整性事件日志](images/code-integrity-logs.png)
 
@@ -65,9 +67,9 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 此策略强制执行与 Windows 10 S 匹配的代码完整性规则，使你可以模拟在 Windows 10 S 上运行。这是最严格的策略，非常适合用于最终生产测试。 在此模式下，你的应用受到的限制与在用户设备上受到的限制相同。 若要使用此模式，你的应用必须由 Microsoft Store 签名。
 
 ### <a name="production-mode-policy-with-self-signed-apps"></a>具有自签名应用的生产模式策略
-此模式类似于生产模式策略，但它也允许通过使用 zip 文件中包含的测试证书进行签名的应用运行。 安装此 zip 文件的 AppxTestRootAgency  文件夹中包含的 PFX 文件。 然后，使用它对你的应用进行签名。 如此一来，你便可以快速进行循环访问，而无需应用商店签名。
+此模式类似于生产模式策略，但它也允许通过使用 zip 文件中包含的测试证书进行签名的应用运行。 安装此 zip 文件的 AppxTestRootAgency 文件夹中包含的 PFX 文件。 然后，使用它对你的应用进行签名。 如此一来，你便可以快速进行循环访问，而无需应用商店签名。
 
-由于你的证书的发布者名称必须与你的应用的发布者名称匹配，你将需要暂时将 Identity 元素的 Publisher 属性更改为“CN = Appx Test Root Agency Ex”。   完成测试后，你可以将该属性更改回其原始值。
+由于你的证书的发布者名称必须与你的应用的发布者名称匹配，你将需要暂时将 Identity 元素的 Publisher 属性更改为“CN = Appx Test Root Agency Ex”。  完成测试后，你可以将该属性更改回其原始值。
 
 ## <a name="next-install-the-policy-and-restart-your-system"></a>接下来，安装策略并重启系统
 
@@ -75,7 +77,7 @@ Device Guard 代码完整性策略强制执行应用在 Windows 10 S 上运行�
 
 如果想要将这些策略应用于本地计算机，最好从审核模式策略开始。 使用此策略，你可以查看代码完整性事件日志，以确保在强制执行的策略中不会阻止任何关键操作。
 
-准备好应用策略时，找到所选策略的 .P7B 文件，将其重命名为 SIPolicy.P7B，然后将该文件保存到系统上的此位置：  C:\Windows\System32\CodeIntegrity\\  。
+准备好应用策略时，找到所选策略的 .P7B 文件，将其重命名为 SIPolicy.P7B，然后将该文件保存到系统上的此位置：C:\Windows\System32\CodeIntegrity\\。
 
 然后，重启系统。
 
