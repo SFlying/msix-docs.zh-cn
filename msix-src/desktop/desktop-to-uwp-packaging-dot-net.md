@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: ac24e33a1580aa8a3ddac6899f4b37829e625620
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: bd6cf9c3c00221fc929e395296eb527b3e3fc049
+ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726475"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84107375"
 ---
 # <a name="set-up-your-desktop-application-for-msix-packaging-in-visual-studio"></a>在 Visual Studio 中设置用于 MSIX 打包的桌面应用程序
 
@@ -78,43 +78,11 @@ ms.locfileid: "82726475"
 
    ![设置入口点](images/entry-point-set.png)
 
-6. 如果你要打包的应用程序以 .NET Core 3 作为应用目标，请按照以下步骤向项目文件中添加一个新的生成目标。 只有对于以 .NET Core 3 作为应用目标的应用程序才需要执行此操作。  
-
-    1. 在“解决方案资源管理器”中，右键单击打包项目节点并选择“编辑项目文件”。 
-
-    2. 在文件中找到 `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` 元素。
-
-    3. 将此元素替换为以下 XML。
-
-        ``` xml
-        <ItemGroup>
-          <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-            <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-            <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-            <Implicit>true</Implicit>
-          </SDKReference>
-        </ItemGroup>
-        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-          <ItemGroup>
-            <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-            <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-            <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-              <SourceProject>
-              </SourceProject>
-            </_FilteredNonWapProjProjectOutput>
-          </ItemGroup>
-        </Target>
-        ```
-
-    4. 保存并关闭项目文件。
-
-7. 生成打包项目，以确保未显示任何错误。 如果收到错误，请打开**配置管理器**并确保你的项目以同一平台为应用目标。
+6. 生成打包项目，以确保未显示任何错误。 如果收到错误，请打开**配置管理器**并确保你的项目以同一平台为应用目标。
 
    ![配置管理器](images/config-manager.png)
 
-8. 使用[创建应用程序包](../package/packaging-uwp-apps.md)向导生成 MSIX 程序包/捆绑包或 .msixupload/.appxupload 文件（用于发布到应用商店）。
+7. 使用[创建应用程序包](../package/packaging-uwp-apps.md)向导生成 MSIX 程序包/捆绑包或 .msixupload/.appxupload 文件（用于发布到应用商店）。
 
 
 ## <a name="next-steps"></a>后续步骤
