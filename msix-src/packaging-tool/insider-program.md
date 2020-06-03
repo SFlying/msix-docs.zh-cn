@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9d00543c21350f31447012afe2399c018734e81c
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 0fa0de03463ff974bdbfd004ba2da27fb1c336d6
+ms.sourcegitcommit: c35618a528daaebcf9e4d4f8effdcb44743b9452
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726537"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84310988"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -35,22 +35,22 @@ ms.locfileid: "82726537"
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-## <a name="version-120204230"></a>版本1.2020.423。0
-- 能够从包编辑器中排除项
-- 在包编辑器中使用 ctrl 键选择多个选项
-- 覆盖文件时添加提示
+## <a name="version-120205280"></a>版本1.2020.528。0
+- 能够将多个文件添加到包编辑器
+- 能够将多个 .reg 文件导入包编辑器
+- 改进了对转换任何安装程序类型的支持
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
-## <a name="share-your-feedback"></a>分享反馈
+## <a name="share-your-feedback"></a>分享你的反馈
 
-如果使用该应用时遇到问题，请按 **Windows 键 + F** 启动“反馈中心”。**** 尽量多提供一些有关该问题的详细信息，以帮助我们诊断并解决问题。 使用类别**应用程序** > **.msix 打包工具**直接向我们提供反馈。
+如果使用该应用时遇到问题，请按 **Windows 键 + F** 启动“反馈中心”。**** 尽量多提供一些有关该问题的详细信息，以帮助我们诊断并解决问题。 使用类别**应用程序**  >  **.msix 打包工具**直接向我们提供反馈。
 
 你还可以从应用内共享反馈。 单击主页屏幕上的“设置”（齿轮图标），选择“反馈”选项卡，然后选择最能代表该问题的按钮。**** 随后会直接启动“反馈中心”，系统会自动填充所需的类别信息。**** 
 
 此外，通过“反馈中心”还能方便地分享有关你希望在应用中添加的新功能的看法和建议。****  
 
-## <a name="faqs"></a>常见问题
+## <a name="faqs"></a>常见问题解答
 
 1. 我没有收到有关已将我登记到预览体验计划的确认电子邮件。 
     - 请再次[加入该计划](https://aka.ms/MSIXPackagingPreviewProgram)。  

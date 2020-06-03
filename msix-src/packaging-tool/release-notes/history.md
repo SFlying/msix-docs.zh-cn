@@ -6,14 +6,22 @@ ms.topic: article
 keywords: windows 10、uwp、.msix、.msix 打包工具、预览体验计划
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: f156b0f6dc48a7b36c19844cd35a265b9de38f74
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 651b4b6c5c8d47e8eedf63434f9016518fa1a6f9
+ms.sourcegitcommit: c35618a528daaebcf9e4d4f8effdcb44743b9452
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726403"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84310978"
 ---
 # <a name="release-notes-for-the-msix-packaging-tool"></a>MSIX 打包工具发行说明
+
+## <a name="version-120205280"></a>版本1.2020.528。0
+- 能够将多个文件添加到包编辑器
+- 能够将多个 .reg 文件导入包编辑器
+- 改进了对转换任何安装程序类型的支持
+- Bug 修复：
+    - 禁用未提供 Hyper-v 时选择本地 vm 计算机
+    - 选中 "强制实施存储要求" 复选框后，禁止创建不被存储区接受的图标
 
 ## <a name="version-120204230"></a>版本1.2020.423。0
 - 将项从包编辑器添加到排除列表的功能
@@ -31,7 +39,7 @@ ms.locfileid: "82726403"
 - 编辑后验证清单格式 
 - 第一次启动任务失败时发出消息 
 - 禁止解压缩相对路径 
-- 更新了文件筛选器，因此它们显示了哪些格式有效（例如，用于表示的安装程序） *。* 现在`*.msi, *.exe, ...`） 
+- 更新了文件筛选器，因此它们显示了哪些格式有效（例如，用于表示的安装程序） *。*  现在 `*.msi, *.exe, ...` ） 
 - 修复了解包时将路径中的空格转换为 "%20"
 - 一般 bug 修复
 
