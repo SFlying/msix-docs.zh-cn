@@ -6,14 +6,17 @@ ms.topic: article
 keywords: windows 10、uwp、.msix、.msix 打包工具、预览体验计划
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: 651b4b6c5c8d47e8eedf63434f9016518fa1a6f9
-ms.sourcegitcommit: c35618a528daaebcf9e4d4f8effdcb44743b9452
+ms.openlocfilehash: c03cf8ba7fd1098184b8e370298997c3a7c51878
+ms.sourcegitcommit: bd738ef9264bd4c2785e5d175c44f2b785092e58
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84310978"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84633851"
 ---
 # <a name="release-notes-for-the-msix-packaging-tool"></a>MSIX 打包工具发行说明
+
+## <a name="version-120206030"></a>版本1.2020.603。0
+- 修复了转换期间 App-v 注册表值的问题
 
 ## <a name="version-120205280"></a>版本1.2020.528。0
 - 能够将多个文件添加到包编辑器
