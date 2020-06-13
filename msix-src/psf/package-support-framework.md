@@ -5,12 +5,12 @@ ms.date: 05/14/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dc0fc16868f5cbdfd83b188d17ec4eae7bea7d9
-ms.sourcegitcommit: 8d6bc53d5f5ae80d9ce191fe81660407e9f11e0e
+ms.openlocfilehash: c878ccb97ea3b77635344a36feb1d63c3f42f9ed
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83427360"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724601"
 ---
 # <a name="get-started-with-package-support-framework"></a>包支持框架入门 
 
@@ -52,11 +52,11 @@ ms.locfileid: "83427360"
 
 如果你怀疑文件系统访问失败，请搜索 System32/SysWOW64 或包文件路径下的失败事件。 筛选器也可以在此处提供帮助。 从列表底部开始，向上滚动。 最近出现在此列表底部的失败。 请注意包含字符串（如 "拒绝访问" 和 "找不到路径/名称"）的错误，并忽略看起来不可疑的问题。 [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)有两个问题。 在下图中显示的列表中可以看到这些问题。
 
-![Procmon 配合配置 .txt](images/procmon_config_txt.png)
+![Procmon 配合 Config.txt](images/procmon_config_txt.png)
 
-在此图中出现的第一个问题中，应用程序无法从位于 "C:\Windows\SysWOW64" 路径中的 "Config .txt" 文件中读取。 应用程序不太可能尝试直接引用该路径。 大多数情况下，它会尝试使用相对路径从该文件中读取，默认情况下，"System32/SysWOW64" 是应用程序的工作目录。 这表明，应用程序需要将当前工作目录设置为包中的某个位置。 查看 appx 内部，可以看到该文件与可执行文件位于同一目录中。
+在此图中出现的第一个问题中，应用程序无法从位于 "C:\Windows\SysWOW64" 路径中的 "Config.txt" 文件读取。 应用程序不太可能尝试直接引用该路径。 大多数情况下，它会尝试使用相对路径从该文件中读取，默认情况下，"System32/SysWOW64" 是应用程序的工作目录。 这表明，应用程序需要将当前工作目录设置为包中的某个位置。 查看 appx 内部，可以看到该文件与可执行文件位于同一目录中。
 
-![应用配置 .txt](images/psfsampleapp_config_txt.png)
+![应用 Config.txt](images/psfsampleapp_config_txt.png)
 
 下图显示了第二个问题。
 
@@ -64,7 +64,7 @@ ms.locfileid: "83427360"
 
 在此问题中，应用程序无法将 .log 文件写入其包路径。 这会建议使用文件重定向修复方法。
 
-<a id="find" />
+<a id="find"></a>
 
 ## <a name="step-2-find-a-runtime-fix"></a>步骤2：查找运行时修补程序
 
@@ -132,9 +132,9 @@ nuget install Microsoft.PackageSupportFramework
 
 | 应用程序可执行文件为 x64 | 应用程序可执行文件为 x86 |
 |-------------------------------|-----------|
-| [PSFLauncher64](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |  [PSFLauncher32](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |
-| [PSFRuntime64](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) | [PSFRuntime32](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) |
-| [PSFRunDll64](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) | [PSFRunDll32](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) |
+| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |
+| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) |
+| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) |
 
 包内容现在应如下所示。
 
@@ -142,7 +142,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="modify-the-package-manifest"></a>修改包清单
 
-在文本编辑器中打开包清单，并将 `Executable` 元素的属性设置 `Application` 为 PSF 启动程序可执行文件的名称。  如果你知道目标应用程序的体系结构，请选择适当的版本 PSFLauncher32 或 PSFLauncher64。  否则，PSFLauncher32 将适用于所有情况。  下面是一个示例。
+在文本编辑器中打开包清单，并将 `Executable` 元素的属性设置 `Application` 为 PSF 启动程序可执行文件的名称。  如果你知道目标应用程序的体系结构，请选择适当的版本，PSFLauncher32.exe 或 PSFLauncher64.exe。  否则，PSFLauncher32.exe 将适用于所有情况。  下面是一个示例。
 
 ```xml
 <Package ...>
@@ -159,7 +159,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="create-a-configuration-file"></a>创建配置文件
 
-创建文件名 ``config.json`` ，并将该文件保存到包的根文件夹。 修改配置的 json 文件的已声明应用 ID，以指向刚才替换的可执行文件。 使用通过处理监视器获得的知识，还可以设置工作目录，并使用文件重定向修正将读取/写入操作重定向到包相对 "PSFSampleApp" 目录下的 .log 文件。
+创建文件名 ``config.json`` ，并将该文件保存到包的根文件夹。 修改文件上 config.js的已声明应用 ID，使其指向刚替换的可执行文件。 使用通过处理监视器获得的知识，还可以设置工作目录，并使用文件重定向修正将读取/写入操作重定向到包相对 "PSFSampleApp" 目录下的 .log 文件。
 
 ```json
 {
@@ -195,7 +195,7 @@ nuget install Microsoft.PackageSupportFramework
 }
 ```
 
-下面是有关配置 json 架构的指南：
+下面是针对架构的 config.js指南：
 
 | Array | 键 | Value |
 |-------|-----------|-------|
@@ -206,7 +206,7 @@ nuget install Microsoft.PackageSupportFramework
 | 修正 | dll | 要加载的链接地址的包相对路径，.msix/.appx。 |
 | 修正 | config | 可有可无控制修正 dll 的行为方式。 此值的准确格式因修正链接而异，因为每个修正都可以根据需要解释此 "blob"。 |
 
-`applications`、 `processes` 和 `fixups` 键是数组。 这意味着，你可以使用配置 json 文件来指定多个应用程序、进程和修复 DLL。
+`applications`、 `processes` 和 `fixups` 键是数组。 这意味着，可以使用文件 config.js来指定多个应用程序、进程和修复 DLL。
 
 ### <a name="package-and-test-the-app"></a>打包并测试应用程序
 
@@ -241,7 +241,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 ### <a name="use-the-trace-fixup"></a>使用跟踪修正
 
-诊断打包应用程序兼容性问题的一种替代方法是使用跟踪修正。 此 DLL 包含在 PSF 中，并提供应用程序行为的详细诊断视图，类似于进程监视器。  它专门设计用于显示应用程序兼容性问题。  若要使用跟踪修正，请将 DLL 添加到包，将以下片段添加到配置文件中，然后打包并安装应用程序。
+诊断打包应用程序兼容性问题的一种替代方法是使用跟踪修正。 此 DLL 包含在 PSF 中，并提供应用程序行为的详细诊断视图，类似于进程监视器。  它专门设计用于显示应用程序兼容性问题。  若要使用跟踪修正，请将 DLL 添加到包，将以下片段添加到 config.js上的，然后打包并安装应用程序。
 
 ```json
 {
@@ -254,7 +254,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 }
 ```
 
-默认情况下，跟踪修正将筛选出可能被视为 "预期" 的失败。  例如，应用程序可能会尝试无条件删除文件，而不检查其是否已存在，并忽略结果。 这会导致某些意外的失败被筛选掉，因此，在上述示例中，我们选择接收来自文件系统功能的所有失败。 我们这样做的原因是，我们从配置 .txt 文件中读取的尝试失败，并显示消息 "找不到文件"。 这是一种通常会出现的错误，通常不会被认为是意外情况。 在实践中，可能最好仅开始筛选意外故障，然后在出现仍无法确定的问题时回退到所有失败。
+默认情况下，跟踪修正将筛选出可能被视为 "预期" 的失败。  例如，应用程序可能会尝试无条件删除文件，而不检查其是否已存在，并忽略结果。 这会导致某些意外的失败被筛选掉，因此，在上述示例中，我们选择接收来自文件系统功能的所有失败。 我们这样做的原因是，在尝试从 Config.txt 文件中读取消息失败，并显示消息 "找不到文件"。 这是一种通常会出现的错误，通常不会被认为是意外情况。 在实践中，可能最好仅开始筛选意外故障，然后在出现仍无法确定的问题时回退到所有失败。
 
 默认情况下，跟踪修正的输出将发送到附加的调试器。 在此示例中，我们不会附加调试器，而是使用 SysInternals 中的[DebugView](https://docs.microsoft.com/sysinternals/downloads/debugview)程序来查看其输出。 运行应用程序后，可以看到与之前相同的故障，这会使我们向相同的运行时修复。
 
@@ -278,7 +278,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 让我们看看此示例中的每个项目。
 
-| Project | 目标 |
+| 项目 | 目标 |
 |-------|-----------|
 | DesktopApplicationPackage | 此项目基于[Windows 应用程序打包项目](../desktop/desktop-to-uwp-packaging-dot-net.md)，并输出 .msix 包。 |
 | Runtimefix | 这是一个 c + + 动态链接库项目，其中包含一个或多个用于运行时修复的替换函数。 |
@@ -361,7 +361,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 右键单击该引用，然后在 "**属性**" 窗口中应用这些值。
 
-| properties | Value |
+| 属性 | Value |
 |-------|-----------|
 | 复制本地 | True |
 | 复制本地附属程序集 | True |
@@ -445,7 +445,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 ```
 
 >[!NOTE]
-> `applications`、 `processes` 和 `fixups` 键是数组。 这意味着，你可以使用配置 json 文件来指定多个应用程序、进程和修复 DLL。
+> `applications`、 `processes` 和 `fixups` 键是数组。 这意味着，可以使用文件 config.js来指定多个应用程序、进程和修复 DLL。
 
 ### <a name="debug-a-runtime-fix"></a>调试运行时修补程序
 
@@ -459,7 +459,7 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 
 Visual Studio 的另一个问题是，它没有为附加到调试器启动的任何子进程提供内置支持。   这使得难以在目标应用程序的启动路径中调试逻辑，必须在启动后由 Visual Studio 手动附加。
 
-若要解决此问题，请使用支持子进程附加的调试程序。  请注意，通常不能将实时（JIT）调试器附加到目标应用程序。  这是因为大多数 JIT 技术都涉及到通过 ImageFileExecutionOptions 注册表项启动调试器来代替目标应用。  这违背了 PSFLauncher 用于将 FixupRuntime 注入目标应用程序的 detouring 机制。  WinDbg 包含在[Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)中，并从[Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)获取，它支持子进程附加。  它现在还支持直接[启动和调试 UWP 应用](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app)。
+若要解决此问题，请使用支持子进程附加的调试程序。  请注意，通常不能将实时（JIT）调试器附加到目标应用程序。  这是因为大多数 JIT 技术都涉及到通过 ImageFileExecutionOptions 注册表项启动调试器来代替目标应用。  这会使 PSFLauncher.exe 将 FixupRuntime.dll 注入到目标应用中，这种机制将违背 detouring 机制。  WinDbg 包含在[Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/index)中，并从[Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)获取，它支持子进程附加。  它现在还支持直接[启动和调试 UWP 应用](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app)。
 
 若要将目标应用程序启动调试为子进程，请启动 ``WinDbg`` 。
 

@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: 247871fab660ca0afa976e1a233cf731b8d13735
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 712b3bdca76efa2eb24b04e246b6fc65b3f55b15
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726563"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724611"
 ---
 # <a name="package-a-desktop-or-uwp-app-in-visual-studio"></a>在 Visual Studio 中打包桌面或 UWP 应用
 
@@ -75,7 +75,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
     从 "**打包**" 选项卡中，你可以输入发布数据。 你可以从此位置选择用于对你的应用进行签名的证书。 必须使用证书对所有 .MSIX 应用进行签名。
 
     > [!NOTE]
-    > 从 Visual Studio 2019 开始，已打包的桌面或 UWP 项目中不再生成临时证书。 若要创建或导出证书，请使用[本文](create-certificate-package-signing.md)中介绍的 PowerShell cmdlet。
+    > 从 Visual Studio 2019 开始，已打包的桌面或 UWP 项目中不再生成临时证书。 若要创建或导出证书，请使用[本文](create-certificate-package-signing.md)中介绍的 PowerShell cmdlet。 在 Visual Studio 的最新版本中，还可以使用存储在用于开发和测试方案的[Azure Key Vault 中的证书对应用进行签名](../desktop/sign-with-akv-cert.md)。
 
     > [!IMPORTANT]
     > 如果你是在 Microsoft Store 中发布应用，将使用你的受信任的证书进行签名。 这让用户能够安装和运行你的应用，而不必安装关联的应用签名证书。
@@ -84,7 +84,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 4. 在你对应用进行必要的编辑后，请保存你的 **Package.appxmanifest** 文件。
 
-如果通过 Microsoft Store 分发应用，则 Visual Studio 可以将你的包与应用商店相关联。 为此，请在解决方案资源管理器中右键单击项目名称，然后选择 "**发布**->**" "将应用与应用商店关联**" （在 Visual Studio 2019 版本16.3 之前，"**发布**" 菜单的名称为 "**存储**"）。 您也可以在 "**创建应用程序包**" 向导中执行此操作，如下一节中所述。 在关联应用时，会自动更新清单设计器的“打包”选项卡中的某些字段。
+如果通过 Microsoft Store 分发应用，则 Visual Studio 可以将你的包与应用商店相关联。 为此，请在解决方案资源管理器中右键单击项目名称，然后选择 "**发布** -> **" "将应用与应用商店关联**" （在 Visual Studio 2019 版本16.3 之前，"**发布**" 菜单的名称为 "**存储**"）。 您也可以在 "**创建应用程序包**" 向导中执行此操作，如下一节中所述。 在关联应用时，会自动更新清单设计器的“打包”选项卡中的某些字段。
 
 ## <a name="generate-an-app-package"></a>生成应用程序包
 
@@ -98,7 +98,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 1. 在**解决方案资源管理器**中，打开应用程序项目的解决方案。
 
-2. 右键单击该项目，然后选择 "**发布**->" "**创建应用包**" （Visual Studio 2019 版本16.3 之前，"**发布**" 菜单的名称为 "**存储**"）。
+2. 右键单击该项目，然后选择 "**发布** -> " "**创建应用包**" （Visual Studio 2019 版本16.3 之前，"**发布**" 菜单的名称为 "**存储**"）。
 
     ![上下文菜单，可导航到“创建应用包”](images/packaging-screen2.jpg)
 
@@ -140,7 +140,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 你可以使用 Visual Studio 中的 "**创建应用包**" 向导创建应用包上传文件，也可以从现有应用包或应用捆绑中手动创建。
 
 > [!NOTE]
-> 如果要手动创建应用程序包（. .msix 或 .appx）或应用捆绑包（. .msixbundle 或 .appxbundle），请参阅[使用 makeappx.exe 工具创建应用包](create-app-package-with-makeappx-tool.md)。
+> 如果要手动创建应用程序包（. .msix 或 .appx）或应用捆绑包（. .msixbundle 或 .appxbundle），请参阅[使用 MakeAppx.exe 工具创建应用包](create-app-package-with-makeappx-tool.md)。
 
 ### <a name="create-your-app-package-upload-file-using-visual-studio"></a>使用 Visual Studio 创建应用包上传文件
 
@@ -149,7 +149,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
 1. 在**解决方案资源管理器**中，打开 UWP 应用项目的解决方案。
 
-2. 右键单击该项目，然后选择 "**发布**->" "**创建应用包**" （Visual Studio 2019 版本16.3 之前，"**发布**" 菜单的名称为 "**存储**"）。 如果此选项处于禁用状态或根本没有显示，请检查该项目是否为通用 Windows 项目。  
+2. 右键单击该项目，然后选择 "**发布** -> " "**创建应用包**" （Visual Studio 2019 版本16.3 之前，"**发布**" 菜单的名称为 "**存储**"）。 如果此选项处于禁用状态或根本没有显示，请检查该项目是否为通用 Windows 项目。  
 
     ![上下文菜单，可导航到“创建应用包”](images/packaging-screen2.jpg)
 
@@ -186,7 +186,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
     - 一个或多个应用包（. .msix 或 .appx）或应用捆绑包（. .msixbundle 或 .appxbundle）。
     - .Appxsym 文件。 这是包含应用的公共符号的压缩 .pdb 文件，用于合作伙伴中心的[故障分析](https://docs.microsoft.com/windows/uwp/publish/health-report)。 您可以省略此文件，但如果您这样做，您的应用程序将不会有任何崩溃分析或调试信息。
 
-2. 选择文件夹中的所有文件，右键单击文件，然后选择 "**发送到** -> **压缩（zipped）文件夹**"。
+2. 选择文件夹中的所有文件，右键单击文件，然后选择 "**发送到**  ->  **压缩（zipped）文件夹**"。
 
 3. 将新的 zip 文件的扩展名从 .zip 更改为 msixupload 或 .appxupload。
 
@@ -202,7 +202,7 @@ Visual Studio 的清单设计器让你能够更新清单文件，而无需编辑
 
     如果你拥有要用于测试的远程 Windows 10 设备，你将需要在该设备上手动安装 Windows 应用认证工具包。 下一节将指导你完成这些步骤。 完成此操作后，可以选择 "**远程计算机**"，然后单击 "**启动 Windows 应用认证工具包**" 以连接到远程设备并运行验证测试。
 
-2. 当 WACK 完成并且你的应用已通过认证后，你就可以将你的应用程序提交到合作伙伴中心了。 请确保上传正确的文件。 可以在解决方案`\[AppName]\AppPackages`的根文件夹中找到该文件的默认位置，该位置将以. .appxupload 或 msixupload 文件扩展名结尾。 该名称的格式`[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`为， `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload`如果你选择了所有选定的包体系结构的应用捆绑包，则为。
+2. 当 WACK 完成并且你的应用已通过认证后，你就可以将你的应用程序提交到合作伙伴中心了。 请确保上传正确的文件。 可以在解决方案的根文件夹中找到该文件的默认位置 `\[AppName]\AppPackages` ，该位置将以. .appxupload 或 msixupload 文件扩展名结尾。 该名称的格式为， `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload` `[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload` 如果你选择了所有选定的包体系结构的应用捆绑包，则为。
 
 ### <a name="validate-your-app-package-on-a-remote-windows10-device"></a>在远程 Windows 10 设备上验证你的应用包
 
