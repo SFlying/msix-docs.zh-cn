@@ -176,6 +176,8 @@
           href: desktop/desktop-to-uwp-packaging-dot-net.md
         - name: 在 Visual Studio 中打包桌面或 UWP 应用
           href: package/packaging-uwp-apps.md
+        - name: 使用 Azure Key Vault 为包签名
+          href: desktop/sign-with-akv-cert.md
         - name: 使用本机映像优化二进制文件
           href: desktop/desktop-to-uwp-r2r.md
     - name: 用于 MSIX 生成的 CI/CD 管道
