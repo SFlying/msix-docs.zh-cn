@@ -1,17 +1,17 @@
 ---
 title: .MSIX 打包工具的已知问题和故障排除提示
 description: 介绍了已知问题，并提供了使用 .MSIX 打包工具将应用程序转换为 .MSIX 时要考虑的故障排除提示。
-ms.date: 02/03/2020
+ms.date: 06/11/2020
 ms.topic: article
 keywords: msix 打包工具, 已知问题, 故障排除
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4ae2efbc30106e8a5cf6a2861f7577ecae73048a
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 466e7527ae1c7dc20322aa6eb2c3d507f1a1962f
+ms.sourcegitcommit: 6243b7aca6f52f007f4571c835f580f433c31769
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726399"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84812760"
 ---
 # <a name="known-issues-and-troubleshooting-tips-for-the-msix-packaging-tool"></a>MSIX 打包工具的已知问题和故障排除提示
 
@@ -23,11 +23,38 @@ ms.locfileid: "82726399"
 
 如果已选择加入我们的[预览体验计划](insider-program.md)，请确保具有正确版本的 .Msix 打包工具：
 - 请参阅 .MSIX 打包工具中的 "**关于**" 部分，查看你所在的版本。
-- 请[在此处](insider-program.md#current-insider-preview-build)确定最新的有问必答预览版本，并确认已安装该版本的 .Msix 打包工具。 请确保注册了试验的 MSA 是登录到 Microsoft Store 的帐户。 
-- 通过计算机上的 Microsoft Store 手动更新 .MSIX 打包工具。 如果此选项可供你使用，请打开应用商店，转到 "**下载" 和 "更新**"，然后单击 "**获取更新**"。
+- 请[在此处](insider-program.md#current-insider-preview-build)确定最新的有问必答预览版本，并确认已安装该版本的 .Msix 打包工具。 
+- 请确保注册了试验的 MSA 是登录到 Microsoft Store 的帐户。 
+- 通过计算机上的 Microsoft Store 手动更新 .MSIX 打包工具。 如果此选项可供你使用，请打开应用商店，转到 "**下载" 和 "更新**"，然后单击 "**获取更新**"。 或者，搜索 .MSIX 打包工具，然后在 "产品" 页上，您可以提示它进行更新。 
 - 若要安装 .MSIX 打包工具以供脱机使用，请按照[以下说明进行操作](disconnected-environment.md#get-the-msix-packaging-tool)，以确保通过脱机过程获得最新的应用。
 
 如果你有兴趣加入我们的预览体验计划，请单击[此处](https://aka.ms/MSIXPackagingPreviewProgram)。
+
+### <a name="msix-packaging-tool-driver"></a>.MSIX 打包工具驱动程序
+
+.MSIX 打包工具驱动程序作为 Windows 更新的[功能按需（FOD）](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities)包提供。 如果在计算机上禁用 Windows 更新服务，或者如果 Windows 有问必答航班环设置与计算机的操作系统内部版本不匹配，则将无法安装它。
+
+如果在获取驱动程序时遇到问题，或者正在脱机环境中工作，则可以在[此处](disconnected-environment.md#get-the-msix-packaging-tool-driver)找到下载驱动程序的链接。 
+
+如果已下载驱动程序，并且在包转换过程中遇到问题，则可能是以下问题之一。
+
+#### <a name="network-connectivity-issues"></a>网络连接问题
+
+以下错误代码可能表示遇到连接问题：
+
+* -2145107924 （0x8024402c）
+* -2145107945 （0x80244017）
+* -2145123272 （0x80240438）
+
+#### <a name="windows-server-update-service-wsus-configuration-manager-or-group-policies-affecting-windows-update-connectivity"></a>影响 Windows 更新连接的 Windows Server Update Service （WSUS）、Configuration Manager 或组策略
+
+以下错误代码可能表示计算机上的策略正在 Windows 更新连接：-2145124306 （0x8024002e）的影响。
+
+如果你收到此错误代码，可能需要检查你的[环境设置和策略](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)。
+
+#### <a name="driver-required-a-reinstall"></a>驱动程序需要重新安装
+
+在这种情况下，.MSIX 打包工具会在错误消息中通知你，驱动程序需要重新启动。 重新启动计算机，然后重新开始转换以解决此问题。 
 
 ### <a name="minimum-version"></a>最低版本
 
@@ -36,7 +63,7 @@ ms.locfileid: "82726399"
 #### <a name="enforce-microsoft-store-versioning-requirements"></a>强制 Microsoft store 版本控制要求
 如果使用早于**1.2019.701.0**的[.msix 打包工具](tool-overview.md)版本转换现有的安装程序，则该工具将强制实施 Microsoft Store 版本控制要求，或使用其他工具来创建未将最低版本设置为10.0.16299.0 的包（Windows 10，版本1709）。 将应用部署到 Windows 10 版本1709或更高版本时，这将导致错误消息。
 
-若要解决此问题，请打开 **.Msix 打包工具**并通过**包编辑器**编辑应用。 打开清单并将`MinVersion` `TargetDeviceFamily`元素的属性设置为 "10.0.16299.0"。
+若要解决此问题，请打开 **.Msix 打包工具**并通过**包编辑器**编辑应用。 打开清单并将元素的 `MinVersion` 属性设置 `TargetDeviceFamily` 为 "10.0.16299.0"。
 
 ```xml
 <Dependencies>
@@ -61,7 +88,7 @@ ms.locfileid: "82726399"
 
 #### <a name="bad-pe-certificate-0x800700c1"></a>错误的 PE 证书（0x800700C1）
 
-当包包含具有损坏证书的二进制文件时，会出现此问题。 若要解决此问题，请`dumpbin.exe /headers`使用命令转储文件头，并检查是否有错误的元素。 手动重写标头以解决问题。 通常，.MSIX 打包工具会自动检测错误的标头。 如果此问题仍然存在，请提供文件反馈。 可在[此处](../desktop/desktop-to-uwp-known-issues.md#bad-pe-certificate-0x800700c1)找到详细信息。
+当包包含具有损坏证书的二进制文件时，会出现此问题。 若要解决此问题，请使用 `dumpbin.exe /headers` 命令转储文件头，并检查是否有错误的元素。 手动重写标头以解决问题。 通常，.MSIX 打包工具会自动检测错误的标头。 如果此问题仍然存在，请提供文件反馈。 可在[此处](../desktop/desktop-to-uwp-known-issues.md#bad-pe-certificate-0x800700c1)找到详细信息。
 
 #### <a name="device-guard-signing"></a>Device Guard 签名
 
@@ -100,7 +127,7 @@ ms.locfileid: "82726399"
 
 #### <a name="file-not-found"></a>找不到文件
 
-该文件可以是打开的或不存在的。 若要解决此问题，请添加相应的文件或关闭当前正在使用的文件。 请注意，如果它处于打开`File not Found`状态，则不会收到错误消息。 相反，您会收到`Access Denied`或`File in Use`错误。
+该文件可以是打开的或不存在的。 若要解决此问题，请添加相应的文件或关闭当前正在使用的文件。 请注意， `File not Found` 如果它处于打开状态，则不会收到错误消息。 相反，您会收到 `Access Denied` 或 `File in Use` 错误。
 
 #### <a name="file-type-associations"></a>文件类型关联
 
@@ -125,7 +152,7 @@ ms.locfileid: "82726399"
 3. 在“类别”下选择“应用”，然后选择“MSIX 打包工具”。************
 4. 附加与转换相关的任何[日志文件](#log-files)。 可以在上面提供的文件夹中找到日志。
 5. 附加转换的 MSIX 包（如果可能）。
-6. 单击“提交”  。
+6. 单击“提交”。
 
 也可以直接在 MSIX 打包工具中向我们发送反馈，方法是转到“设置”下的“反馈”选项卡。******** 
 
