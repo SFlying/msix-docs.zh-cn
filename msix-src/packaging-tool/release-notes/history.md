@@ -6,14 +6,18 @@ ms.topic: article
 keywords: windows 10、uwp、.msix、.msix 打包工具、预览体验计划
 ms.localizationpriority: medium
 ms.custom: Vibranium
-ms.openlocfilehash: c03cf8ba7fd1098184b8e370298997c3a7c51878
-ms.sourcegitcommit: bd738ef9264bd4c2785e5d175c44f2b785092e58
+ms.openlocfilehash: 6aa47ea616a28694a9e22cb68a2a89a100e86629
+ms.sourcegitcommit: 6c517bd2f6354db1a2c51217a208e1d2cfd466da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633851"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85295574"
 ---
 # <a name="release-notes-for-the-msix-packaging-tool"></a>MSIX 打包工具发行说明
+
+## <a name="version-120206180"></a>版本1.2020.618。0
+- 为远程命令行转换添加了较长的超时会话
+- 改进了 .MSIX 核心 OS 选择，以减少冲突和混淆
 
 ## <a name="version-120206030"></a>版本1.2020.603。0
 - 修复了转换期间 App-v 注册表值的问题

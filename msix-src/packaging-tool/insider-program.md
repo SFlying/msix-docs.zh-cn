@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 781c59a2b62cdc1066e7ee884edc3c6161b1c40e
-ms.sourcegitcommit: bd738ef9264bd4c2785e5d175c44f2b785092e58
+ms.openlocfilehash: 485fda5e4d0ef4ca39a1cf2d8220a5cdf003881b
+ms.sourcegitcommit: 6c517bd2f6354db1a2c51217a208e1d2cfd466da
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633861"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85295564"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -19,7 +19,7 @@ ms.locfileid: "84633861"
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://aka.ms/MSIXPackagingPreviewProgram" data-linktype="external">单击此处加入</a></p></div>
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 - Windows 10 版本 1809（或更高版本）。
 - 用于访问 Microsoft Store 中的应用的有效 Microsoft 帐户别名。
@@ -35,8 +35,9 @@ ms.locfileid: "84633861"
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-## <a name="version-120206030"></a>版本1.2020.603。0
-- 修复了转换期间 App-v 注册表值的问题
+## <a name="version-120206180"></a>版本1.2020.618。0
+- 为远程命令行转换添加了较长的超时会话
+- 改进了 .MSIX 核心 OS 选择，以减少冲突和混淆
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 
