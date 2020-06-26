@@ -7,12 +7,12 @@ keywords: windows 10, uwp, msix
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6799625432b42303b81ddcc7fcaacfb72e36f8fe
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 0345e15ad014afb9461eccc6ed112550a3c0c7a8
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "80108451"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724532"
 ---
 # <a name="generating-msix-package-components"></a>生成 MSIX 打包组件
 
@@ -145,7 +145,7 @@ ms.locfileid: "80108451"
     Square44x44Logo="images\small_icon.png"
     Description="A useful description" />
 ```
-<a id="target-based-assets" />
+<a id="target-based-assets"></a>
 
 ## <a name="optional-add-target-based-unplated-assets"></a>（可选）添加基于目标的未着色资产
 
@@ -162,7 +162,7 @@ ms.locfileid: "80108451"
 
 4. 转到下一小节，以生成新的包资源索引文件。
 
-<a id="make-pri" />
+<a id="make-pri"></a>
 
 ### <a name="generate-a-package-resource-index-pri-file-using-makepri"></a>使用 MakePri 生成包资源索引 (PRI) 文件
 
@@ -184,7 +184,7 @@ ms.locfileid: "80108451"
 
 6.  根据下一步骤中的说明打包应用程序。
 
-<a id="make-appx" />
+<a id="make-appx"></a>
 
 ## <a name="test-your-application-before-packaging"></a>在打包之前测试应用程序
 

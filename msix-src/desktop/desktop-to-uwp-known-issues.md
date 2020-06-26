@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f56cc122f82f2806b0cc1d014c9ab4c14307895
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 0ec44b40dc377bbc573c40a6ec12540f7cd89dac
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "80108441"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724533"
 ---
 # <a name="known-issues-with-packaged-desktop-apps"></a>打包的桌面应用的已知问题
 
@@ -69,7 +69,7 @@ Windows 应用包清单中的发布者条目必须与要用于签名的证书的
 certutil -dump <cert_file.pfx>
 ```
 
-<a id="bad-pe-cert" />
+<a id="bad-pe-cert"></a>
 
 ### <a name="bad-pe-certificate-0x800700c1"></a>错误的 PE 证书 (0x800700C1)
 

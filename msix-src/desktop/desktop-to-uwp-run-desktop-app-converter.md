@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: e5fafa90820eed04e33ff3405a8aaf21588e89e5
-ms.sourcegitcommit: 4593ba54c2c75ce82878e948566c92e21c27699d
+ms.openlocfilehash: 251ee703973695fae70b9e4d84b4bb46cb889432
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83383647"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724571"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>使用 Desktop App Converter 打包桌面应用程序
 
@@ -144,7 +144,7 @@ DesktopAppConverter.exe
 * [打包没有安装程序的应用程序](#no-installer-conversion)
 * [将应用打包、为应用签名并为 Store 提交做好准备](#optional-parameters)
 
-<a id="installer-conversion" />
+<a id="installer-conversion"></a>
 
 #### <a name="package-an-application-that-has-an-installer-msi-file"></a>打包具有安装程序 (.msi) 文件的应用程序
 
@@ -159,7 +159,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 
 如果你的安装程序包括相关库或框架的安装程序，则组织内容的方式可能略有不同。 请参阅[用桌面桥链连多个安装程序](https://blogs.msdn.microsoft.com/appconsult/2017/09/11/chaining-multiple-installers-with-the-desktop-app-converter/)。
 
-<a id="setup-conversion" />
+<a id="setup-conversion"></a>
 
 #### <a name="package-an-application-that-has-a-setup-executable-file"></a>打包具有安装程序可执行文件的应用程序
 
@@ -174,7 +174,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 ``InstallerArguments`` 参数是可选参数。 但是，因为 Desktop App Converter 需要安装程序在无人参与模式下运行，因此如果你的应用程序需要无提示标志以静默方式运行，则可能需要使用该参数。 ``/S`` 标志是十分常见的无提示标志，但你使用的标志可能有所不同，具体取决于用于创建安装程序文件的安装程序技术。
 
-<a id="no-installer-conversion" />
+<a id="no-installer-conversion"></a>
 
 #### <a name="package-an-application-that-doesnt-have-an-installer"></a>打包没有安装程序的应用程序
 
@@ -189,7 +189,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 >[!IMPORTANT]
 >如果合作伙伴中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。
 
-<a id="optional-parameters" />
+<a id="optional-parameters"></a>
 
 #### <a name="package-an-app-sign-the-app-and-run-validation-checks-on-the-package"></a>将应用打包、对应用进行签名并对应用包运行验证检查
 
@@ -224,7 +224,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 ```
 可以在下一部分中阅读有关所有参数的信息。
 
-<a id="command-reference" />
+<a id="command-reference"></a>
 
 ### <a name="parameter-reference"></a>参数引用
 
@@ -242,13 +242,13 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 ||||
 |-------------|-----------|-------------|
-|<a id="setup-params" /> <strong>设置参数</strong>  ||
+|<a id="setup-params"></a> <strong>设置参数</strong>  ||
 |-Setup [&lt;SwitchParameter&gt;] |必需 |在设置模式下运行 DesktopAppConverter。 设置模式支持扩展所提供的基本映像。|
 |-BaseImage &lt;String&gt; | 必需 |未扩展的基本映像的完整路径。 如果指定 -Setup，则需要此参数。|
 | -LogFile &lt;String&gt; |可选 |指定日志文件。 如果省略，将创建一个日志文件临时位置。|
 |-NatSubnetPrefix &lt;String&gt; |可选 |用于 Nat 实例的前缀值。 通常，仅在主机连接到与转换器的 NetNat 相同的子网范围时，你会希望更改此值。 你可以通过使用 **Get-NetNat** cmdlet 查询当前转换器 NetNat 配置。 |
 |-NoRestart [&lt;SwitchParameter&gt;] |必需 |在运行设置时不要提示重启（需要重启才能启用容器功能）。 |
-|<a id="conversion-params" /> <strong>转换参数</strong>|||
+|<a id="conversion-params"></a> <strong>转换参数</strong>|||
 |-AppInstallPath &lt;String&gt;  |可选 |应用程序针对已安装文件（如果已安装）的根文件夹的完整路径（例如“C:\Program Files (x86)\MyApp”）。|
 |-Destination &lt;String&gt; |必需 |如果转换器的 appx 输出的所需目标尚未存在，DesktopAppConverter 可以创建此位置。|
 |-Installer &lt;String&gt; |必需 |应用程序的安装程序的路径 - 必须能够在无人参与/无提示的情况下运行。 无安装程序的转换，这是应用程序文件的根目录的路径。 |
@@ -256,11 +256,11 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-InstallerValidExitCodes &lt;Int32&gt; |可选 |指示安装程序成功运行的退出代码的逗号分隔列表（例如：0, 1234, 5678）。  默认情况下，对于非 msi，它为 0，对于 msi，它为 0, 1641, 3010。|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |可选 |一个告知此脚本对输出调用 MakeAppx 的开关（当存在时）。 |
 |-MakeMSIX [&lt;SwitchParameter&gt;]  |可选 |一个开关，它存在时，会指示此脚本将输出打包为 MSIX 包。 |
-|<a id="identity-params" /><strong>程序包标识符参数</strong>||
+|<a id="identity-params"></a><strong>程序包标识符参数</strong>||
 |-PackageName &lt;String&gt; |必需 |通用 Windows 应用程序包的名称。 如果合作伙伴中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。 |
 |-Publisher &lt;String&gt; |必需 |通用 Windows 应用程序包的发布者 |
 |-Version &lt;Version&gt; |必需 |通用 Windows 应用程序包的版本号 |
-|<a id="manifest-params" /><strong>包清单参数</strong>||
+|<a id="manifest-params"></a><strong>包清单参数</strong>||
 |-AppExecutable &lt;String&gt; |可选 |你的应用程序的主可执行文件的名称（“MyApp.exe”）。 无安装程序的转换需要使用此参数。 |
 |-AppFileTypes &lt;String&gt;|可选 |应用程序将与其关联的文件类型的逗号分隔列表。 用法示例：-AppFileTypes "'.md', '.markdown'"。|
 |-AppId &lt;String&gt; |可选 |在 Windows 应用程序包清单中指定要将应用程序 ID 设置为的值。 如果未指定，则将其设置为 *PackageName* 传入的值。 在许多情况下，使用 PackageName 很合适。  然而，如果合作伙伴中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。 |
@@ -268,14 +268,14 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-AppDescription &lt;String&gt; |可选 |在 Windows 应用程序包清单中指定要将应用程序描述设置为的值。 如果未指定，则将其设置为 *PackageName* 传入的值。|
 |-PackageDisplayName &lt;String&gt; |可选 |在 Windows 应用程序包清单中指定要将程序包显示名称设置为的值。 如果未指定，则将其设置为 *PackageName* 传入的值。 |
 |-PackagePublisherDisplayName &lt;String&gt; |可选 |在 Windows 应用程序包清单中指定要将程序包发布者显示名称设置为的值。 如果未指定，则将其设置为 *Publisher* 传入的值。 |
-|<a id="cleanup-params" /><strong>清理参数</strong>|||
+|<a id="cleanup-params"></a><strong>清理参数</strong>|||
 |-Cleanup [&lt;Option&gt;] |必需 |为 DesktopAppConverter 项目运行清除。 清除模式有 3 个有效的选项。 |
 |-Cleanup All | |删除所有已扩展的基本映像、删除任何临时转换器文件、删除容器网络并禁用可选的 Windows 功能，即容器。 |
 |-Cleanup WorkDirectory |必需 |删除所有临时转换器文件。 |
 |-Cleanup ExpandedImage |必需 |删除安装在主机上的所有已扩展的基本映像。 |
-|<a id="architecture-params" /><strong>包体系结构参数</strong>|||
+|<a id="architecture-params"></a><strong>包体系结构参数</strong>|||
 |-PackageArch &lt;String&gt; |必需 |生成指定了体系结构的程序包。 有效选项为“x86”或“x64”，例如 -PackageArch x86。 该参数为可选参数。 如果未指定，DesktopAppConverter 将尝试自动检测程序包体系结构。 如果自动检测失败，它将默认为 x64 程序包。 |
-|<a id="other-params" /><strong>其他参数</strong>|||
+|<a id="other-params"></a><strong>其他参数</strong>|||
 |-ExpandedBaseImage &lt;String&gt;  |可选 |已扩展的基本映像的完整路径。|
 |-LogFile &lt;String&gt;  |可选 |指定日志文件。 如果省略，将创建一个日志文件临时位置。 |
 | -Sign [&lt;SwitchParameter&gt;] |可选 |出于测试目的，告知此脚本使用生成的证书对输出 Windows 应用包进行签名。 此开关应该位于开关 ```-MakeAppx``` 旁边。 |
@@ -283,7 +283,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 | -Verify [&lt;SwitchParameter&gt;] |可选 |一个告知 DAC 根据打包应用和 Microsoft Store 的要求验证应用包的开关（如果有）。 结果是一个“VerifyReport.xml”验证报告，该报告在浏览器中能够以最佳方式显示。 此开关应该位于开关 `-MakeAppx` 旁边。 |
 |-PublishComRegistrations| 可选| 扫描你的安装程序进行的所有公共 COM 注册，并发布你的清单中有效的注册。 仅当想使这些注册可供其他应用程序使用时才使用此标志。 如果这些注册将仅由你的应用程序使用，则无需使用此标志。 <br><br>请查看[本文](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97)以确保在你将应用打包后，COM 注册会按预期工作。
 
-<a id="run-app" />
+<a id="run-app"></a>
 
 ## <a name="run-the-packaged-app"></a>运行打包的应用
 
