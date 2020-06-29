@@ -8,18 +8,18 @@ author: dianmsft
 ms.author: diahar
 keywords: windows 10，.msix，uwp，可选包，相关集，包扩展，visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bf83ac69bc45e2ef984fefc96ad0f9ff9074420
-ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
+ms.openlocfilehash: c8b0dbc98e73e4086556fa6f169522ed5fcc37d9
+ms.sourcegitcommit: f6bb9ced4cce853ae6acd3a359cbbb5e2e3f7187
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84107355"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441654"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>可选包和相关集创作
 
 可选包中包含可与主要包相集成的内容。 这些内容可用于可下载内容 (DLC)，因为大小限制而划分大型应用，或者用于随附从原始应用中单独分隔出来的任何其他内容。
 
-相关集是可选包的扩展 - 它们使你能够跨主要包和可选包强制执行严格的一组版本。 它们还使你能够从可选包加载本机代码 (C++)。 如果相关集部署在应用商店外，则它们可能会有不同的发布者。
+相关集是可选包的扩展 - 它们使你能够跨主要包和可选包强制执行严格的一组版本。 如果相关集部署在应用商店外，则它们可能会有不同的发布者。
 
 可选包和相关集全部在主应用的 .MSIX 容器中运行。
 
@@ -44,62 +44,60 @@ ms.locfileid: "84107355"
 1. 请确保应用的**目标平台最小版本**设置为：10.0.15063.0 或更高版本。
 2. 从**主要包**项目中打开 `Package.appxmanifest` 文件。 导航到“打包”选项卡，然后记下**包系列名称**，即“_”字符之前的所有内容。
 3. 在**可选包**项目中，右键单击 `Package.appxmanifest`，然后选择**打开方式 > XML(文本)编辑器**。
-4. 在文件中找到 `<Dependencies>` 元素。 添加以下内容：
+4. 在文件中找到 `<Dependencies>` 元素。 添加以下，并将替换 `[MainPackageDependency]` 为步骤2中的**包系列名称**。 这将**可选包**指定为依赖于**主要包**。
+    ```XML
+    <uap3:MainPackageDependency Name="[MainPackageDependency]"/>
+    ```
 
-```XML
-<uap3:MainPackageDependency Name="[MainPackageDependency]"/>
-```
-
-将 `[MainPackageDependency]` 替换为步骤 2 中的**包系列名称**。 这将**可选包**指定为依赖于**主要包**。
-
-通过步骤 1 到步骤 4 完成包的依赖关系设置后，就可以像往常一样继续进行开发。 如果要将可选包中的代码加载到主要包中，则需要生成相关集。 有关更多详细信息，请参阅[相关集](#related_sets)部分。
+从步骤1到步骤4设置了包依赖关系之后，可以继续照常进行开发。 
 
 每次部署可选包时，都可将 Visual Studio 配置为重新部署主要包。 若要设置 Visual Studio 中的生成依赖关系，应该：
 
-- 右键单击可选包项目，然后选择**生成依赖关系 > 项目依赖关系...**
-- 查看主要包项目，然后选择“确定”。 
+1. 右键单击可选包项目，然后选择**生成依赖关系 > 项目依赖关系...**
+2. 查看主要包项目，然后选择“确定”。 
 
 现在，每次按 F5 或生成可选包项目时，Visual Studio 将首先生成主要包项目。 这将确保你的主要项目和可选项目保持同步状态。
 
 ## <a name="related-sets"></a>相关集<a name="related_sets"></a>
 
-如果要将可选包中的代码加载到主要包中，则需要生成相关集。 若要生成相关集，你的主要包和可选包必须紧密耦合。 相关集的元数据是在主包的 .appxbundle 或 .msixbundle 文件中指定的。 Visual Studio 可帮助你获取文件中的正确元数据。 若要为相关集配置应用的解决方案，请使用以下步骤：
+相关集由主包和可选包组成，后者通过在主包的 .appxbundle 或 .msixbundle 文件中指定的元数据紧密耦合。 此元数据将主包链接到可选包（使用 .appxbundle 文件 + 版本的名称），并将可选包链接到主包（使用独立于版本的名称）。 Visual Studio 可帮助你获取文件中的正确元数据。 
+
+相关集中包的版本控制是以不允许使用任何包的最新版本的方式进行同步的，直到安装了所有相关集包（由主包中的版本指定）。 包是独立服务的，但在对其进行更新之前，可能不会使用在集中指定的包。
+
+若要为相关集配置应用的解决方案，请使用以下步骤：
 
 1. 右键单击主要包项目，然后选择**添加 > 新项目...**
 2. 在窗口中，搜索扩展名为“.txt”的已安装模板，然后添加一个新的文本文件。
     > [!IMPORTANT]
     > 新文本文件必须命名为 `Bundle.Mapping.txt`。
 3. 在 `Bundle.Mapping.txt` 文件中，你将指定任何可选包项目或外部包的相对路径。 示例 `Bundle.Mapping.txt` 文件应如下所示：
+    ```syntax
+    [OptionalProjects]
+    "..\ActivatableOptionalPackage1\ActivatableOptionalPackage1.vcxproj"
+    "..\ActivatableOptionalPackage2\ActivatableOptionalPackage2.vcxproj"
 
-```syntax
-[OptionalProjects]
-"..\ActivatableOptionalPackage1\ActivatableOptionalPackage1.vcxproj"
-"..\ActivatableOptionalPackage2\ActivatableOptionalPackage2.vcxproj"
+    [ExternalPackages]
+    "..\ActivatableOptionalPackage1\x86\Release\ActivatableOptionalPackage3_1.1.1.0\ ActivatableOptionalPackage3_1.1.1.0.appx"
+    ```
 
-[ExternalPackages]
-"..\ActivatableOptionalPackage1\x86\Release\ActivatableOptionalPackage3_1.1.1.0\ ActivatableOptionalPackage3_1.1.1.0.appx"
-```
-
-当用这种方式配置解决方案时，Visual Studio 将为主要包创建一个捆绑包清单，其中包含相关集的所有必需元数据。 
+以这种方式配置解决方案时，Visual Studio 将为主包创建一个名为 AppxBundleManifest.xml 的[绑定清单](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest)，其中包含相关集的所有必需元数据。 
 
 请注意，与可选包一样， `Bundle.Mapping.txt` 相关集的文件将仅适用于 Windows 10 版本1703或更高版本。 此外，应用的目标平台最低版本应设置为10.0.15063.0 或更高版本。
 
 ## <a name="removing-optional-packages"></a>删除可选包 
 用户可以进入其 "**设置**" 应用，并删除可选包。 同样，开发人员可以使用[RemoveOptionalPackageAsync](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.PackageCatalog)删除可选包的列表。 
 
-```
- 
-    PackageCatalog catalog = PackageCatalog.OpenForCurrentPackage();
-    List<string> optionalList = new List<string>();
-    optionalList.Add("FabrikamAgeAnalysis_kwpnjs8c36mz0");
+```csharp
+PackageCatalog catalog = PackageCatalog.OpenForCurrentPackage();
+List<string> optionalList = new List<string>();
+optionalList.Add("FabrikamAgeAnalysis_kwpnjs8c36mz0");
     
-     //Warn user that application will be restarted. 
-    var result = await catalog.RemoveOptionalPackagesAsync(optionalList);
-    if(result.ExtendedError != null)
-    {
-        throw removalResult.ExtendedError;
-    }
-    
+// Warn user that application will be restarted. 
+var result = await catalog.RemoveOptionalPackagesAsync(optionalList);
+if (result.ExtendedError != null)
+{
+    throw removalResult.ExtendedError;
+}
 ```
 > [!NOTE]
 > 对于相关集，平台将需要重新启动主应用程序以完成删除操作，以避免应用包含从正在删除的包加载的内容的情况。 应用必须通知用户，应用程序在应用调用 API 之前需要重新启动。
