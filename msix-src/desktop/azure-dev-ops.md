@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 42f2486f0575cb1d7d15614ce65765388eaaa940
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: 21b5f8f78a12f1942ca3f723f0c0b8052c44062e
+ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726444"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84724581"
 ---
 # <a name="set-up-a-cicd-pipeline-to-automate-your-msix-builds-and-deployments"></a>设置 CI/CD 管道以自动完成 MSIX 生成和部署
 
@@ -23,9 +23,9 @@ ms.locfileid: "82726444"
 
 接下来，创建一个可用于生成源代码的管道。 有关生成一个用于生成 GitHub 存储库的管道的教程，请参阅[创建第一个管道](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml)。 Azure Pipelines 支持[此文](https://docs.microsoft.com/azure/devops/pipelines/repos)中列出的存储库类型。
 
-若要设置实际生成管道，请浏览到 Azure DevOps 门户 (dev.azure.com/<organization>)，并创建一个新项目。 如果没有帐户，可以免费创建一个。 登录并创建项目后，可将源代码推送到系统设置的 Git 存储库 (https://<organization>@dev.azure.com/\<组织名称>/<project>/_git/<project>)，或使用任何其他提供程序，例如 GitHub。 在门户中依次单击“管道”按钮、“新建管道”创建新管道时，需要选择存储库的位置。
+若要设置实际生成管道，请浏览到 Azure DevOps 门户 (dev.azure.com/\<organization\>)，并创建一个新项目。 如果没有帐户，可以免费创建一个。 登录并创建项目后，可将源代码推送到系统设置的 Git 存储库 (https://\<organization\>@dev.azure.com/<组织\>/\<project\>/_git/\<project\>)，或者使用任何其他提供程序，例如 GitHub。 在门户中依次单击“管道”按钮和“新建管道”来创建新管道时，需要选择存储库的位置 。
 
-在接下来的“配置”屏幕上，应选择“现有 Azure Pipelines YAML 文件”选项，然后选择存储库中签入的 YAML 文件的路径。
+在接下来的“配置”屏幕上，应选择“现有 Azure Pipelines YAML 文件”选项，然后选择存储库中签入的 YAML 文件的路径 。
 
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>将项目证书添加到安全文件库
 
@@ -34,14 +34,10 @@ ms.locfileid: "82726444"
 
 若要为自动生成上传证书：
 
-1. 在 Azure Pipelines 中，展开导航窗格中的“管道”并单击“库”。  
-2. 依次单击“安全文件”选项卡、“+ 安全文件”。  
-
-  
-
-3. 浏览到证书文件并单击“确定”。 
-4. 上传证书后，选择该证书以查看其属性。 在“管道权限”下，将“授权在所有管道中使用”切换开关置于启用状态。  
-
+1. 在 Azure Pipelines 中，展开导航窗格中的“管道”并单击“库”。 
+2. 依次单击“安全文件”选项卡、“+ 安全文件”。 
+3. 浏览到证书文件并单击“确定”。
+4. 上传证书后，选择该证书以查看其属性。 在“管道权限”下，将“授权在所有管道中使用”切换开关置于启用状态。 
 5. 如果证书中的私钥包含密码，则我们建议将密码存储在 [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) 中，然后将密码链接到某个[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 可以使用该变量来从管道访问密码。 请注意，只有私钥支持密码；当前不支持使用本身受密码保护的证书文件。
 
 > [!NOTE]
@@ -188,7 +184,7 @@ steps:
     PathtoPublish: '$(build.artifactstagingdirectory)'
 ```
 
-可以在生成结果页的“项目”选项中查看生成的项目。 
+可以在生成结果页的“项目”选项中查看生成的项目。
 
 
 ## <a name="appinstaller-file-for-non-store-distribution"></a>非 Store 分发内容的 AppInstaller 文件
