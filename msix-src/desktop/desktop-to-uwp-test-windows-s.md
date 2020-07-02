@@ -5,23 +5,18 @@ ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10 S, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: d6b19d6664bb8e2bc95b8f3e85b34541e2fc68e3
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: 11989302e0c5c1d69623aaffafec59d06db5353b
+ms.sourcegitcommit: f6bb9ced4cce853ae6acd3a359cbbb5e2e3f7187
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724521"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441664"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>测试 Windows 应用是否适用于 S 模式下的 Windows 10
 
 可以对 Windows 应用进行测试，以确保其在以 S 模式运行 Windows 10 的设备上正常运行。 事实上，如果准备将应用发布到 Microsoft Store，则必须这样做，因为这是 Microsoft Store 的一项要求。 若要测试应用，可以在运行 Windows 10 专业版的设备上应用 Windows Defender 应用程序控制 (WDAC) 策略。
 
-> [!NOTE]
-> 在应用了该策略的设备上，可以对 Windows 应用进行测试，以确保其在以 S 模式运行 Windows 10 的设备上正常运行。 事实上，如果准备将应用发布到 Microsoft Store，则必须这样做，因为这是 Microsoft Store 的一项要求。 若要测试应用，可以在运行 Windows 10 专业版的设备上应用 WDAC 策略。
-
-
 此 WDAC 策略强制执行一些规则，应用必须遵守这些规则才能在 Windows 10 S 上运行。
-
 
 > [!IMPORTANT]
 >我们建议你将这些策略应用于虚拟机，但如果你想要将它们应用于本地计算机，则请确保在应用策略之前，先查看本主题“下一步，安装策略并重启系统”部分中的最佳实践指南。
