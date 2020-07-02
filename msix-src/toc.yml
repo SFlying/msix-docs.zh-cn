@@ -64,6 +64,8 @@
           href: customer/ecno.md
         - name: Schneider Electric
           href: customer/schneider-electric.md
+    - name: MSIX 合作伙伴
+      href: partners.md
     - name: MSIX SDK
       items:
         - name: 概述
