@@ -6,18 +6,22 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3be32823427b7c62a84db0933d22aec49d1b3eee
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 33c7a07c72b6d820f9ce51c09532e70435daea50
+ms.sourcegitcommit: c95c0a9ddbe944863b131298c158703385835445
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "81433723"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85795566"
 ---
 # <a name="msix-partners"></a>MSIX 合作伙伴
 
 以下合作伙伴提供了有关 MSIX 开发方案的其他工具和支持。
 
 :::row:::
+:::column:::
+[![Access IT Automation 徽标](images/AccessITAutomationLogoTransp.png)](http://info.accessitautomation.com/ty-evergreen-it-webinar-0)
+:::column-end:::
+
 :::column:::
 [![Advanced Installer 徽标](images/AdvancedInstaller_Logo.png)](https://www.advancedinstaller.com/desktop-bridge)
 :::column-end:::
@@ -26,13 +30,12 @@ ms.locfileid: "81433723"
 [![Camwood 徽标](images/Camwood_Logo_2.png)](http://camwood.com/windows-10/)
 :::column-end:::
 
-:::column:::
-[![Cloudhouse 徽标](images/CloudHouse_Logo.png)](https://cloudhouse.com/msixpr)
-:::column-end:::
-
 :::row-end:::
 
 :::row:::
+:::column:::
+[![Cloudhouse 徽标](images/CloudHouse_Logo.png)](https://cloudhouse.com/msixpr)
+:::column-end:::
 
 :::column:::
 [![FireGiant 徽标](images/FireGiant_Logo.png)](https://www.firegiant.com/r/msix/)
@@ -42,14 +45,15 @@ ms.locfileid: "81433723"
 [![Flexera 徽标](images/Flexera_Logo.png)](https://www.flexera.com/company/news/press-releases/Flexera-Launches-Support-for-Microsofts-MSIX.html)    
 :::column-end:::
 
-:::column:::
-[![installAware 徽标](images/installAware_logo.png)](https://www.installaware.com/msix.htm)    
-:::column-end:::
+
 
 
 :::row-end:::
 
 :::row:::
+:::column:::
+[![installAware 徽标](images/installAware_logo.png)](https://www.installaware.com/msix.htm)    
+:::column-end:::
 
 :::column:::
 [![Raynet 徽标](images/RayPackStudio_Logo_offset.png)](https://raynet.de/en/msix/)
