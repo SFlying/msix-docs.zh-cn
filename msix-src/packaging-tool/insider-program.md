@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, MSIX, MSIX 打包工具
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 485fda5e4d0ef4ca39a1cf2d8220a5cdf003881b
-ms.sourcegitcommit: 6c517bd2f6354db1a2c51217a208e1d2cfd466da
+ms.openlocfilehash: 3c60ae9d5f247de8b5b1923beea274a18ede4e4f
+ms.sourcegitcommit: 642563e98a52d4cc384987e618c5482022e29aba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85295564"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86556262"
 ---
 # <a name="msix-packaging-tool-insider-program"></a>MSIX 打包工具预览体验计划
 
@@ -35,9 +35,10 @@ ms.locfileid: "85295564"
 
 ## <a name="current-insider-preview-build"></a>当前 Insider Preview 内部版本
 
-## <a name="version-120206180"></a>版本1.2020.618。0
-- 为远程命令行转换添加了较长的超时会话
-- 改进了 .MSIX 核心 OS 选择，以减少冲突和混淆
+## <a name="version-120207090---public-release"></a>版本 1.2020.709.0-公共版本
+- 能够将多个文件添加到包编辑器
+- 能够将多个 .reg 文件导入包编辑器
+- 改进了对转换任何安装程序类型的支持
 
 可在[此处](release-notes/history.md)找到 MSIX 打包工具发行说明的完整历史记录。
 

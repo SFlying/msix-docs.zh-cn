@@ -6,26 +6,26 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5e73ecb893ccddacf28f87a7080382eeb02f80c3
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: d5b4c857e18770406b8a045b6ec8bda586c170f6
+ms.sourcegitcommit: 642563e98a52d4cc384987e618c5482022e29aba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726592"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86556272"
 ---
 # <a name="best-practices-for-the-msix-packaging-tool"></a>适用于 MSIX 打包工具的最佳做法
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/en-us/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取 MSIX 打包工具</a></p></div>
 
-如果尚未配置环境以进行转换，则可以遵循我们的[环境最佳实践](prepare-your-environment.md)建议，然后回到此处设置 .Msix 打包工具。 在开始任何转换之前，建议在 .MSIX 打包工具中配置设置，以便每次简化工作流。
+如果尚未配置环境以进行转换，则可以遵循我们的[环境最佳实践](prepare-your-environment.md)建议，然后回到此处设置 .Msix 打包工具。 在开始任何转换之前，建议在 .MSIX 打包工具中配置设置，以便每次简化工作流。 启动 .MSIX 打包工具，然后转到 "设置" （登陆页面右上方的 "设备"）以配置工具默认值。 
 
-### <a name="tool-defaults"></a>工具默认值
+### <a name="configure-your-msix-packaging-tool-defaults"></a>配置 .MSIX 打包工具默认值
 
 - **生成包含每个包的命令行**此设置将使你自动生成一个命令行模板文件，以便在稍后通过命令行重新打包同一应用程序（例如新版本）时，你可以为该应用程序预配置的命令行模板文件。 你将需要提供安装程序，以便在工作流期间生成模板文件。
 - **默认情况下，选择 "准备计算机" 的所有修补程序**此设置允许你预先选择所有建议的修复程序，以便在 "准备计算机" 阶段，你只需选择禁用所有修复，无需单独选择它们。
 - **强制实施 Microsoft Store 版本控制要求**如果打算通过 Microsoft Store 来部署应用程序，则应确保选中此选项，使其符合应用商店要求（这将影响包版本要求和最低操作系统版本支持）。 如果未选中此选项，则包的最低版本设置为 Windows 10 1709，你将对包版本4位数字具有完全控制。 如果选中此选项，则包的最低版本设置为 Windows 10 1809，版本必须以. 0 （例如1.5.6.0）结束。
 - **生成包时添加包完整性**如果选择此选项，则包完整性将自动添加到生成的所有包中。 Windows 10 2004 及更高版本支持[包的完整性](../package/signing-package-overview.md#package-integrity-enforcement)。
-- **生成包时添加对 .Msix Core 的支持**此选项允许你添加 9MSIX Core] （.。。/msix-core/msixcore.md）对生成的每个包的支持。 选择后，将提供一个下拉列表，您可以使用该下拉列表指定要支持的 Windows 版本。 
+- **生成包时添加对 .Msix Core 的支持**此选项允许你将[.Msix Core](../msix-core/msixcore.md)支持添加到生成的每个包。 选择后，将提供一个下拉列表，您可以使用该下拉列表指定要支持的 Windows 版本。 
 - **默认保存位置**指定将保存生成的包和关联文件的默认保存位置。
 - **默认安装程序浏览位置**指定用于查找要转换的安装程序的默认位置。
 - **服务器端口号**指定 .MSIX 打包工具的服务器端口号。 如果你打算使用[远程计算机](remote-conversion-setup.md)进行转换，则这一点很有用。 
@@ -35,7 +35,7 @@ ms.locfileid: "82726592"
     - 使用证书签名（.pfx）-如果已有在企业中使用的受信任证书，建议使用此选项。
     - 指定 .cer 文件（不签名）-如果不想在转换时进行签名，但要确保发布服务器信息在签名时有效，则可以选择此选项。
     - 不对包进行签名。 -如果你想要使用其他方法对包进行签名，或者稍后在生成包后进行签名，则可以选择此选项。
-    我们还建议你向签名首选项添加一个时间戳服务器 url （如果适用），以便即使你的证书过期也能安装应用程序。   
+    我们还建议你向签名首选项添加一个**时间戳服务器 url** （如果适用），以便即使你的证书过期也能安装应用程序。   
 
 > [!NOTE]
 > 不支持使用 SHA1 证书对 .MSIX 包格式应用程序进行签名。
