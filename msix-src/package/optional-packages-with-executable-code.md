@@ -7,12 +7,12 @@ author: dianmsft
 ms.author: diahar
 keywords: windows 10，.msix，uwp，应用安装程序，AppInstaller，旁加载，相关集，可选程序包
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c225c13f026f2707c392ccaf4d77655faaeebb
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 6a3862f0c7eaa875444fc9fb99f7b54e1dbe7b5d
+ms.sourcegitcommit: 769bbff22df0ab9e46e1306b4180bbec6a44daba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072537"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87538462"
 ---
 # <a name="optional-packages-with-executable-code"></a>包含可执行代码的可选包
  
@@ -21,7 +21,7 @@ ms.locfileid: "77072537"
 ## <a name="prerequisites"></a>先决条件
 
 - Visual Studio 2019 或 Visual Studio 2017 （版本15.7 或更高版本）
-- Windows 10 版本1709或更高版本
+- Windows 10 版本 1709 或更高版本
 - Windows 10 版本 1709 SDK 或更高版本
 
 若要获取最新的开发工具，请参阅[适用于 Windows 10 的下载和工具](https://developer.microsoft.com/windows/downloads)。
@@ -30,7 +30,7 @@ ms.locfileid: "77072537"
 > 若要将使用可选包和/或相关集的应用提交到 Microsoft Store，你需要权限。 可选包和相关集可用于业务线（LOB）或无合作伙伴中心权限的企业应用（如果未提交到商店）。 请参阅 [Windows 开发人员支持](https://developer.microsoft.com/windows/support)，获取提交使用可选包和相关集的应用的权限。
 
 > [!NOTE]
-> 包含可执行代码的可选包必须是[相关集](optional-packages.md#related_sets)的一部分。 你将无法从可选包执行代码，除非它是相关集的一部分。
+> 包含可执行代码的可选包必须是[相关集](optional-packages.md#related-sets)的一部分。 你将无法从可选包执行代码，除非它是相关集的一部分。
 
 ## <a name="c-optional-packages-with-executable-code"></a>包含可执行代码的 C++ 可选包
 
@@ -50,7 +50,7 @@ ms.locfileid: "77072537"
 
 5. 打开可选应用包的 `Package.appxmanifest` 文件并查找 `uap3:MainAppPackageDependency Name` 值。 更新 `uap3:MainAppPackageDependency Name` 值以匹配上一步中主应用包的 `Identity Name` 值。 
 
-    以下是主应用的 `Identity` 的 `Package.appxmanifest` 示例。
+    以下是主应用的 `Package.appxmanifest` 的 `Identity` 示例。
     ```XML
     <Identity Name="12345.MainAppProject" Publisher="CN=PublisherName" Version="1.0.0.0" />
     ```
@@ -60,7 +60,7 @@ ms.locfileid: "77072537"
     <uap3:MainPackageDependency Name="12345.MainAppProjectTest" />
     ```
 
-6. 将 `Bundle.mapping.txt` 文件添加到主应用。 请按照此[相关集](optional-packages.md#related_sets)部分的步骤创建包含两个应用的相关集。
+6. 将 `Bundle.mapping.txt` 文件添加到主应用。 请按照此[相关集](optional-packages.md#related-sets)部分的步骤创建包含两个应用的相关集。
 
 7. 生成可选包项目，然后导航到生成输出中的包参考文件夹，位于 `..\[PathToOptionalPackageProject]\bin\[architecture]\[configuration]\Reference`。 请注意，你可以在参考文件夹路径中选择任何体系结构，因为 `.winmd` 文件（步骤 8）是体系结构独立文件。
 

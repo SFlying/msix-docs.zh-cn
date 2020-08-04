@@ -1,16 +1,16 @@
 ---
 description: 本文介绍如何使用 Device Guard 签名对 .MSIX 包进行签名，使企业能够保证应用程序来自受信任的源。
 title: 使用 Device Guard 签名功能对 MSIX 包进行签名
-ms.date: 07/12/2019
+ms.date: 07/24/2020
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: c489a4bed1598c0fecca7f20d33aee4880201b96
-ms.sourcegitcommit: 45bb7e2f642a0c7165366bc0867afe803abfc202
+ms.openlocfilehash: dd122ccded203482f32a367473d55bdde4c9d814
+ms.sourcegitcommit: 769bbff22df0ab9e46e1306b4180bbec6a44daba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81433743"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87538472"
 ---
 # <a name="sign-an-msix-package-with-device-guard-signing"></a>使用 Device Guard 签名功能对 MSIX 包进行签名
 
@@ -50,9 +50,9 @@ Device Guard 签名需要 Microsoft Store for Business 中的权限，并使用 
 1. 登录到[Azure 门户](https://portal.azure.com/)并按照[快速入门：向 Microsoft 标识平台注册应用程序](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app)中的说明注册将使用 Device Guard 签名的应用程序。
 
     > [!NOTE]
-    > 在 "**重定向 URI** " 部分中，建议选择 "**公用客户端（移动 & 桌面）** "。 否则，如果你选择 " **Web** " 作为 "应用类型"，则在此过程中稍后获取 Azure AD 访问令牌时，你将需要提供[客户端密码](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-access-web-apis#add-credentials-to-your-web-application)。
+    > 在 "**重定向 URI** " 部分中，建议选择 "**公用客户端（移动 & 桌面）**"。 否则，如果你选择 " **Web** " 作为 "应用类型"，则在此过程中稍后获取 Azure AD 访问令牌时，你将需要提供[客户端密码](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-access-web-apis#add-credentials-to-your-web-application)。
 
-2. 注册应用后，在 Azure 门户的应用主页上，单击 " **API 权限**" 并添加适用于**企业的 WINDOWS 应用商店 API**的权限。
+2. 注册应用后，在应用的 "Azure 门户中，单击" **api 权限**"，在"**我的组织使用的 api** "下，并添加适用于**企业的 Windows 应用商店 API**的权限。
 
 3. 接下来，选择 "**委托的权限**"，然后选择 " **user_impersonation**"。
 
@@ -61,7 +61,7 @@ Device Guard 签名需要 Microsoft Store for Business 中的权限，并使用 
 接下来，获取 JSON 格式的 Azure AD 应用的 Azure AD 访问令牌。 您可以使用各种编程和脚本语言来实现此目的。 有关此过程的详细信息，请参阅[使用 OAuth 2.0 代码授予流授予对 Azure Active Directory web 应用程序的访问权限](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code)。 由于访问令牌将在一小时后过期，因此我们建议你同时检索[刷新令牌](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code#refreshing-the-access-tokens)和访问令牌。
 
 > [!NOTE]
-> 如果在 Azure 门户中将应用注册为**Web**应用，则在请求令牌时必须提供客户端机密。 有关详细信息，请参阅上一节。
+> 如果在 Azure 门户中将应用注册为**Web**应用，则在请求令牌时必须提供客户端机密。 有关详细信息，请参阅上一部分。
 
 下面的 PowerShell 示例演示如何请求访问令牌。
 
@@ -113,15 +113,15 @@ signtool sign /fd sha256 /dlib DgssLib.dll /dmdf <Azure AAD in .json format> /t 
 
 ## <a name="test"></a>测试
 
-若要测试 Device Guard 签名，请从企业门户的 Microsoft Store 下载组织的根证书。
+若要测试 Device Guard 签名，请从业务门户 Microsoft Store 下载证书。
 
 1. 请登录[适用于企业的 Microsoft Store](https://businessstore.microsoft.com/)。
 2. 选择 "**管理**"，然后选择 "**设置**"。
 3. 查看**设备**。
 4. 查看**下载你的组织的根证书以便与 Device Guard 一起使用**
-5. 单击 "**下载**"
+5. 单击 "**下载**" 
 
-将此证书部署到你的设备。 安装新签名的应用，以验证是否已使用 Device Guard 签名成功对应用进行签名。
+在设备上将根证书安装到**受信任的根**证书颁发机构。 安装新签名的应用，以验证是否已使用 Device Guard 签名成功对应用进行签名。
 
 ## <a name="common-errors"></a>常见错误
 
