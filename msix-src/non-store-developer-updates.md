@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, 应用包, 应用更新, msix, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: e68269c0a17254fd92fb00fad6bcbc1d7a16e588
-ms.sourcegitcommit: 6243b7aca6f52f007f4571c835f580f433c31769
+ms.openlocfilehash: 1c120193a278fb8584761d7b6aaa4ab0430697ad
+ms.sourcegitcommit: f1c366459764cf1f3c0bc9edcac4f845937794bd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812782"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87754506"
 ---
 # <a name="update-non-store-published-app-packages-from-your-code"></a>从代码更新非存储已发布的应用包
 
@@ -80,7 +80,7 @@ public async void CheckForAppInstallerUpdatesAndLaunchAsync(string targetPackage
 
 ### <a name="check-for-updates-on-your-server"></a>检查服务器上的更新
 
-如果使用的**不**是应用安装程序文件来部署应用程序包，则第一步是直接检查是否有新版本的应用程序可用。 下面的示例将检查服务器上包的版本是否大于当前版本的应用程序（此示例指的是用于演示的测试服务器）。
+如果使用的**不**是应用安装程序文件来部署应用程序包，则第一步是直接检查是否有新版本的应用程序可用。 下面的示例将检查服务器上包的版本是否大于应用程序 (的当前版本，此示例引用测试服务器) 演示目的。
 
 ```csharp
 using Windows.Management.Deployment;
@@ -137,6 +137,7 @@ private async void CommandInvokedHandler(IUICommand command)
     }
 }
 ```
+
 ## <a name="automatically-restarting-your-app-after-an-update"></a>更新后自动重启应用
 
 如果应用程序是 UWP 应用，则在应用更新时传入 AddPackageByAppInstallerOptions 或 AddPackageOptions 应计划在关闭 + 更新后重新启动应用。 对于非 UWP 应用，需要在应用更新之前调用[RegisterApplicationRestart](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions#updates) 。
