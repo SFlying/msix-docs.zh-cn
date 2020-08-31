@@ -8,12 +8,12 @@ ms.author: diahar
 ms.topic: article
 keywords: windows 10，.msix，uwp，内容组映射，流安装，应用程序流式安装，源内容组映射
 ms.localizationpriority: medium
-ms.openlocfilehash: 09b5d42033082971ee490ef83de59fb30837e227
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: ffb038e011ce6115364e5716aa39e1d5558e0bc5
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328826"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091105"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>创建和转换源内容组映射
 
@@ -80,7 +80,7 @@ ms.locfileid: "73328826"
 要开始编写此文件，简单的方法是在最喜欢的文本编辑器中打开一个新页面，快速将文件“另存为”至应用的项目文件夹，并将新创建的文件命名为：`SourceAppxContentGroupMap.xml`。
 
 > [!IMPORTANT]
-> 如果要开发C++应用程序，则需要调整 `SourceAppxContentGroupMap.xml`的文件属性。 将 `Content` 属性设置为 **true**，`File Type` 属性设置为 **XML 文件**。
+> 如果要开发 c + + 应用，则需要调整的文件属性 `SourceAppxContentGroupMap.xml` 。 将 `Content` 属性设置为 **true**，`File Type` 属性设置为 **XML 文件**。
 
 创建 `SourceAppxContentGroupMap.xml` 时，在文件名中使用通配符会有所帮助，有关详细信息，请参阅[使用通配符的提示和技巧](#wildcards)部分。
 
@@ -123,7 +123,7 @@ ms.locfileid: "73328826"
 - 自动内容组不能包含所需内容组中的**任何**文件。 
 - 自动内容组可包含同时位于其他自动内容组中的文件。 这些文件只会下载一次，并且将使用包含它们的首个自动内容组进行下载。
 
-#### 使用通配符<a name="wildcards"></a>的提示和技巧
+#### <a name="tips-and-tricks-for-using-wildcards"></a>使用通配符<a name="wildcards"></a>的提示和技巧
 
 内容组映射的文件布局始终与项目根文件夹相关。
 
@@ -168,4 +168,4 @@ MakeAppx convertCGM /s MyApp\SourceAppxContentGroupMap.xml /f MyApp\AppxContentG
 MakeAppx convertCGM /?
 ```
 
-这就是使最终 `AppxContentGroupMap.xml` 可供应用使用需要进行的所有操作！ 在应用完全准备好 Microsoft Store 之前，还有更多工作要做。 有关将流式处理安装添加到应用的完整过程的详细信息，请查看[此博客文章](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。
+这就是使最终 `AppxContentGroupMap.xml` 可供应用使用需要进行的所有操作！ 在应用完全准备好 Microsoft Store 之前，还有更多工作要做。 有关将流式处理安装添加到应用的完整过程的详细信息，请查看 [此博客文章](../index.yml)。

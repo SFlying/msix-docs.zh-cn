@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: d7eaa493577c4a83739829c1bee51acbb41640a8
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: a33817b4fa45ab6eb447ebd00ab1934b396d7de1
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072927"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090925"
 ---
 # <a name="bundle-msix-packages"></a>捆绑 MSIX 包
 
@@ -28,9 +28,9 @@ ms.locfileid: "77072927"
 - [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)（1809 或更高版本）
 - 已转换的 x64 和 x86 MSIX 包
 
-## <a name="step-1-find-makeappxexe"></a>步骤1：查找 Makeappx.exe
+## <a name="step-1-find-makeappxexe"></a>步骤1：查找 MakeAppx.exe
 
-[MakeAppx.exe](https://docs.microsoft.com/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) 是 Windows 10 SDK 中提供的一个工具，可用于打包和捆绑 MSIX 包。 你将使用此工具将两个 MSIX 包捆绑到一起。
+[MakeAppx.exe](/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) 是 Windows 10 SDK 中提供的一个工具，可用于打包和捆绑 MSIX 包。 你将使用此工具将两个 MSIX 包捆绑到一起。
 
 MakeAppx.exe 可用于提取 Windows 10 应用包或捆绑包的文件内容。 它还可以加密和解密应用包与捆绑包。
 
@@ -93,5 +93,4 @@ C:\> "C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x86\SignTool.exe" 
 
 有关使用 SignTool.exe 为应用包签名的详细信息，请参阅[此文](../package/sign-app-package-using-signtool.md)。 
 
-成功为捆绑包签名后，可将其放在网络共享或任何内容分发网络上，以将其分发给用户。 
-
+成功为捆绑包签名后，可将其放在网络共享或任何内容分发网络上，以将其分发给用户。

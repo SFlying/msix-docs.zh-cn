@@ -8,12 +8,12 @@ ms.author: diahar
 ms.topic: article
 keywords: windows 10、.msix、uwp、流式处理安装
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e70c7d94cb69e4e2409a126174d61c1fdfdf061
-ms.sourcegitcommit: e9a890c674dd21c9a09048e2520a3de632753d27
+ms.openlocfilehash: 0a2d147cc8465caa3e86ea7462ca52555e8341ac
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73328718"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090955"
 ---
 # <a name="app-streaming-install"></a>应用流式安装
 
@@ -21,8 +21,8 @@ ms.locfileid: "73328718"
 
 若要使用应用程序流安装，需要将应用的文件划分为多个部分。 为此，需要创建一个内容组映射，该映射是一个与应用打包在一起的 XML 文件，使用它可设置下载优先级和顺序。 有关详细信息，请参见以下链接的主题。
 
-有关将流式处理安装添加到应用的完整指南，请查看此[博客系列](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。
+有关将流式处理安装添加到应用的完整指南，请查看此 [博客系列](../index.yml)。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [创建和转换源内容组映射](create-cgm.md) | 若要为应用程序准备好进行流式处理，需要创建内容组映射。 本文介绍有关创建和转换内容组映射的具体信息，同时提供一些相关提示和技巧。 |

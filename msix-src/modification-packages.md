@@ -6,22 +6,22 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 4af514f0027efba09b2ffcdbeaff55d729c39c53
-ms.sourcegitcommit: e650c86433c731d62557b31248c7e36fd90b381d
+ms.openlocfilehash: d890ff472baa343c5b87873f85fce1b435d37b62
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726554"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090325"
 ---
 # <a name="customize-your-enterprise-apps-with-modification-packages"></a>利用修改包自定义企业应用
 
 自定义应用程序体验的功能非常重要，尤其是对于企业而言。 我们已经说过了 IT 专业人员，我们知道，自定义应用程序以满足其用户需求对于迁移到 Windows 10 的工作至关重要。 自定义使用 MSI 打包的应用程序时，很好地了解 IT 专业人员必须从开发人员处获取包，并使用自定义重新打包安装程序以满足其需求。 这对于企业而言成本高昂。 接下来，我们想要将自定义项和主应用程序分离，以便不再需要重新打包。 这可确保企业从开发人员处获取最新更新，同时仍保持对其自定义项的控制。
 
-在 Windows 10 版本1809中，我们引入了一种称为*修改包*的新类型的 .msix 包。 修改包是存储自定义项的 .MSIX 包。 修改包还可以是可能没有激活点的插件/加载项。 IT 专业人员可以使用此功能灵活地更改 .MSIX 容器，以便应用程序可以通过其企业的自定义进行重叠。
+在 Windows 10 版本1809中，我们引入了一种称为 *修改包*的新类型的 .msix 包。 修改包是存储自定义项的 .MSIX 包。 修改包还可以是可能没有激活点的插件/加载项。 IT 专业人员可以使用此功能灵活地更改 .MSIX 容器，以便应用程序可以通过其企业的自定义进行重叠。
 
 ## <a name="how-it-works"></a>工作原理
 
-修改包专为不拥有应用程序代码并且只有安装程序的企业而设计。 可以使用最新版本的 .MSIX 打包工具（适用于 Windows 10 版本1809或更高版本）创建修改包。 如果有应用程序的代码，也可以创建[应用扩展](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-an-extension)。 
+修改包专为不拥有应用程序代码并且只有安装程序的企业而设计。 你可以使用最新版本的 .MSIX 打包工具 (适用于 Windows 10 版本1809或更高版本) 创建修改包。 如果有应用程序的代码，也可以创建 [应用扩展](/windows/uwp/launch-resume/how-to-create-an-extension)。 
 
 <div class="nextstepaction"><p><a class="x-hidden-focus" href="https://www.microsoft.com/p/msix-packaging-tool/9n5lw3jbcxkf" data-linktype="external">获取 MSIX 打包工具</a></p></div>
 
@@ -44,13 +44,13 @@ ms.locfileid: "82726554"
 
 ```
 
-如果修改包和主程序包之间的关系是一对一的，则这是一种简单的配置。 典型的自定义通常需要 HKEY_CURRENT_USER 或 HKEY_CURRENT_USERCLASS 下的注册表项。 在我们的 .MSIX 包中，我们有用户 .dat 和 Userclass 文件来捕获注册表项。 如果需要 HKCU\Software\*下的注册表项，需要创建用户 .dat （就像 registry 使用 HKLM\Software\*）。 如果需要 HKCU\Sofware\Classes\*下的密钥，请使用 Userclass。 
+如果修改包和主程序包之间的关系是一对一的，则这是一种简单的配置。 典型的自定义通常需要 HKEY_CURRENT_USER 或 HKEY_CURRENT_USERCLASS 下的注册表项。 在我们的 .MSIX 包中，我们有用户 .dat 和 Userclass 文件来捕获注册表项。 如果需要 (HKCU\Software 下的注册表项，你需要创建用户 .dat， \* 如注册表中所示。 .dat 用于 HKLM\Software \*) 。 如果需要 HKCU\Sofware\Classes 下的密钥，请使用 Userclass \* 。 
 
 下面是创建 .dat 文件的典型方法：
 
 * 使用 Regedit 创建文件。 在 Regedit 中创建 hive 并插入所需的键。 右键单击、导出和另存为 hive 文件。 请确保将该文件命名为用户 .dat 或 Userclass
 
-* 使用 API 创建必要的文件。 可以使用[ORSaveHive](https://docs.microsoft.com/windows/win32/devnotes/orsavehive)函数保存 .dat 文件。 请确保将该文件命名为网或 Userclass。
+* 使用 API 创建必要的文件。 可以使用 [ORSaveHive](/windows/win32/devnotes/orsavehive) 函数保存 .dat 文件。 请确保将该文件命名为网或 Userclass。
 
 进行必要的更改后，可以像创建任何其他 .MSIX 包一样创建修改包。 然后，你可以通过当前的部署设置部署包。 重新启动主应用时，可以看到修改包所做的更改。 如果你选择删除修改包，则主应用将恢复为不带修改包的状态。 
 
@@ -68,7 +68,7 @@ Get-AppPackage -PackageTypeFilter Optional
 
 请注意，主包可能会使用 VREG 来执行以下操作：
 
-* 查看加载插件文件（DLL）的位置。 如果存在这种情况，请确保该文件是包的一部分。 这样，主包便可以在运行时访问该文件。
+* 查看在何处加载文件 (插件的 DLL) 。 如果存在这种情况，请确保该文件是包的一部分。 这样，主包便可以在运行时访问该文件。
 * 查看 VREG 项值的显示位置。 主包可能会检查某个值是否在 VREG 中存在。 手动或者使用此[工具](https://www.microsoft.com/p/msix-packaging-tool/9n5lw3jbcxkf)创建修改包时，请确保该值正确。
 
 ## <a name="modification-packages-on-windows-10-version-1903-and-later"></a>Windows 10 版本1903及更高版本上的修改包
@@ -87,7 +87,7 @@ Windows 10 版本 1903 中添加了以下功能。
 
 为了确保修改包可在 1903 或更高版本中正常运行，修改包的清单必须包含此元素。 如果使用 MSIX 打包工具一月版打包 MSIX 修改包，则系统会自动包含此元素。 如果使用更低版本的工具转换了某个包，可以在工具中编辑现有的包以添加此新元素。 此外，当用户安装修改包时，系统将发出警报，指出该包可能会修改主应用程序。
 
-如果使用的是在版本1903之前创建的修改包，则需要编辑包清单，将`MaxVersionTested`属性更新为10.0.18362.0。
+如果使用的是在版本1903之前创建的修改包，则需要编辑包清单，将 `MaxVersionTested` 属性更新为10.0.18362.0。
 
 ```xml
 <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17701.0" MaxVersionTested="10.0.18362.0" />
@@ -104,7 +104,7 @@ Windows 10 版本 1903 中添加了以下功能。
 
 ### <a name="create-a-modification-package-using-makeappxexe"></a>使用 MakeAppx.exe 创建修改包
 
-可以使用 Windows 10 SDK 中包含的[makeappx.exe](package/create-app-package-with-makeappx-tool.md)工具手动创建修改包。
+您可以使用 Windows 10 SDK 中包含的 [MakeAppX.exe](package/create-app-package-with-makeappx-tool.md) 工具手动创建修改包。
 
 * 在清单中指定主包。 包含发布者和主包名称。
 

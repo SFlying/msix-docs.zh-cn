@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10，.msix，msixtoolkit，.msix 工具包，工具包，批处理，转换，批量，大容量转换
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b2af803cc540d393703e68569d8da1a78d478f2d
-ms.sourcegitcommit: 6243b7aca6f52f007f4571c835f580f433c31769
+ms.openlocfilehash: 38f084fcd32f85032dfeb9c08a294828e726c246
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812792"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091245"
 ---
 # <a name="msix-bulk-conversion-scripts"></a>.MSIX 大容量转换脚本
 
-.MSIX 工具包中的[批量转换脚本](https://github.com/microsoft/MSIX-Toolkit/tree/master/Scripts/BatchConversion)可用于自动将 Windows 应用转换为 .msix 包格式。 **entry.ps1**脚本中提供了应用及其详细信息的列表。
+.MSIX 工具包中的 [批量转换脚本](https://github.com/microsoft/MSIX-Toolkit/tree/master/Scripts/BatchConversion) 可用于自动将 Windows 应用转换为 .msix 包格式。 **entry.ps1**脚本中提供了应用及其详细信息的列表。
 
 ## <a name="prepare-machines-for-conversion"></a>为转换准备计算机
-在运行 .MSIX 工具包的批量转换脚本之前，若要自动将你的应用程序转换为 .MSIX 打包格式，你将使用的设备（虚拟或远程）必须配置为允许远程通信，并安装 .MSIX 打包工具。
+在运行 .MSIX 工具包的批量转换脚本之前，若要自动将你的应用程序转换为 .MSIX 打包格式，你将使用 (虚拟或远程) 的设备必须配置为允许远程通信，并安装 .MSIX 打包工具。
 
 | 术语            | 说明                                                        |
 |-----------------|--------------------------------------------------------------------|
@@ -31,13 +31,13 @@ ms.locfileid: "84812792"
 * 必须安装[.Msix 打包工具](https://www.microsoft.com/p/msix-packaging-tool/9n5lw3jbcxkf?activetab=pivot:overviewtab)。
 * 如果正在使用虚拟机，则必须安装 Hyper-v。
 * 如果正在使用远程计算机：
-    * 设备与远程计算机位于同一域中：
+    * 设备与远程计算机位于同一域中 () ：
         * 启用 PowerShell 远程处理 
             ```PowerShell
             # Enables PowerShell Remoting
             Enable-PSRemoting -force
             ```
-    * 设备存在于工作组中或作为远程计算机的备用域：
+    * 设备存在于工作组中或备用域中， () 的远程计算机：
         * 启用 PowerShell 远程处理 
         * WinRM 受信任的主机必须包含远程计算机的设备名称或 IP 地址 
             ```PowerShell
@@ -87,9 +87,9 @@ entry.ps1
 
 这是一组 PowerShell 脚本，提供将应用程序批量打包为 .MSIX 包格式的功能。 这些脚本将连接到用于打包每个应用程序的本地虚拟机或远程计算机。
 
-将按照在**entry.ps1**脚本中输入的顺序来转换打包为 .msix 应用程序格式的应用。 将使用**entry.ps1**脚本中列出的远程计算机将应用程序打包为 .msix 格式。 可以多次使用虚拟机将不同的应用程序打包为 .MSIX 应用程序格式。
+将按照在 **entry.ps1** 脚本中输入的顺序来转换打包为 .msix 应用程序格式的应用。 将使用 **entry.ps1** 脚本中列出的远程计算机将应用程序打包为 .msix 格式。 可以多次使用虚拟机将不同的应用程序打包为 .MSIX 应用程序格式。
 
-在运行该脚本之前，必须先将要转换的应用添加到 `conversionsParameters` 脚本中的变量。 可以将多个应用添加到变量。 该脚本利用应用和远程/虚拟机来创建一个 XML 文件，并将其设置为符合[.Msix 打包工具](..\packaging-tool\mpt-overview.md)（MsixPackagingTool.exe）的要求。 创建 XML 文件后，在目标设备上执行 MsixPackagingTool.exe 来转换应用并将其放在位于脚本执行文件夹中的 **.\Out**文件夹中的新 PowerShell 进程中执行**run_job.ps1**脚本。
+在运行该脚本之前，必须先将要转换的应用添加到 `conversionsParameters` 脚本中的变量。 可以将多个应用添加到变量。 此脚本利用应用和远程/虚拟机创建一个格式的 XML 文件，以满足 [.Msix 打包工具](../packaging-tool/tool-overview.md) ( # A0) 的要求。 创建 XML 文件后，在目标设备上执行 MsixPackagingTool.exe 来转换应用并将其放在位于脚本执行文件夹中的 **.\Out**文件夹中的新 PowerShell 进程中执行**run_job.ps1**脚本。
 
 ## <a name="example"></a>示例
 
@@ -97,9 +97,9 @@ entry.ps1
 PS C:\> entry.ps1
 ```
 
-数列示例执行**entry.ps1**脚本。 此脚本将变量中指定的应用转换 `conversionsParameters` 为 .msix 包。 使用*virtualMachines*和*remoteMachines*变量中指示的虚拟机或远程计算机来转换应用。
+数列示例执行 **entry.ps1** 脚本。 此脚本将变量中指定的应用转换 `conversionsParameters` 为 .msix 包。 使用 *virtualMachines* 和 *remoteMachines* 变量中指示的虚拟机或远程计算机来转换应用。
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>parameters
 
 ### <a name="virtualmachines"></a>virtualMachines
 
@@ -117,7 +117,7 @@ $virtualMachines = @(
 )
 ```
 
-将使用指定的虚拟机将应用打包为 .MSIX 格式。 此虚拟机将使用出现提示时输入的凭据进行连接（提示在脚本**entry.ps1**执行后直接显示）。 在将应用程序打包到 .MSIX 打包格式之前，该脚本会创建 Hyper-v VM 的快照，并在打包应用程序后将其还原到此快照。
+将使用指定的虚拟机将应用打包为 .MSIX 格式。 此虚拟机将使用出现提示时输入的凭据连接到 (提示在脚本 **entry.ps1** 执行) 后直接出现。 在将应用程序打包到 .MSIX 打包格式之前，该脚本会创建 Hyper-v VM 的快照，并在打包应用程序后将其还原到此快照。
 
 ### <a name="remotemachines"></a>remoteMachines
 
@@ -136,9 +136,9 @@ $remoteMachines = @(
 )
 ```
 
-指定的远程计算机将用于将单个应用打包为 .MSIX 格式。 当出现提示时，此远程计算机将使用所输入的凭据进行连接（提示在脚本**entry.ps1**执行后直接显示）。
+指定的远程计算机将用于将单个应用打包为 .MSIX 格式。 此远程计算机将使用出现提示时输入的凭据连接到 (提示在脚本 **entry.ps1** 执行) 之后直接显示。
 
-请确保在执行**entry.ps1**脚本之前，该设备的完全限定的域名或面向外部的别名都是可解析的。
+请确保在执行 **entry.ps1** 脚本之前，该设备的完全限定的域名或面向外部的别名都是可解析的。
 
 ### <a name="signingcertificate"></a>signingCertificate
 `signingCertificate`参数是一个数组，其中包含的信息与将用于对 .msix 打包应用程序进行签名的代码签名证书相关。 此证书的加密级别必须至少为 SHA256。
@@ -195,10 +195,10 @@ $conversionsParameters = @(
 )
 ```
 
-变量中提供的应用信息 `conversionsParameters` 将用于生成包含所有必需的应用程序详细信息的 XML 文件。 创建 XML 文件后，该脚本会将 XML 文件传递到要打包的[.Msix 打包工具](..\packaging-tool\mpt-overview.md)（MsixPackagingTool.exe）。
+变量中提供的应用信息 `conversionsParameters` 将用于生成包含所有必需的应用程序详细信息的 XML 文件。 创建 XML 文件后，该脚本会将 XML 文件传递到 [.Msix 打包工具](../packaging-tool/tool-overview.md) ( # A0) 打包。
 
-## <a name="logging"></a>日志记录
+## <a name="logging"></a>Logging
 
-此脚本将生成一个日志文件，其中概述了在脚本执行过程中早于当前的内容。 日志文件将提供有关将应用程序打包到 .MSIX 打包格式的详细信息，以及与脚本进展相关的信息。 日志可以从任何文本实用工具读取，但已配置为使用 Trace32 日志读取器进行读取。 脚本执行中的错误将突出显示为红色，警告显示为黄色。 有关跟踪32日志读取器的详细信息，请访问 Microsoft Docs 上的[CMTrace](https://docs.microsoft.com/mem/configmgr/core/support/cmtrace) 。
+此脚本将生成一个日志文件，其中概述了在脚本执行过程中早于当前的内容。 日志文件将提供有关将应用程序打包到 .MSIX 打包格式的详细信息，以及与脚本进展相关的信息。 日志可以从任何文本实用工具读取，但已配置为使用 Trace32 日志读取器进行读取。 脚本执行中的错误将突出显示为红色，警告显示为黄色。 有关跟踪32日志读取器的详细信息，请访问 Microsoft Docs 上的 [CMTrace](/mem/configmgr/core/support/cmtrace) 。
 
 在脚本的目录中创建日志文件 `.\logs\BulkConversion.log` 。

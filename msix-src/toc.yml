@@ -45,13 +45,13 @@
     - name: API 和架构参考
       items:
         - name: 程序包管理器 API
-          href: 'https://docs.microsoft.com/uwp/api/windows.management.deployment?context=/windows/msix/render'
+          href: /uwp/api/windows.management.deployment?context=%252fwindows%252fmsix%252frender
         - name: 打包 API
-          href: 'https://docs.microsoft.com/windows/desktop/appxpkg/interfaces?context=/windows/msix/render'
+          href: /windows/desktop/appxpkg/interfaces?context=%252fwindows%252fmsix%252frender
         - name: 应用清单架构
-          href: 'https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest?context=/windows/msix/render'
+          href: /uwp/schemas/appxpackage/appx-package-manifest?context=%252fwindows%252fmsix%252frender
         - name: 应用安装程序文件架构
-          href: 'https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file?context=/windows/msix/render'
+          href: /uwp/schemas/appinstallerschema/app-installer-file?context=%252fwindows%252fmsix%252frender
     - name: MSIX 资源
       href: resources.md
     - name: 客户旅程
@@ -213,7 +213,7 @@
         - name: 概述
           href: desktop/extend-overview.md
         - name: 应用扩展
-          href: 'https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-an-extension?context=/windows/msix/render'
+          href: /windows/uwp/launch-resume/how-to-create-an-extension?context=%252fwindows%252fmsix%252frender
         - name: 应用扩展的自定义属性
           href: desktop/custom-props-app-extensions.md
         - name: 可选包
@@ -279,7 +279,7 @@
         - name: 概述
           href: desktop/managing-your-msix-deployment-retail.md
         - name: Microsoft Store
-          href: 'https://docs.microsoft.com/windows/uwp/publish/?context=/windows/msix/render'
+          href: /windows/uwp/publish/?context=%252fwindows%252fmsix%252frender
     - name: MSIX 包更新
       items:
         - name: 概述
@@ -313,13 +313,13 @@
     - name: Windows Server 2019 上的 MSIX 支持
       href: msix-server-2019.md
     - name: Windows 设备门户
-      href: 'https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal?context=/windows/msix/render'
+      href: /windows/uwp/debug-test-perf/device-portal?context=%252fwindows%252fmsix%252frender
     - name: 排查 MSIX 容器中的运行时问题
       href: manage/troubleshoot-msix-container.md
     - name: 调试和测试打包的应用
       items:
         - name: 对 Windows 应用的打包、部署和查询进行故障排除
-          href: 'https://docs.microsoft.com/windows/win32/appxpkg/troubleshooting?context=/windows/msix/render'
+          href: /windows/win32/appxpkg/troubleshooting?context=%252fwindows%252fmsix%252frender
         - name: 运行、调试和测试打包的桌面应用程序
           href: desktop/desktop-to-uwp-debug.md
         - name: 检测包标识和运行时上下文

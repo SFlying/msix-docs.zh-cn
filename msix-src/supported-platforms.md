@@ -7,14 +7,14 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9cece807e2206f754e96f6a394c5da626129c177
-ms.sourcegitcommit: d65b3457343e0590f53e36fc2710863cc2f13897
+ms.openlocfilehash: e1b040901339e921931e96c951ee1a7f95250402
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83790585"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090645"
 ---
-# <a name="supported-platforms"></a>支持的平台
+# <a name="supported-platforms"></a>受支持的平台
 
 以下 Windows 版本目前支持 .MSIX：
 
@@ -22,15 +22,15 @@ ms.locfileid: "83790585"
 * Windows Server 2019 LTSC 及更高版本。
 * Windows Enterprise 2019 LTSC 及更高版本。
 
-有关 Windows 生命周期支持的更多详细信息，如服务日期结束，请访问[windows 生命周期事实数据表](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
+有关 Windows 生命周期支持的更多详细信息，如服务日期结束，请访问 [windows 生命周期事实数据表](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
 
 本文介绍了这些 Windows 版本中的 .MSIX 的主要功能。
 
 > [!NOTE]
-> Windows Server 2019 LTSC 和 Windows Enterprise 2019 LTSC 要求**应用安装**程序应用支持双击安装或直接从 .msix、.msixbundle、.appx 或 .appxbundle 网站上安装。 如果没有此应用，可以通过 PowerShell、API 或使用受支持的系统管理产品来安装包。 有关 Windows Server 2019 LTSC 的更多注意事项，请参阅[此文](msix-server-2019.md)。
+> Windows Server 2019 LTSC 和 Windows Enterprise 2019 LTSC 要求 **应用安装** 程序应用支持双击安装或直接从 .msix、.msixbundle、.appx 或 .appxbundle 网站上安装。 如果没有此应用，可以通过 PowerShell、API 或使用受支持的系统管理产品来安装包。 有关 Windows Server 2019 LTSC 的更多注意事项，请参阅 [此文](msix-server-2019.md)。
 
 > [!NOTE]
-> 对于早于 Windows 10 版本1709的 Windows 版本，请使用[.Msix Core](msix-core/msixcore.md)安装 .msix 包。
+> 对于早于 Windows 10 版本1709的 Windows 版本，请使用 [.Msix Core](msix-core/msixcore.md) 安装 .msix 包。
 
 ## <a name="msix-feature-support"></a>.MSIX 功能支持
 
@@ -39,7 +39,7 @@ ms.locfileid: "83790585"
 > [!div class="mx-tableFixed"]
 | 功能 | 1709 | 1803 | 1809 | 1903 | 1909 | 2004| Windows Server 2019 LTSC | Windows Enterprise 2019 LTSC|
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| [允许提升](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
+| [允许提升](/windows/uwp/packaging/app-capability-declarations) | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
 | [应用安装程序文件支持](app-installer/installing-windows10-apps-web.md)| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark: | :heavy_check_mark:| 
 | [延迟注册标志](desktop/managing-your-msix-deployment-update.md) |  :x: | :x: | :x: | :x:| :x: | :heavy_check_mark:| :x: | :x: |
 | [从任何版本降级强制更新](desktop/managing-your-msix-deployment-targetdevices.md) |  :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
@@ -84,4 +84,4 @@ Windows 10 版本 1709、1803 和 1809 支持主流的企业部署方案。 其�
 目前，通过 Microsoft Store 和 Microsoft Store for Business 进行 .MSIX 安装需要 Windows 10 版本1809及更高版本。
 
 ### <a name="non-windows-platform"></a>非 Windows 平台
-[.MSIX SDK](https://github.com/Microsoft/msix-packaging)是一个开源项目，使开发人员可以在所有平台上广泛使用 .msix 包格式。 SDK 可用于任何允许第三方生成插件或扩展的跨平台客户端应用。 客户端应用开发人员可以使用 Windows 10 平台上提供的应用扩展模型，并在非 Windows 10 平台（如 macOS、iOS、Android 和 Linux）上使用 .MSIX SDK。 
+[.MSIX SDK](https://github.com/Microsoft/msix-packaging)是一个开源项目，使开发人员可以在所有平台上广泛使用 .msix 包格式。 SDK 可用于任何允许第三方生成插件或扩展的跨平台客户端应用。 客户端应用开发人员可以使用 Windows 10 平台上提供的应用扩展模型，并在非 Windows 10 平台（如 macOS、iOS、Android 和 Linux）上使用 .MSIX SDK。

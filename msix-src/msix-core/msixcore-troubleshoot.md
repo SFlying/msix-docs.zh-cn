@@ -1,17 +1,17 @@
 ---
-title: 疑难解答提示
+title: 疑难解答指南
 description: 本文列出了客户在使用 .MSIX Core 时可能遇到的错误代码和问题
 ms.date: 11/15/2019
 ms.topic: article
 keywords: windows 10、windows 7、windows 8、Windows Server、uwp、.msix、msixcore、1709、1703、1607、1511、1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: abd3165eb23cf90e86a80ca685e5c3794648a54f
-ms.sourcegitcommit: 0412ba69187ce791c16313d0109a5d896141d44c
+ms.openlocfilehash: 2a18add1641e56cf3117ab8ad281a9696538e95e
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75303274"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090265"
 ---
 # <a name="troubleshooting-issues-for-msix-core"></a>.MSIX 核心问题的疑难解答
 
@@ -21,7 +21,7 @@ ms.locfileid: "75303274"
 
 下面是可能会遇到的常见错误消息。
 
-| 错误代码 |描述 |
+| 错误代码 |说明 |
 |------------|------------|
 | 0x8BAD0042 | 这通常意味着未安装用于对应用进行签名的证书。 若要解决此情况，请安装证书，然后重试| 
 | 0x80070032 | 包中包含 .MSIX Core 不支持的注释。 例如，不支持包支持框架的某些功能。 这些是包支持框架，可调用在安装结束时运行的脚本，设置为运行的脚本等于 false 或格式不正确的包支持框架。 | 
@@ -29,7 +29,7 @@ ms.locfileid: "75303274"
 
 当包格式有问题时，会出现以下错误。
 
-| 错误代码 |描述 |
+| 错误代码 |说明 |
 |------------|:------------|
 | 0x8BAD0031 | MissingAppxSignatureP7X|
 | 0x8BAD0032 | MissingContentTypesXML|
@@ -41,7 +41,7 @@ ms.locfileid: "75303274"
 
 以下错误与文件问题相关
 
- | 错误代码 |描述 |
+ | 错误代码 |说明 |
 |------------|:------------|
 | 0x8BAD0001 | FileOpen|
 | 0x8BAD0002 | FileSeek|
@@ -52,7 +52,7 @@ ms.locfileid: "75303274"
 
 当包签名时使用的证书出现问题时，会出现以下错误。 
 
-| 错误代码 |描述 |
+| 错误代码 |说明 |
 |------------|:------------|
 | 0x8BAD0041 | SignatureInvalid| 
 | 0x8BAD0042 | CertNotTrusted|
@@ -60,7 +60,7 @@ ms.locfileid: "75303274"
 
 你可能会遇到的其他问题
 
-| 错误代码 |描述 |
+| 错误代码 |说明 |
 |------------|:------------|
 | 0x8BAD0011 | ZipCentralDirectoryHeader|
 | 0x8BAD0012 | ZipLocalFileHeader|
@@ -70,32 +70,32 @@ ms.locfileid: "75303274"
 | 0x8BAD0016 | ZipHiddenData |
 | 0x8BAD0017 | ZipBadExtendedData | 
 
-| 错误代码 |描述 |
+| 错误代码 |说明 |
 |------------|:------------|
 | 0x8BAD0051 | BlockMapSemanticError|
 | 0x8BAD0052 | BlockMapInvalidData|
 
-| 错误代码 |描述 |
+| 错误代码 |说明 |
 |------------|:------------|
 | 0x8BAD0061 | AppxManifestSemanticError |
 | 0x8BAD0082 | DeflateInitialize |
 | 0x8BAD0081 | DeflateWrite |
 | 0x8BAD0083 | DeflateRead  |
 
-| 错误代码 |描述 |
+| 错误代码 |说明 |
 |------------|:------------|
 | 0x8BAD1001 | XmlWarning  |
 | 0x8BAD1002 | XmlError|
 | 0x8BAD1003 | XmlFatal |
 | 0x8BAD1004 | XmlInvalidData |
 
-若要[在此处](https://docs.microsoft.com/windows/win32/debug/system-error-codes)搜索其他错误代码，请参阅。
+若要 [在此处](/windows/win32/debug/system-error-codes)搜索其他错误代码，请参阅。
 
-有关完整列表，请访问[.Msix Core 错误代码](https://github.com/microsoft/msix-packaging/blob/master/src/inc/public/MsixErrors.hpp)页。 
+有关完整列表，请访问 [.Msix Core 错误代码](https://github.com/microsoft/msix-packaging/blob/master/src/inc/public/MsixErrors.hpp) 页。 
 
 ## <a name="msix-tracing-powershell-script"></a>.MSIX 跟踪 PowerShell 脚本
 
-请参阅我们的[发布页面](https://github.com/microsoft/msix-packaging/releases/tag/MSIX-Core-1.1-release)，并下载**msixtrace**。 这是 .MSIX 跟踪 PowerShell 脚本，它将生成日志，以帮助你在 .MSIX 安装过程中遇到问题。
+请参阅我们的 [发布页面](https://github.com/microsoft/msix-packaging/releases/tag/MSIX-Core-1.1-release) 并下载 **msixtrace.ps1**。 这是 .MSIX 跟踪 PowerShell 脚本，它将生成日志，以帮助你在 .MSIX 安装过程中遇到问题。
 
 使用以下命令
 

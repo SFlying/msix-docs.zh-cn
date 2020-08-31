@@ -5,12 +5,12 @@ ms.date: 07/02/2019
 ms.topic: article
 keywords: windows 10、.msix、打包、包布局、资产包
 ms.localizationpriority: medium
-ms.openlocfilehash: 0571f61579f95dbe3465f106b4d8860be636dea8
-ms.sourcegitcommit: 37bc5d6ef6be2ffa373c0aeacea4226829feee02
+ms.openlocfilehash: 0279d052f5a5d98ec13ab26bfd130882afd5255a
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77072797"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091165"
 ---
 # <a name="introduction-to-asset-packages"></a>资产包简介
 
@@ -27,7 +27,7 @@ ms.locfileid: "77072797"
 
 资产包最明显的好处是减小了打包应用的大小。 较小的应用包可减少 Microsoft Store 处理的文件数量，从而加快应用发布过程；但这不是资产包最重要的好处。
 
-创建资产包后，你可以指定是否允许包执行。 由于资产包只应包含与体系结构无关的文件，通常不包含任何 .dll 或 .exe 文件，因此资产包通常不需要执行。 这种区别的重要性在于，在发布过程中，必须扫描所有可执行程序包以确保它们不包含恶意软件，而对于较大的程序包，扫描过程需要更长的时间。 但是，如果将程序包指定为不可执行，则应用的安装将确保该程序包中包含的文件无法执行。 这一保证消除了扫描整个程序包的需要，将大幅减少应用发布（以及更新）期间的恶意软件扫描时间，从而显著加快使用资产包的应用的发布速度。 请注意，[平面捆绑应用包](flat-bundles.md)还必须用于获取此发布权益，因为这样可以使存储区以并行方式处理每个 .appx 或 .msix 包文件。 
+创建资产包后，你可以指定是否允许包执行。 由于资产包只应包含与体系结构无关的文件，通常不包含任何 .dll 或 .exe 文件，因此资产包通常不需要执行。 这种区别的重要性在于，在发布过程中，必须扫描所有可执行程序包以确保它们不包含恶意软件，而对于较大的程序包，扫描过程需要更长的时间。 但是，如果将程序包指定为不可执行，则应用的安装将确保该程序包中包含的文件无法执行。 这一保证消除了扫描整个程序包的需要，将大幅减少应用发布（以及更新）期间的恶意软件扫描时间，从而显著加快使用资产包的应用的发布速度。 请注意， [平面捆绑应用包](flat-bundles.md) 还必须用于获取此发布权益，因为这样可以使存储区以并行方式处理每个 .appx 或 .msix 包文件。 
 
 ### <a name="should-i-use-asset-packages"></a>我应该使用资产包吗？
 
@@ -47,7 +47,7 @@ ms.locfileid: "77072797"
 "Video.mp4"         "Video.mp4"
 ```
 
-使用以下命令之一来创建使用 Makeappx.exe （适用于 .MSIX 和 .appx）的资产包。
+使用以下命令之一，使用 .MSIX 和 .appx) MakeAppx.exe (创建资产包。
 
 ```cmd
 MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.appx
@@ -58,7 +58,7 @@ MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.msix
 
 资产包也不应该包含 resources.pri；MRT 不能用于访问资产包文件。 有关如何访问资产包文件以及为什么资产包要求将你的应用安装到 NTFS 驱动器的详细信息，请参阅[使用资产包和包折叠进行开发](Package-Folding.md)。
 
-要控制是否允许资产包执行，你可以在 AppxManifest 中使用 **Properties[ 元素中的 ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution)** uap6:AllowExecution。此外，你还必须将 **uap6** 添加到顶层的 **Package** 元素，如下所示： 
+要控制是否允许资产包执行，你可以在 AppxManifest 中使用 **Properties** 元素中的 **[uap6:AllowExecution](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution)**。此外，你还必须将 **uap6** 添加到顶层的 **Package** 元素，如下所示： 
 
 ```XML
 <Package IgnorableNamespaces="uap uap6" 
@@ -67,4 +67,4 @@ xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
 xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
 
- 如果不指定 **AllowExecution**，则其默认值为 **true**；将其设置为 **false** 可以加快不含可执行文件的资产包的发布过程。  
+ 如果不指定 **AllowExecution**，则其默认值为 **true**；将其设置为 **false** 可以加快不含可执行文件的资产包的发布过程。

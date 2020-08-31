@@ -7,22 +7,22 @@ ms.topic: article
 keywords: windows 10, uwp, 应用包, 应用更新, msix, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 1c120193a278fb8584761d7b6aaa4ab0430697ad
-ms.sourcegitcommit: f1c366459764cf1f3c0bc9edcac4f845937794bd
+ms.openlocfilehash: ae161305bccd1e0fa53bde5be66ab808e1334e3b
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87754506"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091195"
 ---
 # <a name="update-non-store-published-app-packages-from-your-code"></a>从代码更新非存储已发布的应用包
 
 以 .MSIX 的形式交付应用时，可以通过编程方式启动应用程序的更新。 如果你将应用程序部署到应用商店外部，你只需在服务器上检查是否有新版本的应用程序并安装新版本。 应用更新的方式取决于是否使用应用安装程序文件部署应用程序包。 若要从代码应用更新，应用包必须声明 `packageManagement` 功能。
 
-本文提供的示例演示如何 `packageManagement` 在包清单中声明功能，以及如何从代码应用更新。 如果你使用的是应用程序安装程序文件，第二部分介绍了如何执行此操作，而第二部分介绍了如何在**不**使用应用程序安装程序文件时执行此操作。 最后一节将介绍如何在应用更新后确保应用重启。
+本文提供的示例演示如何 `packageManagement` 在包清单中声明功能，以及如何从代码应用更新。 如果你使用的是应用程序安装程序文件，第二部分介绍了如何执行此操作，而第二部分介绍了如何在 **不** 使用应用程序安装程序文件时执行此操作。 最后一节将介绍如何在应用更新后确保应用重启。
 
 ## <a name="add-the-packagemanagement-capability-to-your-package-manifest"></a>将 PackageManagement 功能添加到包清单
 
-若要使用 `PackageManager` api，应用必须 `packageManagement` 在[包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)中声明[受限功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
+若要使用 `PackageManager` api，应用必须 `packageManagement` 在[包清单](/uwp/schemas/appxpackage/appx-package-manifest)中声明[受限功能](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 
 ```xml
 <Package>
@@ -38,7 +38,7 @@ ms.locfileid: "87754506"
 
 ## <a name="updating-packages-deployed-using-an-app-installer-file"></a>使用应用安装程序文件更新部署的包
 
-如果你使用应用程序安装程序文件部署应用程序，则你执行的任何代码驱动的更新都必须使用[应用程序安装程序文件 api](https://docs.microsoft.com/windows/msix/app-installer/app-installer-documentation#app-installer-file-apis)。 这样做可确保定期应用安装程序文件更新将继续工作。 若要从代码初始化应用程序安装程序的更新，可以使用[PackageManager. AddPackageByAppInstallerFileAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyappinstallerfileasync?view=winrt-19041)或[PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.requestaddpackagebyappinstallerfileasync?view=winrt-19041)。 可以使用[CheckUpdateAvailabilityAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.checkupdateavailabilityasync?view=winrt-19041) API 检查更新是否可用。 下面是示例代码：
+如果你使用应用程序安装程序文件部署应用程序，则你执行的任何代码驱动的更新都必须使用 [应用程序安装程序文件 api](./app-installer/app-installer-documentation.md#app-installer-file-apis)。 这样做可确保定期应用安装程序文件更新将继续工作。 若要从代码初始化应用程序安装程序的更新，可以使用 [PackageManager. AddPackageByAppInstallerFileAsync](/uwp/api/windows.management.deployment.packagemanager.addpackagebyappinstallerfileasync?view=winrt-19041) 或 [PackageManager](/uwp/api/windows.management.deployment.packagemanager.requestaddpackagebyappinstallerfileasync?view=winrt-19041)。 可以使用 [CheckUpdateAvailabilityAsync](/uwp/api/windows.applicationmodel.package.checkupdateavailabilityasync?view=winrt-19041) API 检查更新是否可用。 下面是示例代码：
 
 ```csharp
 using Windows.Management.Deployment;
@@ -80,7 +80,7 @@ public async void CheckForAppInstallerUpdatesAndLaunchAsync(string targetPackage
 
 ### <a name="check-for-updates-on-your-server"></a>检查服务器上的更新
 
-如果使用的**不**是应用安装程序文件来部署应用程序包，则第一步是直接检查是否有新版本的应用程序可用。 下面的示例将检查服务器上包的版本是否大于应用程序 (的当前版本，此示例引用测试服务器) 演示目的。
+如果使用的 **不** 是应用安装程序文件来部署应用程序包，则第一步是直接检查是否有新版本的应用程序可用。 下面的示例将检查服务器上包的版本是否大于应用程序 (的当前版本，此示例引用测试服务器) 演示目的。
 
 ```csharp
 using Windows.Management.Deployment;
@@ -119,7 +119,7 @@ private async void CheckUpdate(object sender, TappedRoutedEventArgs e)
 
 ### <a name="apply-the-update"></a>应用更新 
 
-确定可用更新后，可以使用[AddPackageAsync](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackageasync?view=winrt-19041) API 将其排队，以便下载和安装。 下次关闭应用时，将应用此更新。 应用重新启动后，新版本将可供用户使用。 下面是示例代码：
+确定可用更新后，可以使用 [AddPackageAsync](/uwp/api/windows.management.deployment.packagemanager.addpackageasync?view=winrt-19041) API 将其排队，以便下载和安装。 下次关闭应用时，将应用此更新。 应用重新启动后，新版本将可供用户使用。 下面是示例代码：
 
 ```csharp
 
@@ -140,7 +140,7 @@ private async void CommandInvokedHandler(IUICommand command)
 
 ## <a name="automatically-restarting-your-app-after-an-update"></a>更新后自动重启应用
 
-如果应用程序是 UWP 应用，则在应用更新时传入 AddPackageByAppInstallerOptions 或 AddPackageOptions 应计划在关闭 + 更新后重新启动应用。 对于非 UWP 应用，需要在应用更新之前调用[RegisterApplicationRestart](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions#updates) 。
+如果应用程序是 UWP 应用，则在应用更新时传入 AddPackageByAppInstallerOptions 或 AddPackageOptions 应计划在关闭 + 更新后重新启动应用。 对于非 UWP 应用，需要在应用更新之前调用 [RegisterApplicationRestart](/windows/apps/desktop/modernize/desktop-to-uwp-extensions#updates) 。
 
 在应用开始关闭之前，必须先调用 RegisterApplicationRestart。 下面的示例使用互操作服务调用 c # 中的本机方法：
 

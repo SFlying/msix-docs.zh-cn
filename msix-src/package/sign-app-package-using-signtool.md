@@ -6,38 +6,38 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: 484f2ba6df7044b628154fd73990089652cede20
-ms.sourcegitcommit: e703ffe4c635d9b127ecf8c02e087370b676aa9c
+ms.openlocfilehash: 5df8516441ab7acb8eea54afe6443f92c586c7a4
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108170"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091045"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 对应用包进行签名
 
 **SignTool** 是命令行工具，用于对应用包或带有证书的捆绑包进行数字签名。 证书可以由用户创建（用于测试目的）或由公司颁发（用于分发）。 登录应用包可验证用户登录后应用数据未经更改，并且可确认登录用户或公司的身份。 **SignTool** 可对已加密或未加密的应用包和捆绑包进行签名。
 
 > [!IMPORTANT] 
-> 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包并对其进行签名。 有关详细信息，请参阅使用[Visual Studio 打包 UWP 应用](packaging-uwp-apps.md)和[使用 visual Studio 从源代码打包桌面应用](../desktop/desktop-to-uwp-packaging-dot-net.md)。
+> 如果你使用 Visual Studio 开发你的应用，建议使用 Visual Studio 向导创建应用包并对其进行签名。 有关详细信息，请参阅使用 [Visual Studio 打包 UWP 应用](packaging-uwp-apps.md) 和 [使用 visual Studio 从源代码打包桌面应用](../desktop/desktop-to-uwp-packaging-dot-net.md)。
 
-有关代码签名和证书的一般详细信息，请参阅[代码签名简介](https://docs.microsoft.com/windows/desktop/SecCrypto/cryptography-tools)。
+有关代码签名和证书的一般详细信息，请参阅[代码签名简介](/windows/desktop/SecCrypto/cryptography-tools)。
 
 ## <a name="prerequisites"></a>先决条件
 
-- **打包应用程序**  
+- **应用包**  
     若要了解手动创建应用包的详细信息，请参阅[使用 MakeAppx.exe 工具创建应用包](create-app-package-with-makeappx-tool.md)。
 
 - **有效的签名证书**  
     有关创建或导入有效签名证书的详细信息，请参阅[创建或导入应用包签名证书](create-certificate-package-signing.md)。
 
-- **SignTool**  
+- **SignTool.exe**  
     根据 SDK 的安装路径，以下是 **SignTool** 在 Windows 10 电脑上的位置：
-    - x86： C:\Program Files （x86） \Windows Kits\10\bin arch>\\&lt;sdk 版本&gt;\x86\SignTool.exe
-    - x64： C:\Program Files （x86） \Windows Kits\10\bin arch>\\&lt;sdk 版本&gt;\x64\SignTool.exe
+    - x86： C:\Program Files (x86) \Windows Kits\10\bin arch> \\ &lt; sdk 版本 &gt;\x86\SignTool.exe
+    - x64： C:\Program Files (x86) \Windows Kits\10\bin arch> \\ &lt; sdk 版本 &gt;\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>使用 SignTool
 
-**SignTool** 具有对文件进行签名，验证签名或时间戳，删除签名等功能。 为了实现对应用包进行签名的目的，我们将重点关注**签名**命令。 有关 **SignTool** 的完整信息，请参阅 [SignTool](https://docs.microsoft.com/windows/desktop/SecCrypto/signtool) 参考页面。
+**SignTool** 具有对文件进行签名，验证签名或时间戳，删除签名等功能。 为了实现对应用包进行签名的目的，我们将重点关注**签名**命令。 有关 **SignTool** 的完整信息，请参阅 [SignTool](/windows/desktop/SecCrypto/signtool) 参考页面。
 
 ### <a name="determine-the-hash-algorithm"></a>确定哈希算法
 
@@ -108,4 +108,4 @@ SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 
 请注意，某些证书不使用密码。 如果你的证书没有密码，可忽略示例命令中的“/p &lt;你的密码&gt;”。
 
-使用有效证书对应用包进行签名后即可将你的应用包上传至应用商店。 有关将应用上传和提交至应用商店的详细指南，请参阅[应用提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
+使用有效证书对应用包进行签名后即可将你的应用包上传至应用商店。 有关将应用上传和提交至应用商店的详细指南，请参阅[应用提交](/windows/uwp/publish/app-submissions)。
