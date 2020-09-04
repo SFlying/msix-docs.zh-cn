@@ -5,12 +5,12 @@ ms.date: 02/06/2020
 ms.topic: article
 keywords: windows 10, msix, uwp, 扩展
 ms.localizationpriority: medium
-ms.openlocfilehash: 126fa9b8f897e543d0418ea39d35cd088f0aeace
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 4cf0edb1ae5a8c9e9c180fcec2922bbf60ccbfb5
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77073873"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090125"
 ---
 # <a name="using-custom-properties-for-app-extensions"></a>使用应用扩展的自定义属性
 
@@ -60,7 +60,7 @@ Edge 已使用声明的扩展功能列表定义了 `Capabilities` 的已知属�
 </uap3:Properties>
 ```
 
-若要在运行时获取此数据，只需对应用扩展调用 [GetExtensionPropertiesAsync()](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextension.getextensionpropertiesasync) 即可。
+若要在运行时获取此数据，只需对应用扩展调用 [GetExtensionPropertiesAsync()](/uwp/api/windows.applicationmodel.appextensions.appextension.getextensionpropertiesasync) 即可。
 
 ```csharp
 string extensionVersion = "Unknown";

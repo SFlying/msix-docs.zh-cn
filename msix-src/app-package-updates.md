@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 应用包, 应用更新, msix, appx
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: 56db11754c5f9db0480abf0ec249b97486b3e614
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 5d088f60103543e998b4499977fc273f80f97a69
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "73328282"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090185"
 ---
 # <a name="app-package-updates"></a>应用包更新
 
@@ -55,7 +55,7 @@ ms.locfileid: "73328282"
 包系列由包名称和发布者构成。 为了能够更新，新包元数据需要与以前安装的包相同。 
 
 #### <a name="app-updates-must-increment-to-a-higher-version"></a>应用更新必须递增到更高版本
-一般情况下，应用更新要求新包的版本高于当前版本。 默认情况下，应用更新进程不允许安装版本更低的包。 自 Windows 10 版本 1809 起，当提供重写开关作为更新参数的一部分时，可以使用 ForceUpdateToAnyVersion 允许安装更低版本的包。 目前可以在 PowerShell 中使用 [ForceUpdateFromAnyVersion](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) 选项、通过 [PackageManager API](https://docs.microsoft.com/uwp/api/windows.management.deployment.deploymentoptions)、[EnterpriseModernAppManagement CSP](https://docs.microsoft.com/windows/client-management/mdm/enterprisemodernappmanagement-csp)，以及在 [AppInstaller 文件](https://docs.microsoft.com/windows/msix/app-installer/update-settings)中执行此操作。  
+一般情况下，应用更新要求新包的版本高于当前版本。 默认情况下，应用更新进程不允许安装版本更低的包。 自 Windows 10 版本 1809 起，当提供重写开关作为更新参数的一部分时，可以使用 ForceUpdateToAnyVersion 允许安装更低版本的包。 目前可以在 PowerShell 中使用 [ForceUpdateFromAnyVersion](/powershell/module/appx/add-appxpackage?view=win10-ps) 选项、通过 [PackageManager API](/uwp/api/windows.management.deployment.deploymentoptions)、[EnterpriseModernAppManagement CSP](/windows/client-management/mdm/enterprisemodernappmanagement-csp)，以及在 [AppInstaller 文件](./app-installer/update-settings.md)中执行此操作。  
 
 > [!NOTE]
 > 如果对来自 Windows Store 的应用使用 ForceUpdateToAnyVersion，Windows 更新会自动将该应用更新到最新的适用版本。
@@ -73,5 +73,3 @@ ms.locfileid: "73328282"
 - 在包中保留小文件 - 这可以确保在需要执行会影响整个文件的更改时，更新规模仍然很小。
 - 应该尽可能地对文件进行加法式更改 - 加法式更改可确保最终用户设备仅下载已更改的块。
 - 应该尽可能地将文件更改包含在 64KB 块中 - 如果应用包含大文件并且需要对文件的中间部分进行更改，则在一组块中包含更改可以提供显著的帮助。
- 
-

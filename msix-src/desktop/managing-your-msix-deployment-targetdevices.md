@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, 部署, msix
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 48b9c6661e546f515bfc7de23bed30777498223f
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 2d40b8e8c89a1f6291b65f79589043eaad402310
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77074213"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090465"
 ---
 # <a name="plan-for-your-deployment"></a>规划部署
 
@@ -23,13 +23,13 @@ ms.locfileid: "77074213"
 MSIX 已引入到 Windows 10 版本 1709 (10.0.16299.0) 和更高版本中。  这意味着，如果使用基本 MSIX 功能并以 Windows 10 版本 1709 或更高版本作为目标，MSIX 将会正常工作。  有关支持操作系统和支持功能的完整列表，请参阅[支持的平台](../supported-platforms.md)。
 
 ## <a name="services-packaged-in-msix"></a>在 MSIX 中打包的服务
-在 MSIX 中打包服务的功能已引入到 Windows 10 Client 2004 (10.0.19041.0) 和更高版本中。 因此，如果应用程序使用 MSIX 中打包的服务，则它只能部署在这些操作系统上。 若要详细了解如何使用 MSIX 中的 MSIX 打包服务，请参阅[转换包含服务的安装程序](https://docs.microsoft.com/windows/msix/packaging-tool/convert-an-installer-with-services)。
+在 MSIX 中打包服务的功能已引入到 Windows 10 Client 2004 (10.0.19041.0) 和更高版本中。 因此，如果应用程序使用 MSIX 中打包的服务，则它只能部署在这些操作系统上。 若要详细了解如何使用 MSIX 中的 MSIX 打包服务，请参阅[转换包含服务的安装程序](../packaging-tool/convert-an-installer-with-services.md)。
 
 ## <a name="server-support-for-msix-packages"></a>Server 对 MSIX 包的支持
 MSIX 未内置在 Windows Server 中。  但是，在安装 [AppInstaller 应用程序](https://www.microsoft.com/p/app-installer/9nblggh4nns1)时，支持在装有桌面体验内部版本 1709 和更高版本的 Windows 10 Server 上使用 MSIX。  如果以早期的 Server 内部版本为目标，则还必须安装 MSIX Core。  有关 MSIX Core 的信息，请参阅 [MSIX Core](../msix-core/msixcore.md)。
 
 ## <a name="windows-10-1703-and-earlier-support-for-msix-packages"></a>Windows 10 1703 和更低版本对 MSIX 包的支持
-如果以低于 Windows 10 Client 1709 (10.0.16299.0) 的早期 Windows 版本为目标，则需要使用 [MSIX Core](https://docs.microsoft.com/windows/msix/msix-core/msixcore)。 在早期的 Windows 版本上安装 MSIX Core 可以部署和运行 MSIX 应用程序。 
+如果以低于 Windows 10 Client 1709 (10.0.16299.0) 的早期 Windows 版本为目标，则需要使用 [MSIX Core](../msix-core/msixcore.md)。 在早期的 Windows 版本上安装 MSIX Core 可以部署和运行 MSIX 应用程序。 
 
 有关支持操作系统和支持功能的完整列表，请参阅[支持的平台](../supported-platforms.md)。 
 
@@ -50,9 +50,9 @@ MSIX 未内置在 Windows Server 中。  但是，在安装 [AppInstaller 应用
 ### <a name="downgrade"></a>降级
 卸载或降级 MSIX 时，MSIX 将保留用户的 appdata。  因此请务必注意，除非较新应用创建的数据可后向兼容，否则通过降级的应用访问数据可能会出现问题。  如果数据不能后向兼容，则最好是不要允许用户降级。
 
-若要详细了解如何控制应用的更新设置，请参阅[在应用安装程序文件中配置更新设置](https://docs.microsoft.com/windows/msix/packaging-tool/convert-an-installer-with-services)
+若要详细了解如何控制应用的更新设置，请参阅[在应用安装程序文件中配置更新设置](../packaging-tool/convert-an-installer-with-services.md)
 
 ### <a name="msix-bundles"></a>MSIX 捆绑包
 MSIX 捆绑包是设计用于包含多个体系结构的包。  另一方面，MSIX 包仅支持单一体系结构。  可以使用 MSIX 捆绑包来升级或降级 MSIX 包，但反之不然：  不能使用 MSIX 包来升级或降级 MSIX 捆绑包。 
 
-若要详细了解如何创建捆绑包，请参阅[捆绑 MSIX 包](https://docs.microsoft.com/windows/msix/packaging-tool/bundle-msix-packages)
+若要详细了解如何创建捆绑包，请参阅[捆绑 MSIX 包](../packaging-tool/bundle-msix-packages.md)

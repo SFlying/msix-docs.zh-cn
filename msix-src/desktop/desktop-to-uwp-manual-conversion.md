@@ -1,5 +1,5 @@
 ---
-Description: 介绍如何手动打包适用于 Windows 10 的 Windows 桌面应用程序（例如 Win32、WPF 和 Windows 窗体）。
+description: 介绍如何手动打包适用于 Windows 10 的 Windows 桌面应用程序（例如 Win32、WPF 和 Windows 窗体）。
 title: 手动打包应用程序（桌面桥）
 ms.date: 07/29/2019
 ms.topic: article
@@ -7,12 +7,12 @@ keywords: windows 10, uwp, msix
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0345e15ad014afb9461eccc6ed112550a3c0c7a8
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: 0abfa56857bc417df1381ec56ef3627ac17b7e1c
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724532"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090045"
 ---
 # <a name="generating-msix-package-components"></a>生成 MSIX 打包组件
 
@@ -80,7 +80,7 @@ ms.locfileid: "84724532"
 
 ### <a name="properties"></a>“属性”
 
-[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素包含 3 个必需的子元素。 下面是一个带有元素占位符文本的示例 **Properties** 节点。 **DisplayName** 是在 Store 中保留的应用程序名称，用于上传到 Store 的应用。
+[Properties](/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素包含 3 个必需的子元素。 下面是一个带有元素占位符文本的示例 **Properties** 节点。 **DisplayName** 是在 Store 中保留的应用程序名称，用于上传到 Store 的应用。
 
 ```XML
 <Properties>
@@ -92,7 +92,7 @@ ms.locfileid: "84724532"
 
 ### <a name="resources"></a>资源
 
-下面是一个示例 [Resources](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources) 节点。
+下面是一个示例 [Resources](/uwp/schemas/appxpackage/appxmanifestschema/element-resources) 节点。
 
 ```XML
 <Resources>
@@ -135,7 +135,7 @@ ms.locfileid: "84724532"
 
 ### <a name="visual-elements"></a>可视元素
 
-下面是一个示例 [VisualElements](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements) 节点。
+下面是一个示例 [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements) 节点。
 
 ```XML
 <uap:VisualElements
@@ -149,7 +149,7 @@ ms.locfileid: "84724532"
 
 ## <a name="optional-add-target-based-unplated-assets"></a>（可选）添加基于目标的未着色资产
 
-基于目标的资源是指显示在以下位置的图标和磁贴：Windows 任务栏、任务视图、ALT+TAB、贴靠助手和“开始”磁贴的右下角。 可在[此处](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos#unplated-assets)了解相关详细信息。
+基于目标的资源是指显示在以下位置的图标和磁贴：Windows 任务栏、任务视图、ALT+TAB、贴靠助手和“开始”磁贴的右下角。 可在[此处](/windows/uwp/design/style/app-icons-and-logos#unplated-assets)了解相关详细信息。
 
 1. 获取正确的 44x44 图像，然后将它们复制到包含图像的文件夹（即 Assets）。
 
@@ -204,5 +204,3 @@ ms.locfileid: "84724532"
 
 > [!NOTE]
 > 打包的应用程序始终以交互用户的身份运行，任何安装已打包应用程序的驱动器必须以 NTFS 格式化。
-
-

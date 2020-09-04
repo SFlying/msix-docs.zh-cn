@@ -5,12 +5,12 @@ ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10 S, uwp, msix
 ms.localizationpriority: medium
-ms.openlocfilehash: 11989302e0c5c1d69623aaffafec59d06db5353b
-ms.sourcegitcommit: f6bb9ced4cce853ae6acd3a359cbbb5e2e3f7187
+ms.openlocfilehash: 4cceecd65452b96eed96692095947a7e17c6418e
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85441664"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89089865"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>测试 Windows 应用是否适用于 S 模式下的 Windows 10
 
@@ -49,7 +49,7 @@ ms.locfileid: "85441664"
 此模式为安全模式，不会阻止你的系统启动。
 
 #### <a name="optional-find-specific-failure-points-in-the-call-stack"></a>（可选）查找调用堆栈中的特定故障点
-若要在调用堆栈中找到阻止问题发生的特定点，请添加此注册表项，然后[设置内核模式调试环境](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging)。
+若要在调用堆栈中找到阻止问题发生的特定点，请添加此注册表项，然后[设置内核模式调试环境](/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging)。
 
 |键|名称|类型|值|
 |--|---|--|--|
@@ -87,8 +87,8 @@ ms.locfileid: "85441664"
 
 **查看我们的应用咨询团队发布的详细博客文章**
 
-请参阅[使用桌面桥移植和测试 Windows 10 上的经典桌面应用程序](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/)。
+请参阅[使用桌面桥移植和测试 Windows 10 上的经典桌面应用程序](/archive/blogs/appconsult/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge)。
 
 **解让测试以 S 模式运行的 Windows 变得更轻松的工具**
 
-请参阅[对 APPX 进行解压缩、修改、重新打包、签名](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/)。
+请参阅[对 APPX 进行解压缩、修改、重新打包、签名](/archive/blogs/appconsult/unpack-modify-repack-sign-appx)。

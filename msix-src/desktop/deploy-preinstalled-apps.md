@@ -7,12 +7,12 @@ author: dianmsft
 ms.author: diahar
 keywords: windows 10, msix, uwp, 可选包, 相关集, 包扩展, visual studio, dism, 预安装, 预先安装, 打包应用
 ms.localizationpriority: medium
-ms.openlocfilehash: be5c13d0374ed058934c920053f52a1fdc39df43
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 100e1b95aae5161a0811459e3dfbee866f7d56a8
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "81613996"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090095"
 ---
 # <a name="preinstalling-packaged-apps"></a>预安装已打包的应用
 可以使用多个工具将 MSIX 打包应用安装到设备，供所有用户使用：
@@ -48,10 +48,9 @@ DISM 是一个命令行工具，可用于服务和准备 WIndows 映像，包括
 
 ## <a name="powershell"></a>PowerShell
 相关 PowerShell 命令的列表
-* **[Get-ProvisionedAppxPackages](https://docs.microsoft.com/powershell/module/dism/get-appxprovisionedpackage?view=win10-ps)** 此命令列出映像中预装的所有应用的列表。
-* **[Add-ProvisionedAppxPackage](https://docs.microsoft.com/powershell/module/dism/add-appxprovisionedpackage?view=win10-ps)** 此命令暂存 appx 包，并对其进行配置，以便可以预装。 还必须提供所有依赖项，可以在 SDK 或者从 Store 下载的包中找到这些依赖项。
-* **[/Remove-ProvisionedAppxPackage](https://docs.microsoft.com/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps)** 此命令可用于删除预装的应用。 请注意，如果已经为任何用户注册了应用，则此命令不会删除该应用 - 只会去掉自动注册行为，因此不会为任何新用户自动安装该应用。  如果没用任何用户安装该应用，则此命令还会删除暂存的文件。
+* **[Get-ProvisionedAppxPackages](/powershell/module/dism/get-appxprovisionedpackage?view=win10-ps)** 此命令列出映像中预装的所有应用的列表。
+* **[Add-ProvisionedAppxPackage](/powershell/module/dism/add-appxprovisionedpackage?view=win10-ps)** 此命令暂存 appx 包，并对其进行配置，以便可以预装。 还必须提供所有依赖项，可以在 SDK 或者从 Store 下载的包中找到这些依赖项。
+* **[/Remove-ProvisionedAppxPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps)** 此命令可用于删除预装的应用。 请注意，如果已经为任何用户注册了应用，则此命令不会删除该应用 - 只会去掉自动注册行为，因此不会为任何新用户自动安装该应用。  如果没用任何用户安装该应用，则此命令还会删除暂存的文件。
 
 ## <a name="licensing"></a>授权
 仅当预配 Windows Store 应用时，许可才适用。 任何其他应用无需许可证即可预配。 如果应用来自于 Store，则预配该应用时，还必须提供机器许可证。 目前，所有预装的 Windows Store 应用必须是免费应用，并配置为可通过 Windows Store 合作伙伴中心预装。 配置后，可以下载可预装的包和许可证，然后将其预配到任何映像中。
-

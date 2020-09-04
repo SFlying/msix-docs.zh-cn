@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f4e0fe597847ab88c7929fd398c4ddb5dfa1f9c
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: 4996c7c868fb07424f88c4e1d381d6d99c06efbf
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724591"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090085"
 ---
 # <a name="run-debug-and-test-an-msix-package"></a>运行、调试和测试 MSIX 包
 
@@ -69,9 +69,9 @@ Add-AppxPackage –Register AppxManifest.xml
 
 在某些情况下，你可能希望更精细地控制调试过程，包括能够在应用程序启动前进行调试。
 
-可以使用 [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) 获取对应用程序生命周期的完全控制，包括暂停、恢复和终止。
+可以使用 [PLMDebug](/windows-hardware/drivers/debugger/plmdebug) 获取对应用程序生命周期的完全控制，包括暂停、恢复和终止。
 
-[PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) 已随附在 Windows SDK 中。
+[PLMDebug](/windows-hardware/drivers/debugger/plmdebug) 已随附在 Windows SDK 中。
 
 ## <a name="test-your-app"></a>测试应用
 

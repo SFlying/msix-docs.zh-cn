@@ -1,17 +1,17 @@
 ---
-Description: 可以使用 Azure Pipelines 为 MSIX 项目创建自动化生成。
+description: 可以使用 Azure Pipelines 为 MSIX 项目创建自动化生成。
 title: 设置 CI/CD 管道以自动完成 MSIX 生成和部署
 ms.date: 01/27/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 21b5f8f78a12f1942ca3f723f0c0b8052c44062e
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: 79b8e7472685f63104a8d5e1066a316a970ab8aa
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724581"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090625"
 ---
 # <a name="set-up-a-cicd-pipeline-to-automate-your-msix-builds-and-deployments"></a>设置 CI/CD 管道以自动完成 MSIX 生成和部署
 
@@ -19,9 +19,9 @@ ms.locfileid: "84724581"
 
 ## <a name="create-a-new-azure-pipeline"></a>创建新的 Azure 管道
 
-首先[注册 Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up)（如果尚未这样做）。
+首先[注册 Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up)（如果尚未这样做）。
 
-接下来，创建一个可用于生成源代码的管道。 有关生成一个用于生成 GitHub 存储库的管道的教程，请参阅[创建第一个管道](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml)。 Azure Pipelines 支持[此文](https://docs.microsoft.com/azure/devops/pipelines/repos)中列出的存储库类型。
+接下来，创建一个可用于生成源代码的管道。 有关生成一个用于生成 GitHub 存储库的管道的教程，请参阅[创建第一个管道](/azure/devops/pipelines/get-started-yaml)。 Azure Pipelines 支持[此文](/azure/devops/pipelines/repos)中列出的存储库类型。
 
 若要设置实际生成管道，请浏览到 Azure DevOps 门户 (dev.azure.com/\<organization\>)，并创建一个新项目。 如果没有帐户，可以免费创建一个。 登录并创建项目后，可将源代码推送到系统设置的 Git 存储库 (https://\<organization\>@dev.azure.com/<组织\>/\<project\>/_git/\<project\>)，或者使用任何其他提供程序，例如 GitHub。 在门户中依次单击“管道”按钮和“新建管道”来创建新管道时，需要选择存储库的位置 。
 
@@ -30,7 +30,7 @@ ms.locfileid: "84724581"
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>将项目证书添加到安全文件库
 
 > [!NOTE]
->应尽量避免将证书提交到存储库，Git 默认会忽略这些证书。 为了管理敏感文件（例如证书）的安全处理，Azure DevOps 支持[安全文件](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops)功能。
+>应尽量避免将证书提交到存储库，Git 默认会忽略这些证书。 为了管理敏感文件（例如证书）的安全处理，Azure DevOps 支持[安全文件](/azure/devops/pipelines/library/secure-files?view=azure-devops)功能。
 
 若要为自动生成上传证书：
 
@@ -38,10 +38,10 @@ ms.locfileid: "84724581"
 2. 依次单击“安全文件”选项卡、“+ 安全文件”。 
 3. 浏览到证书文件并单击“确定”。
 4. 上传证书后，选择该证书以查看其属性。 在“管道权限”下，将“授权在所有管道中使用”切换开关置于启用状态。 
-5. 如果证书中的私钥包含密码，则我们建议将密码存储在 [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) 中，然后将密码链接到某个[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 可以使用该变量来从管道访问密码。 请注意，只有私钥支持密码；当前不支持使用本身受密码保护的证书文件。
+5. 如果证书中的私钥包含密码，则我们建议将密码存储在 [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) 中，然后将密码链接到某个[变量组](/azure/devops/pipelines/library/variable-groups)。 可以使用该变量来从管道访问密码。 请注意，只有私钥支持密码；当前不支持使用本身受密码保护的证书文件。
 
 > [!NOTE]
-> 从 Visual Studio 2019 开始，不再在 MSIX 项目中生成临时证书。 若要创建或导出证书，请使用[此文](/windows/msix/package/create-certificate-package-signing)中所述的 PowerShell cmdlet。
+> 从 Visual Studio 2019 开始，不再在 MSIX 项目中生成临时证书。 若要创建或导出证书，请使用[此文](../package/create-certificate-package-signing.md)中所述的 PowerShell cmdlet。
 
 
 ## <a name="configure-the-build-in-your-yaml-file"></a>在 YAML 文件中配置生成
@@ -59,7 +59,7 @@ ms.locfileid: "84724581"
 | AppxPackageSigningEnabled | true | 启用包签名。 |
 | PackageCertificateThumbprint | 证书指纹 | 此值**必须**与签名证书中的指纹匹配，或者为空字符串。 |
 | PackageCertificateKeyFile | 路径 | 要使用的证书的路径。 此值是从安全文件元数据中检索的。 |
-| PackageCertificatePassword | 密码 | 证书中私钥的密码。 建议将密码存储在 [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) 中，并将密码链接到[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 可将变量传递到此参数。 |
+| PackageCertificatePassword | 密码 | 证书中私钥的密码。 建议将密码存储在 [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates) 中，并将密码链接到[变量组](/azure/devops/pipelines/library/variable-groups)。 可将变量传递到此参数。 |
 
 
 
@@ -164,7 +164,7 @@ steps:
 使用 `$()` 语法定义的参数是在生成定义中定义的变量，在其他生成系统中将会更改。
 
 
-若要查看所有预定义的变量，请参阅[预定义的生成变量](https://docs.microsoft.com/azure/devops/pipelines/build/variables)。
+若要查看所有预定义的变量，请参阅[预定义的生成变量](/azure/devops/pipelines/build/variables)。
 
 ## <a name="configure-the-publish-build-artifacts-task"></a>配置“发布生成项目”任务
 
@@ -291,5 +291,3 @@ displayName: 'Modify URIs in App Installer File'
 ```
 
 如果设置发布管道用于将放置文件夹的内容发布到 Intranet 或任何其他网站，且 Web 服务器支持字节范围请求并已正确配置，则最终用户可以使用此链接直接安装应用，而无需先下载 MSIX 包。
-
-

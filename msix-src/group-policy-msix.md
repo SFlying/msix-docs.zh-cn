@@ -5,20 +5,20 @@ ms.date: 04/12/2019
 ms.topic: article
 keywords: msix
 ms.localizationpriority: medium
-ms.openlocfilehash: d7c5bec4b088bd5bf9f003b3936d14529f53197c
-ms.sourcegitcommit: 6243b7aca6f52f007f4571c835f580f433c31769
+ms.openlocfilehash: 100fd87c2d40bcb15aa68ad146fb7de693b965a8
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812744"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090415"
 ---
 # <a name="group-policy-and-msix-packaged-apps"></a>组策略和 MSIX 打包的应用
 
 使用 MSIX 的开发人员可以采用类似于其他安装程序类型的方式利用组策略。
 
-如果你已将 Win32 应用打包成 MSIX（或者使用桌面桥生成了应用），则该应用已启用完全信任功能。 这样，便可从组策略注册表项中读取数据。 在运行时，你的应用的组策略注册表视图与使用其他方法安装该应用后的相同。 从 Windows 10 版本 1809 开始，如果你的应用是通用 Windows 平台 (UWP) 应用，则该应用可访问这些组策略注册表项。 有关创建组策略的详细信息，请参阅[此文](https://docs.microsoft.com/openspecs/windows_protocols/ms-gpreg/834da877-264f-4589-9b80-b6b012c8edc3)。
+如果你已将 Win32 应用打包成 MSIX（或者使用桌面桥生成了应用），则该应用已启用完全信任功能。 这样，便可从组策略注册表项中读取数据。 在运行时，你的应用的组策略注册表视图与使用其他方法安装该应用后的相同。 从 Windows 10 版本 1809 开始，如果你的应用是通用 Windows 平台 (UWP) 应用，则该应用可访问这些组策略注册表项。 有关创建组策略的详细信息，请参阅[此文](/openspecs/windows_protocols/ms-gpreg/834da877-264f-4589-9b80-b6b012c8edc3)。
 
-如果你正在使用 [MSIX 打包工具](mpt-overview.md)将现有的安装程序转换为 MSIX，则无需执行新的操作，你的应用即可支持组策略。 可以像平时使用原始安装程序后那样管理组策略。 转换为 MSIX 的应用仍可从现有的组策略注册表项中读取数据。 
+如果你正在使用 [MSIX 打包工具](./packaging-tool/tool-overview.md)将现有的安装程序转换为 MSIX，则无需执行新的操作，你的应用即可支持组策略。 可以像平时使用原始安装程序后那样管理组策略。 转换为 MSIX 的应用仍可从现有的组策略注册表项中读取数据。 
 
 组策略原生并不支持安装 MSIX 应用程序。 
 

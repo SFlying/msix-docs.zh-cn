@@ -1,20 +1,20 @@
 ---
-Description: 本指南说明了如何使用 Microsoft Endpoint Configuration Manager 创建和部署 MSIX 应用
+description: 本指南说明了如何使用 Microsoft Endpoint Configuration Manager 创建和部署 MSIX 应用
 title: Microsoft Endpoint Configuration Manager
 ms.date: 1/31/2020
 ms.topic: article
 keywords: windows 10, uwp, mecm, configmgr, 应用, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: eb136e71cec242efebe9129d2c6c8bee5fa62a35
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 51b681af964ad55822bb27768a17372ed3aebadf
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77074173"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090605"
 ---
 # <a name="microsoft-endpoint-configuration-manager"></a>Microsoft Endpoint Configuration Manager
-[Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/configmgr/) 可用来创建可以交付到客户端设备的 `Windows app package (*.appx, *.appxbundle, *.msix, *.msixbundle)`。 部署 MSIX 应用需要具备以下先决条件：
+[Microsoft Endpoint Configuration Manager](/configmgr/) 可用来创建可以交付到客户端设备的 `Windows app package (*.appx, *.appxbundle, *.msix, *.msixbundle)`。 部署 MSIX 应用需要具备以下先决条件：
 1) 对要部署的 MSIX 程序包的访问权限。
 2) 用作安装目标的设备或用户集合。
 
@@ -23,8 +23,8 @@ ms.locfileid: "77074173"
 
 |||
 |-----|------|
-| 1.从安装程序捕获 MSIX 程序包，或者检索现有的 MSIX 应用 | [通过桌面安装程序创建 MSIX 程序包](../packaging-tool/create-app-package-msi-vm.md)  |
+| 1.从安装程序捕获 MSIX 程序包，或者检索现有的 MSIX 应用 | [通过桌面安装程序创建 MSIX 程序包](../packaging-tool/create-app-package.md)  |
 | 2.启动 Microsoft Endpoint Configuration Manager 控制台 | [Microsoft Endpoint Configuration Manager 控制台](https://devicemanagement.microsoft.com) |
-| 3.创建业务线应用 | [创建 Windows 应用程序包](https://docs.microsoft.com/configmgr/apps/get-started/creating-windows-applications) |
-| 4.创建用户或设备集合 | [创建集合](https://docs.microsoft.com/configmgr/core/clients/manage/collections/create-collections) |
-| 5.部署业务线应用 | [通过 ConfigMgr 部署应用程序](https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-applications) |
+| 3.创建业务线应用 | [创建 Windows 应用程序包](/configmgr/apps/get-started/creating-windows-applications) |
+| 4.创建用户或设备集合 | [创建集合](/configmgr/core/clients/manage/collections/create-collections) |
+| 5.部署业务线应用 | [通过 ConfigMgr 部署应用程序](/configmgr/apps/deploy-use/deploy-applications) |

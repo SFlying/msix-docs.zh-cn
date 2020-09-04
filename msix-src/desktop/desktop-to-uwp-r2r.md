@@ -1,16 +1,16 @@
 ---
-Description: 本指南介绍如何配置 Visual Studio 解决方案，以使用本机映像优化应用程序二进制文件。
+description: 本指南介绍如何配置 Visual Studio 解决方案，以使用本机映像优化应用程序二进制文件。
 title: 使用本机映像优化 NET 桌面应用
 ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10, uwp, msix, 本机映像编译器
 ms.localizationpriority: medium
-ms.openlocfilehash: ebc2c7351fef0856d83529e55ba4ebf012aaaeed
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: c4f0bfda14c6d14b75da0478366196cbaf14ca16
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77073087"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090035"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>使用本机映像优化 NET 桌面应用
 
@@ -91,7 +91,7 @@ A. 在装有 .NET Framework 4.7.2 的情况下运行时，优化的二进制文�
 
 **问：如何提供反馈或报告问题？**
 
-A. 请使用 Visual Studio 2017 中的“反馈”工具报告问题。 [详细信息](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)。
+A. 请使用 Visual Studio 2017 中的“反馈”工具报告问题。 [详细信息](/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)。
 
 **问：将本机映像添加到现有二进制文件会造成什么影响？**
 

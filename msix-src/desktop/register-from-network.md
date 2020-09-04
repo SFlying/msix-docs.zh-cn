@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
-ms.openlocfilehash: 08a21a15d5e9929d7f7b01e0865ee90da45f8a7c
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: ca179a49a282d2bee6217a142ef94409e2161c8d
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77074183"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091225"
 ---
 # <a name="registering-a-package-layout-from-a-network-share"></a>从网络共享注册包布局
 
@@ -31,11 +31,11 @@ ms.locfileid: "77074183"
 
 ## <a name="in-visual-studio"></a>在 Visual Studio 中
 
-如果是在 Visual Studio 中进行开发，则可以按照[此处](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps?redirectedfrom=MSDN#advanced-remote-deployment-options)所述步骤进行操作。
+如果是在 Visual Studio 中进行开发，则可以按照[此处](/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#advanced-remote-deployment-options)所述步骤进行操作。
 
 ## <a name="from-the-command-line"></a>从命令行中
 
-如果不是在 Visual Studio 中进行开发，并且使用命令行工具，则可以使用 [WinDeployAppCmd](https://docs.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool)。 下面是有关如何在命令行窗口中执行此操作的示例：
+如果不是在 Visual Studio 中进行开发，并且使用命令行工具，则可以使用 [WinDeployAppCmd](/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool)。 下面是有关如何在命令行窗口中执行此操作的示例：
 
 ```
 WinAppDeployCmd.exe registerfiles -remotedeploydir <network path> -ip <IP Address> -pin <target machine PIN>

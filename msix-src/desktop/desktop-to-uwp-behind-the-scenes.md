@@ -1,17 +1,17 @@
 ---
-Description: 本文深入探讨桌面桥幕后的工作原理。
+description: 本文深入探讨桌面桥幕后的工作原理。
 title: 在桌面桥幕后
 ms.date: 01/30/2020
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
-ms.openlocfilehash: c646f8c393c43a6aa01fc0cf594b269cef984433
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 6e7641f095ef7a74210c796d52f62c778d8b040d
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77072738"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090075"
 ---
 # <a name="understanding-how-packaged-desktop-apps-run-on-windows"></a>了解打包的桌面应用如何在 Windows 上运行
 
@@ -58,7 +58,7 @@ AppData 用户文件夹中所有新建的文件和文件夹（例如 *C:\Users\u
 
 ### <a name="packaged-vfs-locations"></a>打包的 VFS 位置
 
-下表显示了为应用在系统上的哪个位置覆盖作为程序包一部分交付的文件。 应用程序将认为这些文件位于所列的系统位置，但这些文件实际上位于 *C:\Program Files\WindowsApps\package_name\VFS* 中的重定向位置。 根据 [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx) 常量确定 FOLDERID 位置。
+下表显示了为应用在系统上的哪个位置覆盖作为程序包一部分交付的文件。 应用程序将认为这些文件位于所列的系统位置，但这些文件实际上位于 *C:\Program Files\WindowsApps\package_name\VFS* 中的重定向位置。 根据 [**KNOWNFOLDERID**](/windows/win32/shell/knownfolderid) 常量确定 FOLDERID 位置。
 
 系统位置 | 重定向位置 (在 [PackageRoot]\VFS\ 下\) | 支持的体系结构
  :--- | :--- | :---

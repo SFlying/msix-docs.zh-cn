@@ -1,17 +1,17 @@
 ---
-Description: 有关基于源代码创建 MSIX 程序包的主题概述
+description: 有关基于源代码创建 MSIX 程序包的主题概述
 title: 基于代码生成 MSIX 程序包
 ms.date: 01/27/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5d0f2105f9ac7fa245b2ced572a7c9c75485b2f0
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 6fb34afdbe3b3b5f74c6a19997e6c7a29994b471
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77074033"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090615"
 ---
 # <a name="extend-your-packaged-applications"></a>扩展打包的应用程序
 
@@ -25,8 +25,6 @@ MSIX 允许你使用应用扩展和可选程序包来轻松扩展应用程序。
 
 |主题| 说明 |
 |:---|:---|
-|[创建和托管应用扩展](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-an-extension?context=/windows/msix/render)|本部分讨论了如何在 MSIX 程序包中创建并托管应用扩展。 |
+|[创建和托管应用扩展](/windows/uwp/launch-resume/how-to-create-an-extension?context=%252fwindows%252fmsix%252frender)|本部分讨论了如何在 MSIX 程序包中创建并托管应用扩展。 |
 [应用扩展的自定义属性](custom-props-app-extensions.md)|本部分讨论了如何使用应用扩展的自定义属性。 |
 |[使用可选程序包扩展应用](../package/optional-packages-with-executable-code.md)| 本部分讨论了如何利用可选程序包模型将内容加载到主程序包中。 |
-
-

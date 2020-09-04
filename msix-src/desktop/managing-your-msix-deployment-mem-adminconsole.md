@@ -1,17 +1,17 @@
 ---
-Description: 本指南说明了如何使用 Microsoft 终结点管理器管理控制台创建和部署 MSIX 应用
+description: 本指南说明了如何使用 Microsoft 终结点管理器管理控制台创建和部署 MSIX 应用
 title: Microsoft 终结点管理器管理控制台
 ms.date: 06/17/2019
 ms.topic: article
 keywords: windows 10, uwp, mem, mem ac, mem 管理控制台, 应用
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f0ed835c3eb94dda358fbf88fe587bcb44277af1
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 6073f787630751df88734f293b65e63a90bebc02
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77073913"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090515"
 ---
 # <a name="microsoft-endpoint-manager-admin-console"></a>Microsoft 终结点管理器管理控制台
 [Microsoft 终结点管理器管理控制台](https://devicemanagement.microsoft.com)可用于将 MSIX 程序包部署到客户端设备。 通过 Microsoft 终结点配置管理器管理控制台部署 MSIX 应用时，你需要具有要部署的 MSIX 应用，以及要用作安装目标的 Azure Active Directory 组。
@@ -21,6 +21,6 @@ ms.locfileid: "77073913"
 
 |||
 |-----|------|
-| 1.从安装程序捕获 MSIX 程序包，或者检索现有的 MSIX 应用 | [通过桌面安装程序创建 MSIX 程序包](../packaging-tool/create-app-package-msi-vm.md)  |
+| 1.从安装程序捕获 MSIX 程序包，或者检索现有的 MSIX 应用 | [通过桌面安装程序创建 MSIX 程序包](../packaging-tool/create-app-package.md)  |
 | 2.启动 Microsoft 终结点管理器管理控制台 | [Microsoft 终结点管理器管理控制台](https://devicemanagement.microsoft.com) |
-| 3.创建和部署业务线应用 | [创建业务线应用](https://docs.microsoft.com/intune/apps/lob-apps-windows) |
+| 3.创建和部署业务线应用 | [创建业务线应用](/intune/apps/lob-apps-windows) |

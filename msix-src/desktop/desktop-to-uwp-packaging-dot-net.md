@@ -1,17 +1,17 @@
 ---
-Description: 本指南介绍了如何配置 Visual Studio 解决方案来编辑、调试和打包桌面应用。
+description: 本指南介绍了如何配置 Visual Studio 解决方案来编辑、调试和打包桌面应用。
 title: 使用 Visual Studio 从源代码中将桌面应用打包
 ms.date: 02/02/2020
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: fcaca4943d3101600ef408b0e1d0349e2fc06f94
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: d609bfa787cd1e53dfe66a02566a9fd66b8db185
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724551"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090115"
 ---
 # <a name="set-up-your-desktop-application-for-msix-packaging-in-visual-studio"></a>在 Visual Studio 中设置用于 MSIX 打包的桌面应用程序
 
@@ -103,12 +103,12 @@ ms.locfileid: "84724551"
 
 **通过添加 UWP API 来增强桌面应用程序**
 
-请参阅[增强用于 Windows 10 的桌面应用程序](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)
+请参阅[增强用于 Windows 10 的桌面应用程序](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)
 
 **通过添加 UWP 项目和 Windows 运行时组件来扩展你的桌面应用程序**
 
-请参阅[使用新式 UWP 组件扩展桌面应用程序](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extend)。
+请参阅[使用新式 UWP 组件扩展桌面应用程序](/windows/apps/desktop/modernize/desktop-to-uwp-extend)。
 
 **分发你的应用**
 
-请参阅[分发打包的桌面应用程序](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-distribute)
+请参阅[分发打包的桌面应用程序](/windows/apps/desktop/modernize/desktop-to-uwp-distribute)

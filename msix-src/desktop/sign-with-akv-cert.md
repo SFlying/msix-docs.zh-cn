@@ -5,12 +5,12 @@ ms.date: 05/07/2020
 ms.topic: article
 keywords: windows 10, msix, uwp, azure key vault, visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: d7dec1116ddbb56d335a5734f360eb7cfffa41f6
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: ac69ae105dbd1fff5d64c20f50af644f9d27504f
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84740486"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090425"
 ---
 # <a name="sign-packages-with-azure-key-vault"></a>使用 Azure Key Vault 为包签名
 
@@ -22,7 +22,7 @@ ms.locfileid: "84740486"
 ## <a name="prerequisites"></a>先决条件
 
 - 一个 Azure 帐户。 如果还没有 Azure 帐户，请在[此处](https://azure.microsoft.com/free/)开始。
-- 一个 Azure Key Vault。 有关详细信息，请参阅[创建 Key Vault](https://docs.microsoft.com/azure/key-vault/secrets/quick-create-portal#create-a-vault)。
+- 一个 Azure Key Vault。 有关详细信息，请参阅[创建 Key Vault](/azure/key-vault/secrets/quick-create-portal#create-a-vault)。
 - 一个导入到 Azure Key Vault 的有效包签名证书。 Azure Key Vault 生成的默认证书不能用于代码签名。 要详细了解如何创建包签名证书，请参阅[为包签名创建证书](../package/create-certificate-package-signing.md)。
 
 ## <a name="import-a-certificate-to-your-key-vault"></a>将证书导入 Key Vault
@@ -43,7 +43,7 @@ ms.locfileid: "84740486"
 
 ## <a name="configure-the-access-policies-for-your-key-vault"></a>为 Key Vault 配置访问策略
 
-可使用访问策略控制谁有权访问 Key Vault 的内容。 Key Vault 访问策略分别授予对密钥、机密和证书的权限。 可仅授权用户访问密钥，但禁止访问机密。 密钥、机密和证书的访问权限在保管库级别进行管理。 有关详细信息，请参阅 [Azure Key Vault 安全性](https://docs.microsoft.com/azure/key-vault/general/overview-security#identity-and-access-management)。
+可使用访问策略控制谁有权访问 Key Vault 的内容。 Key Vault 访问策略分别授予对密钥、机密和证书的权限。 可仅授权用户访问密钥，但禁止访问机密。 密钥、机密和证书的访问权限在保管库级别进行管理。 有关详细信息，请参阅 [Azure Key Vault 安全性](/azure/key-vault/general/overview-security#identity-and-access-management)。
 
 > [!NOTE]
 > 在 Azure 订阅中创建 Key Vault 时，它会自动与订阅的 Azure Active Directory 租户相关联。 任何尝试管理或检索 Key Vault 中的内容的用户都必须经过 Azure AD 授权。

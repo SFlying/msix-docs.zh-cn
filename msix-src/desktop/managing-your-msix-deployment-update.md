@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, 部署, msix
 ms.assetid: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 893b67394b4ed996d4506a65b030205a1b8a9f3f
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: 80258b0b63b16ed02ac12a0b103ac1a4c8949c8e
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77074113"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091235"
 ---
 # <a name="differential-updates-for-msix-app-packages"></a>MSIX 应用包的差异更新
 
@@ -47,5 +47,4 @@ ms.locfileid: "77074113"
 | -RetainFilesOnFailure | 在部署失败的情况下，如果此开关设置为 True，则不会删除安装期间在目标计算机上创建的文件。 |
 | -Update | 指定所要添加的包是依赖项包更新。 删除父应用时，将删除依赖项包。 如果未指定，则删除父应用时不会删除该包。 |
 
-有关此 cmdlet 的可用参数的完整列表，请访问有关 [add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) 的 PowerShell 文章。
-
+有关此 cmdlet 的可用参数的完整列表，请访问有关 [add-appxpackage](/powershell/module/appx/add-appxpackage?view=win10-ps) 的 PowerShell 文章。

@@ -1,22 +1,22 @@
 ---
-Description: 运行 Desktop App Converter 以将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）打包。
+description: 运行 Desktop App Converter 以将 Windows 桌面应用程序（如 Win32、WPF 和 Windows 窗体）打包。
 title: 使用 Desktop App Converter 将应用打包（桌面桥）
 ms.date: 07/29/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 251ee703973695fae70b9e4d84b4bb46cb889432
-ms.sourcegitcommit: e3a06eccd3322053b8b498cb6343fb6f711a7a0b
+ms.openlocfilehash: 16e9c5b24f213dfcde2555354b364a222b6c1947
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84724571"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090175"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>使用 Desktop App Converter 打包桌面应用程序
 
 > [!NOTE]
-> 现已弃用 Desktop App Converter 工具。 建议改用 [MSIX 打包工具](../packaging-tool/create-app-package-msi-vm.md)。
+> 现已弃用 Desktop App Converter 工具。 建议改用 [MSIX 打包工具](../packaging-tool/create-app-package.md)。
 
 ![DAC 图标](images/dac.png)
 
@@ -98,7 +98,7 @@ Desktop App Converter (DAC) 创建桌面应用程序的包以便与最新 Window
    确保文件名中显示的版本号与 Windows 内部版本的版本号相匹配。
 
    >[!IMPORTANT]
-   > 如果使用的是版本 15063，则该版本的次要版本等于或大于 .483（例如：   15063.540），请确保下载 BaseImage-15063-UPDATE.wim 文件。   如果该版本的次要版本小于 .483，请下载 BaseImage-15063.wim 文件。   如果已设置此基文件的不兼容版本，则可以解决此问题。 这篇[博客文章](https://blogs.msdn.microsoft.com/appconsult/2017/08/04/desktop-app-converter-fails-on-windows-10-15063-483-and-later-how-to-solve-it/)介绍了如何解决此问题。
+   > 如果使用的是版本 15063，则该版本的次要版本等于或大于 .483（例如：   15063.540），请确保下载 BaseImage-15063-UPDATE.wim 文件。   如果该版本的次要版本小于 .483，请下载 BaseImage-15063.wim 文件。   如果已设置此基文件的不兼容版本，则可以解决此问题。 这篇[博客文章](/archive/blogs/appconsult/desktop-app-converter-fails-on-windows-10-15063-483-and-later-how-to-solve-it)介绍了如何解决此问题。
 
 3. 将下载的文件放置在你稍后可在计算机上找到它的任意位置。
 
@@ -157,7 +157,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 > [!IMPORTANT]
 > 以下是在执行此操作时要记住的两个重要事项。 首先，请确保安装程序位于独立文件夹中，并确保只有与该安装程序相关的文件位于同一文件夹中。 转换器将该文件夹的所有内容复制到隔离的 Windows 环境中。 <br> 其次，如果合作伙伴中心为你的程序包分配了以数字开头的标识，请确保还要传入 <i>-AppId</i> 参数，并且仅使用字符串后缀（在句点分隔符之后）作为该参数的值。  
 
-如果你的安装程序包括相关库或框架的安装程序，则组织内容的方式可能略有不同。 请参阅[用桌面桥链连多个安装程序](https://blogs.msdn.microsoft.com/appconsult/2017/09/11/chaining-multiple-installers-with-the-desktop-app-converter/)。
+如果你的安装程序包括相关库或框架的安装程序，则组织内容的方式可能略有不同。 请参阅[用桌面桥链连多个安装程序](/archive/blogs/appconsult/chaining-multiple-installers-with-the-desktop-app-converter)。
 
 <a id="setup-conversion"></a>
 
@@ -413,7 +413,7 @@ PE 文件的验证码签名的位置由可选头数据目录中的证书表项�
 - **WIN_CERTIFICATE** 项的大小必须为正数
 - 对于 32 位可执行文件，**WIN_CERTIFICATE** 项必须在 **IMAGE_NT_HEADERS32** 结构之后开始，对于 64 位可执行文件，必须在 IMAGE_NT_HEADERS64 结构之后开始
 
-有关更多详细信息，请参考[验证码门户可执行文件规范](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx)和 [PE 文件格式规范](https://msdn.microsoft.com/windows/hardware/gg463119.aspx)。
+有关更多详细信息，请参考[验证码门户可执行文件规范](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx)和 [PE 文件格式规范](/windows/win32/debug/pe-format)。
 
 请注意，当尝试对 Windows 应用包进行签名时，SignTool.exe 可能会输出已损坏或格式不正确的二进制文件列表。 若要执行此操作，请通过将环境变量 APPXSIP_LOG 设置为 1（如 ```set APPXSIP_LOG=1```）来启用详细日志记录并重新运行 SignTool.exe。
 
