@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, msix
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2cd4de777c7fc45a62e511d76916d61a46d5492a
-ms.sourcegitcommit: 7a52883434aa05272c15d033d85b67e2dd1e8c75
+ms.openlocfilehash: 108fb7be52c24c52f8b65fd3c17b9c35feb96a30
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84107335"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091175"
 ---
 # <a name="what-is-msix"></a>什么是 MSIX？
 
@@ -27,7 +27,7 @@ MSIX 可使企业掌握最新信息，并确保其应用程序始终保持最新
 
 ## <a name="highlights"></a>亮点
 
-* **将现有的 Windows 应用打包。** 使用 [MSIX 打包工具](packaging-tool/mpt-overview.md)可为任何旧式或新式 Windows 应用创建 MSIX 包。 MSIX 打包工具简化了打包体验，提供交互式用户界面或命令行来转换和打包 Windows 应用。
+* **将现有的 Windows 应用打包。** 使用 [MSIX 打包工具](./packaging-tool/tool-overview.md)可为任何旧式或新式 Windows 应用创建 MSIX 包。 MSIX 打包工具简化了打包体验，提供交互式用户界面或命令行来转换和打包 Windows 应用。
 * **安装 MSIX 应用包。** 使用[应用安装程序](app-installer/app-installer-root.md)可安装或更新在本地或任何内容分发网络上提供的任何 MSIX 应用包。
 * **将运行时修补程序应用于已打包的应用。** [包支持框架](psf/package-support-framework-overview.md)是一个开放源代码工具包，有助于在无权访问源代码时将修补程序应用于现有桌面应用，以便其在 MSIX 容器中运行。
 * **随时随地使用 MSIX。** 由于使用了开源 [MSIX SDK](msix-sdk/sdk-overview.md)，MSIX 包的用途更广泛，并且不区分平台。 该 SDK 提供在任何平台（包括 Windows 10 平台和非 Windows 10 平台）上验证和解包应用包所需的全部 API。

@@ -7,16 +7,16 @@ author: dianmsft
 keywords: windows 10, windows 7, windows 8, Windows Server, uwp, msix, msixcore, 1709, 1703, 1607, 1511, 1507
 ms.localizationpriority: medium
 ms.custom: RS5, seodec18
-ms.openlocfilehash: d5da083602173560a9fa481f138e108e851d84fc
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: e897cd77785c345863c0e2e17bc4dbf8d73b854f
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "76248419"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89091185"
 ---
 # <a name="msix-support-on-windows-server-2019"></a>Windows Server 2019 上的 MSIX 支持
 
-现在，具有桌面体验的 Windows Server 2019 (LTSC) 上支持 MSIX。 利用这种支持，你可以在企业中的客户端和服务器 SKU 上分发相同的 MSIX 包，通过 **PowerShell** 安装，或直接通过 [Package Manager API](https://docs.microsoft.com/uwp/api/Windows.Management.Deployment.PackageManager) 安装。
+现在，具有桌面体验的 Windows Server 2019 (LTSC) 上支持 MSIX。 利用这种支持，你可以在企业中的客户端和服务器 SKU 上分发相同的 MSIX 包，通过 **PowerShell** 安装，或直接通过 [Package Manager API](/uwp/api/Windows.Management.Deployment.PackageManager) 安装。
 
 ## <a name="considerations"></a>注意事项
 
