@@ -1,49 +1,49 @@
 ---
-Description: 本文列出了在打包桌面应用程序之前需要知道的事项。 可能不需要执行很多操作即可使应用为打包过程做好准备。
+description: 本文列出了在打包桌面应用程序之前需要知道的事项。 可能不需要执行很多操作即可使应用为打包过程做好准备。
 title: 准备打包桌面应用程序 (MSIX)
 ms.date: 08/22/2019
 ms.topic: article
 keywords: windows 10, uwp, msix
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 432017a083ae3f9553bea88902378ca3e6556bcb
-ms.sourcegitcommit: ccfd90b4a62144f45e002b3ce6a2618b07510c71
+ms.openlocfilehash: f7019e6eb98a7d37a1b37d6a23cb8435a2072a24
+ms.sourcegitcommit: 6b1ec6420dbaa327b65c208b4cd00da87985104b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "77576907"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89090015"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>准备打包桌面应用程序
 
 本文列出了在打包桌面应用程序之前需要知道的事项。 可能不需要执行很多操作即可使应用为打包过程做好准备，但是如果以下任意一项适用于你的应用程序，则在打包之前需要解决该问题。
 
-+ __.NET 应用程序需要低于 4.6.2 的 .NET Framework 版本__。 如果你正在打包 .NET 应用程序，我们建议使应用程序以 .NET Framework 4.6.2 或更高版本为目标。 Windows 10 版本 1607（也称为周年更新）中首次引入了安装和运行打包桌面应用程序的功能，此 OS 版本默认包含 .NET Framework 4.6.2。 更高版本的 OS 包含更高版本的 .NET Framework。 有关更高版本的 Windows 10 中包含的 .NET 版本完整列表，请参阅[此文](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)。
++ __.NET 应用程序需要低于 4.6.2 的 .NET Framework 版本__。 如果你正在打包 .NET 应用程序，我们建议使应用程序以 .NET Framework 4.6.2 或更高版本为目标。 Windows 10 版本 1607（也称为周年更新）中首次引入了安装和运行打包桌面应用程序的功能，此 OS 版本默认包含 .NET Framework 4.6.2。 更高版本的 OS 包含更高版本的 .NET Framework。 有关更高版本的 Windows 10 中包含的 .NET 版本完整列表，请参阅[此文](/dotnet/framework/migration-guide/versions-and-dependencies)。
 
   在大多数情况下，预期都可以在打包的桌面应用程序中以低于 4.6.2 的 .NET Framework 版本为目标。 但是，如果以低于 4.6.2 的版本为目标，则在将打包的桌面应用程序分发给用户之前，应先对其进行全面测试。
 
   + 4.0 - 4.6.1：以这些 .NET Framework 版本为目标的应用程序在 4.6.2 或更高版本中预期也可以正常运行。 因此，在 Windows 10 版本 1607 或更高版本上使用 OS 原装 .NET Framework 版本的情况下，这些应用程序应该无需进行任何更改即可安装和运行。
 
-  + 2.0 和 3.5：根据我们的测试，以这些 .NET Framework 版本为目标的打包桌面应用程序通常可以正常运行，但某些情况下可能会出现性能问题。 要使这些打包的应用程序能够安装和运行，必须在目标计算机上安装 [.NET Framework 3.5 功能](https://docs.microsoft.com/dotnet/framework/install/dotnet-35-windows-10)（此功能还包括 .NET Framework 2.0 和 3.0）。 打包这些应用程序后，还应该对其进行全面的测试。
+  + 2.0 和 3.5：根据我们的测试，以这些 .NET Framework 版本为目标的打包桌面应用程序通常可以正常运行，但某些情况下可能会出现性能问题。 要使这些打包的应用程序能够安装和运行，必须在目标计算机上安装 [.NET Framework 3.5 功能](/dotnet/framework/install/dotnet-35-windows-10)（此功能还包括 .NET Framework 2.0 和 3.0）。 打包这些应用程序后，还应该对其进行全面的测试。
 
 + __应用程序始终使用提升的安全特权运行__。 应用程序需要在以交互用户身份运行时工作。 安装应用程序的用户可能不是系统管理员，因此需要应用程序以提升的权限运行意味着它无法对标准用户正确运行。 如果打算将应用发布到 Mcirosoft Store，请注意，Store 不接受任何功能部分需要提升权限的应用。
 
 + __应用程序需要内核模式驱动程序或 Windows 服务__。 MSIX 不支持内核模式驱动程序或需要在系统帐户下运行的 Windows 服务。 使用[后台任务](/windows/uwp/launch-resume/create-and-register-a-background-task)，而不是 Windows 服务。
 
-+ __在进程内将应用的模块加载到不在 Windows 应用包中的进程__。 不允许此操作，这意味着不支持进程中扩展，如 [shell 扩展](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx)。 但是，如果你在同一个程序包中有两个应用，则可以在它们之间执行进程间通信。
++ __在进程内将应用的模块加载到不在 Windows 应用包中的进程__。 不允许此操作，这意味着不支持进程中扩展，如 [shell 扩展](/previous-versions/windows/desktop/legacy/dd758089(v=vs.85))。 但是，如果你在同一个程序包中有两个应用，则可以在它们之间执行进程间通信。
 
 + __确保应用程序安装的任何扩展安装在应用程序所安装到的位置__。 Windows 允许用户和 IT 管理者更改包的默认安装位置。  查看“设置”->“系统”>“存储”->“更多存储设置”->“更改新内容的保存位置”->“新应用将保存到”。  如果在应用程序中安装某个扩展，请确保该扩展在安装文件夹方面没有其他限制。  例如，某些扩展可能会禁止将其扩展安装到非系统驱动器。  如果默认位置已更改，这会导致错误 0x80073D01 (ERROR_DEPLOYMENT_BLOCKED_BY_POLICY)。 
 
-+ __应用程序使用自定义应用程序用户模型 ID (AUMID)__ 。 如果进程调用 [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) 以设置其自己的 AUMID，则它可能仅使用应用程序模型环境/Windows 应用包为其生成的 AUMID。 无法定义自定义 AUMID。
++ __应用程序使用自定义应用程序用户模型 ID (AUMID)__ 。 如果进程调用 [SetCurrentProcessExplicitAppUserModelID](/windows/win32/api/shobjidl_core/nf-shobjidl_core-setcurrentprocessexplicitappusermodelid) 以设置其自己的 AUMID，则它可能仅使用应用程序模型环境/Windows 应用包为其生成的 AUMID。 无法定义自定义 AUMID。
 
 + __应用程序修改 HKEY_LOCAL_MACHINE (HKLM) 注册表配置单元__。 应用程序的任何创建 HKLM 键或打开一个键以进行修改的尝试都会导致拒绝访问失败。 请记住，应用程序具有自身的注册表专用虚拟化视图，因此用户范围和计算机范围的注册表配置单元的概念（HKLM 的定义）不适用。 你将需要找到另一种方法来实现 HKLM 的用途，如改为写入 HKEY_CURRENT_USER (HKCU)。
 
-+ __应用程序使用 ddeexec 注册表子项作为启动另一个应用的方式__。 改为使用[应用程序包清单](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)中的各种可激活*扩展配置的 DelegateExecute 谓词处理程序之一。
++ __应用程序使用 ddeexec 注册表子项作为启动另一个应用的方式__。 改为使用[应用程序包清单](/uwp/schemas/appxpackage/appx-package-manifest)中的各种可激活*扩展配置的 DelegateExecute 谓词处理程序之一。
 
 + __应用程序会写入 AppData 文件夹或注册表，目的是与其他应用共享数据__。 转换后，AppData 将重定向到本地应用数据存储，该存储是每个应用的专用应用商店。
 
   应用程序将写入 HKEY_LOCAL_MACHINE 注册表配置单元的所有条目都将重定向到隔离的二进制文件中，应用程序写入 HKEY_CURRENT_USER 注册表配置单元的任何条目都将按用户、按应用放入专用位置。 有关文件和注册表重定向的更多详细信息，请参阅[在桌面桥幕后](desktop-to-uwp-behind-the-scenes.md)。  
 
-  使用不同的进程间数据共享方式。 有关详细信息，请参阅[存储和检索设置以及其他应用数据](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)。
+  使用不同的进程间数据共享方式。 有关详细信息，请参阅[存储和检索设置以及其他应用数据](/windows/uwp/design/app-settings/store-and-retrieve-app-data)。
 
 + __应用程序写入应用的安装目录__。 例如，应用程序写入与你的 exe 放置在同一个目录中的日志文件。 此操作不受支持，因此你需要找到另一个位置，如本地应用数据存储。
 
@@ -54,7 +54,7 @@ ms.locfileid: "77576907"
 
 + __应用程序安装需要用户交互__。 应用程序安装程序必须能够在无提示的情况下运行，并且必须安装默认不在干净 OS 映像中的所有必备组件。
 
-+ __应用程序需要 UIAccess__。 如果应用程序在 UAC 清单的 `requestedExecutionLevel` 元素中指定 `UIAccess=true`，则当前不支持转换为 MSIX。 有关详细信息，请参阅 [UI 自动化安全概述](https://msdn.microsoft.com/library/ms742884.aspx)。
++ __应用程序需要 UIAccess__。 如果应用程序在 UAC 清单的 `requestedExecutionLevel` 元素中指定 `UIAccess=true`，则当前不支持转换为 MSIX。 有关详细信息，请参阅 [UI 自动化安全概述](/dotnet/framework/ui-automation/ui-automation-security-overview)。
 
 + __应用程序公开 COM 对象__。 来自程序包内的进程和扩展可以注册并使用 COM 和 OLE 服务器，进程内和进程外 (OOP) 皆可。  创意者更新添加了打包的 COM 支持，它提供注册 OOP COM 和 OLE 服务器（现在这些服务器在包外部可见）的功能。  请参阅[对桌面桥的 COM 服务器和 OLE 文档支持](https://blogs.windows.com/windowsdeveloper/2017/04/13/com-server-ole-document-support-desktop-bridge)。
 
@@ -112,11 +112,11 @@ ms.locfileid: "77576907"
 
     - __应用的体系结构与 OS 不匹配__。  如果应用程序与 OS 体系结构不匹配（例如在 x64 Windows 上运行 x86 应用程序），则跳转列表目前无法正常工作。 当前没有其他解决方法，只能重新编译应用程序，使其匹配体系结构。
 
-    - __应用程序创建跳转列表条目并调用 [ICustomDestinationList::SetAppID](https://msdn.microsoft.com/library/windows/desktop/dd378403(v=vs.85).aspx) 或 [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422(v=vs.85).aspx)__ 。 不要在代码中以编程方式设置你的 AppID。 否则，将会导致不显示你的跳转列表条目。 如果应用程序需要自定义的 ID，请使用清单文件指定。 有关说明，请参阅[手动打包桌面应用程序](desktop-to-uwp-manual-conversion.md)。 应用程序的 AppID 在 *YOUR_PRAID_HERE* 部分中指定。
+    - __应用程序创建跳转列表条目并调用 [ICustomDestinationList::SetAppID](/windows/win32/api/shobjidl_core/nf-shobjidl_core-icustomdestinationlist-setappid) 或 [SetCurrentProcessExplicitAppUserModelID](/windows/win32/api/shobjidl_core/nf-shobjidl_core-setcurrentprocessexplicitappusermodelid)__ 。 不要在代码中以编程方式设置你的 AppID。 否则，将会导致不显示你的跳转列表条目。 如果应用程序需要自定义的 ID，请使用清单文件指定。 有关说明，请参阅[手动打包桌面应用程序](desktop-to-uwp-manual-conversion.md)。 应用程序的 AppID 在 *YOUR_PRAID_HERE* 部分中指定。
 
-    - __应用程序添加跳转列表 shell 链接，该链接引用包中的可执行文件__。 你不能通过跳转列表直接启动程序包中的可执行文件（应用自身 .exe 的绝对路径除外）。 改为注册应用执行别名（此别名允许通过关键字启动打包的桌面应用程序，就像它在 PATH 环境变量中一样），并设置指向别名的链接目标路径。 有关如何使用 appExecutionAlias 扩展的详细信息，请参阅[将桌面应用程序与 Windows 10 集成](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions)。 注意，如果要求跳转列表中的链接资源与原始 .exe 匹配，你将需要使用 [**SetIconLocation**](https://msdn.microsoft.com/library/windows/desktop/bb761047(v=vs.85).aspx) 和 PKEY_Title 的显示名称设置图标等资源，就像设置其他自定义条目那样。
+    - __应用程序添加跳转列表 shell 链接，该链接引用包中的可执行文件__。 你不能通过跳转列表直接启动程序包中的可执行文件（应用自身 .exe 的绝对路径除外）。 改为注册应用执行别名（此别名允许通过关键字启动打包的桌面应用程序，就像它在 PATH 环境变量中一样），并设置指向别名的链接目标路径。 有关如何使用 appExecutionAlias 扩展的详细信息，请参阅[将桌面应用程序与 Windows 10 集成](/windows/apps/desktop/modernize/desktop-to-uwp-extensions)。 注意，如果要求跳转列表中的链接资源与原始 .exe 匹配，你将需要使用 [**SetIconLocation**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-ishelllinka-seticonlocation) 和 PKEY_Title 的显示名称设置图标等资源，就像设置其他自定义条目那样。
 
-    - __应用程序添加跳转列表条目，该条目通过绝对路径引用应用包中的资源__。 更新应用程序的包时，应用程序的安装路径可能会更改，从而更改资源的位置（例如图标、文档、可执行文件等）。 如果跳转列表条目通过绝对路径引用此类资源，则应用程序应定期刷新其跳转列表（例如应用程序启动时）以确保正确解析路径。 或者，改用 UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx) API，使你可以使用程序包相对的 ms-resource URI 方案（也与语言、DPI 和高对比度相关）来引用字符串和图像资源。
+    - __应用程序添加跳转列表条目，该条目通过绝对路径引用应用包中的资源__。 更新应用程序的包时，应用程序的安装路径可能会更改，从而更改资源的位置（例如图标、文档、可执行文件等）。 如果跳转列表条目通过绝对路径引用此类资源，则应用程序应定期刷新其跳转列表（例如应用程序启动时）以确保正确解析路径。 或者，改用 UWP [**Windows.UI.StartScreen.JumpList**](/uwp/api/Windows.UI.StartScreen.JumpList) API，使你可以使用程序包相对的 ms-resource URI 方案（也与语言、DPI 和高对比度相关）来引用字符串和图像资源。
 
 + __应用程序启动一个实用工具来执行任务__。 避免启动 PowerShell 和 Cmd.exe 等命令实用工具。 实际上，如果用户将应用程序安装在运行 Windows 10 S 的系统上，则应用程序根本无法启动这些实用工具。 这可能会使应用程序无法提交到 Microsoft Store，因为提交到 Microsoft Store 的所有应用都必须与 Windows 10 S 兼容。
 
@@ -126,7 +126,7 @@ ms.locfileid: "77576907"
 
    但是，如果这些扩展已打包，然后作为 Windows 应用包安装，则它们将无法正常工作，因为每个包（主机应用程序和扩展）将彼此隔离。 有关如何从系统隔离应用程序的详细信息，请参阅[在桌面桥幕后](desktop-to-uwp-behind-the-scenes.md)。
 
-     用户安装到运行 Windows 10 S 的系统上的所有应用程序和扩展都必须作为 Windows 应用包安装。 因此，如果想要对扩展打包，或者打算鼓励你的参与者对其打包，请考虑如何能够促进主机应用程序包和任意扩展包之间的通信。 使用[应用服务](https://docs.microsoft.com/windows/uwp/launch-resume/app-services)即可实现此目的。
+     用户安装到运行 Windows 10 S 的系统上的所有应用程序和扩展都必须作为 Windows 应用包安装。 因此，如果想要对扩展打包，或者打算鼓励你的参与者对其打包，请考虑如何能够促进主机应用程序包和任意扩展包之间的通信。 使用[应用服务](/windows/uwp/launch-resume/app-services)即可实现此目的。
 
 + __应用程序生成代码__。 应用程序可以生成其在内存中使用的代码，但请避免将生成的代码写入磁盘，因为 Windows 应用认证过程在应用提交之前无法验证该代码。 此外，向磁盘写入代码的应用将无法在运行 Windows 10 S 的系统中正常运行。这可能会使应用程序无法提交到 Microsoft Store，因为提交到 Microsoft Store 的所有应用都必须与 Windows 10 S 兼容。
 
